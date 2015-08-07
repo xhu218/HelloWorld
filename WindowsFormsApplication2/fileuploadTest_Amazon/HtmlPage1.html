@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+     <script src="js/jquery-1.6.2.min.js" type="text/javascript"></script>
+     <script  type="text/javascript">
+/*
+         var glo_image_data = {
+             OSSAccessKeyId: 'lZ28HtbWIV8xBRKT',//需要根据自己的bucket填写 详情请见oss api
+             policy: 'ewoiZXhwaXJhdGlvbiI6ICIyMTIwLTAxLTAxVDEyOjAwOjAwLjAwMFoiLAoiY29uZGl0aW9ucyI6IFsKWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsIDAsIDEwNDg1NzYwMF0KXQp9Cg==',
+             Signature: 'myP0J3/YOGzHkaiUs9ur4nzsk1c=',
+             success_action_status: '201',
+             key: 'upload/${filename}'
+             //Content-Type:'text/plain'
+         },
+         glo_image_upload_url = 'http://sobey-test.oss-cn-shenzhen.aliyuncs.com';
+*/
+         function doUploadImage() {
+             //var oMyForm = new FormData();
+
+             //for (var field_name in data) {
+             //    oMyForm.append(field_name, data[field_name]);
+             //}
+
+             //oMyForm.append("file", $("#file")[0].files[0]);
+
+			 var url ="http://xhu218.s3.amazonaws.com/";
+			 
+             var oMyForm = new FormData(document.forms.namedItem("postform"));
+
+             var oReq = new XMLHttpRequest();
+             //上传进度监听
+             oReq.upload.onprogress = function (e) {
+                 if (e.type == 'progress') {
+                     var percent = Math.round(e.loaded / e.total * 100, 2) + '%';
+                     $('#progress').html(percent);//显示进度的容器 自行修改
+                 }
+             };
+             //上传结果
+             oReq.onreadystatechange = function (e) {
+                 if (oReq.readyState == 4) {
+                     if (oReq.status == 201)//这里如果成功返回的是 success_action_status设置的值
+                         alert('成功');
+                     else
+                         alert('失败');
+                 }
+             };
+             oReq.open("POST", url);
+             oReq.send(oMyForm);
+         }
+
+         function SubmitMoth() {
+             //doUploadImage(glo_image_upload_url, glo_image_data);
+			  doUploadImage();
+         }
+    </script>
+</head>
+<body>
+  <form id="postform"  action="http://xhu218.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+    Key to upload: 
+    <input type="input"  name="key" value="xhu218/${filename}" /><br />
+    acl:<input type="input" name="acl" value="public-read" /><br />
+    success_action_redirect:<input type="input" name="success_action_redirect" value="http://xhu218.s3.amazonaws.com/successful_upload.html" />
+   <br />
+   Content-Type: <br/>  <br /> 
+    X-Amz-Credential:<input type="text"   name="X-Amz-Credential" value="AKIAIPHVRYALA6YRQULQ/20150805/ap-northeast-1/s3/aws4_request" /><br />
+    X-Amz-Algorithm:<input type="text"   name="X-Amz-Algorithm" value="AWS4-HMAC-SHA256" /><br />
+    X-Amz-Date:<input type="text"   name="X-Amz-Date" value="20150806T000000Z" />
+<br/>
+    Tags for File:  <br /> <br />
+    x-amz-meta-tag:<input type="input"  name="x-amz-meta-tag" value="" /><br />
+    Policy:<input type="input" name="Policy" value="eyAiZXhwaXJhdGlvbiI6ICIyMDIwLTEyLTAxVDEyOjAwOjAwLjAwMFoiLA0KICAiY29uZGl0aW9ucyI6IFsNCiAgICB7ImJ1Y2tldCI6ICJ4aHUyMTgifSwNCiAgICBbInN0YXJ0cy13aXRoIiwgIiRrZXkiLCAidXNlci91c2VyMS8iXSwNCiAgICB7ImFjbCI6ICJwdWJsaWMtcmVhZCJ9LA0KICAgIHsic3VjY2Vzc19hY3Rpb25fcmVkaXJlY3QiOiAiaHR0cDovL3hodTIxOC5zMy5hbWF6b25hd3MuY29tL3N1Y2Nlc3NmdWxfdXBsb2FkLmh0bWwifSwNCiAgICBbInN0YXJ0cy13aXRoIiwgIiRDb250ZW50LVR5cGUiLCAiaW1hZ2UvIl0sDQogICAgeyJ4LWFtei1tZXRhLXV1aWQiOiAiMTQzNjUxMjM2NTEyNzQifSwNCiAgICBbInN0YXJ0cy13aXRoIiwgIiR4LWFtei1tZXRhLXRhZyIsICIiXSwNCiAgICB7IngtYW16LWNyZWRlbnRpYWwiOiAiQUtJQUlQSFZSWUFMQTZZUlFVTFEvMjAxNTA4MDUvYXAtbm9ydGhlYXN0LTEvczMvYXdzNF9yZXF1ZXN0In0sDQogICAgeyJ4LWFtei1hbGdvcml0aG0iOiAiQVdTNC1ITUFDLVNIQTI1NiJ9LA0KICAgIHsieC1hbXotZGF0ZSI6ICIyMDE1MDgwNlQwMDAwMDBaIiB9DQogIF0NCn0=" /><br />
+    X-Amz-Signature:<input type="input" name="X-Amz-Signature" value="8268259805d20578dbbc7828bd4146d33207d2d3a3b75133a92b2acca5dc70ff" />
+	<br />
+	
+    File: 
+   <div>  <p>
+                快速上传:
+                <input name="file" type="file" id="file"> 
+                <button onclick="populateContentType('file'); return false;" style="display: none">填入 Content-Type</button>
+            </p></div>
+  </form>
+
+    <span id="fileSize"></span>
+      <input id="btnsubmitExt" onclick="SubmitMoth()" type="button" value="上传" />
+     <div id="progress"></div>
+	 
+	 <div>
+AKIAIPHVRYALA6YRQULQ
+</br>
+ux/PvIslC/BIJ4LVbDCQmxG7u4TVjn+ZZbhP99Zx
+	 </div>
+</body>
+</html>
