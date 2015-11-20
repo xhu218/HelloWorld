@@ -1,0 +1,6 @@
+LIBRARY	"MyCProgram"
+
+EXPORTS
+    Say  @1
+    Sum  @2
+    Test1 @3
