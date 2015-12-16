@@ -50,6 +50,7 @@
     <Compile Include="FileOp\ImageMogrify.cs" />
     <Compile Include="FileOp\ImageView.cs" />
     <Compile Include="FileOp\ImageWaterMarker.cs" />
+    <Compile Include="FileOp\Video.cs" />
     <Compile Include="FileOp\WaterMarker.cs" />
     <Compile Include="FileOp\TextWaterMarker.cs" />
     <Compile Include="IO\IOClient.cs" />
