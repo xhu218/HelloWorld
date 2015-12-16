@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qiniu.4.0", "Qiniu\Qiniu.4.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qiniu.4.0.Test", "Qiniu.Test\Qiniu.4.0.Test.csproj", "{95DC2A77-2344-4315-9F6F-334CC928459C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1594C16B-9C83-4425-B704-60E361D3AFD2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{1594C16B-9C83-4425-B704-60E361D3AFD2}"
 	ProjectSection(SolutionItems) = preProject
 		Lib\Newtonsoft.Json.dll = Lib\Newtonsoft.Json.dll
 	EndProjectSection
