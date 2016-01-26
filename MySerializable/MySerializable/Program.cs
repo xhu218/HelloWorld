@@ -34,6 +34,7 @@ namespace MySerializable
 
 
             Element_source source1 = serializer.Deserialize(new StringReader(writer.ToString())) as Element_source;
+
             Element_source source2 = JsonConvert.DeserializeObject(json) as Element_source;
 
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Element_source));
@@ -45,7 +46,9 @@ namespace MySerializable
             string r1 = jsonSerializer.Serialize(source);
 
             //执行反序列化
-            Element_source source3 = jsonSerializer.Deserialize<Element_source>(json);
+            Element_source source3 = jsonSerializer.Deserialize<Element_source>(r1);
+
+            String r2 = jsonSerializer.Serialize(source3);
 
 
 
