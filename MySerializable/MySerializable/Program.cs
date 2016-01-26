@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using System.Runtime.Serialization.Json;
+using System.Web.Script.Serialization;
 
 namespace MySerializable
 {
@@ -15,8 +17,9 @@ namespace MySerializable
         {
 
             Element_source source = new Element_source();
-            source.Items = new object[]{new Item{ ItemId = "1"}};
+            source.Items = new object[] { new Item { ItemId = "1" } };
             source.ItemsType = ItemChoiceType.item;
+
 
             XmlSerializer serializer = new XmlSerializer(typeof(Element_source));
             StringWriter writer = new StringWriter();
@@ -32,6 +35,20 @@ namespace MySerializable
 
             Element_source source1 = serializer.Deserialize(new StringReader(writer.ToString())) as Element_source;
             Element_source source2 = JsonConvert.DeserializeObject(json) as Element_source;
+
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Element_source));
+            MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(json));
+            //Element_source obj = (Element_source)ser.ReadObject(ms);   //ERROR
+
+            JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+            //执行序列化
+            string r1 = jsonSerializer.Serialize(source);
+
+            //执行反序列化
+            Element_source source3 = jsonSerializer.Deserialize<Element_source>(json);
+
+
+
             Console.Read();
         }
     }
