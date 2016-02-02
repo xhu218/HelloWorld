@@ -72,6 +72,8 @@ namespace GettingStartedGuide
 
                     Console.WriteLine("Get Sig Url");
                     GetPreSigUrl();
+
+                    GetPreSigUrl1();
                 }
             }
 
@@ -100,6 +102,65 @@ namespace GettingStartedGuide
             }
 
             return true;
+        }
+
+        static void GetPreSigUrl1()
+        {
+
+            String fileKey = "test-txt.log";
+
+
+              AmazonS3Config config = new AmazonS3Config();
+                config.RegionEndpoint = null;
+                config.ServiceURL = "http://obs.myhwclouds.com";
+                config.SignatureMethod = Amazon.Runtime.SigningAlgorithm.HmacSHA1;
+                Amazon.AWSConfigsS3.UseSignatureVersion4 = false;
+                config.ForcePathStyle = false;
+
+
+                using (client = new AmazonS3Client("61140DEQBD8L2QSRATPS", "1oZedqSsM2DLjer2VvZ74ACpn998TamNbz4LEURN", config))
+                {
+                    Amazon.S3.Model.GetPreSignedUrlRequest urlRequest = new Amazon.S3.Model.GetPreSignedUrlRequest();
+                    urlRequest.BucketName = bucketName;
+                    urlRequest.Key = fileKey;
+                    urlRequest.Protocol = Protocol.HTTP;
+                    urlRequest.Verb = HttpVerb.GET;
+             
+                    urlRequest.Expires = DateTime.Now.AddHours(12); // ;.Now + dtSpan; //new TimeSpan(12,0,0); //12小时有效期
+                    String strSinnedURL = client.GetPreSignedURL(urlRequest);
+                    Console.WriteLine(strSinnedURL);
+                
+                }
+
+
+            //Amazon.Runtime.BasicAWSCredentials cred = new Amazon.Runtime.BasicAWSCredentials("61140DEQBD8L2QSRATPS", "1oZedqSsM2DLjer2VvZ74ACpn998TamNbz4LEURN");
+            //Amazon.RegionEndpoint endpoint = Amazon.RegionEndpoint.APNortheast1;
+
+
+            ////首先创建一个s3的客户端操作对象（需要amazon提供的密钥）  
+            //AmazonS3Client s3 = new AmazonS3Client(cred, endpoint);
+            //try
+            //{
+            //    // 验证名称为bucketName的bucket是否存在，不存在则创建  
+
+            //    Amazon.S3.Model.GetPreSignedUrlRequest urlRequest = new Amazon.S3.Model.GetPreSignedUrlRequest();
+            //    urlRequest.BucketName = bucketName;
+            //    urlRequest.Key = fileKey;
+            //    urlRequest.Protocol = Protocol.HTTP;
+            //    urlRequest.Verb = HttpVerb.GET;
+            //    urlRequest.Expires = DateTime.Now.AddHours(12); // ;.Now + dtSpan; //new TimeSpan(12,0,0); //12小时有效期
+            //    String strSinnedURL = s3.GetPreSignedURL(urlRequest);
+            //    Console.WriteLine(strSinnedURL);
+            //}
+            //catch (Amazon.S3.AmazonS3Exception e)
+            //{
+            //    Console.WriteLine("GenerateFileSignURL AmazonS3Exception:" + e.ToString());
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("GenerateFileSignURL Exception:" + e.ToString());
+            //}
+
         }
 
         static void GetPreSigUrl()
