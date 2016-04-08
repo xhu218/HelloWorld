@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+
+<body>
+    <div ng-app="myApp" ng-controller="customersCtrl">
+        <ul>
+            <li ng-repeat="x in names">
+                {{ x.Name + ', ' + x.Country }}
+            </li>
+        </ul>
+    </div>
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("names.js")
+            .success(function(response) {
+                $scope.names = response.records;
+            });
+    });
+    </script>
+</body>
+
+</html>

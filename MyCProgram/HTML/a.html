@@ -1,0 +1,51 @@
+<html>
+<script src="jquery-1.11.3.js"></script>
+<script type="text/javascript" src="share1.js"></script>
+<script type="text/javascript" src="myfun1.js"></script>
+
+<script type="text/javascript">
+
+function shareTSina(title,rLink,site,pic) {
+	//alert("in");
+    title = "标题。";
+  // pic = $(".p-img img").attr("src");
+   rLink = "http://www.abc.com/heeh.html";
+   
+    window.open("http://service.weibo.com/share/share.php?pic=" +encodeURIComponent(pic) +"&title=" + 
+    encodeURIComponent(title.replace(/&nbsp;/g, " ").replace(/<br \/>/g, " "))+ "&url=" + encodeURIComponent(rLink),
+    "分享至新浪微博",
+    "height=500,width=600,top=" + top + ",left=" + left + ",toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no");
+    
+}
+
+$(document).ready(function() {
+a.sss();
+	$("#id1").click(function(event) {
+		var msg = "hello wfg";
+			shareTSina();
+	    alert(msg.replace("wfg","qq"));
+	});
+	
+	
+	$("#myshare").click(function(event){
+	shareTSina();
+		//shareTSina("title","http://www.baidu.com","完美假期","http://img.taopic.com/uploads/allimg/130501/240451-13050106450911.jpg”);
+	});
+	
+	
+});
+
+</script>
+<div id="id1">this is div   http://sobey-test.oss-cn-shenzhen.aliyuncs.com/11075.mp4</div>
+<video src="http://sobey-test.oss-cn-shenzhen.aliyuncs.com/11075.mp4" controls="controls" width="200px" height="200px" >
+您的浏览器不支持 video 标签。
+</video>
+<video src="http://bj-sobey1.oss-cn-beijing.aliyuncs.com/hy_sobey.com/2015/11/06/b1102b69ea374e5cb09897ff138dc1e5low_video.mp4?h5v=1446804061347"
+controls="controls" width="200px" height="200px"></video>
+<video src="http://bj-sobey1.oss-cn-beijing.aliyuncs.com/hy_sobey.com/2015/11/06/b1102b69ea374e5cb09897ff138dc1e5low_video.mp4?h5v=1446804061347" controls="controls" width="200px" ></video>
+
+<div id="myshare">this is my share</div>
+
+<video src="http://bj-sobey1.oss-cn-beijing.aliyuncs.com/hy_sobey.com/2015/11/06/6091cb3b823843698a88fff2a6e36559low_video.mp4?h5v=1446811873420" controls="controls" width="200px" height="200px"></video>
+
+</html>
