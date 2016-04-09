@@ -4,120 +4,25 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="jquery-1.11.3.js"></script>
+    <script src="data.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
 
-            var model = {
-                "version": 1,
-                "type": "biz_sobey_video",
-                "object": {
-                    "entity": {
-                        "id": 0,
-                        "name": "004.mp4",
-                        "type": 32,
-                        "subtype": 1,
-                        "folderid": 0,
-                        "folderpath": "global_sobey_defaultclass/MaterialList/cgw",
-                        "cdid": null,
-                        "keyword": null,
-                        "iconframe": 0,
-                        "iconfilename": null,
-                        "creator": "admin",
-                        "modifier": "admin",
-                        "menber": "admin",
-                        "Delater": "admin",
-                        "createdate": "2016-03-27T15:25:35+08:00",
-                        "modifydate": "0001-01-01T00:00:00",
-                        "accessdate": "2016-03-27T15:25:35+08:00",
-                        "deletedate": "2016-03-27T15:25:35+08:00",
-                        "column": null,
-                        "status": 0,
-                        "usedflag": 0,
-                        "lockflag": 0,
-                        "rights": null,
-                        "journallist": null,
-                        "note": null,
-                        "editterminal": null,
-                        "modifyterminal": null,
-                        "deviceid": null,
-                        "markin": 0,
-                        "markout": 0,
-                        "filestatus": 0,
-                        "colorspace": null,
-                        "Item": {
-                            "clipfile": [{
-                                "clipclass": 1,
-                                "filename": "Z:\\lqctest\\b78a9f3a617fad84e1616de02d1c6fd5wfg.mp4",
-                                "mediachannel": 1,
-                                "owner": "admin"
-                            }]
-                        }
-                    },
-                    "metadata": null,
-                    "additionalinfo": null,
-                    "fileformatinfo": null,
-                    "streammedia": null
-                }
-            };
-
-        $("#input2").click(function(event) {
-            /* Act on the event */
-            $.post("2.ashx",model,function(result){
-                $("span").html(result);
-              });
-
-        });
-
-        function HttpRequest(method,url,data,successcallback,errorcallback)
-        {
-            
-             $.ajax({
-                type: method,
-                url: url,
-               // data: JSON.stringify(model),
-                //dataType: "json",
-               // contentType: "application/json",     
-                async: true,
-                 success: function(data) {
-                    //alert(JSON.stringify(data.ext));                    
-                      
-                        if (successcallback && typeof successcallback == "function")
-                                successcallback.call(this, data,"1111");
-
-                    
-                },
-                error: function(err) {
- if (errorcallback && typeof errorcallback == "function")
-                                errorcallback.call(this, data);
-
-                }
-            });
-        }
-
-        $("#input3").click(function(event) {
-            /* Act on the event */
-
-            HttpRequest("GET","hello.txt",   null,   function t1(data,msg)
-            {alert(data);alert(msg);},function(){alert("dddd111");});
-        });
-
 
         $("#input1").click(function(event) {
-            /* Act on the event */   
-     
-            dosomething();
+            /* Act on the event */
             $.ajax({
                 type: "POST",
                 url: "http://172.16.160.9:8999/CMApi/api/Entity/SaveObjectInfo?usertoken=i0l7/w8fa8MFfYxyO7GadPArh1s=",
                 data: JSON.stringify(model),
                 dataType: "json",
-                contentType: "application/json",     
+                contentType: "application/json",
                 async: false,
                 success: function(data) {
                     alert(JSON.stringify(data.ext));
                     if (data.code == 0) {
                         var str = "";
-                       // csInterface.evalScript('$._ext_Premiere.writeFilePath("' + str + '")', null);
+                        // csInterface.evalScript('$._ext_Premiere.writeFilePath("' + str + '")', null);
                         renderFilePath = "";
                         alert("入库成功");
                     } else {
@@ -128,19 +33,67 @@
                     alert("入库错误1");
                 }
             });
+        });
 
+        $("#input2").click(function(event) {
+            /* Act on the event */
+            alert(model);
+            /*
+            $.post("2.ashx", model, function(result) {
+                $("span").val(result);
+            });
+            */
 
         });
+
+        $("#input3").click(function(event) {
+            /* Act on the event */
+            alert(JSON.stringify(model));
+            HttpRequest("GET", "http://localhost:9988/listUsers", null, function t1(data, msg) {
+                alert(data);
+                alert(msg);
+            }, function() {
+                alert("dddd111");
+            });
+        });
+
+        function HttpRequest(method, url, data, successcallback, errorcallback) {
+
+            $.ajax({
+                type: method,
+                url: url,
+                // data: JSON.stringify(model),
+                dataType: "json",
+                //contentType: "application/json",     
+                async: true, //
+                success: function(data) {
+
+                    if (successcallback && typeof successcallback == "function")
+                        successcallback.call(this, data, "1111");
+
+
+                },
+                error: function(err) {
+                    if (errorcallback && typeof errorcallback == "function")
+                        errorcallback.call(this, data);
+
+                }
+            });
+        }
 
     });
     </script>
 </head>
 
 <body>
-    <div id="div1">this is div1</div>
+    <div id="div1">this is div12</div>
     <input id="input1" type="button"></input>
+    </br>
     <input id="input2" type="button"></input>
+    </br>
     <input id="input3" type="button"></input>
+    </br>
+    <span></span>
 </body>
 
 </html>
