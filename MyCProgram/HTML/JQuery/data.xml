@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field Name="Name1">
+    <fieldname>dsname</fieldname>
+    <datatype>字符</datatype>
+  </field>
+  <field Name="Name2">
+    <fieldname>dstype</fieldname>
+    <datatype>字符</datatype>
+  </field>
+</fields>
