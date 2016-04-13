@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			var node;
+			$(document).ready(function() {
+				alert("111");
+				node = "wfg";
+			});
+			function load()
+			{
+				var url = window.location.href;
+				document.getElementById("input1").value = url;
+			}
+			function btnclick (argument) {
+				alert(node);
+			}
+		</script>
+	</head>
+	<body onload="load();">
+		<input id="input1" type="input" value="url"> </input>
+		<input id="btn1" type="button"  value="button" onclick="btnclick();"></input>
+	</body>
+</html>
