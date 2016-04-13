@@ -48,13 +48,19 @@
 
         $("#input3").click(function(event) {
             /* Act on the event */
-            alert(JSON.stringify(model));
+           // alert(JSON.stringify(model));
             HttpRequest("GET", "http://localhost:9988/listUsers", null, function t1(data, msg) {
                 alert(data);
                 alert(msg);
             }, function() {
                 alert("dddd111");
             });
+        });
+
+        $("#input4").click(function(event) {
+            /* Act on the event */
+          
+            
         });
 
         function HttpRequest(method, url, data, successcallback, errorcallback) {
@@ -65,7 +71,8 @@
                 // data: JSON.stringify(model),
                 dataType: "json",
                 //contentType: "application/json",     
-                async: true, //
+                async: false, //
+                beforeSend:function(){alert("before");},
                 success: function(data) {
 
                     if (successcallback && typeof successcallback == "function")
@@ -92,6 +99,8 @@
     <input id="input2" type="button"></input>
     </br>
     <input id="input3" type="button"></input>
+    </br>
+        <input id="input4" type="button"></input>
     </br>
     <span></span>
 </body>
