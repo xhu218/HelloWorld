@@ -1,10 +1,6 @@
 var top = window.screen.height / 2 - 250;
 var left = window.screen.width / 2 - 300;
-alert("hello");
-function test1()
-{
-	alert("test1");
-}
+
 /*title是标题，rLink链接，summary内容，site分享来源，pic分享图片路径,分享到新浪微博*/
 function shareTSina(title,rLink,site,pic) {
 	alert("in");
@@ -19,9 +15,7 @@ function shareTSina(title,rLink,site,pic) {
     
 }
 
-
 /*,分享到qq空间*/
-
 function shareQzone(title,rLink,summary,site,pic) {
 	 title = "标题。";
 	 rLink = "http://www.abc.com/heeh.html";
