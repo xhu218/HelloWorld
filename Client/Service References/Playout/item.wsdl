@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://sobey.com/sonaps/playout/types" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://sobey.com/sonaps/playout/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://sobey.com/sonaps/playout/types/Imports">
+      <xsd:import schemaLocation="http://localhost:9988/?xsd=xsd0" namespace="http://sobey.com/sonaps/playout/types" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStudioListType">
+    <wsdl:part name="parameters" element="tns:GetStudioList" />
+  </wsdl:message>
+  <wsdl:message name="GetStudioListResponseType">
+    <wsdl:part name="parameters" element="tns:GetStudioListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRundownListType">
+    <wsdl:part name="parameters" element="tns:GetRundownList" />
+  </wsdl:message>
+  <wsdl:message name="GetRundownListResponseType">
+    <wsdl:part name="parameters" element="tns:GetRundownListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStoryListType">
+    <wsdl:part name="parameters" element="tns:GetStoryList" />
+  </wsdl:message>
+  <wsdl:message name="GetStoryListResponseType">
+    <wsdl:part name="parameters" element="tns:GetStoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEventListType">
+    <wsdl:part name="parameters" element="tns:GetEventList" />
+  </wsdl:message>
+  <wsdl:message name="GetEventListResponseType">
+    <wsdl:part name="parameters" element="tns:GetEventListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudioMetadataType">
+    <wsdl:part name="parameters" element="tns:GetStudioMetadata" />
+  </wsdl:message>
+  <wsdl:message name="GetStudioMetadataResponseType">
+    <wsdl:part name="parameters" element="tns:GetStudioMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRundownMetadataType">
+    <wsdl:part name="parameters" element="tns:GetRundownMetadata" />
+  </wsdl:message>
+  <wsdl:message name="GetRundownMetadataResponseType">
+    <wsdl:part name="parameters" element="tns:GetRundownMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStoryMetadataType">
+    <wsdl:part name="parameters" element="tns:GetStoryMetadata" />
+  </wsdl:message>
+  <wsdl:message name="GetStoryMetadataResponseType">
+    <wsdl:part name="parameters" element="tns:GetStoryMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEventMetadataType">
+    <wsdl:part name="parameters" element="tns:GetEventMetadata" />
+  </wsdl:message>
+  <wsdl:message name="GetEventMetadataResponseType">
+    <wsdl:part name="parameters" element="tns:GetEventMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEventModifyFlagType">
+    <wsdl:part name="parameters" element="tns:GetEventModifyFlag" />
+  </wsdl:message>
+  <wsdl:message name="GetEventModifyFlagResponseType">
+    <wsdl:part name="parameters" element="tns:GetEventModifyFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRundownMetadataType">
+    <wsdl:part name="parameters" element="tns:SetRundownMetadata" />
+  </wsdl:message>
+  <wsdl:message name="SetRundownMetadataResponseType">
+    <wsdl:part name="parameters" element="tns:SetRundownMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetStoryMetadataType">
+    <wsdl:part name="parameters" element="tns:SetStoryMetadata" />
+  </wsdl:message>
+  <wsdl:message name="SetStoryMetadataResponseType">
+    <wsdl:part name="parameters" element="tns:SetStoryMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetEventMetadataType">
+    <wsdl:part name="parameters" element="tns:SetEventMetadata" />
+  </wsdl:message>
+  <wsdl:message name="SetEventMetadataResponseType">
+    <wsdl:part name="parameters" element="tns:SetEventMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRundownType">
+    <wsdl:part name="parameters" element="tns:AddRundown" />
+  </wsdl:message>
+  <wsdl:message name="AddRundownResponseType">
+    <wsdl:part name="parameters" element="tns:AddRundownResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddStoryType">
+    <wsdl:part name="parameters" element="tns:AddStory" />
+  </wsdl:message>
+  <wsdl:message name="AddStoryResponseType">
+    <wsdl:part name="parameters" element="tns:AddStoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddEventType">
+    <wsdl:part name="parameters" element="tns:AddEvent" />
+  </wsdl:message>
+  <wsdl:message name="AddEventResponseType">
+    <wsdl:part name="parameters" element="tns:AddEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRundownType">
+    <wsdl:part name="parameters" element="tns:DeleteRundown" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRundownResponseType">
+    <wsdl:part name="parameters" element="tns:DeleteRundownResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteStoryType">
+    <wsdl:part name="parameters" element="tns:DeleteStory" />
+  </wsdl:message>
+  <wsdl:message name="DeleteStoryResponseType">
+    <wsdl:part name="parameters" element="tns:DeleteStoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEventType">
+    <wsdl:part name="parameters" element="tns:DeleteEvent" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEventResponseType">
+    <wsdl:part name="parameters" element="tns:DeleteEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOAMaterialType">
+    <wsdl:part name="parameters" element="tns:RegisterOAMaterial" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOAMaterialResponseType">
+    <wsdl:part name="parameters" element="tns:RegisterOAMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOAMaterialByMetadataType">
+    <wsdl:part name="parameters" element="tns:RegisterOAMaterialByMetadata" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOAMaterialByMetadataResponseType">
+    <wsdl:part name="parameters" element="tns:RegisterOAMaterialByMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrashCanObjectsType">
+    <wsdl:part name="parameters" element="tns:GetTrashCanObjects" />
+  </wsdl:message>
+  <wsdl:message name="GetTrashCanObjectsResponseType">
+    <wsdl:part name="parameters" element="tns:GetTrashCanObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PurgeDeletedObjectType">
+    <wsdl:part name="parameters" element="tns:PurgeDeletedObject" />
+  </wsdl:message>
+  <wsdl:message name="PurgeDeletedObjectResponseType">
+    <wsdl:part name="parameters" element="tns:PurgeDeletedObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestoreDeletedObjectType">
+    <wsdl:part name="parameters" element="tns:RestoreDeletedObject" />
+  </wsdl:message>
+  <wsdl:message name="RestoreDeletedObjectResponseType">
+    <wsdl:part name="parameters" element="tns:RestoreDeletedObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetEventVersionMetadataType">
+    <wsdl:part name="parameters" element="tns:SetEventVersionMetadata" />
+  </wsdl:message>
+  <wsdl:message name="SetEventVersionMetadataResponseType">
+    <wsdl:part name="parameters" element="tns:SetEventVersionMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Playout_UserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="Playout_UserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Playout">
+    <wsdl:operation name="GetStudioList">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetStudioList" name="GetStudioListType" message="tns:GetStudioListType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetStudioListResponse" name="GetStudioListResponseType" message="tns:GetStudioListResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRundownList">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetRundownList" name="GetRundownListType" message="tns:GetRundownListType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetRundownListResponse" name="GetRundownListResponseType" message="tns:GetRundownListResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoryList">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetStoryList" name="GetStoryListType" message="tns:GetStoryListType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetStoryListResponse" name="GetStoryListResponseType" message="tns:GetStoryListResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventList">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetEventList" name="GetEventListType" message="tns:GetEventListType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetEventListResponse" name="GetEventListResponseType" message="tns:GetEventListResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudioMetadata">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetStudioMetadata" name="GetStudioMetadataType" message="tns:GetStudioMetadataType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetStudioMetadataResponse" name="GetStudioMetadataResponseType" message="tns:GetStudioMetadataResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRundownMetadata">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetRundownMetadata" name="GetRundownMetadataType" message="tns:GetRundownMetadataType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetRundownMetadataResponse" name="GetRundownMetadataResponseType" message="tns:GetRundownMetadataResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoryMetadata">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetStoryMetadata" name="GetStoryMetadataType" message="tns:GetStoryMetadataType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetStoryMetadataResponse" name="GetStoryMetadataResponseType" message="tns:GetStoryMetadataResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventMetadata">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetEventMetadata" name="GetEventMetadataType" message="tns:GetEventMetadataType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetEventMetadataResponse" name="GetEventMetadataResponseType" message="tns:GetEventMetadataResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventModifyFlag">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetEventModifyFlag" name="GetEventModifyFlagType" message="tns:GetEventModifyFlagType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetEventModifyFlagResponse" name="GetEventModifyFlagResponseType" message="tns:GetEventModifyFlagResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRundownMetadata">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/SetRundownMetadata" name="SetRundownMetadataType" message="tns:SetRundownMetadataType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/SetRundownMetadataResponse" name="SetRundownMetadataResponseType" message="tns:SetRundownMetadataResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="SetStoryMetadata">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/SetStoryMetadata" name="SetStoryMetadataType" message="tns:SetStoryMetadataType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/SetStoryMetadataResponse" name="SetStoryMetadataResponseType" message="tns:SetStoryMetadataResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEventMetadata">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/SetEventMetadata" name="SetEventMetadataType" message="tns:SetEventMetadataType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/SetEventMetadataResponse" name="SetEventMetadataResponseType" message="tns:SetEventMetadataResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRundown">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/AddRundown" name="AddRundownType" message="tns:AddRundownType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/AddRundownResponse" name="AddRundownResponseType" message="tns:AddRundownResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStory">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/AddStory" name="AddStoryType" message="tns:AddStoryType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/AddStoryResponse" name="AddStoryResponseType" message="tns:AddStoryResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEvent">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/AddEvent" name="AddEventType" message="tns:AddEventType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/AddEventResponse" name="AddEventResponseType" message="tns:AddEventResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRundown">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/DeleteRundown" name="DeleteRundownType" message="tns:DeleteRundownType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/DeleteRundownResponse" name="DeleteRundownResponseType" message="tns:DeleteRundownResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStory">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/DeleteStory" name="DeleteStoryType" message="tns:DeleteStoryType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/DeleteStoryResponse" name="DeleteStoryResponseType" message="tns:DeleteStoryResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEvent">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/DeleteEvent" name="DeleteEventType" message="tns:DeleteEventType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/DeleteEventResponse" name="DeleteEventResponseType" message="tns:DeleteEventResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOAMaterialByGUID">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/RegisterOAMaterialByGUID" name="RegisterOAMaterialType" message="tns:RegisterOAMaterialType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/RegisterOAMaterialByGUIDResponse" name="RegisterOAMaterialResponseType" message="tns:RegisterOAMaterialResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOAMaterialByMetadata">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/RegisterOAMaterialByMetadata" name="RegisterOAMaterialByMetadataType" message="tns:RegisterOAMaterialByMetadataType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/RegisterOAMaterialByMetadataResponse" name="RegisterOAMaterialByMetadataResponseType" message="tns:RegisterOAMaterialByMetadataResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrashCanObjects">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetTrashCanObjects" name="GetTrashCanObjectsType" message="tns:GetTrashCanObjectsType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/GetTrashCanObjectsResponse" name="GetTrashCanObjectsResponseType" message="tns:GetTrashCanObjectsResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="PurgeDeletedObject">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/PurgeDeletedObject" name="PurgeDeletedObjectType" message="tns:PurgeDeletedObjectType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/PurgeDeletedObjectResponse" name="PurgeDeletedObjectResponseType" message="tns:PurgeDeletedObjectResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="RestoreDeletedObject">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/RestoreDeletedObject" name="RestoreDeletedObjectType" message="tns:RestoreDeletedObjectType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/RestoreDeletedObjectResponse" name="RestoreDeletedObjectResponseType" message="tns:RestoreDeletedObjectResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEventVersionMetadata">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/SetEventVersionMetadata" name="SetEventVersionMetadataType" message="tns:SetEventVersionMetadataType" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/SetEventVersionMetadataResponse" name="SetEventVersionMetadataResponseType" message="tns:SetEventVersionMetadataResponseType" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/UserLogin" message="tns:Playout_UserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://sobey.com/sonaps/playout/types/Playout/UserLoginResponse" message="tns:Playout_UserLogin_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
