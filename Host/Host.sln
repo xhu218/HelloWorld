@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host", "Host.csproj", "{DB2E0A9B-76D3-4053-99BF-5009658352DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonaps.ESB.WebService.Playout", "..\Sonaps.ESB.WebService.Playout\Sonaps.ESB.WebService.Playout.csproj", "{1C92A516-D4E2-45EA-B50E-C1613A4CB6EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "..\Client\Client.csproj", "{3CAE01DA-0E27-4ABD-AF06-D23AC07ED273}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		FullSearch|Any CPU = FullSearch|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB2E0A9B-76D3-4053-99BF-5009658352DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB2E0A9B-76D3-4053-99BF-5009658352DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB2E0A9B-76D3-4053-99BF-5009658352DF}.FullSearch|Any CPU.ActiveCfg = Release|Any CPU
+		{DB2E0A9B-76D3-4053-99BF-5009658352DF}.FullSearch|Any CPU.Build.0 = Release|Any CPU
+		{DB2E0A9B-76D3-4053-99BF-5009658352DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB2E0A9B-76D3-4053-99BF-5009658352DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C92A516-D4E2-45EA-B50E-C1613A4CB6EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C92A516-D4E2-45EA-B50E-C1613A4CB6EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C92A516-D4E2-45EA-B50E-C1613A4CB6EE}.FullSearch|Any CPU.ActiveCfg = FullSearch|Any CPU
+		{1C92A516-D4E2-45EA-B50E-C1613A4CB6EE}.FullSearch|Any CPU.Build.0 = FullSearch|Any CPU
+		{1C92A516-D4E2-45EA-B50E-C1613A4CB6EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C92A516-D4E2-45EA-B50E-C1613A4CB6EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CAE01DA-0E27-4ABD-AF06-D23AC07ED273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CAE01DA-0E27-4ABD-AF06-D23AC07ED273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CAE01DA-0E27-4ABD-AF06-D23AC07ED273}.FullSearch|Any CPU.ActiveCfg = Release|Any CPU
+		{3CAE01DA-0E27-4ABD-AF06-D23AC07ED273}.FullSearch|Any CPU.Build.0 = Release|Any CPU
+		{3CAE01DA-0E27-4ABD-AF06-D23AC07ED273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CAE01DA-0E27-4ABD-AF06-D23AC07ED273}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
