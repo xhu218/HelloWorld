@@ -1,9 +1,6 @@
-var a={
-	
-	t:"dd",
-	sss:function(){
-		
-		alert("hello world");
-		
-	}
+var a = {
+    t: "dd",
+    sss: function() {
+        alert("hello world");
+    }
 };

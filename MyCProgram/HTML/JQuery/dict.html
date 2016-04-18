@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+    
+    var dict = new Array();
+
+    dict["lbl1"] = "文本框1";
+    dict["lbl2"] = "文本框2";
+    dict["lbl3"] = "文本框3";
+    dict["lbl4"] = "文本框4";
+    dict["lbl5"] = "文本框5";
+
+
+    $(function() {
+        $("label[dict!=null]").each(function(index, el) {
+            console.log($(this).attr("dict"));
+            $(this).html(dict[$(this).attr("dict")]);
+        });
+    })
+    </script>
+</head>
+
+<body>
+    <div>this is 6 page</div>
+    <input id="btn1" type="button" value="button"></input>
+    <div>
+        <label dict="lbl1">sssss</label>
+        <input type="text" name="" value="">
+        </br>
+        <label dict="lbl2">sssss</label>
+        <input type="text" name="" value="">
+        </br>
+        <label dict="lbl3">sssss</label>
+        <input type="text" name="" value="">
+        </br>
+        <label dict="lbl4">sssss</label>
+        <input type="text" name="" value="">
+        </br>
+        <label dict="lbl5">sssss</label>
+        <input type="text" name="" value="">
+        </br>
+    </div>
+</body>
+
+</html>
