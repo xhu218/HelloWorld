@@ -1,11 +1,17 @@
 (function($) {
 
     var _inited = false;
-    this.showhello = function() {
+    
+    this.showhello = function(options) {
         alert("show hello");
     }
+    
+    this.RegistertoOA = function()
+    {
 
-    t
+    }
+
+    
     var $cutter = (function() {
         var inited = false;
         return {

@@ -19,7 +19,7 @@
 
         $("#btn2").click(function(event) {
             /* Act on the event */
-            alert("btn2 click");
+            console.log("btn2 click");
             //此处不通，不能跨域访问
             $("#iframe1").contents().find('#div123').click();
         });

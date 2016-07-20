@@ -5,7 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="jquery-1.11.3.js"></script>
     <script type="text/javascript">
-    
     var dict = new Array();
 
     dict["lbl1"] = "文本框1";
@@ -16,9 +15,10 @@
 
 
     $(function() {
-        $("label[dict!=null]").each(function(index, el) {
-            console.log($(this).attr("dict"));
-            $(this).html(dict[$(this).attr("dict")]);
+
+        $("label[dictid!=null]").each(function(index, el) {
+            console.log($(this).attr("dictid"));
+            $(this).html(dict[$(this).attr("dictid")]);
         });
     })
     </script>
@@ -28,19 +28,22 @@
     <div>this is 6 page</div>
     <input id="btn1" type="button" value="button"></input>
     <div>
-        <label dict="lbl1">sssss</label>
+        <label dictid="lbl1">lbl1</label>
         <input type="text" name="" value="">
         </br>
-        <label dict="lbl2">sssss</label>
+        <label dictid="lbl2">lbl2</label>
         <input type="text" name="" value="">
         </br>
-        <label dict="lbl3">sssss</label>
+        <label dictid="lbl3">lbl3</label>
         <input type="text" name="" value="">
         </br>
-        <label dict="lbl4">sssss</label>
+        <label dictid="lbl4">lbl4</label>
         <input type="text" name="" value="">
         </br>
-        <label dict="lbl5">sssss</label>
+        <label dictid="lbl5">lbl5</label>
+        <input type="text" name="" value="">
+        </br>
+          <label dictid="lbl5">lbl5</label>
         <input type="text" name="" value="">
         </br>
     </div>
