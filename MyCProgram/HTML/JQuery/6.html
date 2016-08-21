@@ -4,8 +4,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="jquery-1.11.3.js"></script>
-    <script src="user.js"></script>
-    <script src="http://172.16.134.228:9020/js/plugins/jquery.getconfig.js"></script>
+    <script src="user.js"></script>   
+    <script src="golbalSettings.js"></script> 
+    <!--<script src="http://172.16.134.228:9020/js/plugins/jquery.getconfig.js"></script>-->
     <script type="text/javascript">
     $(document).ready(function() {
 
@@ -19,8 +20,9 @@
             //var user1 = getUserNameByUserCode("c5286ede2f7c4a2c8c8507bae2f9f02e","a3cfda0cdba2148f0f7aece8b73ad5a9");
             //log("c5286ede2f7c4a2c8c8507bae2f9f02e : " + user1);
 
-            var conf = $.fn.getConfig();
-            log(conf);
+            //var conf = $.fn.getConfig();
+            //log(conf);
+            sayhello();
 
         });
 

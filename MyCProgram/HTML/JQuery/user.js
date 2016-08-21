@@ -41,6 +41,12 @@
         }
     };
 
+    this.sayhello = function()
+    {
+        alert("hello wfg");    
+        alert(golbalSetting.CMAPI);    
+    };
+
     $(document).ready(function() {
     	//初始化的事情，以后做
     });
