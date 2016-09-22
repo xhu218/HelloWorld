@@ -11,7 +11,7 @@
 
         $("#input1").click(function(event) {
             /* Act on the event */
-            
+
             $.ajax({
                 type: "POST",
                 url: "http://172.16.160.9:8999/CMApi/api/Entity/SaveObjectInfo?usertoken=i0l7/w8fa8MFfYxyO7GadPArh1s=",
@@ -36,8 +36,8 @@
             });
         });
 
-        $("#input2").click(function(event){
-          
+        $("#input2").click(function(event) {
+
         })
 
         $("#input2").click(function(event) {
@@ -53,7 +53,7 @@
 
         $("#input3").click(function(event) {
             /* Act on the event */
-           // alert(JSON.stringify(model));
+            // alert(JSON.stringify(model));
             HttpRequest("GET", "http://localhost:9988/listUsers", null, function t1(data, msg) {
                 alert(data);
                 alert(msg);
@@ -64,9 +64,10 @@
 
         $("#input4").click(function(event) {
             /* Act on the event */
-          
-            
+
+
         });
+
 
         function HttpRequest(method, url, data, successcallback, errorcallback) {
 
@@ -77,7 +78,9 @@
                 dataType: "json",
                 //contentType: "application/json",     
                 async: false, //
-                beforeSend:function(){alert("before");},
+                beforeSend: function() {
+                    alert("before");
+                },
                 success: function(data) {
 
                     if (successcallback && typeof successcallback == "function")
@@ -105,7 +108,10 @@
     </br>
     <input id="input3" type="button"></input>
     </br>
-        <input id="input4" type="button"></input>
+    <input id="input4" type="button"
+
+
+    ></input>
     </br>
     <span></span>
 </body>

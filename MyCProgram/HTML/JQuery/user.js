@@ -2,11 +2,11 @@
 (function($) {
 
     var userlist = [];
-    this.getUserNameByUserCode = function(usercode,usertoken) {
+    this.getUserNameByUserCode = function(usercode, usertoken) {
         if (userlist.length == 0) {
             console.log("query user");
             $.ajax({
-                url: "http://hive.sobey.com:9022/CMApi/api/basic/account/getalluser?usertoken="+ usertoken,
+                url: "http://hive.sobey.com:9022/CMApi/api/basic/account/getalluser?usertoken=" + usertoken,
                 type: "get",
                 async: false,
                 dataType: "json",
@@ -24,31 +24,26 @@
             });
         }
         if (userlist.length != 0) {
-            for (var i = 0; i < userlist.length; i++) 
-            {
-            	
-                if(userlist[i].usercode === usercode)
-                {
-                	return userlist[i].loginname;
+            for (var i = 0; i < userlist.length; i++) {
+
+                if (userlist[i].usercode === usercode) {
+                    return userlist[i].loginname;
                 }
-                
+
             }
             return "not find user."
-        }
-        else
-        {
-        	return "get user list failed.";
+        } else {
+            return "get user list failed.";
         }
     };
 
-    this.sayhello = function()
-    {
-        alert("hello wfg");    
-        alert(golbalSetting.CMAPI);    
+    this.sayhello = function() {
+        alert("hello wfg");
+        alert(golbalSetting.CMAPI);
     };
 
     $(document).ready(function() {
-    	//初始化的事情，以后做
+        //初始化的事情，以后做
     });
 
 
