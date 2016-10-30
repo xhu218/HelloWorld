@@ -42,17 +42,17 @@ app.get('/:id', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
        data = JSON.parse( data );
        var user = data["user" + req.params.id] 
-       console.log( user );
+       console.log(   user );
                res.writeHead(200, { 'Content-Type': 'application/json; charset=UTF-8' });
        res.end( JSON.stringify(user));
    });
 })
 
 
-var server = app.listen(9988, function () {
+var server = app.listen(20003, function () {
 
-  var host = server.address().address
-  var port = server.address().port
+  var host = "127.0.0.1"//server.address().address
+  var port = 20003;//server.adress().port
 
   console.log("应用实例，访问地址为 http://%s:%s", host, port)
 
