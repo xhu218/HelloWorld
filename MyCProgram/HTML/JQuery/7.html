@@ -10,35 +10,8 @@
     $(document).ready(function() {
 
 
-        $("#clickme").click(function(event) {
-            /* Act on the event */
-            //log("click me!!!!");
-            //var user = getUserNameByUserCode("e29cf642e8d046d3846ecc5bd3ccb3bf","a3cfda0cdba2148f0f7aece8b73ad5a9");
-            //log("e29cf642e8d046d3846ecc5bd3ccb3bf : " +  user)
-            
-            //var user1 = getUserNameByUserCode("c5286ede2f7c4a2c8c8507bae2f9f02e","a3cfda0cdba2148f0f7aece8b73ad5a9");
-            //log("c5286ede2f7c4a2c8c8507bae2f9f02e : " + user1);
-
-            //var conf = $.fn.getConfig();
-               $.ajax({
-                type: "GET",
-                url: "http://172.16.168.205:9033/webopen",
-                data: null,
-                dataType: "json",
-                contentType: "application/json",
-                async: false,
-                success: function(data) {
-                    alert(data);
-                    
-                },
-                error: function(err) {
-                    alert("入库错误1");
-                }
-            });
-
-           // log(conf);
-
-        });
+        $("#clickme").bind("click",function(){alert("hello");})
+        $("#clickme").unbind("click");
 
         log("<br />start...");
 
