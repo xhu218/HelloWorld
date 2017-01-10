@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
+using System.Net;
 
 namespace ConsoleApplication1
 {
@@ -27,10 +28,28 @@ namespace ConsoleApplication1
             System.Diagnostics.Process.Start(pi);
              * */
 
-            String s = "abc";
-            String s1 = "abc中";
-            byte[] b1 = System.Text.Encoding.UTF8.GetBytes(s);
-            byte[] b2 = System.Text.Encoding.UTF8.GetBytes(s1);
+            String s = "5.00";
+           // int x = int.Parse(s);
+
+            double y = 1 / 3;
+            Console.WriteLine(double.MaxValue);
+            Console.WriteLine(double.MinValue);
+
+            float d = 1 / 3;
+            Console.WriteLine(float.MaxValue);
+            Console.WriteLine(float.MinValue);
+
+            String z = "0.3333333333333333";
+            float t = float.Parse(z);
+            double t1 = Double.Parse(z);
+
+            long x;
+            long.TryParse("1.17773443",out x);
+
+
+
+
+            Console.ReadKey();
         }
     }
 }
