@@ -5,19 +5,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="jquery-1.11.3.js"></script>
     <script src="jquery.cookie.js"></script>
+    <script src="2.js"></script>
+    <script src="golbalSettings.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
 
         //alert("hello");
         //$.cookie('the_cookie', 'the_value'); 
         var num = 101;
-        var num1 = num>100?0:num;
+        var num1 = num > 100 ? 0 : num;
 
 
-        console.log(num1);
+        //console.log(num1);
 
-        var x = 1/3;
-        console.log(x);
+        var x = 1 / 3;
+        //console.log(x);
+        if (
+            typeof golbalSetting != null &&
+            typeof golbalSetting.CMAPI != null) {
+            console.log("golbalSetting.CMAPI : " + golbalSetting.CMAPI);
+            //alert(golbalSetting.CMAPI.apply());
+        } else {
+            alert("is null");
+
+        }
+
+
 
 
 

@@ -1,7 +1,44 @@
 var golbalSetting = {
-    "CMAPI": "CMAPI",
-    "CM": "CM"
+
+    "CMAPI": "http://172.168.1.1:9023",
+    "CM": "CM1",
+
+    "inited":false,
+
+    "init": function() {
+        if(this.inited)
+            return;
+
+        var ip;
+        var port;
+
+        var baseUrlIndex = window.location.href.indexOf("/", 7);
+        var baseUrl = window.location.href.substr(0, baseUrlIndex);
+
+        var portIndex = baseUrl.indexOf(":", "7");
+
+        if (portIndex > 0) {
+            ip = baseUrl.substr(0, portIndex);
+            port = baseUrl.substr(portIndex + 1);
+        }
+
+        if (this.CMAPI.indexOf("hive.sobey.com:9023") > 0) {
+            this.CMAPI = ip + ":9023";
+        }
+        if (this.CMAPI.indexOf("hive.sobey.com:9023") > 0) {
+            this.CMAPI = ip + ":9023";
+        }
+        if (this.CMAPI.indexOf("hive.sobey.com:9023") > 0) {
+            this.CMAPI = ip + ":9023";
+        }
+        if (this.CMAPI.indexOf("hive.sobey.com:9023") > 0) {
+            this.CMAPI = ip + ":9023";
+        }
+        this.inited = true;
+
+    }
 };
+golbalSetting.init();
 
 function loadJs(file) {
     var head = $("head").remove("script[role='reload']");
@@ -20,15 +57,12 @@ function reloadAbleJSFn(id, newJS) {
     document.getElementsByTagName("head")[0].appendChild(scriptObj);
 };
 
-function loadjscssfile(filename, filetype) {
-  
-    if (filetype  ==  "js") 
-    { 
-        var fileref   =  document.createElement('script'); 
+function loadjscssfile(filename, filetype) {  
+    if (filetype  ==  "js") { 
+        var fileref  =  document.createElement('script'); 
         fileref.setAttribute("type", "text/javascript"); 
         fileref.setAttribute("src", filename); 
-    }
-    else if(filetype  ==  "css") {  
+    } else if (filetype  ==  "css") {  
         var fileref  =  document.createElement('link'); 
         fileref.setAttribute("rel", "stylesheet"); 
         fileref.setAttribute("type", "text/css"); 
@@ -38,5 +72,3 @@ function loadjscssfile(filename, filetype) {
         document.getElementsByTagName("head")[0].appendChild(fileref);     
     }  
 } ;
-
-
