@@ -55,16 +55,20 @@ namespace GettingStartedGuide
                     Console.WriteLine("Reading an object");
                     ReadingAnObject();
 
-                    Console.WriteLine("Deleting an object");
-                    DeletingAnObject();
+                    //Console.WriteLine("Deleting an object");
+                    //DeletingAnObject();
 
                     Console.WriteLine("Listing objects");
                     ListingObjects();
+
+                    String url = client.GeneratePreSignedURL(bucketName, keyName, DateTime.Now.AddDays(1), null);
+
+                    Console.WriteLine(url); 
                 }
             }
 
             Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
+            Console.ReadLine();
         }
 
         static bool checkRequiredFields()
@@ -156,7 +160,8 @@ namespace GettingStartedGuide
                 PutObjectRequest titledRequest = new PutObjectRequest()
                 {
                     BucketName = bucketName,
-                    Key = keyName
+                    Key = keyName,
+                      ContentBody = "this is a test",
   
                 };
                 titledRequest.Metadata.Add("title", "the title");
