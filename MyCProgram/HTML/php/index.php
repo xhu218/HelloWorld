@@ -10,11 +10,11 @@ define('S3_REGION', 'ap-northeast-1');        // S3 region name: http://amzn.to/
 define('S3_ACL',    'private'); // File permissions: http://amzn.to/18s9Gv7
 */
 
-define('S3_BUCKET', 'wmjq2015');
+define('S3_BUCKET', 'nabbucket');
 //define('S3_BUCKET', 'ph.test');
-define('S3_KEY',    'AKIAPNNPICLYDIP2T2HQ');
-define('S3_SECRET', '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');
-define('S3_REGION', 'cn-north-1');        // S3 region name: http://amzn.to/1FtPG6r
+define('S3_KEY',    'AKIAJOJGNKQOYRHZGPOA');
+define('S3_SECRET', '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');
+define('S3_REGION', 'ap-northeast-1');        // S3 region name: http://amzn.to/1FtPG6r
 define('S3_ACL',    'private'); // File permissions: http://amzn.to/18s9Gv7
 
 
@@ -122,7 +122,7 @@ echo "signature=".$signature."</BR>";
         <!-- URL prefix (//) means either HTTP or HTTPS (depending on which is being currently used) -->
         <!-- . "-" . S3_REGION-->
         <!--.amazonaws.com------.cn-north-1.amazonaws.com.cn-->
-        <form action="//<?php echo S3_BUCKET . "." . $service; ?>.cn-north-1.amazonaws.com.cn"
+        <form action="//<?php echo S3_BUCKET . "." . $service; ?>.ap-northeast-1.amazonaws.com"
               method="POST"
               enctype="multipart/form-data"
               class="direct-upload">
@@ -136,7 +136,8 @@ echo "signature=".$signature."</BR>";
             <input type="hidden" name="policy" value="<?php echo $base64Policy; ?>">
 
             <input type="hidden" name="X-amz-algorithm" value="<?php echo $algorithm; ?>">
-            <input type="text" name="X-amz-credential" value="<?php echo $credentials; ?>">
+            <input type="text" name="X-amz-credential" value="<?php echo $credentials; ?>" width="200px" >
+            </br>
             <input type="hidden" name="X-amz-date" value="<?php echo $date; ?>">
             <input type="hidden" name="X-amz-expires" value="<?php echo $expires; ?>">
             <input type="hidden" name="X-amz-signature" value="<?php echo $signature; ?>">

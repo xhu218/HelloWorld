@@ -1,9 +1,9 @@
 ﻿<?php
 echo "wfg";
 // Fill These In!
-define('S3_BUCKET', 'xhu218');
-define('S3_KEY',    'AKIAJAOWMI65GXBIJ4ZQ');
-define('S3_SECRET', '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');
+define('S3_BUCKET', 'nabbucket');
+define('S3_KEY',    'AKIAJOJGNKQOYRHZGPOA');
+define('S3_SECRET', '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');
 define('S3_REGION', 'ap-northeast-1');        // S3 region name: http://amzn.to/1FtPG6r
 define('S3_ACL',    'private'); // File permissions: http://amzn.to/18s9Gv7
 // Stop Here
@@ -11,8 +11,8 @@ define('S3_ACL',    'private'); // File permissions: http://amzn.to/18s9Gv7
 
 $algorithm = "AWS4-HMAC-SHA256";
 $service = "s3";
-$date = "20150811T110920Z";//gmdate('Ymd\THis\Z');
-$shortDate = "20150811";//gmdate('Ymd');
+$date = "20170217T204320Z";//gmdate('Ymd\THis\Z');
+$shortDate = "20170217";//gmdate('Ymd');
 $requestType = "aws4_request";
 $expires = '86400'; // 24 Hours
 $successStatus = '201';
