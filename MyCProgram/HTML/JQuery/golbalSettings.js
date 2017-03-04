@@ -1,12 +1,20 @@
 var golbalSetting = {
 
+    /*
+    这样的代码对于开发本自的机器上面测试还是有问题的。
+    */
     "CMAPI": "http://172.168.1.1:9023",
     "CM": "CM1",
 
     "inited":false,
+    "autoReflect":true,
+
+    "CMAPIPORT" :   9023,
+    "CMWEBPORT" :   9021,
+    
 
     "init": function() {
-        if(this.inited)
+        if( this.inited || !this.autoReflect)
             return;
 
         var ip;

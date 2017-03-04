@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#clickme").bind("click", function() {
+            alert("hello");
+        })
+        $("#clickme").unbind("click");
+        log("<br />start...");
+        log("end...");
+
+        function log(msg) {
+            $("#info").append(msg + "</br>");
+        }
+
+    });
+    </script>
+</head>
+
+<body>
+    <a href="1.html">this is a link</a>
+    <div id="info" />
+    <br />
+   
+    <form action="1.aspx" method="get" accept-charset="utf-8" >
+        <textarea name="t1" style="word-wrap:break-all; "></textarea>
+         <input type="submit" id="clickme" width="200px" />
+    </form>
+</body>
+
+</html>
