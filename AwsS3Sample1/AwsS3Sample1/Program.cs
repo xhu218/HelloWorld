@@ -33,7 +33,7 @@ namespace GettingStartedGuide
         // You must also sign up for an Amazon S3 account for this to work
         // See http://aws.amazon.com/s3/ for details on creating an Amazon S3 account
         // Change the bucketName and keyName fields to values that match your bucketname and keyname
-        static string bucketName = "sobey";
+        static string bucketName = "infinityfs";
         static string keyName = "1.txt";
         static IAmazonS3 client;
 
@@ -41,7 +41,7 @@ namespace GettingStartedGuide
         {
             if (checkRequiredFields())
             {
-                using (client = new AmazonS3Client("AKIAJ2I7QXRGR5LYMI6Q", "qjAbHRGPCF3T508pyH7SpcDoqQlNL8Uxp9tAK/ke", RegionEndpoint.APNortheast1))
+                using (client = new AmazonS3Client("AKIAPT2HLY4SV35DYTDQ", "2bY1DyrBSD4UuBmc3NXUj397/kbFjBGVeIuN/Gn+", RegionEndpoint.CNNorth1))
                 {
                     Console.WriteLine("Listing buckets");
                   //  ListingBuckets();
