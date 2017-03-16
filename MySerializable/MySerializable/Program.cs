@@ -17,6 +17,13 @@ namespace MySerializable
         static void Main(string[] args)
         {
 
+            Test1();
+
+            Console.Read();
+        }
+
+        public static void Test2()
+        {
             Operation oper = new Operation();
             oper.Name = "wfg";
             oper.Age = 100;
@@ -26,11 +33,7 @@ namespace MySerializable
 
             String input = "<Operation>   <Name>wfg</Name>   <Age>100</Age>   <Note><a>this is a</a><b>this is b</b></Note> </Operation>";
             Operation oper1 = Operation.FromXml(input);
-
-            Console.Read();
         }
-
-       
 
         public static void Test1()
         {
@@ -50,6 +53,7 @@ namespace MySerializable
 
             Element_source source1 = serializer.Deserialize(new StringReader(writer.ToString())) as Element_source;
             Element_source source2 = JsonConvert.DeserializeObject(json) as Element_source;
+           
             var temp = JsonConvert.DeserializeObject(json);
 
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Element_source));
