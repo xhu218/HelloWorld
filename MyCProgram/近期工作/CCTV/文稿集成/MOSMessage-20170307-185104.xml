@@ -1,0 +1,2700 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='mossession.xsl'?>
+<MOSLog StartTime="3/7/2017 6:51:04 PM" HostName="TASKCONSOLE">
+  <mosNotify command="mosObj" time="18:51:04.444" source="sony.studioA.mos" destination="">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID />
+  <mosObj>
+    <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+    <objSlug>11</objSlug>
+    <mosAbstract></mosAbstract>
+    <objGroup>OA Material</objGroup>
+    <objType>VIDEO</objType>
+    <objTB>60</objTB>
+    <objRev>1</objRev>
+    <objDur>7196</objDur>
+    <status>UPDATED</status>
+    <objAir>READY</objAir>
+    <objPaths>
+      <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41a58b54b8daef43a884d907191823552d.mxf</objPath>
+      <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41fc65c3534e6847ad9cd02c1d8e1bd87e.mp4</objProxyPath>
+      <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ad9aa839a2f842989566fac55fee1b0f.mp3</objProxyPath>
+      <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ed24dd01d9324595940568abdd45ceb6.mp3</objProxyPath>
+      <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_414cd2d36077314f41b2865e9a88142105.mp3</objProxyPath>
+      <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41f2b30486f3d34cd49b44f779a61c6ebd.mp3</objProxyPath>
+      <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4138b3054cedee4a048d22a0777c0ce9cb.mp3</objProxyPath>
+      <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41608ee69841f9498da332d771cd1f3241.mp3</objProxyPath>
+      <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4182a36c0e2d6746eaac206a5bd29c7fdf.mp3</objProxyPath>
+      <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_412456a3f6de6c49f58ed37706f0cd4ca6.mp3</objProxyPath>
+    </objPaths>
+    <createdBy>Originalaccount</createdBy>
+    <created>2017-03-07T18:36:38</created>
+    <changedBy>wangxiuya</changedBy>
+    <changed>2017-03-07T18:44:55</changed>
+    <description></description>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+      <mosPayload><objectType>CLIP</objectType><siteID>12</siteID><planningID>d6e7af1f64dd440fb3ecbf4f7c8bf45d</planningID><essenceMark><sceneIn>339</sceneIn><sceneOut>886</sceneOut><color>40191</color><note></note></essenceMark></mosPayload>
+    </mosExternalMetadata>
+  </mosObj>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roElementAction" time="18:51:04.897" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>667</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+        <storySlug>11</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>11-1</itemSlug>
+          <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>11 2:00</mosAbstract>
+          <objPaths>
+            <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41a58b54b8daef43a884d907191823552d.mxf</objPath>
+            <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41fc65c3534e6847ad9cd02c1d8e1bd87e.mp4</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ad9aa839a2f842989566fac55fee1b0f.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ed24dd01d9324595940568abdd45ceb6.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_414cd2d36077314f41b2865e9a88142105.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41f2b30486f3d34cd49b44f779a61c6ebd.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4138b3054cedee4a048d22a0777c0ce9cb.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41608ee69841f9498da332d771cd1f3241.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4182a36c0e2d6746eaac206a5bd29c7fdf.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_412456a3f6de6c49f58ed37706f0cd4ca6.mp3</objProxyPath>
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>7196</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload><objectType>CLIP</objectType><siteID>12</siteID><planningID>d6e7af1f64dd440fb3ecbf4f7c8bf45d</planningID><essenceMark><sceneIn>339</sceneIn><sceneOut>886</sceneOut><color>40191</color><note></note></essenceMark></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:51:05.443" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>667</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roStorySend" time="18:51:05.864" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>668</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+    <storySlug>11</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>11-1</itemSlug>
+        <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>11 2:00</mosAbstract>
+        <objPaths>
+          <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41a58b54b8daef43a884d907191823552d.mxf</objPath>
+          <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41fc65c3534e6847ad9cd02c1d8e1bd87e.mp4</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ad9aa839a2f842989566fac55fee1b0f.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ed24dd01d9324595940568abdd45ceb6.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_414cd2d36077314f41b2865e9a88142105.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41f2b30486f3d34cd49b44f779a61c6ebd.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4138b3054cedee4a048d22a0777c0ce9cb.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41608ee69841f9498da332d771cd1f3241.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4182a36c0e2d6746eaac206a5bd29c7fdf.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_412456a3f6de6c49f58ed37706f0cd4ca6.mp3</objProxyPath>
+        </objPaths>
+        <itemChannel>      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>7196</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload>        <objectType>CLIP</objectType>        <siteID>12</siteID>        <planningID>d6e7af1f64dd440fb3ecbf4f7c8bf45d</planningID>        <essenceMark>          <sceneIn>339</sceneIn>          <sceneOut>886</sceneOut>          <color>40191</color>          <note>          </note>        </essenceMark>      </mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>119.933333333333</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307185253</ModTime><MOSItemDurations>119.933333333333</MOSItemDurations><MOSItemEdDurations>119.933333333333</MOSItemEdDurations><MOSObjSlugs>11</MOSObjSlugs><MOSSlugs>11-1</MOSSlugs><MOSStatus>READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:51:06.145" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>668</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:51:06.176" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>READY</status>
+    <time>2017-03-07T18:51:06</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:51:06.394" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+    <itemID>1</itemID>
+    <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+    <status>READY</status>
+    <time>2017-03-07T18:51:06</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roElementAction" time="18:51:56.096" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>669</messageID>
+  <roElementAction operation="INSERT">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID />
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+        <storySlug>New Row 1 ENPS User</storySlug>
+        <storyNum />
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:51:56.907" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>669</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roStorySend" time="18:51:57.110" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>670</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+    <storySlug>New Row 1 ENPS User</storySlug>
+    <storyBody />
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><ModBy>ADMINISTRATOR</ModBy><ModTime>20170307185344</ModTime><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:51:57.266" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>670</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:51:58.732" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>671</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+        <storySlug>ssss</storySlug>
+        <storyNum />
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:51:59.574" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>671</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roStorySend" time="18:51:59.746" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>672</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+    <storySlug>ssss</storySlug>
+    <storyBody />
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><ModBy>ADMINISTRATOR</ModBy><ModTime>20170307185344</ModTime><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:51:59.902" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>672</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="mosReqObjAction" time="18:52:02.741" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>673</messageID>
+  <mosReqObjAction operation="NEW">
+    <objSlug>ssss</objSlug>
+    <objType>SUMMARY</objType>
+    <objTB />
+    <time>2017-03-07T18:52:02</time>
+    <createdBy>ADMINISTRATOR</createdBy>
+    <description />
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><ModBy>ADMINISTRATOR</ModBy><ModTime>20170307185344</ModTime><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><ENPSItemType>3</ENPSItemType><roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID><roSlug>studioA_002</roSlug><roEdStart>2017-03-08T10:00:00</roEdStart></mosPayload>
+    </mosExternalMetadata>
+  </mosReqObjAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="mosAck" time="18:52:03.786" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>673</messageID>
+  <mosAck>
+    <objID>b3a408f5498540fcb50e333f6b7d39a9</objID>
+    <objRev>1</objRev>
+    <status>ACK</status>
+    <statusDescription>b3a408f5498540fcb50e333f6b7d39a9</statusDescription>
+  </mosAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="mosObj" time="18:52:04.005" source="sony.studioA.mos" destination="">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID />
+  <mosObj>
+    <objID>b3a408f5498540fcb50e333f6b7d39a9</objID>
+    <objSlug>ssss</objSlug>
+    <mosAbstract></mosAbstract>
+    <objGroup>OA Material</objGroup>
+    <objType>VIDEO</objType>
+    <objTB>60</objTB>
+    <objRev>1</objRev>
+    <objDur>0</objDur>
+    <status>NEW</status>
+    <objAir>NOT READY</objAir>
+    <createdBy>Originalaccount</createdBy>
+    <created>2017-03-07T18:52:02</created>
+    <changedBy>Originalaccount</changedBy>
+    <changed>2017-03-07T18:52:02</changed>
+    <description></description>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+      <mosPayload><objectType>CLIP</objectType><siteID>12</siteID></mosPayload>
+    </mosExternalMetadata>
+  </mosObj>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:04.239" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>674</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+    <storySlug>ssss</storySlug>
+    <storyBody />
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><ModBy>ADMINISTRATOR</ModBy><ModTime>20170307185344</ModTime><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:04.379" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>674</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:04.613" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+        <storySlug>ssss</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>ssss-1</itemSlug>
+          <objID>b3a408f5498540fcb50e333f6b7d39a9</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>ssss</mosAbstract>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload><objectType>CLIP</objectType><siteID>12</siteID><objType>VIDEO</objType></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosNotify command="mosObj" time="18:52:05.986" source="sony.studioA.mos" destination="">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID />
+  <mosObj>
+    <objID>b3a408f5498540fcb50e333f6b7d39a9</objID>
+    <objSlug>ssss</objSlug>
+    <mosAbstract></mosAbstract>
+    <objGroup>OA Material</objGroup>
+    <objType>VIDEO</objType>
+    <objTB>60</objTB>
+    <objRev>1</objRev>
+    <objDur>0</objDur>
+    <status>UPDATED</status>
+    <objAir>NOT READY</objAir>
+    <createdBy>Originalaccount</createdBy>
+    <created>2017-03-07T18:52:02</created>
+    <changedBy>Originalaccount</changedBy>
+    <changed>2017-03-07T18:45:59</changed>
+    <description></description>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+      <mosPayload><objectType>CLIP</objectType><siteID>12</siteID></mosPayload>
+    </mosExternalMetadata>
+  </mosObj>
+</mos>
+  </mosNotify>
+  <mosResponse command="roAck" time="18:52:06.423" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:06.532" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>READY</status>
+    <time>2017-03-07T18:52:06</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:06.641" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+    <storySlug>ssss</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>ssss-1</itemSlug>
+        <objID>b3a408f5498540fcb50e333f6b7d39a9</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>ssss</mosAbstract>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload>        <objectType>CLIP</objectType>        <siteID>12</siteID>      <objType>VIDEO</objType></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>0</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307185353</ModTime><MOSItemDurations>0</MOSItemDurations><MOSObjSlugs>ssss</MOSObjSlugs><MOSSlugs>ssss-1</MOSSlugs><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosNotify command="roElementStat" time="18:52:06.657" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;1F0EAC04-255A-4710-BC067E192A99D7F8</storyID>
+    <itemID>1</itemID>
+    <objID>b3a408f5498540fcb50e333f6b7d39a9</objID>
+    <status>NOT READY</status>
+    <time>2017-03-07T18:52:06</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosResponse command="roAck" time="18:52:06.797" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:19.090" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:19</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.570" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;96A167B7-F5BA-4430-A323AB1CEC10CB9E</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 8 ENPS User-1</itemSlug>
+      <objID>d862ff369c3847bc8976bfe36613c1a6</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 8 ENPS User 02:00</mosAbstract>
+      <objPaths>
+        <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_165bfc8e36557542aaad394322063a5b3f.mxf</objPath>
+        <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1659aab9a4a5bb459a9e6e1903652c155a.mp4</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1669160c3c3c534d4eaa59143ac101f80b.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_169d3a6331462042a4b87af83e73b42a41.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1649c4174a45b14233bc058a19f8619c70.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1605eebad1b45b47d09ef4d14a58184bf5.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16693eb647c7fc408e837e691883c4de2c.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16a84b31a69395470e897d6f458cfa3696.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16122c220c708e4614a673b99c4f0eabc3.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_165f941064193045219a383ac5e742adcf.mp3</objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>7196</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.633" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;96A167B7-F5BA-4430-A323AB1CEC10CB9E</storyID>
+    <itemID>1</itemID>
+    <objID>d862ff369c3847bc8976bfe36613c1a6</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;C208F80E-375A-437F-9A42B01F4D5FFEFA</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 2 ENPS User-1</itemSlug>
+      <objID>b1395e18cc5540bf80a74e054ad79609</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 2 ENPS User</mosAbstract>
+      <objPaths>
+        <objPath techDescription=" "> </objPath>
+        <objProxyPath techDescription=" "> </objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>0</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>11-1</itemSlug>
+      <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>11 02:00</mosAbstract>
+      <objPaths>
+        <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41a58b54b8daef43a884d907191823552d.mxf</objPath>
+        <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41fc65c3534e6847ad9cd02c1d8e1bd87e.mp4</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ad9aa839a2f842989566fac55fee1b0f.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ed24dd01d9324595940568abdd45ceb6.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_414cd2d36077314f41b2865e9a88142105.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41f2b30486f3d34cd49b44f779a61c6ebd.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4138b3054cedee4a048d22a0777c0ce9cb.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41608ee69841f9498da332d771cd1f3241.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4182a36c0e2d6746eaac206a5bd29c7fdf.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_412456a3f6de6c49f58ed37706f0cd4ca6.mp3</objProxyPath>
+      </objPaths>
+      <itemChannel>A-1</itemChannel>
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>7196</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;59A630EA-58B7-46D1-9F2DB9B13E0C0859</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 4 ENPS User-1</itemSlug>
+      <objID>01ea8767aeaa498d9d7692180c6b53d7</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 4 ENPS User</mosAbstract>
+      <objPaths>
+        <objPath techDescription=" "> </objPath>
+        <objProxyPath techDescription=" "> </objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>0</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;640131EC-A1BE-45EC-AFDAE3E710AF1A9B</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 1 ENPS User-1</itemSlug>
+      <objID>0c16e3f8cb394aa1b0e6e49bd555967b</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 1 ENPS User</mosAbstract>
+      <objPaths>
+        <objPath techDescription=" "> </objPath>
+        <objProxyPath techDescription=" "> </objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>0</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;CC10CC43-C618-4E79-8AC87FCABB008013</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 3 ENPS User-1</itemSlug>
+      <objID>02ebc41d55984d7185b1c44b4374b461</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 3 ENPS User</mosAbstract>
+      <objPaths>
+        <objPath techDescription=" "> </objPath>
+        <objProxyPath techDescription=" "> </objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>0</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7E935669-CFDC-4958-BB40B5EB6E62BC8E</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 9 ENPS User-1</itemSlug>
+      <objID>39341e281d74450cabc6b5d4c423af57</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 9 ENPS User</mosAbstract>
+      <objPaths>
+        <objPath techDescription=" "> </objPath>
+        <objProxyPath techDescription=" "> </objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>0</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;B4B430FA-59BF-4B05-9B167D2621547905</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 10 ENPS User-1</itemSlug>
+      <objID>ab05226776b24ead9e24b0a8d89df9a2</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 10 ENPS User</mosAbstract>
+      <objPaths>
+        <objPath techDescription=" "> </objPath>
+        <objProxyPath techDescription=" "> </objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>0</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;FAF3EEBD-C411-4E14-B641F9B2D24CA74F</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 6 ENPS User-1</itemSlug>
+      <objID>195e6614a9b64e84ae5b83192e2ccef1</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 6 ENPS User</mosAbstract>
+      <objPaths>
+        <objPath techDescription=" "> </objPath>
+        <objProxyPath techDescription=" "> </objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>0</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;202D2280-064F-49D1-8EEDA02E3D38DC06</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 7 ENPS User-1</itemSlug>
+      <objID>0a958c692ff947a284edf7d78848dae3</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 7 ENPS User 02:00</mosAbstract>
+      <objPaths>
+        <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_043e6b30dbc29b4fd88616829f8026441e.mxf</objPath>
+        <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_041a2b7e99990144139f366f15156e1371.mp4</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_04ac27805295e4468d95ba60f4113d1d56.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_041e6f44227cf94e4abb932a3007ea8ea7.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_047eb96bac3fc8454d86a337c51933ceb7.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_042fc9cfd93aff473fb3d71b0be3aa88de.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_0492752a8867f04faba6fe156c51005f00.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_04458404e5f1274bab9970a93720978002.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_043f7edac408c44bedbfe70573ccaaaab9.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_04aa3ad38c94264b85a70e5855bce271f8.mp3</objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>7196</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7078ED77-8EA8-4F79-A04028F2E1E8F2CD</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>fu xian-1</itemSlug>
+      <objID>4272792402564e13aa1c4c48d3f6dda5</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>fu xian 02:00</mosAbstract>
+      <objPaths>
+        <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_2918bae32e3c054d10bd0dde2a81f477d0.mxf</objPath>
+        <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_291484037b4ee846bbb90fb86c4544fc74.mp4</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29615dcbc659384f51b54ab3cf96de10db.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_295e6752272b444906a7bbbec31d859647.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29dcc6be9329254ce594ec72c0f026be59.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29293e1854e52d4f05ad0bed99becc82b1.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_2936e490598b874d76b078ba17d2b651a2.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_2967842393b8974b43a83d7d9887a4707a.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_297719c06f7c304b58a434e7dd689be46d.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29fa198449c9ff44c69990b3a4ecd6bb06.mp3</objProxyPath>
+      </objPaths>
+      <itemChannel>A-1</itemChannel>
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>7196</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <mosNotify command="mosItemReplace" time="18:52:21.664" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;F2773B23-940B-4C5F-929C4906B7652C2F</storyID>
+    <item>
+      <itemID>1</itemID>
+      <itemSlug>New Row 5 ENPS User-1</itemSlug>
+      <objID>3962216307644e91922f508b8ff0be1e</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 5 ENPS User</mosAbstract>
+      <objPaths>
+        <objPath techDescription=" "> </objPath>
+        <objProxyPath techDescription=" "> </objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>0</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roElementAction" time="18:52:21.695" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>675</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;96A167B7-F5BA-4430-A323AB1CEC10CB9E</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;96A167B7-F5BA-4430-A323AB1CEC10CB9E</storyID>
+        <storySlug>3</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 8 ENPS User-1</itemSlug>
+          <objID>d862ff369c3847bc8976bfe36613c1a6</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 8 ENPS User 02:00</mosAbstract>
+          <objPaths>
+            <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_165bfc8e36557542aaad394322063a5b3f.mxf</objPath>
+            <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1659aab9a4a5bb459a9e6e1903652c155a.mp4</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1669160c3c3c534d4eaa59143ac101f80b.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_169d3a6331462042a4b87af83e73b42a41.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1649c4174a45b14233bc058a19f8619c70.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1605eebad1b45b47d09ef4d14a58184bf5.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16693eb647c7fc408e837e691883c4de2c.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16a84b31a69395470e897d6f458cfa3696.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16122c220c708e4614a673b99c4f0eabc3.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_165f941064193045219a383ac5e742adcf.mp3</objProxyPath>
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>7196</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosNotify command="roElementStat" time="18:52:21.882" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;59A630EA-58B7-46D1-9F2DB9B13E0C0859</storyID>
+    <itemID>1</itemID>
+    <objID>01ea8767aeaa498d9d7692180c6b53d7</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.882" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;640131EC-A1BE-45EC-AFDAE3E710AF1A9B</storyID>
+    <itemID>1</itemID>
+    <objID>0c16e3f8cb394aa1b0e6e49bd555967b</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.898" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;C208F80E-375A-437F-9A42B01F4D5FFEFA</storyID>
+    <itemID>1</itemID>
+    <objID>b1395e18cc5540bf80a74e054ad79609</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.898" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;CC10CC43-C618-4E79-8AC87FCABB008013</storyID>
+    <itemID>1</itemID>
+    <objID>02ebc41d55984d7185b1c44b4374b461</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.898" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+    <itemID>1</itemID>
+    <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+    <status>NEXTSTANDBY</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosResponse command="roAck" time="18:52:21.914" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>675</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:21.914" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7E935669-CFDC-4958-BB40B5EB6E62BC8E</storyID>
+    <itemID>1</itemID>
+    <objID>39341e281d74450cabc6b5d4c423af57</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.929" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7078ED77-8EA8-4F79-A04028F2E1E8F2CD</storyID>
+    <itemID>1</itemID>
+    <objID>4272792402564e13aa1c4c48d3f6dda5</objID>
+    <status>PREPARING</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.929" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;FAF3EEBD-C411-4E14-B641F9B2D24CA74F</storyID>
+    <itemID>1</itemID>
+    <objID>195e6614a9b64e84ae5b83192e2ccef1</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.945" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;F2773B23-940B-4C5F-929C4906B7652C2F</storyID>
+    <itemID>1</itemID>
+    <objID>3962216307644e91922f508b8ff0be1e</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.945" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;B4B430FA-59BF-4B05-9B167D2621547905</storyID>
+    <itemID>1</itemID>
+    <objID>ab05226776b24ead9e24b0a8d89df9a2</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:21.976" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;202D2280-064F-49D1-8EEDA02E3D38DC06</storyID>
+    <itemID>1</itemID>
+    <objID>0a958c692ff947a284edf7d78848dae3</objID>
+    <status>SKIPPED</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:22.007" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7078ED77-8EA8-4F79-A04028F2E1E8F2CD</storyID>
+    <itemID>1</itemID>
+    <objID>4272792402564e13aa1c4c48d3f6dda5</objID>
+    <status>STANDBY</status>
+    <time>2017-03-07T18:52:21</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:22.038" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:22</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:22.085" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>676</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;96A167B7-F5BA-4430-A323AB1CEC10CB9E</storyID>
+    <storySlug>3</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 8 ENPS User-1</itemSlug>
+        <objID>d862ff369c3847bc8976bfe36613c1a6</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 8 ENPS User 02:00</mosAbstract>
+        <objPaths>
+          <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_165bfc8e36557542aaad394322063a5b3f.mxf</objPath>
+          <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1659aab9a4a5bb459a9e6e1903652c155a.mp4</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1669160c3c3c534d4eaa59143ac101f80b.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_169d3a6331462042a4b87af83e73b42a41.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1649c4174a45b14233bc058a19f8619c70.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1605eebad1b45b47d09ef4d14a58184bf5.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16693eb647c7fc408e837e691883c4de2c.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16a84b31a69395470e897d6f458cfa3696.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16122c220c708e4614a673b99c4f0eabc3.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_165f941064193045219a383ac5e742adcf.mp3</objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>7196</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>119.933333333333</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307180901</ModTime><MOSItemDurations>119.933333333333</MOSItemDurations><MOSItemEdDurations>119.933333333333</MOSItemEdDurations><MOSObjSlugs>New Row 8 ENPS User</MOSObjSlugs><MOSSlugs>New Row 8 ENPS User-1</MOSSlugs><MOSStatus>READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:22.319" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>676</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:22.491" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>677</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;C208F80E-375A-437F-9A42B01F4D5FFEFA</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;C208F80E-375A-437F-9A42B01F4D5FFEFA</storyID>
+        <storySlug>we</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 2 ENPS User-1</itemSlug>
+          <objID>b1395e18cc5540bf80a74e054ad79609</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 2 ENPS User</mosAbstract>
+          <objPaths>
+            <objPath techDescription=" " />
+            <objProxyPath techDescription=" " />
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>0</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:22.553" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>677</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:22.678" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:22</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:22.709" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>678</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;C208F80E-375A-437F-9A42B01F4D5FFEFA</storyID>
+    <storySlug>we</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 2 ENPS User-1</itemSlug>
+        <objID>b1395e18cc5540bf80a74e054ad79609</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 2 ENPS User</mosAbstract>
+        <objPaths>
+          <objPath techDescription=" ">
+        </objPath>
+          <objProxyPath techDescription=" ">
+        </objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>0</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>0</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307174811</ModTime><MOSItemDurations>0</MOSItemDurations><MOSItemEdDurations>0</MOSItemEdDurations><MOSObjSlugs>New Row 2 ENPS User</MOSObjSlugs><MOSSlugs>New Row 2 ENPS User-1</MOSSlugs><MOSStatus>NOT READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:22.850" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>678</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:22.896" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>679</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;59A630EA-58B7-46D1-9F2DB9B13E0C0859</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;59A630EA-58B7-46D1-9F2DB9B13E0C0859</storyID>
+        <storySlug>dsf</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 4 ENPS User-1</itemSlug>
+          <objID>01ea8767aeaa498d9d7692180c6b53d7</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 4 ENPS User</mosAbstract>
+          <objPaths>
+            <objPath techDescription=" " />
+            <objProxyPath techDescription=" " />
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>0</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:22.959" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>679</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:23.068" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:23</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:23.099" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>680</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;59A630EA-58B7-46D1-9F2DB9B13E0C0859</storyID>
+    <storySlug>dsf</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 4 ENPS User-1</itemSlug>
+        <objID>01ea8767aeaa498d9d7692180c6b53d7</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 4 ENPS User</mosAbstract>
+        <objPaths>
+          <objPath techDescription=" ">
+        </objPath>
+          <objProxyPath techDescription=" ">
+        </objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>0</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>0</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307174804</ModTime><MOSItemDurations>0</MOSItemDurations><MOSItemEdDurations>0</MOSItemEdDurations><MOSObjSlugs>New Row 4 ENPS User</MOSObjSlugs><MOSSlugs>New Row 4 ENPS User-1</MOSSlugs><MOSStatus>NOT READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:23.240" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>680</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:23.302" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>681</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;640131EC-A1BE-45EC-AFDAE3E710AF1A9B</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;640131EC-A1BE-45EC-AFDAE3E710AF1A9B</storyID>
+        <storySlug>hda</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 1 ENPS User-1</itemSlug>
+          <objID>0c16e3f8cb394aa1b0e6e49bd555967b</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 1 ENPS User</mosAbstract>
+          <objPaths>
+            <objPath techDescription=" " />
+            <objProxyPath techDescription=" " />
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>0</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:23.380" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>681</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:23.505" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:23</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:23.505" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>682</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;640131EC-A1BE-45EC-AFDAE3E710AF1A9B</storyID>
+    <storySlug>hda</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 1 ENPS User-1</itemSlug>
+        <objID>0c16e3f8cb394aa1b0e6e49bd555967b</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 1 ENPS User</mosAbstract>
+        <objPaths>
+          <objPath techDescription=" ">
+        </objPath>
+          <objProxyPath techDescription=" ">
+        </objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>0</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>0</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307174814</ModTime><MOSItemDurations>0</MOSItemDurations><MOSItemEdDurations>0</MOSItemEdDurations><MOSObjSlugs>New Row 1 ENPS User</MOSObjSlugs><MOSSlugs>New Row 1 ENPS User-1</MOSSlugs><MOSStatus>NOT READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:23.754" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>682</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:23.926" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>683</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+        <storySlug>11</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>11-1</itemSlug>
+          <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>11 02:00</mosAbstract>
+          <objPaths>
+            <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41a58b54b8daef43a884d907191823552d.mxf</objPath>
+            <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41fc65c3534e6847ad9cd02c1d8e1bd87e.mp4</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ad9aa839a2f842989566fac55fee1b0f.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ed24dd01d9324595940568abdd45ceb6.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_414cd2d36077314f41b2865e9a88142105.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41f2b30486f3d34cd49b44f779a61c6ebd.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4138b3054cedee4a048d22a0777c0ce9cb.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41608ee69841f9498da332d771cd1f3241.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4182a36c0e2d6746eaac206a5bd29c7fdf.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_412456a3f6de6c49f58ed37706f0cd4ca6.mp3</objProxyPath>
+          </objPaths>
+          <itemChannel>A-1</itemChannel>
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>7196</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:23.988" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>683</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:24.113" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:24</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:24.129" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>684</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+    <storySlug>11</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>11-1</itemSlug>
+        <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>11 02:00</mosAbstract>
+        <objPaths>
+          <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41a58b54b8daef43a884d907191823552d.mxf</objPath>
+          <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41fc65c3534e6847ad9cd02c1d8e1bd87e.mp4</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ad9aa839a2f842989566fac55fee1b0f.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41ed24dd01d9324595940568abdd45ceb6.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_414cd2d36077314f41b2865e9a88142105.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41f2b30486f3d34cd49b44f779a61c6ebd.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4138b3054cedee4a048d22a0777c0ce9cb.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_41608ee69841f9498da332d771cd1f3241.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_4182a36c0e2d6746eaac206a5bd29c7fdf.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\be77525d0daf45788c43d0f9da379332\LG 35_2017-02-25 17_37_412456a3f6de6c49f58ed37706f0cd4ca6.mp3</objProxyPath>
+        </objPaths>
+        <itemChannel>A-1</itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>7196</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>119.933333333333</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307185253</ModTime><MOSItemDurations>119.933333333333</MOSItemDurations><MOSItemEdDurations>119.933333333333</MOSItemEdDurations><MOSObjSlugs>11</MOSObjSlugs><MOSSlugs>11-1</MOSSlugs><MOSStatus>READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:24.285" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>684</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:24.487" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>685</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;CC10CC43-C618-4E79-8AC87FCABB008013</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;CC10CC43-C618-4E79-8AC87FCABB008013</storyID>
+        <storySlug>gfd</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 3 ENPS User-1</itemSlug>
+          <objID>02ebc41d55984d7185b1c44b4374b461</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 3 ENPS User</mosAbstract>
+          <objPaths>
+            <objPath techDescription=" " />
+            <objProxyPath techDescription=" " />
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>0</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:24.550" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>685</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:24.659" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:24</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:24.675" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>686</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;CC10CC43-C618-4E79-8AC87FCABB008013</storyID>
+    <storySlug>gfd</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 3 ENPS User-1</itemSlug>
+        <objID>02ebc41d55984d7185b1c44b4374b461</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 3 ENPS User</mosAbstract>
+        <objPaths>
+          <objPath techDescription=" ">
+        </objPath>
+          <objProxyPath techDescription=" ">
+        </objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>0</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>0</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307174808</ModTime><MOSItemDurations>0</MOSItemDurations><MOSItemEdDurations>0</MOSItemEdDurations><MOSObjSlugs>New Row 3 ENPS User</MOSObjSlugs><MOSSlugs>New Row 3 ENPS User-1</MOSSlugs><MOSStatus>NOT READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:24.831" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>686</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:24.893" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>687</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7E935669-CFDC-4958-BB40B5EB6E62BC8E</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7E935669-CFDC-4958-BB40B5EB6E62BC8E</storyID>
+        <storySlug>se</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 9 ENPS User-1</itemSlug>
+          <objID>39341e281d74450cabc6b5d4c423af57</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 9 ENPS User</mosAbstract>
+          <objPaths>
+            <objPath techDescription=" " />
+            <objProxyPath techDescription=" " />
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>0</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:24.971" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>687</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:25.080" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:25</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:25.096" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>688</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7E935669-CFDC-4958-BB40B5EB6E62BC8E</storyID>
+    <storySlug>se</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 9 ENPS User-1</itemSlug>
+        <objID>39341e281d74450cabc6b5d4c423af57</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 9 ENPS User</mosAbstract>
+        <objPaths>
+          <objPath techDescription=" ">
+        </objPath>
+          <objProxyPath techDescription=" ">
+        </objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>0</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>0</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307180918</ModTime><MOSItemDurations>0</MOSItemDurations><MOSItemEdDurations>0</MOSItemEdDurations><MOSObjSlugs>New Row 9 ENPS User</MOSObjSlugs><MOSSlugs>New Row 9 ENPS User-1</MOSSlugs><MOSStatus>NOT READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:25.252" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>688</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:25.283" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>689</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;FAF3EEBD-C411-4E14-B641F9B2D24CA74F</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;FAF3EEBD-C411-4E14-B641F9B2D24CA74F</storyID>
+        <storySlug>re</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 6 ENPS User-1</itemSlug>
+          <objID>195e6614a9b64e84ae5b83192e2ccef1</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 6 ENPS User</mosAbstract>
+          <objPaths>
+            <objPath techDescription=" " />
+            <objProxyPath techDescription=" " />
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>0</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:25.345" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>689</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:25.455" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:25</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:25.501" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>690</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;FAF3EEBD-C411-4E14-B641F9B2D24CA74F</storyID>
+    <storySlug>re</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 6 ENPS User-1</itemSlug>
+        <objID>195e6614a9b64e84ae5b83192e2ccef1</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 6 ENPS User</mosAbstract>
+        <objPaths>
+          <objPath techDescription=" ">
+        </objPath>
+          <objProxyPath techDescription=" ">
+        </objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>0</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>0</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307174758</ModTime><MOSItemDurations>0</MOSItemDurations><MOSItemEdDurations>0</MOSItemEdDurations><MOSObjSlugs>New Row 6 ENPS User</MOSObjSlugs><MOSSlugs>New Row 6 ENPS User-1</MOSSlugs><MOSStatus>NOT READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:25.735" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>690</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:25.907" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>691</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;B4B430FA-59BF-4B05-9B167D2621547905</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;B4B430FA-59BF-4B05-9B167D2621547905</storyID>
+        <storySlug>43h</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 10 ENPS User-1</itemSlug>
+          <objID>ab05226776b24ead9e24b0a8d89df9a2</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 10 ENPS User</mosAbstract>
+          <objPaths>
+            <objPath techDescription=" " />
+            <objProxyPath techDescription=" " />
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>0</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:26.032" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>691</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roStorySend" time="18:52:26.110" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>692</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;B4B430FA-59BF-4B05-9B167D2621547905</storyID>
+    <storySlug>43h</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 10 ENPS User-1</itemSlug>
+        <objID>ab05226776b24ead9e24b0a8d89df9a2</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 10 ENPS User</mosAbstract>
+        <objPaths>
+          <objPath techDescription=" ">
+        </objPath>
+          <objProxyPath techDescription=" ">
+        </objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>0</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>0</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307181116</ModTime><MOSItemDurations>0</MOSItemDurations><MOSItemEdDurations>0</MOSItemEdDurations><MOSObjSlugs>New Row 10 ENPS User</MOSObjSlugs><MOSSlugs>New Row 10 ENPS User-1</MOSSlugs><MOSStatus>NOT READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosNotify command="roElementStat" time="18:52:26.157" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:26</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosResponse command="roAck" time="18:52:26.281" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>692</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:26.328" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>693</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;202D2280-064F-49D1-8EEDA02E3D38DC06</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;202D2280-064F-49D1-8EEDA02E3D38DC06</storyID>
+        <storySlug>e</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 7 ENPS User-1</itemSlug>
+          <objID>0a958c692ff947a284edf7d78848dae3</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 7 ENPS User 02:00</mosAbstract>
+          <objPaths>
+            <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_043e6b30dbc29b4fd88616829f8026441e.mxf</objPath>
+            <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_041a2b7e99990144139f366f15156e1371.mp4</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_04ac27805295e4468d95ba60f4113d1d56.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_041e6f44227cf94e4abb932a3007ea8ea7.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_047eb96bac3fc8454d86a337c51933ceb7.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_042fc9cfd93aff473fb3d71b0be3aa88de.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_0492752a8867f04faba6fe156c51005f00.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_04458404e5f1274bab9970a93720978002.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_043f7edac408c44bedbfe70573ccaaaab9.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_04aa3ad38c94264b85a70e5855bce271f8.mp3</objProxyPath>
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>7196</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:26.406" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>693</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:26.531" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:26</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:26.531" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>694</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;202D2280-064F-49D1-8EEDA02E3D38DC06</storyID>
+    <storySlug>e</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 7 ENPS User-1</itemSlug>
+        <objID>0a958c692ff947a284edf7d78848dae3</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 7 ENPS User 02:00</mosAbstract>
+        <objPaths>
+          <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_043e6b30dbc29b4fd88616829f8026441e.mxf</objPath>
+          <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_041a2b7e99990144139f366f15156e1371.mp4</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_04ac27805295e4468d95ba60f4113d1d56.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_041e6f44227cf94e4abb932a3007ea8ea7.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_047eb96bac3fc8454d86a337c51933ceb7.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_042fc9cfd93aff473fb3d71b0be3aa88de.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_0492752a8867f04faba6fe156c51005f00.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_04458404e5f1274bab9970a93720978002.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_043f7edac408c44bedbfe70573ccaaaab9.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\40c82ad45aa348a5ace0434f9376a939\XAVC intra 50_2017-02-25 17_40_04aa3ad38c94264b85a70e5855bce271f8.mp3</objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>7196</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>119.933333333333</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307174821</ModTime><MOSItemDurations>119.933333333333</MOSItemDurations><MOSItemEdDurations>119.933333333333</MOSItemEdDurations><MOSObjSlugs>New Row 7 ENPS User</MOSObjSlugs><MOSSlugs>New Row 7 ENPS User-1</MOSSlugs><MOSStatus>READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:26.703" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>694</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:26.921" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>695</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7078ED77-8EA8-4F79-A04028F2E1E8F2CD</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7078ED77-8EA8-4F79-A04028F2E1E8F2CD</storyID>
+        <storySlug>fu xian</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>fu xian-1</itemSlug>
+          <objID>4272792402564e13aa1c4c48d3f6dda5</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>fu xian 02:00</mosAbstract>
+          <objPaths>
+            <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_2918bae32e3c054d10bd0dde2a81f477d0.mxf</objPath>
+            <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_291484037b4ee846bbb90fb86c4544fc74.mp4</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29615dcbc659384f51b54ab3cf96de10db.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_295e6752272b444906a7bbbec31d859647.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29dcc6be9329254ce594ec72c0f026be59.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29293e1854e52d4f05ad0bed99becc82b1.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_2936e490598b874d76b078ba17d2b651a2.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_2967842393b8974b43a83d7d9887a4707a.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_297719c06f7c304b58a434e7dd689be46d.mp3</objProxyPath>
+            <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29fa198449c9ff44c69990b3a4ecd6bb06.mp3</objProxyPath>
+          </objPaths>
+          <itemChannel>A-1</itemChannel>
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>7196</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:27.030" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>695</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:27.139" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:27</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:27.139" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>696</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7078ED77-8EA8-4F79-A04028F2E1E8F2CD</storyID>
+    <storySlug>fu xian</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>fu xian-1</itemSlug>
+        <objID>4272792402564e13aa1c4c48d3f6dda5</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>fu xian 02:00</mosAbstract>
+        <objPaths>
+          <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_2918bae32e3c054d10bd0dde2a81f477d0.mxf</objPath>
+          <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_291484037b4ee846bbb90fb86c4544fc74.mp4</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29615dcbc659384f51b54ab3cf96de10db.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_295e6752272b444906a7bbbec31d859647.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29dcc6be9329254ce594ec72c0f026be59.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29293e1854e52d4f05ad0bed99becc82b1.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_2936e490598b874d76b078ba17d2b651a2.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_2967842393b8974b43a83d7d9887a4707a.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_297719c06f7c304b58a434e7dd689be46d.mp3</objProxyPath>
+          <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\2174b935375b40fab25d0f778d1a775a\LG 50_2017-02-25 17_36_29fa198449c9ff44c69990b3a4ecd6bb06.mp3</objProxyPath>
+        </objPaths>
+        <itemChannel>A-1</itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>7196</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>119.933333333333</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307182536</ModTime><MOSItemDurations>119.933333333333</MOSItemDurations><MOSItemEdDurations>119.933333333333</MOSItemEdDurations><MOSObjSlugs>fu xian</MOSObjSlugs><MOSSlugs>fu xian-1</MOSSlugs><MOSStatus>READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:27.311" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>696</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <ncsRequest command="roElementAction" time="18:52:27.545" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>697</messageID>
+  <roElementAction operation="REPLACE">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <element_target>
+      <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;F2773B23-940B-4C5F-929C4906B7652C2F</storyID>
+    </element_target>
+    <element_source>
+      <story>
+        <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;F2773B23-940B-4C5F-929C4906B7652C2F</storyID>
+        <storySlug>few</storySlug>
+        <storyNum />
+        <item>
+          <itemID>1</itemID>
+          <itemSlug>New Row 5 ENPS User-1</itemSlug>
+          <objID>3962216307644e91922f508b8ff0be1e</objID>
+          <mosID>sony.studioA.mos</mosID>
+          <mosAbstract>New Row 5 ENPS User</mosAbstract>
+          <objPaths>
+            <objPath techDescription=" " />
+            <objProxyPath techDescription=" " />
+          </objPaths>
+          <itemChannel />
+          <itemEdStart>0</itemEdStart>
+          <itemEdDur>0</itemEdDur>
+          <mosExternalMetadata>
+            <mosScope>PLAYLIST</mosScope>
+            <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+            <mosPayload></mosPayload>
+          </mosExternalMetadata>
+          <MosRedirect>false</MosRedirect>
+        </item>
+      </story>
+    </element_source>
+  </roElementAction>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:27.623" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>697</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK: Contained data in request is same with SONAPS DB, not apply again.</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:27.732" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:27</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <ncsRequest command="roStorySend" time="18:52:27.935" source="2008R2ENPS8VM" destination="sony.studioA.mos">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>698</messageID>
+  <roStorySend>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;F2773B23-940B-4C5F-929C4906B7652C2F</storyID>
+    <storySlug>few</storySlug>
+    <storyBody>
+      <p></p>
+      <storyItem>
+        <itemID>1</itemID>
+        <itemSlug>New Row 5 ENPS User-1</itemSlug>
+        <objID>3962216307644e91922f508b8ff0be1e</objID>
+        <mosID>sony.studioA.mos</mosID>
+        <mosAbstract>New Row 5 ENPS User</mosAbstract>
+        <objPaths>
+          <objPath techDescription=" ">
+        </objPath>
+          <objProxyPath techDescription=" ">
+        </objProxyPath>
+        </objPaths>
+        <itemChannel>
+      </itemChannel>
+        <itemEdStart>0</itemEdStart>
+        <itemEdDur>0</itemEdDur>
+        <mosExternalMetadata>
+          <mosScope>PLAYLIST</mosScope>
+          <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+          <mosPayload></mosPayload>
+        </mosExternalMetadata>
+        <MosRedirect>false</MosRedirect>
+      </storyItem>
+      <p></p>
+    </storyBody>
+    <mosExternalMetadata>
+      <mosScope>PLAYLIST</mosScope>
+      <mosSchema>http://2008R2ENPS8VM:10505/schema/enps.dtd</mosSchema>
+      <mosPayload><Approved>0</Approved><Creator>ADMINISTRATOR</Creator><MediaTime>0</MediaTime><ModBy>sony.studioA.mos</ModBy><ModTime>20170307180911</ModTime><MOSItemDurations>0</MOSItemDurations><MOSItemEdDurations>0</MOSItemEdDurations><MOSObjSlugs>New Row 5 ENPS User</MOSObjSlugs><MOSSlugs>New Row 5 ENPS User-1</MOSSlugs><MOSStatus>NOT READY</MOSStatus><Owner>ADMINISTRATOR</Owner><pubApproved>0</pubApproved><SourceMediaTime>0</SourceMediaTime><SourceTextTime>0</SourceTextTime><TextTime>0</TextTime><ENPSItemType>3</ENPSItemType></mosPayload>
+    </mosExternalMetadata>
+  </roStorySend>
+</mos>
+  </ncsRequest>
+  <mosResponse command="roAck" time="18:52:28.091" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID>698</messageID>
+  <roAck>
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <roStatus>OK</roStatus>
+  </roAck>
+</mos>
+  </mosResponse>
+  <mosNotify command="roElementStat" time="18:52:29.199" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7078ED77-8EA8-4F79-A04028F2E1E8F2CD</storyID>
+    <itemID>1</itemID>
+    <objID>4272792402564e13aa1c4c48d3f6dda5</objID>
+    <status>PLAY</status>
+    <time>2017-03-07T18:52:29</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:29.776" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+    <itemID>1</itemID>
+    <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+    <status>PREPARING</status>
+    <time>2017-03-07T18:52:29</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:30.478" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7078ED77-8EA8-4F79-A04028F2E1E8F2CD</storyID>
+    <itemID>1</itemID>
+    <objID>4272792402564e13aa1c4c48d3f6dda5</objID>
+    <status>STOP</status>
+    <time>2017-03-07T18:52:30</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:32.818" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="RO">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <status>STOP</status>
+    <time>2017-03-07T18:52:32</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:33.067" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;7078ED77-8EA8-4F79-A04028F2E1E8F2CD</storyID>
+    <itemID>1</itemID>
+    <objID>4272792402564e13aa1c4c48d3f6dda5</objID>
+    <status>END</status>
+    <time>2017-03-07T18:52:33</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+  <mosNotify command="roElementStat" time="18:52:33.083" source="sony.studioA.mos" destination="2008R2ENPS8VM">
+    <mos>
+  <mosID>sony.studioA.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <messageID />
+  <roElementStat element="ITEM">
+    <roID>2008R2ENPS8VM;P_SYSTEM\W;EB6331F5-2529-4F98-A2E78168C352476F</roID>
+    <storyID>2008R2ENPS8VM;P_SYSTEM\W\R_EB6331F5-2529-4F98-A2E78168C352476F;062D8B1A-C98C-43DF-8BF467DB3173342D</storyID>
+    <itemID>1</itemID>
+    <objID>1d97d4b7469e4e07b25f2ca15c5ed956</objID>
+    <status>READY</status>
+    <time>2017-03-07T18:52:33</time>
+  </roElementStat>
+</mos>
+  </mosNotify>
+</MOSLog>

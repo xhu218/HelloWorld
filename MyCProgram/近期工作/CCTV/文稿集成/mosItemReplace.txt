@@ -1,0 +1,36 @@
+ <mos>
+  <mosID>sony.studioDev.mos</mosID>
+  <ncsID>2008R2ENPS8VM</ncsID>
+  <mosItemReplace>
+		<roID>2008R2ENPS8VM;P_STUDIDEV\W;E61291EA-1E27-4344-8E8F55246664DDD2</roID>
+			<storyID>2008R2ENPS8VM;P_STUDIDEV\W\R_E61291EA-1E27-4344-8E8F55246664DDD2;30DA9EAC-6898-4CB0-8491CAF7532ED6FB</storyID>
+    <item>
+      <itemID>3</itemID>
+      <itemSlug>New Row 8 ENPS User-1</itemSlug>
+      <objID>d862ff369c3847bc8976bfe36613c1a6</objID>
+      <mosID>sony.studioA.mos</mosID>
+      <mosAbstract>New Row 8 ENPS User 02:00</mosAbstract>
+      <objPaths>
+        <objPath techDescription="MXF">\\10.116.10.66\x\CompileOUT\high_video\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_165bfc8e36557542aaad394322063a5b3f.mxf</objPath>
+        <objProxyPath>\\10.116.10.66\x\TranscodeOut\low_video\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1659aab9a4a5bb459a9e6e1903652c155a.mp4</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio1\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1669160c3c3c534d4eaa59143ac101f80b.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio2\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_169d3a6331462042a4b87af83e73b42a41.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio3\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1649c4174a45b14233bc058a19f8619c70.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio4\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_1605eebad1b45b47d09ef4d14a58184bf5.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio5\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16693eb647c7fc408e837e691883c4de2c.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio6\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16a84b31a69395470e897d6f458cfa3696.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio7\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_16122c220c708e4614a673b99c4f0eabc3.mp3</objProxyPath>
+        <objProxyPath techDescription="MP3 48kHz 64Kbps Audio Only">\\10.116.10.66\x\TranscodeOut\low_audio8\50f016bbb1fd4beb82db0857ef7c4480\XAVC intra 100_2017-02-25 17_39_165f941064193045219a383ac5e742adcf.mp3</objProxyPath>
+      </objPaths>
+      <itemChannel />
+      <itemEdStart>0</itemEdStart>
+      <itemEdDur>7196</itemEdDur>
+      <mosExternalMetadata>
+        <mosScope>PLAYLIST</mosScope>
+        <mosSchema>http://sony.com/schema/sonaps4.5</mosSchema>
+        <mosPayload></mosPayload>
+      </mosExternalMetadata>
+      <MosRedirect>false</MosRedirect>
+    </item>
+  </mosItemReplace>
+</mos>
