@@ -11,7 +11,7 @@
 
         $("#input1").click(function(event) {
             /* Act on the event */
-
+            /*
             $.ajax({
                 type: "POST",
                 url: "http://172.16.160.9:8999/CMApi/api/Entity/SaveObjectInfo?usertoken=i0l7/w8fa8MFfYxyO7GadPArh1s=",
@@ -34,6 +34,24 @@
                     alert("入库错误1");
                 }
             });
+            */
+
+           $.ajax({
+                type: "GET",
+                url: "https://172.16.168.201:10005/login.aspx",
+                
+               
+               
+                async: false,
+                success: function(data) {
+                   alert(data);
+                },
+                error: function(err) {
+                    alert("入库错误1");
+                }
+            }); 
+
+
         });
 
         $("#input2").click(function(event) {
