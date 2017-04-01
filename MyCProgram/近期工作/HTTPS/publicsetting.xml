@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicSetting>
+	<System>
+		<Sys_VIP>172.16.168.205</Sys_VIP>
+		<CMServer>172.16.168.205:9023</CMServer>
+		<CMserver_windows>172.16.168.205:9037</CMserver_windows>
+		<CMweb>172.16.168.205:9021</CMweb>
+		<Fls>172.16.168.205:9031</Fls>
+		<FLSvr>172.16.168.205:9033</FLSvr>
+		<Jove>172.16.168.205:9027</Jove>
+		<PLS_Windows>172.16.168.205:9035</PLS_Windows>
+		<IngestDBSvr>172.16.168.205:9025</IngestDBSvr>
+		<IngestDEVCTL>172.16.168.205:9039</IngestDEVCTL>
+		<IngestTaskSvr>172.16.168.205:9041</IngestTaskSvr>
+		<IngestMsgSvr>172.16.168.205:9043</IngestMsgSvr>
+		<Otc>172.16.168.205:9045</Otc>
+		<SangHa>172.16.168.205:4505</SangHa>
+		<SangHaSvr>172.16.168.205:9047</SangHaSvr>
+		<SangHaWeb>172.16.168.205:9049</SangHaWeb>
+		<SNSServer>172.16.168.205:9053</SNSServer>
+	</System>
+	<DBConfig>
+		<DatabaseConfig module="INGESTDB">
+			<Instance>ingestDb</Instance>
+			<Username>sdba</Username>
+			<Password>sdba</Password>
+			<Port>3307</Port>
+		</DatabaseConfig>
+		<DatabaseConfig module="PLAYOUTDB">
+			<Instance>playoutdb</Instance>
+			<Username>playoutdba</Username>
+			<Password>sobeydba</Password>
+			<Port>3307</Port>
+		</DatabaseConfig>
+		<DatabaseConfig module="PLATDB">
+			<Instance>platdb</Instance>
+			<Username>platdba</Username>
+			<Password>sobeydba</Password>
+			<Port>3307</Port>
+		</DatabaseConfig>
+		<DatabaseConfig module="FLDB">
+			<Instance>fldb</Instance>
+			<Username>fldba</Username>
+			<Password>sobeydba</Password>
+			<Port>3307</Port>
+		</DatabaseConfig>
+		<DatabaseConfig module="CMDB">
+			<Instance>mldb</Instance>
+			<Username>mldba</Username>
+			<Password>sobeydba</Password>
+			<Port>3307</Port>
+		</DatabaseConfig>
+	</DBConfig>
+</PublicSetting>
