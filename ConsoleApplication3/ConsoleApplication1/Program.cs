@@ -7,6 +7,8 @@ using System.IO;
 using System.Diagnostics;
 using System.Net;
 using System.Security.Cryptography;
+using System.Reflection;
+using log4net;
 
 namespace ConsoleApplication1
 {
@@ -57,14 +59,22 @@ namespace ConsoleApplication1
            //string sign ="";//= BitConverter.ToString(encodedPutPolicy).Replace("-", "").ToLower();
            //sign = Convert.ToBase64String(encodedPutPolicy);
            // Console.WriteLine(sign);
-
+            /*
             var hmacSHA1 = HMACSHA1.Create();
             hmacSHA1.Key = Encoding.UTF8.GetBytes("sobey_storage_key");
             var computHash = hmacSHA1.ComputeHash(Encoding.UTF8.GetBytes("abc"));
             var base64 = Convert.ToBase64String(computHash);
             Console.WriteLine(base64);
 
-            
+            */
+
+            ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+            log.Error("error", new Exception("发生了一个异常"));
+            log.Fatal("fatal", new Exception("发生了一个致命错误"));
+            log.Info("info");
+            log.Debug("debug");
+            log.Warn("warn");
+            Console.WriteLine("日志记录完毕。");
 
             Console.ReadKey();
         }
