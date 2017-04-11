@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCApplication1", "MFCAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{B9BCD879-C6EC-4FBA-91ED-660E08CCA888}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileVersionLooker", "FileVersionLooker\FileVersionLooker.csproj", "{6A80F096-60B9-4C94-ADA7-53105BD98270}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -51,6 +53,16 @@ Global
 		{B9BCD879-C6EC-4FBA-91ED-660E08CCA888}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B9BCD879-C6EC-4FBA-91ED-660E08CCA888}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B9BCD879-C6EC-4FBA-91ED-660E08CCA888}.Release|Win32.ActiveCfg = Release|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6A80F096-60B9-4C94-ADA7-53105BD98270}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
