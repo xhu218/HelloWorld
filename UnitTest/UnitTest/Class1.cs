@@ -2,27 +2,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace UnitTest
 {
-    static class Program
+    public class Class1
     {
-        /// <summary>
-        /// 应用程序的主入口点。
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public int sum(int x, int y)
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            Console.Write("hello");
-            Class1 cls = new Class1();
-            Console.Write(cls.sum(1, 2));
+            return x + y;
+        }
+        public int substruct(int x, int y)
+        {
+            return x - y - 1;
+        }
 
-
+        public String test3()
+        {
             var client = new RestClient("http://hive.sobey.com:9023/CMApi/api/basic/account/login");
             var request = new RestRequest(Method.POST);
             request.AddHeader("postman-token", "07af69b3-9ac1-bc08-5ef1-3946b6161dba");
@@ -34,7 +31,7 @@ namespace UnitTest
             request.AddParameter("application/json", "{LOGINNAME:\"admin\",LOGINPWD:\"21232f297a57a5a743894a0e4a801fc3\",LOGINSUBSYSTEM:\"sys1\",LOGINIP:\"127.0.0.1\"}", ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
 
-            Console.Read();
+            return "";
         }
     }
 }

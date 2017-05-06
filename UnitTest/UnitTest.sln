@@ -3,6 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{AEDFBF12-6852-416A-8854-B3FCD5CCD0BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{BF743886-88B0-4D8C-BAD2-BCFE309061DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C000175D-1D9A-4A60-8753-93298CF5DC85}"
+	ProjectSection(SolutionItems) = preProject
+		Performance1.psess = Performance1.psess
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -17,6 +24,10 @@ Global
 		{AEDFBF12-6852-416A-8854-B3FCD5CCD0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEDFBF12-6852-416A-8854-B3FCD5CCD0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEDFBF12-6852-416A-8854-B3FCD5CCD0BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF743886-88B0-4D8C-BAD2-BCFE309061DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF743886-88B0-4D8C-BAD2-BCFE309061DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF743886-88B0-4D8C-BAD2-BCFE309061DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF743886-88B0-4D8C-BAD2-BCFE309061DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
