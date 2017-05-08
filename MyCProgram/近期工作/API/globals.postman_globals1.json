@@ -1,0 +1,189 @@
+{
+  "id": "4683ae76-4dea-6ae3-cbc2-646412523719",
+  "name": "Postman Globals",
+  "values": [
+    {
+      "enabled": true,
+      "key": "echo_digest_realm",
+      "value": "Users",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "echo_digest_nonce",
+      "value": "OnN4vCWOvpcbqN1i7lZFCTKIX4ofUilv",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "variable_key",
+      "value": "undefined",
+      "type": "text"
+    },
+    {
+      "key": "VIP",
+      "value": "172.16.168.205",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "contentid",
+      "type": "text",
+      "value": "eb8938a1c7714d7daa492b38ac814a7a",
+      "enabled": true
+    },
+    {
+      "key": "mosid\n",
+      "value": "sony.studioDev.mos",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "foldername_re",
+      "type": "text",
+      "value": "9ZKAYR13KYGCWFVC9E1BK5UVXETH3IKX",
+      "enabled": true
+    },
+    {
+      "key": "responseTime",
+      "type": "text",
+      "value": "1",
+      "enabled": true
+    },
+    {
+      "key": "StudioID",
+      "type": "text",
+      "value": "1",
+      "enabled": true
+    },
+    {
+      "key": "mosid",
+      "type": "text",
+      "value": "sony.studioDev.mos",
+      "enabled": true
+    },
+    {
+      "key": "RundownID",
+      "type": "text",
+      "value": "3a2bcc72-d6bc-4453-be00-2377ba21c921",
+      "enabled": true
+    },
+    {
+      "key": "StoryID",
+      "type": "text",
+      "value": "3d7ed9d4-5bad-4a60-8e48-9a1f88bba40f",
+      "enabled": true
+    },
+    {
+      "key": "EventID",
+      "type": "text",
+      "value": "4d902f59-c9ed-4b85-a7a3-a46b1b14cbb4",
+      "enabled": true
+    },
+    {
+      "key": "jove_contentId",
+      "type": "text",
+      "value": "bd5ff6eae68b4889b02d4058fe766e51",
+      "enabled": true
+    },
+    {
+      "key": "foldername",
+      "type": "text",
+      "value": "QF71FYEYWSC826GW3OS66TPZ4JS34AZP",
+      "enabled": true
+    },
+    {
+      "key": "folderid",
+      "type": "text",
+      "value": "fa9a93f7ac924b1ab962ae688f55a4ad",
+      "enabled": true
+    },
+    {
+      "key": "foldername_rename",
+      "type": "text",
+      "value": "FEUP157VPON2RCX9ENHA973YRMFXVIGA",
+      "enabled": true
+    },
+    {
+      "key": "folder_contentid",
+      "type": "text",
+      "value": "86023a7e3f2646a2bbee8a9fec7e6bcb",
+      "enabled": true
+    },
+    {
+      "key": "Response_time\n",
+      "value": "200",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "filepath",
+      "value": "\\\\\\\\172.16.168.202\\\\hivefiles\\\\sobeyhive\\\\bucket-z\\\\u20002\\\\cmupload\\\\2017-04-21\\\\2e690595ace342465a82a73b6a063a35.mp4",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "fcpfilepath",
+      "value": "\\\\\\\\172.16.168.202\\\\hivefiles\\\\sobeyhive\\\\bucket-z\\\\u20002\\\\cmupload\\\\2017-04-21\\\\6c6bd26f696e90b21226c25e42891b79.mp4",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "pefFilePath",
+      "type": "text",
+      "value": "\\\\172.16.168.202\\hivefiles\\sobeyhive\\bucket-z\\u20011\\\\PEF\\2017-05-04\\PEF_New_38748da8235a43deb2bb2f429095a816.pef",
+      "enabled": true
+    },
+    {
+      "key": "usertoken",
+      "type": "text",
+      "value": "3da9ab79a55edc893a4289175e8ff7fa",
+      "enabled": true
+    },
+    {
+      "key": "loginInfoID",
+      "type": "text",
+      "value": "184699",
+      "enabled": true
+    },
+    {
+      "key": "userid",
+      "type": "text",
+      "value": "1",
+      "enabled": true
+    },
+    {
+      "key": "loginname",
+      "type": "text",
+      "value": "admin",
+      "enabled": true
+    },
+    {
+      "key": "usercode",
+      "type": "text",
+      "value": "admin",
+      "enabled": true
+    },
+    {
+      "key": "columnname",
+      "type": "text",
+      "value": "12",
+      "enabled": true
+    },
+    {
+      "key": "columncode",
+      "type": "text",
+      "value": "undefined",
+      "enabled": true
+    },
+    {
+      "key": "contentId",
+      "type": "text",
+      "value": "258acb0738f747509eb38f7c04bcf445",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "globals",
+  "_postman_exported_at": "2017-05-04T12:11:13.587Z",
+  "_postman_exported_using": "Postman/4.10.7"
+}
