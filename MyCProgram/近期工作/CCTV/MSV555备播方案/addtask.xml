@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MPC>
+	<Header>
+		<Version>1.0</Version>
+		<RequestID>3A5FE5FE-CE3F-4455-BDF1-87E06415FE89</RequestID>
+		<RequestTime>2013-01-28 14:33:42</RequestTime>
+		<RequestMQ/>
+	</Header>
+	<Content>
+		<MPCType>AddTask</MPCType>
+		<AddTask>
+			<BaseInfo>
+				<TaskGUID>3A5FE5FE-CE3F-4455-BDF1-87E06415FE89</TaskGUID>
+				<TaskName>3A5FE5FE-CE3F-4455-BDF1-87E06415FE89</TaskName>
+				<ColumnName/>
+				<TaskLength>n/a</TaskLength>
+				<TaskPriority>0</TaskPriority>
+				<DispatchType>auto</DispatchType>
+				<Controllable>1</Controllable>
+				<PutinTime>2013-01-28 14:33:42</PutinTime>
+			</BaseInfo>
+			<TaskInfo>
+				<Scope>msv_trans_param</Scope>
+				<Data>
+					<PathPrefix>msv555://DIR_MSVTRANSFER/MSV5551_20130125_173610</PathPrefix>
+					<MaxSpeed>300</MaxSpeed>
+					<Backup>FALSE</Backup>
+				</Data>
+			</TaskInfo>
+			<MediaFile>
+				<GroupType>Msv555</GroupType>
+				<MediaType>video</MediaType>
+				<FileName>D:\各种类型的任务\MSV相关\MSV大网迁移\sedl迁移.sedl</FileName>
+				<InPoint>0</InPoint>
+				<OutPoint>-1</OutPoint>
+			</MediaFile>
+			<PolicyID>105</PolicyID>
+		</AddTask>
+	</Content>
+</MPC>
