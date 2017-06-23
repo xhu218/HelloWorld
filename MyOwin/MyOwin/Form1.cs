@@ -39,19 +39,54 @@ namespace MyOwin
         }
     }
 
-    public class ValuesController : ApiController
+    public class Values1Controller : ApiController
     {
+<<<<<<< .mine
+        [HttpGet]
+        [Route("Values1/Hello")]
+        public String Hello()
+        {
+            return "hello...111";
+        }
+||||||| .r22
+        // GET api/values 
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+=======
          //GET api/values 
         //[Route("Values/Get1")]
         //public IEnumerable<string> Get1()
         //{
         //    return new string[] { "value1", "value2" };
         //}
+>>>>>>> .r110
+    }
+
+    public class ValuesController : ApiController
+    {
+        // GET api/values 
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
         // GET api/values/5 
-        public string Get(int id)
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
+
+        // POST api/values 
+        //public void Post([FromBody]string value)
+        //{
+        //}
+        [HttpGet]
+        [Route("Values/Hello")]
+        public String Hello()
         {
-            return "value";
+            return "hello...";
         }
         [Route("Values/GetStu1")]
         public Stu GetStu1()
@@ -59,13 +94,34 @@ namespace MyOwin
             String stu = "{\"Name\":\"wfg\",\"Age\":11,\"obj\":{\"name1\":\"sss\"}}";
             Stu stu1 = JsonConvert.DeserializeObject<Stu>(stu);
 
+<<<<<<< .mine
+
+        [HttpPost]
+    
+        public String Post([FromBody] ETObject etobject)
+||||||| .r22
+        // POST api/values 
+        public void Post([FromBody]string value)
+=======
             return stu1;
         }
 
         // POST api/values 
         public Stu Post([FromBody]Stu value)
+>>>>>>> .r110
         {
+<<<<<<< .mine
+            ETObject temp = new ETObject();
+            if (etobject.ObjType == "A")
+            {
+                temp.Item = Newtonsoft.Json.JsonConvert.DeserializeObject<A>(etobject.Item.ToString());
+                temp.ObjType = "A";
+            }
+            return temp.ToString();
+||||||| .r22
+=======
             return value;
+>>>>>>> .r110
         }
 
         // PUT api/values/5 
@@ -78,6 +134,39 @@ namespace MyOwin
         {
         }
 
+<<<<<<< .mine
+    public class ETObject
+    {
+        public String ObjType{get;set;}
+        public Object Item{get;set;}
+
+        public override string ToString()
+        {
+ 	        return String.Format("{0}:{1}",ObjType,Item.ToString());
+        }
+    }
+
+    public class A
+    {
+        public String Name{get;set;}
+
+        public override string ToString()
+        {
+ 	         return "Name:"+Name;
+        }
+    }
+    public class B
+    {
+        public int Age{get;set;}
+
+        public override string ToString()
+{
+ 	 return "Age:"+Age;
+}
+    }
+
+||||||| .r22
+=======
 
     }
     public class Stu
@@ -87,6 +176,7 @@ namespace MyOwin
         public Object obj;
     }
 
+>>>>>>> .r110
      public class Startup 
     { 
         // This code configures Web API. The Startup class is specified as a type
