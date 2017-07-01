@@ -7,29 +7,29 @@
     <!--<script src="user.js"></script>-->
     <!--<script src="http://172.16.134.228:9020/js/plugins/jquery.getconfig.js"></script>-->
     <script type="text/javascript">
-    $(document).ready(function() {
+        $(document).ready(function () {
+
+            $("#clickme").unbind("click");
+            $("#clickme").bind("click", function () { log("hello"); })
+           
+
+            log("<br />start...");
 
 
-        $("#clickme").bind("click",function(){alert("hello");})
-        $("#clickme").unbind("click");
 
-        log("<br />start...");
+            log("end...");
 
 
+            function log(msg) {
+                $("#info").append(msg + "</br>");
+            }
 
-        log("end...");
-
-
-        function log(msg) {
-            $("#info").append(msg + "</br>");
-        }
-
-    });
+        });
     </script>
 </head>
 
 <body>
-<a href="1.html">this is a link</a>
+    <a href="1.html">this is a link</a>
     <div id="info" />
     <br />
     <input type="submit" id="clickme" width="200px" />
