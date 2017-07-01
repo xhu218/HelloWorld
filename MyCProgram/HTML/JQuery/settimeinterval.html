@@ -1,25 +1,21 @@
 <html>
+
 <body>
-
-<input type="text" id="clock" size="35" />
-<script language=javascript>
-var int=self.setInterval("clock()",50)
-function clock()
-  {
-  var t=new Date()
-  document.getElementById("clock").value=t
-  }
-</script>
-</form>
-
-<br />
-
-<br />
+  <input type="text" id="clock" size="35" />
+  <script language=javascript>
+    var int = self.setInterval("clock()", 50)
+    function clock() {
+      var t = new Date()
+      document.getElementById("clock").value = t
+    }
+  </script>
+  </form>
+  <br />
+  <br />
 
 
-<button onclick="int=window.clearInterval(int)">
-Stop interval</button>
-
-<iframe src="http://note.youdao.com/share/?token=20DBD4508D9943719DE42732D276537E&gid=29036723#/" width="500" height="500">
+  <button onclick="int=window.clearInterval(int)">Stop interval</button>
+  <iframe src="http://note.youdao.com/share/?token=20DBD4508D9943719DE42732D276537E&gid=29036723#/" width="500" height="500">
 </body>
+
 </html>
