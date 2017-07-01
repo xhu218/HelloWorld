@@ -1,0 +1,413 @@
+-----------------------------------------------------------------------------------------
+e:\分析日志\2017\2017-05\2017-05-19\QA\201\sobeyhive\logs\cmserver\2017-03-29==\WebApi.CMApi_Message.log
+/CMApi/api/basic/account/testconnect
+0.9
+  }
+}
+
+[2017-03-29 19:02:23.0698][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.17.0.9:8999/CMApi/api/basic/account/testconnect
+
+
+[2017-03-29 19:02:23.0714][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "0",
+  "msg": "Welcome To CM Server"
+}
+
+[2017-03-29 19:02:23.6236][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9023/CMApi/api/basic/config/getsysparam?usertoken=84033539087e1ff402da19469f34b27b
+User-Agent: cpprestsdk/2.6.0
+sobeyhive-http-site: S1
+sobeyhive-http-system: MATERIALLIST
+sobeyhive-http-token: 84033539087e1ff402da19469f34b27b
+sobeyhive-http-tool: MLCLIENT
+Host: 172.16.168.205:9023
+Connection: close
+
+{"paramdescription":"To save icon files","paramname":"ET_ICONPATH","paramvaluedef":"c:\\","system":"","tool":"DEFAULT"}
+
+[2017-03-29 19:02:23.7084][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "0",
+  "ext": {
+    "paramname": "ET_ICONPATH",
+    "paramvalue": "\\\\172.16.168.202\\hivefiles\\sobeyhive\\bucket-z\\u20002\\icon",
+    "paramdescription": "E7 Timeline Icons physical path"
+  }
+}
+
+[2017-03-29 19:02:23.8542][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.17.0.9:8999/CMApi/api/basic/account/testconnect
+
+
+[2017-03-29 19:02:23.8562][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "0",
+  "msg": "Welcome To CM Server"
+}
+
+[2017-03-29 19:02:24.0378][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9023/CMApi/api/basic/config/getsysparam?usertoken=84033539087e1ff402da19469f34b27b
+User-Agent: cpprestsdk/2.6.0
+sobeyhive-
+-----------------------------------------------------------------------------------------
+e:\分析日志\2017\2017-05\2017-05-19\QA\201\sobeyhive\logs\cmserver\2017-03-29==\WebApi.CMApi_Message.log
+/CMApi/api/basic/account/getcurrentuserinfo
+  }
+}
+
+[2017-03-29 19:02:20.5029][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.168.205:9023/CMApi/api/basic/account/getcurrentuserinfo?usertoken=&siteCode=
+sobeyhive-http-system: JOVE
+sobeyhive-http-site: S1
+sobeyhive-http-tool: JOVE
+Host: 172.16.168.205:9023
+Connection: close
+
+
+[2017-03-29 19:02:20.5212][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "1",
+  "msg": "usertoken can't null"
+}
+
+[2017-03-29 19:02:21.1444][TRACE][WebApi.CMApi_Message] 收到请求：
+OPTIONS http://172.16.168.205:9023/CMApi/api/basic/account/getuserstoragebyname?usertoken=39588be4a348af2cf50f7f99f3b64c6c&loginName=jjj
+Host: 172.16.168.205:9023
+Access-Control-Request-Method: GET
+Origin: http://172.16.168.205:9021
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+Access-Control-Request-Headers: sobeyhive-http-site, sobeyhive-http-system, sobeyhive-http-token, sobeyhive-http-tool
+Accept: */*
+DNT: 1
+Referer: http://172.16.168.205:9021/NEW-CM/index.html
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Connection: close
+
+
+[2017-03-29 19:02:21.1453][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+
+[2017-03-29 19:02:21.3076][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.168.205:9023/CMApi/api/basic/account/Getuserstoragebycode?usertoken=a2c6c2323c40ef92f20c01899551f0b4&code=0c17994a2a3148c4a3c98ecd668a06c7
+User-Agent: WinHTTP Example/1.0
+sobeyhive-http-system: INGEST
+sobeyhive-http-site: S1
+sobeyhive-http-tool: INGESTCLIENT
+Host: 172.16.168.205:9023
+Connection: close
+
+
+[2017-03-29 19:02:21.3390][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allo
+-----------------------------------------------------------------------------------------
+e:\分析日志\2017\2017-05\2017-05-19\QA\201\sobeyhive\logs\cmserver\2017-06-20\WebApi.CMApi_Message.log
+/CMApi/api/basic/config/getsysparam/
+ }
+}
+
+[2017-06-20 19:06:38.4620][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9023/CMApi/api/basic/config/getsysparam/?usertoken=3cb3ffa5662905dc8c8b0474c8033ef5
+sobeyhive-http-system: INGEST
+sobeyhive-http-site: S1
+sobeyhive-http-tool: INGESTSERVER
+Host: 172.16.168.205:9023
+ORIG_CLIENT_IP: 172.17.0.9
+Connection: close
+
+{"system":"INGEST","tool":"DEFAULT","paramname":"ZookeeperIP","paramvalue":null,"paramvaluedef":null,"paramdescription":null}
+
+[2017-06-20 19:06:38.4981][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "0",
+  "ext": {
+    "paramname": "ZookeeperIP",
+    "paramvalue": "172.16.168.201:2182,172.16.168.202:2182,172.16.168.203:2182",
+    "paramdescription": "ZKBroker address"
+  }
+}
+
+[2017-06-20 19:06:38.5933][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9023/CMApi/api/basic/config/getsysparam/?usertoken=3cb3ffa5662905dc8c8b0474c8033ef5
+sobeyhive-http-system: INGEST
+sobeyhive-http-site: S1
+sobeyhive-http-tool: INGESTSERVER
+Host: 172.16.168.205:9023
+ORIG_CLIENT_IP: 172.17.0.9
+Connection: close
+
+{"system":"INGEST","tool":"DEFAULT","paramname":"MatrialListPath","paramvalue":null,"paramvaluedef":null,"paramdescription":null}
+
+[2017-06-20 19:06:38.6264][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "0",
+  "ext": {
+    "paramname": "MatrialListPath",
+    "paramvalue": "global_sobey_defaultclass/MaterialList",
+    "paramdescription": "ML logical path"
+  }
+}
+
+[2017-06-20 19:06:38.7298][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9023/CMApi/api/basic/config/getsysparam/?usertoken=3cb3ffa5662905dc8c8b0474c8033ef5
+sobeyhive-http-system: INGEST
+sobeyhive-http-site: S1
+sobeyhive-http
+-----------------------------------------------------------------------------------------
+e:\分析日志\2017\2017-05\2017-05-19\QA\201\sobeyhive\logs\cmserver\2017-06-20\WebApi.CMApi_Message.log
+/CMApi/api/entity/metadatcustom/updatetabcustom
+r"
+}
+
+[2017-06-20 19:54:45.6385][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9023/CMApi/api/entity/metadatcustom/updatetabcustom?usertoken=03f292d1307530df54495f166dcef861&ObjType=biz_sobey_video
+sobeyhive-http-site: S1
+sobeyhive-http-system: WEBCM
+sobeyhive-http-tool: WEBCM
+sobeyhive-http-token: 03f292d1307530df54495f166dcef861
+Host: 172.16.168.205:9023
+ORIG_CLIENT_IP: 172.16.168.202
+Connection: close
+
+[{"id":1,"tabid":"8CE78C21D4C74D31A238845DEEF","tabname":"Basic Info","typename":"biz_sobey_video","tabtype":"info","tabdisplayname":"Basic Info","tabvisable":1,"taborder":1,"tabfixed":1,"description":"Basic Info"},{"id":13,"tabid":"463AD7F743734FE1B993A74E682","tabname":"History","typename":"biz_sobey_video","tabtype":"info","tabdisplayname":"History","tabvisable":1,"taborder":2,"tabfixed":1},{"id":7,"tabid":"EAABBD7B2013491FA06866CF6284E482","tabname":"Filing","typename":"biz_sobey_video","tabtype":"info","tabdisplayname":"Filing","tabvisable":1,"taborder":3,"tabfixed":1},{"id":10,"tabid":"A9A7EC5041584692A1C73C17994","tabname":"Marks","typename":"biz_sobey_video","tabtype":"Mark","tabdisplayname":"Marks","tabvisable":1,"taborder":4,"tabfixed":1},{"id":25,"tabid":"D7950E4F39974EFBB4330526CE75C0FC","tabname":"File List","typename":"biz_sobey_video","tabtype":"list","tabdisplayname":"File List","tabvisable":1,"taborder":5,"tabfixed":1},{"id":4,"tabid":"EDF5225002BC4BCE826D4C215E4","tabname":"Planning","typename":"biz_sobey_video","tabtype":"info","tabdisplayname":"Planning","tabvisable":1,"taborder":6,"tabfixed":1,"description":"Planning"},{"id":16,"tabid":"1065F8DD75024540862059C3B57","tabname":"Rights","typename":"biz_sobey_video","tabtype":"info","tabdisplayname":"Rights","tabvisable":1,"taborder":7,"tabfixed":1},{"id":19,"tabid":"586DB28BE6904CBAB94F99CCFF1","tabname":"Original Metadata","typename":"biz_sobey_video","tabtype":"info","tabdisplayname":"Original Metadata","tabvisable":1,"taborder":8,"tabfixed":1},{"id":22,"tabid":"E8EF5208BD114FA5
+-----------------------------------------------------------------------------------------
+e:\分析日志\2017\2017-05\2017-05-19\QA\203\sobeyhive\logs\cmserver\2017-06-26\WebApi.CMApi_Message.log
+/CMApi/api/basic/config/getuserparam/
+ }
+}
+
+[2017-06-26 19:17:33.7424][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9023/CMApi/api/basic/config/getuserparam/?usertoken=5205b1b944dad8b22418949738d965ef
+Host: 172.16.168.205:9023
+ORIG_CLIENT_IP: 172.17.0.6
+Connection: close
+
+{"loginname":null,"system":"INGEST","tool":"DEFAULT","paramname":"HIGH_RESOLUTION","paramvalue":null,"paramvaluedef":null,"paramdescription":null}
+
+[2017-06-26 19:17:33.9539][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "0",
+  "ext": {
+    "paramname": "HIGH_RESOLUTION",
+    "paramvalue": "2",
+    "paramdescription": "Capture Parameter"
+  }
+}
+
+[2017-06-26 19:17:35.2860][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9023/CMApi/api/basic/config/getsysparam?usertoken=5205b1b944dad8b22418949738d965ef
+User-Agent: User-Agent
+sobeyhive-http-system: INGEST
+sobeyhive-http-site: S1
+sobeyhive-http-tool: INGESTCLIENT
+Host: 172.16.168.205:9023
+ORIG_CLIENT_IP: 172.16.147.13
+Connection: close
+
+{
+   "paramname" : "DEFAULT_CATALOG",
+   "system" : "INGEST",
+   "tool" : "DEFAULT"
+}
+
+
+[2017-06-26 19:17:35.3562][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "0",
+  "ext": {
+    "paramname": "DEFAULT_CATALOG",
+    "paramvalue": "\\\\Public Material\\Ingest",
+    "paramdescription": "Default Catalog"
+  }
+}
+
+[2017-06-26 19:17:36.8071][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.168.205:9023/CMApi/api/basic/account/getuserinfocurrent?usertoken=
+sobeyhive-http-system: JOVE
+sobeyhive-http-site: S1
+sobeyhive-http-tool: JOVE
+Host: 172.16.168.205:9023
+ORIG_CLIENT_IP: 172.17.0.16
+Connection: close
+
+
+[2017-06-26 19:17:36.8138][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin
+-----------------------------------------------------------------------------------------
+e:\分析日志\2017\2017-05\2017-05-19\QA\47\2017-04-26\WebApi.CMApi_Message.log
+/CMApi/api/entity/notify/notifyupdates
+
+
+
+[2017-04-26 18:21:15.5833][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9037/CMApi/api/entity/notify/notifyupdates
+Connection: close
+Accept: application/jsontext/htmltext/plainapplication/octet-streamtext/htmltext/plainapplication/octet-streamapplication/vnd.lotus-organizerapplication/jsonapplication/*+json
+Accept-Charset: utf-8
+Accept-Encoding: gzipdeflate
+Host: 172.16.168.205:9037
+User-Agent: Apache-HttpClient/4.4.1(Java/1.8.0_111)
+
+{"EMSG":{"content":{"identifiers":{"contentId_":"21854ab20d7b4095a64a8f5af8af5654"},"tree_":["global_sobey_defaultclass/MaterialList/In House"],"createDate_":"2017-04-26 18:21:25","copyFrom_":null,"type_":"biz_sobey_program","entityData":{"template":{},"note":"","createdate":"2017-04-26 18:21:38","usedflag":0,"program":{"projectdata":"{\"id\":\"27FEA17AEBDB9656CEEA266C495346DC\",\"version\":\"jove2\",\"url\":[\"#t=\",\"238\"],\"duration\":238,\"framerate\":25,\"sizes\":\"16:9\",\"videoSizes\":{\"x\":0,\"width\":1,\"transCodeType\":16,\"scale\":\"16:9\"},\"markPoints\":[],\"inout\":{\"inPoint\":null,\"outPoint\":null},\"resources\":[{\"ObjectID\":52647,\"ObjectGUID\":\"106414daf9884b3a9bb941358d3def89\",\"ObjectType\":32,\"SubType\":1,\"FolderID\":28051,\"ObjectName\":\"\",\"IconFrame\":2,\"IconFileName\":\"\\\\\\\\172.16.168.202\\\\hivefiles\\\\sobeyhive\\\\bucket-k\\\\u20017\\\\keyframes\\\\biz_sobey_video\\\\2017\\\\04\\\\26\\\\41c3893473814c4ab25162f3da4da41a_videogroup_220_123_0.jpg\",\"Length\":58058000,\"TrimIn\":0,\"TrimOut\":58058000,\"CreatorID\":\"d72ca3af5eab480ca106669de229b28f\",\"CreateDate\":\"2017-04-26 12:02:06\",\"Files\":[{\"Length\":1916800000,\"MediaChannel\":1,\"FileSize\":32562134,\"FormatID\":\"275\",\"ClipID\":52647,\"QualityType\":0,\"ClipClass\":1,\"FilePath\":\"\\\\\\\\172.16.168.202\\\\hivefiles\\\\sobeyhive\\\\bucket-z\\\\u20011\\\\a2376420c3f44932b26444be2270316e\\\\37855e1bba90d481af707803a1f0ac78myfly.mp4\",\"ClipIn\":0,\"ClipOut\":1916800000,\"FileIn\":0,\"FileOut\":1916
+-----------------------------------------------------------------------------------------
+e:\分析日志\2017\2017-05\2017-05-19\QA\47\2017-05-31\WebApi.CMApi_Message.log
+/CMApi/api/entity/program/autoPackege
+t
+
+
+[2017-05-31 16:50:09.2423][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://hive.sobey.com:9037/CMApi/api/entity/program/autoPackege?userToken=4130b39375361486bb31d753d284e09e&clipGuid=be1b63e0f57546c689c7c1e11393f893&edlGuid=8e94ba280c91cec45b35e2e5453ac2f3&entityName=222&folderPath=global_sobey_defaultclass%2FMaterialList%2FPublic Material%2FAutoPackage&siteCode=
+sobeyhive-http-site: S1
+sobeyhive-http-system: WEBCM
+sobeyhive-http-tool: WEBCM
+sobeyhive-http-token: 4130b39375361486bb31d753d284e09e
+ORIG_CLIENT_IP: 172.16.147.21
+Connection: close
+Host: hive.sobey.com:9037
+
+
+[2017-05-31 16:50:14.0471][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.148.47:9022/CMApi/api/basic/account/testconnect
+
+
+[2017-05-31 16:50:14.5463][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9037/CMApi/api/entity/notify/notifyupdates
+ORIG_CLIENT_IP: 172.16.168.202
+Connection: close
+Accept: application/jsontext/htmltext/plainapplication/octet-streamtext/htmltext/plainapplication/octet-streamapplication/vnd.lotus-organizerapplication/jsonapplication/*+json
+Accept-Charset: utf-8
+Accept-Encoding: gzipdeflate
+Host: 172.16.168.205:9037
+User-Agent: Apache-HttpClient/4.4.1(Java/1.8.0_111)
+
+{"EMSG":{"content":{"identifiers":{"contentId_":"77d67a6d36534c368bdb6c07559b40fb"},"tree_":["global_sobey_defaultclass/MaterialList/Public Material/AutoPackage"],"createDate_":"2017-05-31 16:50:19","copyFrom_":null,"type_":"biz_sobey_video","entityData":{"template":{},"cd":{},"ingesttask":{},"original":{},"program":{},"type":"clip","edl":{},"privilege_":"public_S1","name_":"222","contentId_":"77d67a6d36534c368bdb6c07559b40fb","planning":{},"lastUpdate_":{"site":"S1","system":"WEBCM","region":"DefaultRegion","user":"dce0c9f8be4c461fa29dd9363e71469a","timestamp":"2017-05-31 16:50:19.838"},"subtype":"av","tree_":["Daabaaaaam007"],"createDate_":"2017-05-31 16:50:19","id":782944,"collectiontime":"0001-01-01 00:00:00","event":{},"clip":{"capturestatus":1},"type_":"biz_s
+-----------------------------------------------------------------------------------------
+e:\分析日志\2017\2017-05\2017-05-19\QA\47\2017-06-06\WebApi.CMApi_Message.log
+/CMApi/api/entity/program/getpgmcensorinfo
+t
+
+
+[2017-06-06 14:43:28.9865][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.168.205:9037/CMApi/api/entity/program/getpgmcensorinfo?pgmguid=1b9a88bd2291d35a5ac75e2c680da58c&lCensorType=2
+Upgrade-Insecure-Requests: 1
+ORIG_CLIENT_IP: 172.16.146.5
+Connection: close
+Accept: text/htmlapplication/xhtml+xmlapplication/xml; q=0.9image/webp*/*; q=0.8
+Accept-Encoding: gzipdeflatesdch
+Accept-Language: zh-CNzh; q=0.8
+Host: 172.16.168.205:9037
+User-Agent: Mozilla/5.0(Windows NT 10.0; WOW64)AppleWebKit/537.36(KHTML, like Gecko)Chrome/55.0.2883.87Safari/537.36
+
+
+[2017-06-06 14:43:29.2517][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.148.47:9022/CMApi/api/basic/account/testconnect
+
+
+[2017-06-06 14:43:30.4841][TRACE][WebApi.CMApi_Message] 收到请求：
+POST http://172.16.168.205:9037/CMApi/api/entity/notify/notifyupdates
+ORIG_CLIENT_IP: 172.16.168.202
+Connection: close
+Accept: application/jsontext/htmltext/plainapplication/octet-streamtext/htmltext/plainapplication/octet-streamapplication/vnd.lotus-organizerapplication/jsonapplication/*+json
+Accept-Charset: utf-8
+Accept-Encoding: gzipdeflate
+Host: 172.16.168.205:9037
+User-Agent: Apache-HttpClient/4.4.1(Java/1.8.0_111)
+
+{"EMSG":{"content":{"metadata":{"metadata":[{"note":"att","creator":"816bfc97e5494ed6a4f6c2c3031281d9","iconfilename":"\\\\172.16.168.202\\hivefiles\\sobeyhive\\bucket-z\\u20002\\clipiconpath\\2017-06-01\\99cbfab883d24e5385ed768cc3784f25-414.bmp","color":5263597,"inpoint":414,"type":"loggingmark","markextendinfo":[{"itemid":0,"itemvalue":[{"itemvalue":"","languageid":0}],"itemtype":0,"itemname":"Title"}],"outpoint":1,"markguid":"b78c32eda7944ff79213411c0f771e12","guid_":"b78c32eda7944ff79213411c0f771e12","iconframe":244,"startframe":0,"objectguid":"99cbfab883d24e5385ed768cc3784f25"}],"name":null,"type":"model_sobey_object_markmeta"},"contentId_":"99cbfab883d24e5385ed768cc3784f25"},"op":{"region":"DefaultRegion","site":"S1","system":"INGEST","time":"2017-06-06 14:43:31","user":"816bf
+-----------------------------------------------------------------------------------------
+e:\分析日志\2017\2017-05\2017-05-19\QA\47\2017-06-06\WebApi.CMApi_Message.log
+/CMApi/api/entity/program/savepgmcensorinfo
+t
+
+
+[2017-06-06 14:35:19.4264][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.168.205:9037/CMApi/api/entity/program/savepgmcensorinfo
+Upgrade-Insecure-Requests: 1
+ORIG_CLIENT_IP: 172.16.146.5
+Connection: close
+Accept: text/htmlapplication/xhtml+xmlapplication/xml; q=0.9image/webp*/*; q=0.8
+Accept-Encoding: gzipdeflatesdch
+Accept-Language: zh-CNzh; q=0.8
+Host: 172.16.168.205:9037
+User-Agent: Mozilla/5.0(Windows NT 10.0; WOW64)AppleWebKit/537.36(KHTML, like Gecko)Chrome/55.0.2883.87Safari/537.36
+
+
+[2017-06-06 14:35:19.6136][ERROR][WebApi.CMApi_Message] 处理请求时发生异常：http://172.16.168.205:9037/CMApi/api/entity/program/savepgmcensorinfo:
+Message:The requested resource does not support http method 'GET'.
+
+[2017-06-06 14:35:19.6292][ERROR][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "message": "The requested resource does not support http method 'GET'."
+}
+
+[2017-06-06 14:35:29.4105][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.148.47:9022/CMApi/api/basic/account/testconnect
+
+
+[2017-06-06 14:35:33.7629][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.148.47:9022/CMApi/api/basic/account/testconnect
+
+
+[2017-06-06 14:35:42.7173][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.148.47:9022/CMApi/api/basic/account/testconnect
+
+
+[2017-06-06 14:35:54.8073][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.148.47:9022/CMApi/api/basic/account/testconnect
+
+
+[2017-06-06 14:35:55.1973][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.148.47:9022/CMApi/api/basic/account/testconnect
+
+
+[2017-06-06 14:36:03.7773][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.148.47:9022/CMApi/api/basic/account/testconnect
+
+
+[2017-06-06 14:36:11.6709][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.16.148.47:9022/CMApi/api/basic/account/testconnect
+
+
+[2017-06-06 14

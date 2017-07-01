@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <style type="text/css">
+        *{padding: 0px;margin:0px;}
+        .droppable{
+            background: yellow;
+        }
+        .dnd{margin:20px;border:2px solid blue;padding: 20px;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var lists = document.getElementsByTagName('ul');
+            var regexp = /\bdnd\b/;
+            for (var i=0;i<lists.length;i++)
+                if (regexp.test(lists[i].className)) dnd(lists[i]);
+            function dnd(list){
+                var original_class = list.className;
+                var entered = 0;
+                list.ondragenter = function(e){
+                    e =  window.event;
+                    var from = e.relatedTarget;
+                    entered++;
+                    if ((from &&!isChild(from,list)) || entered ==1) {
+                        var dt = e.dataTransfer;
+                        var types = dt.types;
+                        if (!types ||(types.contains&&types.contains("text/plain"))||(types.indexOf &&types.indexOf("text/plain")!=-1)) {
+                            list.className = original_class + " droppable";
+                            return false;
+                        }
+                        return;
+                    }
+                    return false;
+                };
+                list.ondragover = function(e){return false;}
+
+                list.ondragleave = function(e){
+                    e =  window.event;
+                    var to = e.relatedTarget;
+                    entered--;
+                    if (to && !isChild(to,list) || entered <= 0) {
+                        list.className = original_class;
+                        entered = 0;
+                    }
+                    return false;
+                };
+
+                list.ondrop = function(e){
+                    e =  window.event;
+                    var dt = e.dataTransfer;
+                    var text = dt.getData("Text");
+                    if (text) {
+                        var item = document.createElement("li");
+                        item.draggable = true;
+                        item.appendChild(document.createTextNode(text));
+                        list.appendChild(item);
+                        list.className = original_class;
+                        entered = 0;
+                        return false;
+                    }
+                };
+
+                var items = list.getElementsByTagName("li");
+                for (var i=0;i<items.length;i++) 
+                    items[i].draggable = true;
+                list.ondragstart = function(e){
+                    var e =  window.event;
+                    var target = e.target || e.srcElemnt;
+                    if (target.tagName !=="LI") return false;
+                    var dt = e.dataTransfer;
+                    dt.setData("Text", target.innerText || target.textContent);
+                    dt.effectAllowed = "move";
+                };
+
+                list.ondragend = function(e){
+                    e =  window.event;
+                    var target = e.target || e.srcElemnt;
+                    if (e.dataTransfer.dropEffect ==="move") target.parentNode.removeChild(target);
+                }
+
+                function isChild(a,b){
+                    for(; a; a = a.parentNode) if (a === b) return true;
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul class="dnd">
+        <li>测试测试测试测试-1</li>
+        <li>测试测试测试测试-2</li>
+        <li>测试测试测试测试-3</li>
+        <li>测试测试测试测试-4</li>
+    </ul>
+    <ul class="dnd">
+        <li>测试测试测试测试-5</li>
+        <li>测试测试测试测试-6</li>
+        <li>测试测试测试测试-7</li>
+        <li>测试测试测试测试-8</li>
+    </ul>
+    <ul class="dnd">
+        <li>测试测试测试测试-9</li>
+        <li>测试测试测试测试-10</li>
+        <li>测试测试测试测试-11</li>
+        <li>测试测试测试测试-12</li>
+    </ul>
+</body>
+</html>
