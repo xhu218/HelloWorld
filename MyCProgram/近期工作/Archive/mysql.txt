@@ -1,0 +1,161 @@
+
+--STEP 1 remove high file from diskfileinst
+
+delete from dcm_diskfileinst
+ where instanceid in
+       (select instanceid
+          from dcm_diskfileinst t
+         where instanceid in
+               (select INSTANCEID
+                  from dcm_peentity_instance t
+                 where t.physicalentityid in
+                       (select id
+                          from dcm_physicalentity t
+                         where t.logicentityid in (select entityid
+                                                     from dcm_entityclip t
+                                                    where t.clipguid =
+                                                          '0b0f9a864e894041b6ca8e8a94239f5c'
+                                                   
+                                                   )
+                           AND filegroupid = 100)
+                   AND KEEPERTYPE = 'DISKFILE'
+                UNION
+                select KEEPERID
+                  from dcm_peentity_instance t
+                 where t.physicalentityid in
+                       (select id
+                          from dcm_physicalentity t
+                         where t.logicentityid in (select entityid
+                                                     from dcm_entityclip t
+                                                    where t.clipguid =
+                                                          '0b0f9a864e894041b6ca8e8a94239f5c'
+                                                   
+                                                   )
+                           and filegroupid = 100)
+                   AND KEEPERTYPE = 'DISKFILE')
+           and t.path like '%ArchiveOnline%');
+
+commit;
+
+--STEP2 remove high file in PE
+
+DELETE FROM dcm_peentity_instance
+ WHERE keeperid IN
+       (
+        
+        select keeperid
+          from dcm_peentity_instance t
+         where t.physicalentityid in
+               (select id
+                  from dcm_physicalentity t
+                 where t.logicentityid in
+                       (select entityid
+                          from dcm_entityclip t
+                         where t.clipguid = '0b0f9a864e894041b6ca8e8a94239f5c'
+                        
+                        )
+                   AND filegroupid = 100)
+           AND KEEPERTYPE = 'DISKFILE'
+           AND keeperid not in
+               (
+                
+                select instanceid
+                  from dcm_diskfileinst t
+                 where instanceid in
+                       (select INSTANCEID
+                          from dcm_peentity_instance t
+                         where t.physicalentityid in
+                               (select id
+                                  from dcm_physicalentity t
+                                 where t.logicentityid in (select entityid
+                                                             from dcm_entityclip t
+                                                            where t.clipguid =
+                                                                  '0b0f9a864e894041b6ca8e8a94239f5c'
+                                                           
+                                                           )
+                                   AND filegroupid = 100)
+                           AND KEEPERTYPE = 'DISKFILE'
+                        UNION
+                        select KEEPERID
+                          from dcm_peentity_instance t
+                         where t.physicalentityid in
+                               (select id
+                                  from dcm_physicalentity t
+                                 where t.logicentityid in (select entityid
+                                                             from dcm_entityclip t
+                                                            where t.clipguid =
+                                                                  '0b0f9a864e894041b6ca8e8a94239f5c'
+                                                           
+                                                           )
+                                   and filegroupid = 100)
+                           AND KEEPERTYPE = 'DISKFILE')));
+
+commit;
+
+--STEP 3  correct low file with mxf
+
+select t.rowid, t.*
+  from dcm_diskfileinst t
+ where instanceid in
+       (select INSTANCEID
+          from dcm_peentity_instance t
+         where t.physicalentityid in
+               (select id
+                  from dcm_physicalentity t
+                 where t.logicentityid in
+                       (select entityid
+                          from dcm_entityclip t
+                         where t.clipguid = '0b0f9a864e894041b6ca8e8a94239f5c'
+                        
+                        )
+                   and filegroupid = 101)
+           AND (KEEPERTYPE = 'DISKFILE' or KEEPERTYPE = 'DEVICE')
+        UNION
+        select KEEPERID
+          from dcm_peentity_instance t
+         where t.physicalentityid in
+               (select id
+                  from dcm_physicalentity t
+                 where t.logicentityid in
+                       (select entityid
+                          from dcm_entityclip t
+                         where t.clipguid = '0b0f9a864e894041b6ca8e8a94239f5c'
+                        
+                        )
+                   and filegroupid = 101)
+           AND (KEEPERTYPE = 'DISKFILE' or KEEPERTYPE = 'DEVICE'))
+   and t.path like '%ArchiveOnline%';
+
+ 
+
+--step 4 modify filetype and filegrouptype
+
+update dcm_physicalentity t
+   set filegroupid = 102
+ where t.logicentityid in
+       (select entityid
+          from dcm_entityclip t
+         where t.clipguid = '0b0f9a864e894041b6ca8e8a94239f5c'
+        
+        )
+   and filegroupid = 100;
+update dcm_physicalentity t
+   set filetypeid = 131
+ where t.logicentityid in
+       (select entityid
+          from dcm_entityclip t
+         where t.clipguid = '0b0f9a864e894041b6ca8e8a94239f5c'
+        
+        )
+   and filetypeid = 1001;
+commit;
+
+--to view
+
+select * from dcm_physicalentity t where t.logicentityid = 110206;
+select t.*
+  from dcm_physicalentity t
+ where t.logicentityid =
+       (select entityid
+          from dcm_entityclip t
+         where t.clipguid = '0b0f9a864e894041b6ca8e8a94239f5c');
