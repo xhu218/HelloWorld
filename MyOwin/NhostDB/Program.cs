@@ -13,31 +13,137 @@ namespace NhostDB
     {
         static void Main(string[] args)
         {
-            DatabaseConfiguration config = new DatabaseConfiguration
-            {
-                 DatabaseType = DatabaseType.MySql,
-                    Encoding = "utf8",
-                     DatabaseName = "mldb",
-                      Username = "mldba",
-                       Password = "sobeydba",
-                        DatabaseServer = "172.16.168.205",
-                        Pooling=true,
-                 MaximumPoolSize = 10
-
-               
-            };
-
-       
-            Database  db = DatabaseHelper.CreateDatabase(config);
-
-            SmmUserlogininfoTable user = new SmmUserlogininfoTable(db);
-            var x = user.Login();
-            Console.WriteLine(x.ToString());
+            //TestGen2SmmUserLoginInfo();
+            TestSelfTab1Info();
             Console.Read();
 
 
         }
+
+
+
+        private static void TestSelfTab1Info()
+        {
+            DatabaseConfiguration config = new DatabaseConfiguration
+            {
+                DatabaseType = DatabaseType.MySql,
+                Encoding = "ascii",
+                DatabaseName = "mydatabase",
+                Username = "mysql",
+                Password = "mysql",
+                DatabaseServer = "centos1",
+                Pooling = true,
+                MaximumPoolSize = 10,
+                 
+
+
+            };
+
+
+            Database db = DatabaseHelper.CreateDatabase(config);
+
+            tab1Table user = new tab1Table(db);
+
+            var x = user.Login();
+            Console.WriteLine(String.Format("Current Date Count is :{0} ", x.ToString()));
+
+            Console.WriteLine(String.Format("the add fun result is :{0}", user.Add()));
+
+            Console.WriteLine(String.Format("Current Date Count is :{0} ", user.Login().ToString()));
+        }
+
+        private static void TestGen2SmmUserLoginInfo()
+        {
+            DatabaseConfiguration config = new DatabaseConfiguration
+            {
+                DatabaseType = DatabaseType.MySql,
+                Encoding = "utf8",
+                DatabaseName = "mldb",
+                Username = "mldba",
+                Password = "sobeydba",
+                DatabaseServer = "172.16.168.205",
+                Pooling = true,
+                MaximumPoolSize = 10
+
+
+            };
+
+
+            Database db = DatabaseHelper.CreateDatabase(config);
+
+            SmmUserlogininfoTable user = new SmmUserlogininfoTable(db);
+
+            var x = user.Login();
+            Console.WriteLine(String.Format("Current Date Count is :{0} ", x.ToString()));
+
+            Console.WriteLine(String.Format("the add fun result is :{0}", user.Add()));
+
+            Console.WriteLine(String.Format("Current Date Count is :{0} ", user.Login().ToString()));
+        }
     }
+
+
+    public class tab1
+    {
+        public int id { get; set; }
+        public DateTime dt { get; set; }
+        public String t2 { get; set; }
+
+    }
+
+    public class tab1Table : TableRepositoryBase<tab1>
+    {
+        public tab1Table(Database db) :
+            base(db, "tab1")
+        {
+
+        }
+
+        protected override IDataRowMapContext<tab1> MappingColumn()
+        {
+            return MapAllProperties().PrimaryKey(x => x.id);
+
+        }
+
+        public int Add()
+        {
+            return this.Add(new tab1
+            {
+                dt = DateTime.Now,
+                t2 = "hello1"
+            });
+
+        }
+
+
+
+
+        public long Login()
+        {
+
+            try
+            {
+                var loginObjs = from l in this.AsQueryable()
+
+                                select l;
+                return loginObjs.ToList().LongCount();
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+    }
+
+
+
+
 
     public class SmmUserlogininfo
     {
@@ -105,6 +211,24 @@ namespace NhostDB
                 
         }
 
+        public int Add()
+        {
+            return this.Add(new SmmUserlogininfo{ 
+                loginip = "127.0.0.1", 
+                loginname = "wfg",
+                loginpwd = "wfg",
+                loginsubsystem = "ML",
+                logintime = DateTime.Now,
+                newrefreshtime = DateTime.Now,
+                pwdchangetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fff"),
+                usercode = "WFG",
+                userid = 111,
+                windowname = "localhost",
+                usertoken = Guid.NewGuid().ToString("n")
+            });
+            
+        }
+
 
 
         public long  Login()
@@ -116,6 +240,8 @@ namespace NhostDB
                                 
                                 select l;
                 return  loginObjs.ToList().LongCount();
+
+               
 
 
             }
