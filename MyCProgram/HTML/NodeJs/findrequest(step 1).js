@@ -4,9 +4,14 @@
 */
 
 var fs = require('fs');
+var sd = require('silly-datetime');
+
+
 var postmanpath = "E:\\Work\\GitHub\\HTML\\NodeJs\\CMAPI.postman_collection.json";
 var requesturlpath = "E:\\Work\\GitHub\\HTML\\NodeJs\\request.url";
-var rpt = "E:\\Work\\GitHub\\HTML\\NodeJs\\result.txt";
+
+var time=sd.format(new Date(), 'YYYY-MM-DD HH-mm');
+var rpt = "E:\\Work\\GitHub\\HTML\\NodeJs\\result\\url" + time + ".txt";
 
 function findString(lookingForString, data) {
     var exc = new RegExp(lookingForString);

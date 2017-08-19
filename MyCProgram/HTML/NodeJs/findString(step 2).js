@@ -1,42 +1,37 @@
 var fs = require('fs');
 var fs_rpt = require("fs");
 var readline = require('readline');
-var rpt = "E:\\Work\\GitHub\\HTML\\NodeJs\\result.txt";
+
+var fs = require('fs');
+var sd = require('silly-datetime');
+var time=sd.format(new Date(), 'YYYY-MM-DD HH-mm');
+
+var rpt = "E:\\Work\\GitHub\\HTML\\NodeJs\\result\\rpt"+time+".txt";
 
 var root_path = "e:\\分析日志\\2017\\2017-05\\2017-05-19\\QA";
 var searchString = 
 [
 { "url": "/CMApi/api/basic/account/testconnect","file":""},
 { "url": "/CMApi/api/entity/notify/notifyupdates","file":""},
-{ "url": "/CMApi/api/basic/account/getcurrentuserinfo","file":""},
-{ "url": "/CMApi/api/basic/config/getsysparam/","file":""},
-{ "url": "/CMApi/api/basic/config/getuserparam/","file":""},
-{ "url": "/CMApi/api/basic/config/setuserparam","file":""},
-{ "url": "/CMApi/api/entity/clip/clipstorestr","file":""},
-{ "url": "/CMApi/api/entity/program/getpgmcensorinfo","file":""},
-{ "url": "/CMApi/api/entity/program/savepgmcensorinfo","file":""},
-{ "url": "/CMApi/api/sns/presnspublish","file":""},
-{ "url": "/CMApi/api/entity/process/movementcreatenewclip","file":""},
-{ "url": "/CMApi/api/entity/metadatcustom/getcustomfielddetails","file":""},
-{ "url": "/CMApi/api/basic/account/getuserextendattributes/20040","file":""},
-{ "url": "/CMApi/api/basic/account/adduserextendattributes/1","file":""},
-{ "url": "/CMApi/api/entity/metadatcustom/updatetabcustom","file":""},
-{ "url": "/CMApi/api/basic/account/deletealluserextendattributes/1","file":""},
-{ "url": "/CMApi/api/basic/account/deleteuserextendattributes/1/23275","file":""},
-{ "url": "/CMApi/api/basic/account/updateuserextendattributes/1","file":""},
-{ "url": "/CMApi/api/basic/account/getuserextendattributes/1","file":""},
-{ "url": "/CMApi/api/basic/account/getuserextendattributes/20067","file":""},
-{ "url": "/CMApi/api/entity/commongw/savesite","file":""},
-{ "url": "/CMApi/api/entity/process/archivingmovement","file":""},
-{ "url": "/CMApi/api/basic/account/deleteuserextendattributes/1/24776","file":""},
-{ "url": "/CMApi/api/basic/account/deleteuserextendattributes/1/24786","file":""},
-{ "url": "/CMApi/api/basic/account/deleteuserextendattributes/1/24780","file":""},
 { "url": "/CMApi/api/entity/entityrest/getfileformatinfo","file":""},
-{ "url": "/CMApi/api/basic/account/deleteuserextendattributes/1/24788","file":""},
-{ "url": "/CMApi/api/entity/program/autoPackege","file":""},
-{ "url": "/CMApi/api/entity/program/getPremiereExportPath","file":""},
+{ "url": "/CMApi/api/basic/config/setuserparam","file":""},
+{ "url": "/CMApi/api/basic/config/getuserparam","file":""},
+{ "url": "/CMApi/api/entity/program/savepgmcensorinfo","file":""},
+{ "url": "/CMApi/api/entity/clip/clipstorestr","file":""},
+{ "url": "/CMApi/api/entity/process/movementcreatenewclip","file":""},
 { "url": "/CMApi/api/entity/object/getmosidfromclipguid","file":""},
-{ "url": "/CMApi/api/entity/user/getrightusergroupdetail","file":""}
+{ "url": "/CMApi/api/basic/account/adduserextendattributes/1","file":""},
+{ "url": "/CMApi/api/basic/account/getuserextendattributes/20040","file":""},
+{ "url": "/CMApi/api/basic/account/getuserextendattributes/20067","file":""},
+{ "url": "/CMApi/api/basic/account/deleteuserextendattributes/1/23275","file":""},
+{ "url": "/CMApi/api/sns/presnspublish","file":""},
+{ "url": "/CMApi/api/basic/account/deleteuserextendattributes/1/24788","file":""},
+{ "url": "/CMApi/api/basic/account/getuserextendattributes/1","file":""},
+{ "url": "/CMApi/api/basic/account/updateuserextendattributes/1","file":""},
+{ "url": "/CMApi/api/entity/metadatcustom/getcustomfielddetails","file":""},
+{ "url": "/CMApi/api/entity/process/archivingmovement","file":""},
+{ "url": "/CMApi/api/entity/program/getPremiereExportPath","file":""}
+
 ];
 
 
