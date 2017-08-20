@@ -1,0 +1,1510 @@
+#cd /etc/haproxy/
+#touch haproxy.cfg
+#vi /etc/haproxy/haproxy.cfg
+
+global
+    stats socket  /tmp/haproxy level admin #echo "show info" | sudo socat stdio unix-connect:/tmp/haproxy 
+    log 127.0.0.1   local0 notice ##记日志的功能
+    maxconn 64000
+    tune.maxaccept 512 
+    tune.maxpollevents 512 
+    tune.maxrewrite 1024 
+    chroot    /var/lib/haproxy
+    user        haproxy 
+    group        haproxy
+    daemon 
+    nbproc    1   
+    pidfile    /var/run/haproxy.pid 
+    log-send-hostname
+    spread-checks 50
+    node hivenode02
+ 
+defaults 
+    log        global 
+    mode http
+    option   httplog 
+    option    dontlognull
+    retries    3
+    option    redispatch #当serverId对应的服务器挂掉后，强制定向到其他健康的服务器
+    retries    3
+    balance  source
+    maxconn    64000 
+    timeout connect 10s
+    #下面两个超时不要配置到默认参数中，超时过短可能导致mysql的tcp链接断开，不配置则默认无超时 
+    #timeout client 120s    #客户端超时 
+    #timeout server 120s    #服务器超时 
+ 
+listen  Admin_status:48800 *:48800 ##VIP 
+    stats uri /admin-status        ##统计页面
+    stats auth  admin:admin
+    mode    http 
+    option  httplog
+    stats hide-version              #隐藏统计页面上HAProxy的版本信息 
+    option    httpclose
+    stats refresh 30s               #统计页面自动刷新时间
+    #stats    admin if TRUE
+    timeout connect    10s 
+    timeout server    10s 
+    timeout client    10s  
+    server    hivenode01 hivenode01:22 check   inter 30s rise 2 fall 2 weight 1 
+    server    hivenode02 hivenode02:22 check   inter 30s rise 2 fall 2 weight 1 
+    server    hivenode03 hivenode03:22 check   inter 30s rise 2 fall 2 weight 1 
+
+#################HAProxy的日志记录内容设置###################
+    capture request header Host len 40
+    capture request header Content-Length len 10
+    capture request header Referer len 200
+    capture response header Server len 40
+    capture response header Content-Length len 10
+    capture response header Cache-Control len 8 
+
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+ 
+##转发到zookeeper的2181端口，即zookeeper的服务端口
+listen   ZooKeeper:2182 *:2182
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+      option httpchk OPTIONS * HTTP/1.1\r\nHost:\ www
+      balance roundrobin 
+      server    ZooKeeper_hivenode01 hivenode01:2181 check port 49997 inter 15s rise 2 fall 2 weight 1 
+      server    ZooKeeper_hivenode02 hivenode02:2181 check port 49997 inter 15s rise 2 fall 2 weight 1 
+      server    ZooKeeper_hivenode03 hivenode03:2181 check port 49997 inter 15s rise 2 fall 2 weight 1 
+ 
+listen    Mysql:3307 *:3307 ##转发到mysql的3306端口，即mysql的服务端口 
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    option httpchk OPTIONS * HTTP/1.1\r\nHost:\ www
+    balance  roundrobin 
+    server    MySQL_hivenode01 hivenode01:3306 check port 49999 inter 8s rise 2 fall 2 weight 1 
+    server    MySQL_hivenode02 hivenode02:3306 check port 49999 inter 8s rise 2 fall 2 weight 1 
+    server    MySQL_hivenode03 hivenode03:3306 check port 49999 inter 8s rise 2 fall 2 weight 1 
+######################################################257
+ 
+listen    Mongodb:27019 *:27019 ##转发到mongodb的27017、27018端口，即mongodb的服务端口 
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    option httpchk OPTIONS * HTTP/1.1\r\nHost:\ www
+    balance roundrobin 
+    server    Mongodb_hivenode01 hivenode01:27017 check port 49995 inter 30s rise 2 fall 2 weight 100 
+    server    Mongodb_hivenode02 hivenode02:27017 check port 49995 inter 30s rise 2 fall 2 weight 100 
+    server    Mongodb_hivenode03 hivenode03:27017 check port 49995 inter 30s rise 2 fall 2 weight 100 
+ 
+#Codis只是为了监控是否启动，没有负载的功能 
+listen    Codis_Proxy:6307 *:6307 
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    server    Codis_Proxy_hivenode01 hivenode01:6377 check inter 30s rise 2 fall 2 weight 1 
+    server    Codis_Proxy_hivenode02 hivenode02:6377 check inter 30s rise 2 fall 2 weight 1 
+    server    Codis_Proxy_hivenode03 hivenode03:6377 check inter 30s rise 2 fall 2 weight 1 
+ 
+#Eagles  check 
+listen   Eagles:9121 *:9121
+    #http 通用设置
+    mode    http
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    balance    source
+    option forwardfor header ORIG_CLIENT_IP
+    #option forwardfor header Client-IP
+    option    redispatch
+    retries    3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout server          30s
+    timeout client          30s
+    timeout http-keep-alive 2s
+    timeout check           5s
+    cookie SERVERID insert indirect nocache
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+    option    httpchk GET /_cluster/health 
+    server    Eagles_hivenode01 hivenode01:17100  check inter 10s rise 2 fall 2 
+    server    Eagles_hivenode02 hivenode02:17100  check inter 10s rise 2 fall 2 
+    server    Eagles_hivenode03 hivenode03:17100  check inter 10s rise 2 fall 2 
+ 
+#Nump   check 
+listen   Nump:10056 *:10056
+    #http 通用设置
+    mode    http
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    balance    source
+    option forwardfor header ORIG_CLIENT_IP
+    #option forwardfor header Client-IP
+    option    redispatch
+    retries    3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout server          30s
+    timeout client          30s
+    timeout http-keep-alive 2s
+    timeout check           5s
+    cookie SERVERID insert indirect nocache
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+    option    httpchk GET /nump/ 
+    server    Nump_hivenode01 hivenode01:10057  check inter 15s rise 2 fall 2 
+    server    Nump_hivenode02 hivenode02:10057  check inter 15s rise 2 fall 2 
+    server    Nump_hivenode03 hivenode03:10057  check inter 15s rise 2 fall 2 
+ 
+frontend Public:88
+    bind  *:88 
+    mode  http 
+    log        global 
+    option        httplog
+    option          dontlognull
+    option    forwardfor except 127.0.0.1
+    option        httpclose
+    monitor-uri    /monitoruri
+    #http 通用设置
+    mode    http
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    #option forwardfor header ORIG_CLIENT_IP
+    #option forwardfor header Client-IP
+    timeout http-request    10s
+    timeout client          30s
+    timeout http-keep-alive 2s
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http 
+
+ 
+ 
+    # Host: will use a specific keyword soon 
+    #use_backend    ^Host:\ img        static 
+ 
+    #    The URI will use a specific keyword soon 
+    #    use_backend    ^[^\ ]*\ /(img|css)/    static 
+
+    acl fp url_dir -i /sobeyhive-fp
+    use_backend Hivecore_FP:88 if fp
+    
+    acl bp url_dir -i /sobeyhive-bp
+    use_backend Hivecore_BP:88 if bp
+    
+    acl pmp url_dir -i /sobeyhive-pmp
+    use_backend HivePMP:88 if pmp    
+    
+    acl ftengine url_dir -i /ftengine
+    use_backend Ftengine:88 if ftengine
+    
+    acl nebula url_dir -i /nebula
+    acl api url_dir -i /api
+    use_backend Nebula:88 if nebula || api
+    
+    default_backend    Nebula:88 
+ 
+backend    Hivecore_FP:88
+    option    httpchk HEAD /sobeyhive-fp 
+    #http 通用设置
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    balance    source
+    option    redispatch
+    retries    3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout server          30s
+    timeout http-keep-alive 2s
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    server    FP_hivenode01 hivenode01:8060 cookie FoundationPlatform_1 check inter 8s rise 1 fall 2 weight 1 
+    server    FP_hivenode02 hivenode02:8060 cookie FoundationPlatform_2 check inter 8s rise 1 fall 2 weight 1 
+    server    FP_hivenode03 hivenode03:8060 cookie FoundationPlatform_3 check inter 8s rise 1 fall 2 weight 1 
+ 
+backend    Hivecore_BP:88
+    #http 通用设置
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    balance    source
+    option    redispatch
+    retries    3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout server          30s
+    timeout http-keep-alive 2s
+    timeout check           5s
+    cookie SERVERID insert indirect nocache  
+    option    httpchk HEAD /sobeyhive-bp 
+    server    BP_hivenode01 hivenode01:8060 cookie BizCore_1 check inter 8s rise 1 fall 2 weight 1 
+    server    BP_hivenode02 hivenode02:8060 cookie BizCore_2 check inter 8s rise 1 fall 2 weight 1 
+    server    BP_hivenode03 hivenode03:8060 cookie BizCore_3 check inter 8s rise 1 fall 2 weight 1 
+ 
+backend    HivePMP:88
+    option    httpchk HEAD /sobeyhive-pmp 
+    #http 通用设置
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    balance    source
+    option    redispatch
+    retries    3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout server          30s
+    timeout http-keep-alive 2s
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    server    HivePMP_hivenode01 hivenode01:8050 check inter 8s rise 1 fall 2 weight 1 
+    server    HivePMP_hivenode02 hivenode02:8050 check inter 8s rise 1 fall 2 weight 1 
+    server    HivePMP_hivenode03 hivenode03:8050 check inter 8s rise 1 fall 2 weight 1 
+ 
+backend    Ftengine:88 
+    #http 通用设置
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    balance    source
+    option    redispatch
+    retries    3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout server          30s
+    timeout http-keep-alive 2s
+    timeout check           5s
+    cookie SERVERID insert indirect nocache  
+    option    httpchk HEAD /ftengine 
+    server    Ftengine_hivenode01 hivenode01:8090 cookie FTengine_1 check inter 8s rise 1 fall 2 weight 1 
+    server    Ftengine_hivenode02 hivenode02:8090 cookie FTengine_2 check inter 8s rise 1 fall 2 weight 1 
+    server    Ftengine_hivenode03 hivenode03:8090 cookie FTengine_3 check inter 8s rise 1 fall 2 weight 1 
+ 
+backend    Nebula:88 
+    option http-server-close 
+    #http 通用设置
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    balance    source
+    option    redispatch
+    retries    3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout server          30s
+    timeout http-keep-alive 2s
+    timeout check           5s
+    cookie SERVERID insert indirect nocache  
+    option    httpchk GET /api/version  HTTP/1.1\r\nHost:\ www 
+    server    Nebula_hivenode01 hivenode01:9090 cookie Nebula_1 check inter 8s rise 1 fall 2 weight 1 
+    server    Nebula_hivenode02 hivenode02:9090 cookie Nebula_2 check inter 8s rise 1 fall 2 weight 1 
+    server    Nebula_hivenode03 hivenode03:9090 cookie Nebula_3 check inter 8s rise 1 fall 2 weight 1 
+ 
+#CMserver 
+listen    CMserver:9023 *:9023
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    leastconn  
+    option forwardfor header ORIG_CLIENT_IP if-none
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+    #斜杠转义空格用
+    http-response set-header Access-Control-Allow-Headers Origin,\ Access-Control-Allow-Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+    rspadd Access-Control-Allow-Headers:sobeyhive-http-system,sobeyhive-http-site,sobeyhive-http-token
+
+    option    httpchk GET /CMApi/api/basic/account/testconnect
+    server    CMserver_hivenode01 hivenode01:9022  check  inter 15s rise 3 fall 3 
+    server    CMserver_hivenode02 hivenode02:9022  check  inter 15s rise 3 fall 3 
+    server    CMserver_hivenode03 hivenode03:9022  check  inter 15s rise 3 fall 3 
+ 
+ #CMserver 
+listen    CMserver1.05:10023 *:10023
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    leastconn  
+    option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /CMApi/api/basic/account/testconnect
+    server    CMserver_hivenode01 hivenode01:10022  check  inter 15s rise 3 fall 3 
+    server    CMserver_hivenode02 hivenode02:10022  check  inter 15s rise 3 fall 3 
+    server    CMserver_hivenode03 hivenode03:10022  check  inter 15s rise 3 fall 3 
+	
+ #CMserver 
+listen    CMserveryle:20023 *:20023
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    leastconn  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /CMApi/api/basic/account/testconnect
+    server    CMserver_hivenode01 hivenode01:20022  check  inter 15s rise 3 fall 3 
+    server    CMserver_hivenode02 hivenode02:20022  check  inter 15s rise 3 fall 3 
+    server    CMserver_hivenode03 hivenode03:20022  check  inter 15s rise 3 fall 3 
+	
+ #CMserver 
+listen    CMserverchina:30023 *:30023
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    leastconn  
+    option forwardfor header ORIG_CLIENT_IP if-none
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /CMApi/api/basic/account/testconnect
+    server    CMserver_hivenode01 hivenode01:30022  check  inter 15s rise 3 fall 3 
+    server    CMserver_hivenode02 hivenode02:30022  check  inter 15s rise 3 fall 3 
+    server    CMserver_hivenode03 hivenode03:30022  check  inter 15s rise 3 fall 3  
+ 
+#CMserver Windows
+listen    CMserver_windows:9037 *:9037
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    leastconn  
+    option forwardfor header ORIG_CLIENT_IP if-none
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /CMApi/api/basic/account/testconnect
+    server    CMserver_windows_hivenode01 172.16.148.47:9022  check  inter 15s rise 3 fall 3 
+#    server    CMserver_windows_hivenode02 hivenode02:9036  check  inter 15s rise 3 fall 3 
+#    server    CMserver_windows_hivenode03 hivenode03:9036  check  inter 15s rise 3 fall 3 
+
+#CMserver Windows
+listen    CMserver_windows1.2.1:10037 *:10037
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    leastconn  
+    option forwardfor header ORIG_CLIENT_IP if-none
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /CMApi/api/basic/account/testconnect
+    server    CMserver_windows_hivenode01 172.16.134.30:9022  check  inter 15s rise 3 fall 3 
+#    server    CMserver_windows_hivenode02 hivenode02:9036  check  inter 15s rise 3 fall 3 
+#    server    CMserver_windows_hivenode03 hivenode03:9036  check  inter 15s rise 3 fall 3
+
+#CMserverCCTV Windows
+listen    CMserver_windowsCCTV:30037 *:30037
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    leastconn  
+    option forwardfor header ORIG_CLIENT_IP if-none
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /CMApi/api/basic/account/testconnect
+    server    CMserver_windows_hivenode01 172.16.134.20:9022  check  inter 15s rise 3 fall 3 
+#    server    CMserver_windows_hivenode02 hivenode02:9036  check  inter 15s rise 3 fall 3 
+#    server    CMserver_windows_hivenode03 hivenode03:9036  check  inter 15s rise 3 fall 3 
+ 
+
+#CM-Web 
+listen    CMweb:9021 *:9021
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /index.aspx 
+    server    CMweb_hivenode01 hivenode01:9020  check  inter 15s rise 3 fall 3 
+    server    CMweb_hivenode02 hivenode02:9020  check  inter 15s rise 3 fall 3 
+    server    CMweb_hivenode03 hivenode03:9020  check  inter 15s rise 3 fall 3 
+	
+#CM-Web 
+listen    CMweb1.05:10021 *:10021
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /index.aspx 
+    server    CMweb_hivenode01 hivenode01:10020  check  inter 15s rise 3 fall 3 
+    server    CMweb_hivenode02 hivenode02:10020  check  inter 15s rise 3 fall 3 
+    server    CMweb_hivenode03 hivenode03:10020  check  inter 15s rise 3 fall 3 	
+
+#CM-Web 
+listen    CMwebyle:20021 *:20021
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /index.aspx 
+    server    CMweb_hivenode01 hivenode01:20020  check  inter 15s rise 3 fall 3 
+    server    CMweb_hivenode02 hivenode02:20020  check  inter 15s rise 3 fall 3 
+    server    CMweb_hivenode03 hivenode03:20020  check  inter 15s rise 3 fall 3 		
+	
+frontend Streams:86
+    bind  *:86 
+    mode  http 
+    log        global 
+    option        httplog
+    option          dontlognull
+    option    forwardfor except 127.0.0.1
+    option        httpclose
+    monitor-uri    /monitoruri
+    #http 通用设置
+    mode    http
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    #option forwardfor header ORIG_CLIENT_IP
+    #option forwardfor header Client-IP
+    timeout http-request    10s
+    timeout client          30s
+    timeout http-keep-alive 2s
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http 
+
+    acl streams url_reg -i /bucket.*
+    use_backend Streams_Bucket:86 if streams
+    default_backend Streams_Bucket:86
+ 
+backend Streams_Bucket:86 
+    option http-server-close 
+    #http 通用设置
+    option    httplog
+    option  http-keep-alive
+    option    httpclose
+    balance    source
+    option    redispatch
+    retries    3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout server          30s
+    timeout http-keep-alive 2s
+    timeout check           5s
+    cookie SERVERID insert indirect nocache  
+    option  httpchk GET /hacheck/index.html
+    server  Streams_Bucket_hivenode01 hivenode01:9010 cookie Streams_1 check inter 15s rise 1 fall 2 weight 1 
+    server  Streams_Bucket_hivenode02 hivenode02:9010 cookie Streams_2 check inter 15s rise 1 fall 2 weight 1 
+    server  Streams_Bucket_hivenode03 hivenode03:9010 cookie Streams_3 check inter 15s rise 1 fall 2 weight 1 
+ 
+#MosGateway   check 
+listen   MosGateway:10540 *:10540
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    server    MosGateway_hivenode01 hivenode01:10550  check inter 30s rise 3 fall 3 weight 1
+    server    MosGateway_hivenode02 hivenode02:10550  check inter 30s rise 3 fall 3 weight 1
+    server    MosGateway_hivenode03 hivenode03:10550  check inter 30s rise 3 fall 3 weight 1
+    #server    MosGateway_hivenode01 172.16.172.27:10550  check inter 30s rise 3 fall 3 weight 1
+
+ 
+listen   MosGateway:10541 *:10541
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    server    MosGateway_hivenode01 hivenode01:10551  check inter 30s rise 3 fall 3 weight 1
+    server    MosGateway_hivenode02 hivenode02:10551  check inter 30s rise 3 fall 3 weight 1
+    server    MosGateway_hivenode03 hivenode03:10551  check inter 30s rise 3 fall 3 weight 1
+    #server    MosGateway_hivenode01 172.16.172.27:10551  check inter 30s rise 3 fall 3 weight 1
+
+
+ 
+listen   MosGateway:10542 *:10542
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    server    MosGateway_hivenode01 hivenode01:10552  check inter 30s rise 3 fall 3 weight 1
+    server    MosGateway_hivenode02 hivenode02:10552  check inter 30s rise 3 fall 3 weight 1
+    server    MosGateway_hivenode03 hivenode03:10552  check inter 30s rise 3 fall 3 weight 1
+    #server    MosGateway_hivenode01 172.16.172.27:10552  check inter 30s rise 3 fall 3 weight 1
+
+ 
+listen   MosGateway:10555 *:10555
+    option http-server-close 
+    #http 通用设置
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache  
+    option httpchk GET /index.htm 
+    server    MosGateway_hivenode01 hivenode01:10556  check inter 15s rise 3 fall 3 weight 1
+    server    MosGateway_hivenode02 hivenode02:10556  check inter 15s rise 3 fall 3 weight 1
+    server    MosGateway_hivenode03 hivenode03:10556  check inter 15s rise 3 fall 3 weight 1
+    #server    MosGateway_hivenode01 172.16.172.27:10556  check inter 15s rise 3 fall 3 weight 1
+
+ 
+#Jove   check 
+listen   Jove:9027 *:9027
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /Cm/Login?usertoken= 
+    server    Jove_hivenode01 hivenode01:9026  check inter 15s rise 3 fall 3 weight 1
+    server    Jove_hivenode02 hivenode02:9026  check inter 15s rise 3 fall 3 weight 1
+    server    Jove_hivenode03 hivenode03:9026  check inter 15s rise 3 fall 3 weight 1
+ 
+#Jove   check 
+listen   Joveyle:20027 *:20027
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+    option    httpchk GET /Cm/Login?usertoken= 
+    server    Jove_hivenode01 hivenode01:20026  check inter 15s rise 3 fall 3 weight 1
+    server    Jove_hivenode02 hivenode02:20026  check inter 15s rise 3 fall 3 weight 1
+    server    Jove_hivenode03 hivenode03:20026  check inter 15s rise 3 fall 3 weight 1
+	
+#IngestDBSvr   check 
+listen   IngestDBSvr:9025 *:9025
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /api/device/GetAllCaptureChannels 
+    server    IngestDBSvr_hivenode01 hivenode01:9024  check inter 15s rise 3 fall 3 weight 1
+    server    IngestDBSvr_hivenode02 hivenode02:9024  check inter 15s rise 3 fall 3 weight 1
+    server    IngestDBSvr_hivenode03 hivenode03:9024  check inter 15s rise 3 fall 3 weight 1
+ 
+#IngestDEVCTL   check 
+listen   IngestDEVCTL:9039 *:9039
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET  /api/G2MatrixWebCtrl/getall 
+    server    IngestDEVCTL_hivenode01 hivenode01:9038  check inter 15s rise 3 fall 3 weight 1
+    server    IngestDEVCTL_hivenode02 hivenode02:9038  check inter 15s rise 3 fall 3 weight 1
+    server    IngestDEVCTL_hivenode03 hivenode03:9038  check inter 15s rise 3 fall 3 weight 1
+ 
+#IngestTaskSvr   check 
+listen   IngestTaskSvr:9041 *:9041
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /sobey/plat/cmd 
+    server    IngestTaskSvr_hivenode01 hivenode01:9040  check inter 15s rise 3 fall 3 weight 1
+    server    IngestTaskSvr_hivenode02 hivenode02:9040  check inter 15s rise 3 fall 3 weight 1
+    server    IngestTaskSvr_hivenode03 hivenode03:9040  check inter 15s rise 3 fall 3 weight 1
+ 
+#IngestMsgSvr   check 
+listen   IngestMsgSvr:9043 *:9043
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+    option    httpchk GET /Plat.Web/NormalServicePage.html 
+    server    IngestMsgSvr_hivenode01 hivenode01:9042  check inter 15s rise 3 fall 3 weight 1
+    server    IngestMsgSvr_hivenode02 hivenode02:9042  check inter 15s rise 3 fall 3 weight 1
+    server    IngestMsgSvr_hivenode03 hivenode03:9042  check inter 15s rise 3 fall 3 weight 1
+ 
+#Otc   check 
+listen   Otc:9045 *:9045
+    #http 通用设置
+    mode    http  
+    option    httplog 
+   # option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /getotc HTTP/1.1\r\nHost:/getotc  
+    server    Otc_hivenode01 hivenode01:9044  check inter 15s rise 3 fall 3 weight 1
+    server    Otc_hivenode02 hivenode02:9044  check inter 15s rise 3 fall 3 weight 1
+    server    Otc_hivenode03 hivenode03:9044  check inter 15s rise 3 fall 3 weight 1
+ 
+#Floatinglicensesvr   check 
+listen   FLSvr:9033 *:9033
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    option forwardfor
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+    option    httpchk GET /testalive 
+    server    FLSvr_hivenode01 hivenode01:9032  check inter 15s rise 3 fall 3 weight 1
+    server    FLSvr_hivenode02 hivenode02:9032  check inter 15s rise 3 fall 3 weight 1
+    server    FLSvr_hivenode03 hivenode03:9032  check inter 15s rise 3 fall 3 weight 1
+ 
+listen   Fls:9031 *:9031
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    server    Fls_hivenode01 hivenode01:9030  check inter 30s rise 3 fall 3 weight 1
+    server    Fls_hivenode02 hivenode02:9030  check inter 30s rise 3 fall 3 weight 1
+    server    Fls_hivenode03 hivenode03:9030  check inter 30s rise 3 fall 3 weight 1
+ 
+#PLS_Windows   check 
+listen   PLS_Windows:9035 *:9035
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+
+    #斜杠转义空格用
+    #http-response set-header Access-Control-Allow-Headers Origin,\ Content-Type,\ X-Requested-With,\ Accept,\ sobeyhive-http-system,\ #sobeyhive-http-site,\ sobeyhive-http-token,\ sobeyhive-http-tool
+     
+    option    httpchk GET /api/Studio/heartbeat 
+    server    PLS_Windows_hivenode01 172.16.168.16:9034  check inter 15s rise 3 fall 3 weight 1
+#    server    PLS_Windows_hivenode02 hivenode02:9090  check inter 15s rise 3 fall 3 weight 1
+#    server    PLS_Windows_hivenode03 hivenode03:9090  check inter 15s rise 3 fall 3 weight 1
+ 
+listen   SangHa:4505 *:4505
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    server    SangHa_hivenode01 hivenode01:4504  check inter 30s rise 3 fall 3 weight 1
+    server    SangHa_hivenode02 hivenode02:4504  check inter 30s rise 3 fall 3 weight 1
+    server    SangHa_hivenode03 hivenode03:4504  check inter 30s rise 3 fall 3 weight 1
+ 
+#SangHaSvr   check 
+listen   SangHaSvr:9047 *:9047
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+    option    httpchk GET /sobey/plat/cmd 
+    server    SangHaSvr_hivenode01 172.16.134.30:80  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaSvr_hivenode02 hivenode02:9046  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaSvr_hivenode03 hivenode03:9046  check inter 15s rise 3 fall 3 weight 1
+ 
+#SangHaWeb   check 
+listen   SangHaWeb:9049 *:9049
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+#    option    httpchk GET /Plat.Web/NormalServicePage.html 
+    server    SangHaWeb_hivenode01 172.16.134.30:90  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode02 hivenode02:9048  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode03 hivenode03:9048  check inter 15s rise 3 fall 3 weight 1
+
+#SNSServer   check 
+listen   SNSServer:9053 *:9053
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+ #   option    httpchk GET /api/sns/healthcheck
+    server    SNSServer_hivenode01 172.16.134.10:3333  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode02 hivenode02:9048  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode03 hivenode03:9048  check inter 15s rise 3 fall 3 weight 1 
+
+#LiveLoggingSvr   check 
+listen   LiveLoggingSvr:9029 *:9029
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+ #   option    httpchk GET /api/sns/healthcheck
+    server    LiveLoggingSvr_hivenode01 172.16.147.16:9028  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode02 hivenode02:9048  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode03 hivenode03:9048  check inter 15s rise 3 fall 3 weight 1 
+
+
+
+#LiveLoggingSvr   check 
+listen   LiveLoggingSvr:9029 *:9029
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+ #   option    httpchk GET /api/sns/healthcheck
+    server    LiveLoggingSvr_hivenode01 172.16.147.10:9028  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode02 hivenode02:9048  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode03 hivenode03:9048  check inter 15s rise 3 fall 3 weight 1 
+
+
+listen   PNS:11112 *:11112
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    #server    PNS_hivenode01 172.16.168.16:11111  check inter 30s rise 3 fall 3 weight 1
+    server    PNS_hivenode01 hivenode01:11111  check inter 30s rise 3 fall 3 weight 1
+    server    PNS_hivenode02 hivenode02:11111  check inter 30s rise 3 fall 3 weight 1
+    server    PNS_hivenode03 hivenode03:11111  check inter 30s rise 3 fall 3 weight 1
+    
+listen   FileServer:6151 *:6151
+    #tcp 通用设置
+    mode tcp
+    timeout connect 20s # default 10 second time out if a backend is not found
+    timeout client 3650d #只是解决警告
+    timeout server 3650d #只是解决警告
+    timeout check 15s
+    option tcplog
+    #option    tcpka
+    #tcp 通用设置 end
+
+    server    FileServer_hivenode01 172.16.168.16:6150  check inter 30s rise 3 fall 3 weight 1
+
+ 
+  
+listen   HTTPS:85_88
+    bind *:85 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance    source
+    option forwardfor header ORIG_CLIENT_IP
+    option    redispatch 
+    server    hivenode01 hivenode01:88  check inter 5s rise 2 fall 2 
+    server    hivenode02 hivenode02:88  check inter 5s rise 2 fall 2 
+    server    hivenode03 hivenode03:88  check inter 5s rise 2 fall 2 
+
+listen   HTTPS:84_86
+    bind *:84 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance    source
+    option forwardfor header ORIG_CLIENT_IP
+    option    redispatch 
+    server    hivenode01 hivenode01:86  check inter 5s rise 2 fall 2 
+    server    hivenode02 hivenode02:86  check inter 5s rise 2 fall 2 
+    server    hivenode03 hivenode03:86  check inter 5s rise 2 fall 2 
+
+listen   CMServerAPI_HTTPS:9123_9023
+    bind *:9123 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance    source
+    option forwardfor header ORIG_CLIENT_IP
+    option    redispatch 
+    reqadd    X-Proto:\ SSL
+    server    hivenode01 hivenode01:9023  check inter 5s rise 2 fall 2 
+    server    hivenode02 hivenode02:9023  check inter 5s rise 2 fall 2 
+    server    hivenode03 hivenode03:9023  check inter 5s rise 2 fall 2 
+
+listen   CMWeb_HTTPS:9125_9021
+    bind *:9125 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance    source
+    option forwardfor header ORIG_CLIENT_IP
+    option    redispatch 
+    reqadd    X-Proto:\ SSL
+    server    hivenode01 hivenode01:20021  check inter 5s rise 2 fall 2 
+    server    hivenode02 hivenode02:20021  check inter 5s rise 2 fall 2 
+    server    hivenode03 hivenode03:20021  check inter 5s rise 2 fall 2   
+    
+listen   Jove_HTTPS:9127_9027
+    bind *:9127 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance source
+    option forwardfor header ORIG_CLIENT_IP
+    option redispatch 
+    reqadd X-Proto:\ SSL
+    server hivenode01 hivenode01:9027  check inter 5s rise 2 fall 2 
+    server hivenode02 hivenode02:9027  check inter 5s rise 2 fall 2 
+    server hivenode03 hivenode03:9027  check inter 5s rise 2 fall 2 
+    
+listen   FloatinglicenseServer_HTTPS:9133_9033
+    bind *:9133 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance source
+    option forwardfor header ORIG_CLIENT_IP
+    option redispatch 
+    reqadd X-Proto:\ SSL
+    server hivenode01 hivenode01:9033  check inter 5s rise 2 fall 2 
+    server hivenode02 hivenode02:9033  check inter 5s rise 2 fall 2 
+    server hivenode03 hivenode03:9033  check inter 5s rise 2 fall 2  
+
+listen   PLS_Windows_HTTPS:9135_9035
+    bind *:9135 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance source
+    option forwardfor header ORIG_CLIENT_IP
+    option redispatch 
+    reqadd X-Proto:\ SSL
+    server hivenode01 hivenode01:9035  check inter 5s rise 2 fall 2 
+    server hivenode02 hivenode02:9035  check inter 5s rise 2 fall 2 
+    server hivenode03 hivenode03:9035  check inter 5s rise 2 fall 2  
+
+listen   CMServerwindows_HTTPS:9137_9037
+    bind *:9137 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance source
+    option forwardfor header ORIG_CLIENT_IP
+    option redispatch 
+    reqadd X-Proto:\ SSL
+    server hivenode01 hivenode01:9037  check inter 5s rise 2 fall 2 
+    server hivenode02 hivenode02:9037  check inter 5s rise 2 fall 2 
+    server hivenode03 hivenode03:9037  check inter 5s rise 2 fall 2  
+
+listen   OTCServer_HTTPS:9145_9045
+    bind *:9145 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance source
+    option forwardfor header ORIG_CLIENT_IP
+    option redispatch 
+    reqadd X-Proto:\ SSL
+    server hivenode01 hivenode01:9045  check inter 5s rise 2 fall 2 
+    server hivenode02 hivenode02:9045  check inter 5s rise 2 fall 2 
+    server hivenode03 hivenode03:9045  check inter 5s rise 2 fall 2
+
+listen   SangHaService_HTTPS:9147_9047
+    bind *:9147 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance source
+    option forwardfor header ORIG_CLIENT_IP
+    option redispatch 
+    reqadd X-Proto:\ SSL
+    server hivenode01 hivenode01:9047  check inter 5s rise 2 fall 2 
+    server hivenode02 hivenode02:9047  check inter 5s rise 2 fall 2 
+    server hivenode03 hivenode03:9047  check inter 5s rise 2 fall 2
+
+listen   SangHaWeb_HTTPS:9149_9049
+    bind *:9149 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance source
+    option forwardfor header ORIG_CLIENT_IP
+    option redispatch 
+    reqadd X-Proto:\ SSL
+    server hivenode01 hivenode01:9049  check inter 5s rise 2 fall 2 
+    server hivenode02 hivenode02:9049  check inter 5s rise 2 fall 2 
+    server hivenode03 hivenode03:9049  check inter 5s rise 2 fall 2
+
+listen   SNSWindows_HTTPS:9153_9053
+    bind *:9149 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance   source
+    option    forwardfor header ORIG_CLIENT_IP
+    option    redispatch 
+    reqadd    X-Proto:\ SSL
+    server    hivenode01 hivenode01:9053  check inter 5s rise 2 fall 2 
+    server    hivenode02 hivenode02:9053  check inter 5s rise 2 fall 2 
+    server    hivenode03 hivenode03:9053  check inter 5s rise 2 fall 2
+	
+	
+##wfgtest	
+listen   CMServerAPI_HTTPS:50024_50023
+    bind *:50024 ssl crt /etc/haproxy/crt/hive_crt.pem
+    balance    source
+	
+    option forwardfor header ORIG_CLIENT_IP
+	timeout connect         120s
+	timeout client          120s
+	timeout server          120s
+    option    redispatch 
+	##acl is-ssl  dst_port       50024
+	reqadd      X-Proto:\ SSL
+    server    hivenode01 172.16.134.248:50023  check inter 5s rise 2 fall 2 
+#    server    hivenode02 hivenode02:9023  check inter 5s rise 2 fall 2 
+#    server    hivenode03 hivenode03:9023  check inter 5s rise 2 fall 2	
+
+
+#CMserver 
+listen    CMserver:50023 *:50023
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    leastconn
+    option forwardfor header ORIG_CLIENT_IP if-none
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+	##http-request set-query ORIG_CLIENT_IP=%[forwardfor]
+	
+	rspadd Access-Control-Allow-Headers:sobeyhive-http-system,sobeyhive-http-site,sobeyhive-http-token
+
+
+     
+    ##option    httpchk GET /CMApi/api/basic/account/testconnect
+    server    CMserver_hivenode01 172.16.148.66:9023  check  inter 15s rise 3 fall 3 
+    ##server    CMserver_hivenode02 hivenode02:9022  check  inter 15s rise 3 fall 3 
+    ##server    CMserver_hivenode03 hivenode03:9022  check  inter 15s rise 3 fall 3
+
+#LiveLoggingSvr   check 
+listen   LiveLoggingSvr:9029 *:9029
+    #http 通用设置
+    mode    http  
+    option    httplog 
+    option  http-keep-alive 
+    option    httpclose
+    balance    source  
+    #option forwardfor header ORIG_CLIENT_IP
+    option    redispatch    
+    retries    3
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s 
+    timeout server          30s 
+    timeout client          30s  
+    timeout http-keep-alive 2s 
+    timeout check           5s
+    cookie SERVERID insert indirect nocache 
+    errorfile 403 /etc/haproxy/errorfiles/403.http
+    errorfile 500 /etc/haproxy/errorfiles/500.http
+    errorfile 502 /etc/haproxy/errorfiles/502.http
+    errorfile 503 /etc/haproxy/errorfiles/503.http
+    errorfile 504 /etc/haproxy/errorfiles/504.http
+     
+#   option    httpchk GET /api/sns/healthcheck
+    server    LiveLoggingSvr_hivenode01 172.16.147.16:9028  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode02 hivenode02:9048  check inter 15s rise 3 fall 3 weight 1
+#    server    SangHaWeb_hivenode03 hivenode03:9048  check inter 15s rise 3 fall 3 weight 1
