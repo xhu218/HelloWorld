@@ -1,4 +1,4 @@
-;
+
 
 var request = require("request");
 
@@ -42,6 +42,29 @@ var jd = {
                 if (typeof callback == "function")
                     
                   callback(url,goods);
+            } catch (err) {
+                console.log(err);
+                //console.log(body);
+            }
+
+
+        });
+    },
+    sendRequest1: function() {
+        var url = this.url;
+        request(this.options, function(error, response, body) {
+
+
+            if (error) throw new Error(error);
+            var pcMiaoShaAreaList = {};
+            try {
+                var strToJson = function(str) {
+                    var json = (new Function("return " + str))();
+                    return json;
+                }
+                var goods = strToJson(body.replace("pcMiaoShaAreaList", ""));
+                return goods;
+              
             } catch (err) {
                 console.log(err);
                 //console.log(body);

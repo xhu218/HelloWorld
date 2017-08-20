@@ -1,1 +1,0 @@
-var wfg = "wfg";

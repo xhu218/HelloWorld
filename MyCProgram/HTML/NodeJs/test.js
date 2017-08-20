@@ -6,3 +6,24 @@ console.log(time);
 var str = "123wfgabcwfg321";
 var tt = str.replace(/wfg/g,'lxx'); 
 console.log(tt);
+
+
+  var schedule = require("node-schedule");
+
+　var rule = new schedule.RecurrenceRule();
+
+　　var times = [];
+
+　　for(var i=1; i<60; i++){
+
+　　　　times.push(i);
+
+　　}
+
+　　rule.second = times;
+
+　　var c=0;
+　　var j = schedule.scheduleJob(rule, function(){
+     　　 c++;
+      　　console.log(c);
+　　});
