@@ -53,7 +53,7 @@ def testLogin(desc, username, password, result):
     browser.find_by_value('登录').first.click()  
     checkresult(result)  
   
-__testUrl = 'http://waptest.taobao.com/login/login.htm?tpl_redirect_url=http%3A%2F%2Fm.taobao.com%2F'  
+__testUrl = 'https://miaosha.jd.com/'  
   
 # chrome driver : http://code.google.com/p/selenium/wiki/ChromeDriver  
 # already support firefox  
@@ -64,22 +64,27 @@ output("测试页面:"+browser.title)
   
 try:  
     # test login  
-    testLogin('测试未输入用户名','','','请输入会员名')  
-    testLogin('测试未输入密码','qd_test_001','','请输入密码')  
-    testLogin('测试帐户不存在','这是一个不存在的名字哦','xxxxxxx','该账户名不存在')  
-    testLogin('测试成功登录','qd_test_001','taobao1234','继续登录前操作')  
+    #testLogin('测试未输入用户名','','','请输入会员名')  
+    #testLogin('测试未输入密码','qd_test_001','','请输入密码')  
+    #testLogin('测试帐户不存在','这是一个不存在的名字哦','xxxxxxx','该账户名不存在')  
+    #testLogin('测试成功登录','qd_test_001','taobao1234','继续登录前操作')  
   
     # test find password  
-    output("测试[找回密码]链接")  
+    #output("测试[找回密码]链接")  
     browser.visit(__testUrl)  
-    backPasswordLink = browser.find_link_by_text('取回密码')  
-    if 1 == len(backPasswordLink):  
-        backPasswordLink.first.click()  
-        ru = re.findall(re.compile(".*(reg/gp.htm).*", re.IGNORECASE), browser.url)  
-        if ru is not None:  
-            checkresult('找回密码')  
-        else:  
-            output("测试找回密码链接失败")  
+
+    List<WebElement> chesses = browser.findElements(By.className("seckill_mod_goods_info"))
+
+    print(chesses.count)
+    
+    #backPasswordLink = browser.find_link_by_text('取回密码')  
+    #if 1 == len(backPasswordLink):  
+    #    backPasswordLink.first.click()  
+    #    ru = re.findall(re.compile(".*(reg/gp.htm).*", re.IGNORECASE), browser.url)  
+    #    if ru is not None:  
+    #        checkresult('找回密码')  
+    #    else:  
+    #        output("测试找回密码链接失败")  
   
 except Exception ( x):  
     print (x)  
