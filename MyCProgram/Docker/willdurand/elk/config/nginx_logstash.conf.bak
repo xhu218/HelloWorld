@@ -1,0 +1,25 @@
+input {
+  lumberjack {
+    port => 5043
+    ssl_certificate => "/etc/ssl/logstash-forwarder.crt"
+    ssl_key => "/etc/ssl/logstash-forwarder.key"
+  }
+}
+
+filter {
+#  if [type] == "hipache" {
+#    grok {
+#      patterns_dir => "/etc/logstash/patterns/nginx"
+#      match => { "message" => "%{NGINXACCESS}" }
+#    }
+#  }
+}
+
+output {
+  elasticsearch {
+    host => "127.0.0.1"
+    cluster => "logstash"
+    # Uncomment the line below if you use Kibana 3.1.0
+    # embedded => false
+  }
+}
