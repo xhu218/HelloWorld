@@ -1,4 +1,4 @@
- var jdProcess = require("./jdProcess.js")
+var jdProcess = require("./jdProcess.js")
 
 
             jdProcess.job();

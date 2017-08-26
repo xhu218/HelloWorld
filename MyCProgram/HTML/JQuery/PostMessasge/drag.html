@@ -57,7 +57,8 @@
 
 
                 list.ondragover = function (e) {
-                    e.dataTransfer.setData("Text", "over");
+                    //e.dataTransfer.setData("Text", "over");
+                    e.dataTransfer.setData("URL","http://www.baidu.com");
                     return false;
                 }
 

@@ -7,8 +7,11 @@ var jdProcess = {
         var jdPrice = 1000;
 
         var docount = 0;
-        var totalcount = 100;
+        var totalcount = 48;
         var myArray = [];
+		
+        //r root_dir = "/ext_file_root/bucket-z/wfg/jd";
+        var root_dir = __dirname;
 
 
         function printgoods(url, goods) {
@@ -36,8 +39,8 @@ var jdProcess = {
                     return a.wareId - b.wareId;
                 });
 
-                var datapath = "E:\\Work\\GitHub\\HTML\\NodeJs\\miaosha\\data\\data.js";
-                var extenpath = "E:\\Work\\GitHub\\HTML\\NodeJs\\miaosha\\data\\extentinfo.js"
+                var datapath = root_dir + "/data/data.js";
+                var extenpath = root_dir + "/data/extentinfo.js"
                 var fromfile = readfromFile(datapath);
 
                 //console.log("from is ok1 " + fromfile);
@@ -50,7 +53,7 @@ var jdProcess = {
 
                     var sd = require('silly-datetime');
                     var time = sd.format(new Date(), 'YYYY-MM-DD HH-mm');
-                    var path = "E:\\Work\\GitHub\\HTML\\NodeJs\\miaosha\\data\\" + time + ".js";
+                    var path = root_dir + "/data/" + time + ".js";
 
                     writetoFile(writeto, path, true);
                     writetoFile(writeto, datapath, false);
