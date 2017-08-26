@@ -177,7 +177,7 @@ function autoRun(obj){
 	    } else {
 	        console.log('collection run completed.');
 			//obj.finishFlag = true;
-			setTimeout(function(){console.log("我已经做完了哟");process.exit(1);}, 30000);
+			setTimeout(function(){console.log("晶晶，我已经做完了哟\n，您看看对不对，\n不好理解的，找下老王！");process.exit(1);}, 30000);
 			
 			
 	    }
