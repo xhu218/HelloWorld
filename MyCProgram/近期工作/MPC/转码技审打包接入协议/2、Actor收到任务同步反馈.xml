@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MPC>
+	<Header>
+		<Version>1.0</Version>
+		<RequestID>2d16ca6834974c7d81c49e94eee71828</RequestID>
+		<RequestTime>2016-01-05T18:39:08</RequestTime>
+		<RequestMQ>DIRECT=TCP:172.16.162.41\PRIVATE$\MPC_Transcode</RequestMQ>
+	</Header>
+	<Content>
+		<MPCType>RTN_Assign</MPCType>
+		<RTN_Assign>
+			<JobID>4510</JobID>
+			<ServiceGUID>c9b3713fccb546279d70f5634c8bf70d</ServiceGUID>
+			<Result>accepted</Result>
+			<Attribute>14</Attribute>
+		</RTN_Assign>
+	</Content>
+</MPC>

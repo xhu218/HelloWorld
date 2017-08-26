@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by  () -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="MPC">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Version" type="xs:string"/>
+							<xs:element name="RequestID" type="xs:string"/>
+							<xs:element name="RequestTime" type="xs:dateTime"/>
+							<xs:element name="RequestMQ" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Content">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MPCType" type="xs:string"/>
+							<xs:choice>
+								<xs:element name="AddTask">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="BaseInfo" type="TaskBaseInfoType"/>
+											<xs:element name="TaskInfo" type="TaskAttachType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="MediaFile" type="ClipFileItemType2" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:choice>
+												<xs:element name="PolicyID" type="xs:long"/>
+												<xs:element name="JobList" type="JobExecuteParamType" maxOccurs="unbounded"/>
+											</xs:choice>
+											<xs:element name="SourceInfo" type="MachineInfoType" minOccurs="0"/>
+											<xs:element name="NotifyEvent" type="xs:long" minOccurs="0"/>
+											<xs:element name="NotifyTarget" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_AddTask">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="TaskGUID" type="xs:string"/>
+											<xs:element name="Result" type="xs:boolean"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="DelTask">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="TaskGUID" type="xs:string"/>
+											<xs:element name="AllowCancel" type="xs:boolean"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_DelTask">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="TaskGUID" type="xs:string"/>
+											<xs:element name="Result" type="xs:boolean"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="QueryGuage">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="TaskGUID" type="xs:string"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_Guage">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="TaskGUID" type="xs:string"/>
+											<xs:element name="Result" type="xs:boolean"/>
+											<xs:element name="TaskGuage" type="JobGuageType" maxOccurs="unbounded"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="QueryPolicylist">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="PolicyType" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_PolicyList">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="Result" type="xs:boolean"/>
+											<xs:element name="PolicyItem" type="PolicylistItem" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="QueryPolicyContent">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="PolicyID" type="xs:long"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_PolicyContent">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="Result" type="xs:boolean"/>
+											<xs:element name="PolicyCnt" type="PolicyContentType"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="MPCNotify">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="NotifyEvent" type="xs:long"/>
+											<xs:element name="TaskGUID" type="xs:string"/>
+											<xs:element name="TaskExternalGUID" type="xs:string" minOccurs="0"/>
+											<xs:element name="JobID" type="xs:long" minOccurs="0"/>
+											<xs:element name="JobType" type="xs:string" minOccurs="0"/>
+											<xs:element name="FlowType" type="xs:long" minOccurs="0"/>
+											<xs:element name="Realtime" type="xs:boolean" minOccurs="0"/>
+											<xs:element name="TaskGuage" type="JobGuageType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="TaskInfo" type="TaskAttachType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="MediaFile" type="ClipFileItemType2" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="ServiceRegister">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="IPAddr" type="xs:string"/>
+											<xs:element name="HostName" type="xs:string"/>
+											<xs:element name="ServiceMQFormat" type="xs:string"/>
+											<xs:element name="ServiceName" type="xs:string"/>
+											<xs:element name="ServiceType" type="xs:string" maxOccurs="unbounded"/>
+											<xs:element name="MaxTaskCount" type="xs:long"/>
+											<xs:element name="AttachType" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="NeedWaken" type="xs:boolean"/>
+											<xs:element name="ServiceAttach" type="TaskAttachType" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="ServiceUnregister">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="ServiceFeedback">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="GwNotify">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="Event">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="startwork"/>
+														<xs:enumeration value="shutdown"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="AssignTask">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobType" type="xs:string"/>
+											<xs:element name="JobID" type="xs:long"/>
+											<xs:element name="BreakResume" type="xs:boolean"/>
+											<xs:element name="BaseInfo" type="TaskBaseInfoType"/>
+											<xs:element name="TaskInfo" type="TaskAttachType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="MediaFile" type="ClipFileItemType2" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:sequence>
+												<xs:element name="JobInfo" type="TaskAttachType" minOccurs="0"/>
+												<xs:element name="JobSource" type="xs:string" minOccurs="0"/>
+												<xs:element name="JobObject" type="xs:string" minOccurs="0"/>
+											</xs:sequence>
+											<xs:element name="BreakPack" type="TaskAttachType" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_Assign">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobID" type="xs:long"/>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="Result">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="error"/>
+														<xs:enumeration value="succeed"/>
+														<xs:enumeration value="mutex"/>
+														<xs:enumeration value="fullload"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="Attribute" type="xs:long"/>
+											<xs:element name="KeyRes" type="KeyResourceType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_KeyRes">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobID" type="xs:long"/>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="KeyRes" type="KeyResourceType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_AirInfo">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobID" type="xs:long"/>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="Realtime" type="xs:boolean"/>
+											<xs:element name="OutputFile" type="ClipFileItemType2" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_Task">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobID" type="xs:long"/>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="Result">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="error"/>
+														<xs:enumeration value="succeed"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="TaskInfo" type="TaskAttachType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="MediaFile" type="ClipFileItemType2" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="CancelTask">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobID" type="xs:long"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="PauseTask">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobID" type="xs:long"/>
+											<xs:element name="Suspend" type="xs:boolean"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_Pause">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobID" type="xs:long"/>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="Result">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="paused"/>
+														<xs:enumeration value="suspended"/>
+														<xs:enumeration value="notsupport"/>
+														<xs:enumeration value="error"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="BreakPack" type="TaskAttachType" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="ResumeTask">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobID" type="xs:long"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_Resume">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="JobID" type="xs:long"/>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="Result">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="resumed"/>
+														<xs:enumeration value="notsupport"/>
+														<xs:enumeration value="error"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="QueryStatus"/>
+								<xs:element name="RTN_Status">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="ServiceStatus">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="busy"/>
+														<xs:enumeration value="free"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="JobCount" type="xs:long"/>
+											<xs:element name="JobInfo" type="JobGuageType" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="BatchGuage">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="GuageList" type="TaskGuageInfoType" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="QueryConfig"/>
+								<xs:element name="RTN_QueryConfig">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="Result">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="error"/>
+														<xs:enumeration value="succeed"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="Config" type="TaskAttachType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="SaveConfig">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="Config" type="TaskAttachType" maxOccurs="unbounded"/>
+											<xs:element name="RebootService" type="xs:boolean" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RTN_SaveConfig">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="ServiceGUID" type="xs:string"/>
+											<xs:element name="Result">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="error"/>
+														<xs:enumeration value="saveok"/>
+														<xs:enumeration value="rebootnow"/>
+														<xs:enumeration value="rebootdelay"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="Info" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="GwBroadcast">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="Name" type="xs:string"/>
+											<xs:element name="MachineInfo" type="MachineInfoType"/>
+											<xs:element name="Remark" type="xs:string" minOccurs="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="UniformConfig">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="ConnectAddr" type="xs:string"/>
+											<xs:element name="ConnectPort" type="xs:int"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="UpdateKeyResource">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="TaskGUID"/>
+											<xs:element name="TaskName"/>
+											<xs:element name="JobID"/>
+											<xs:element name="KeyResource" minOccurs="0" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="ResourceName"/>
+														<xs:element name="DeviceName"/>
+														<xs:element name="RefCount"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TaskAttachType">
+		<xs:annotation>
+			<xs:documentation>任务附加数据结构</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Scope" type="xs:string"/>
+			<xs:element name="Schema" type="xs:string"/>
+			<xs:element name="Data"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MediaParamType">
+		<xs:annotation>
+			<xs:documentation>媒体编码参数</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FileFormat" type="xs:long"/>
+			<xs:element name="VideoFormat" type="xs:long"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="BitRate" type="xs:long"/>
+				<xs:element name="FrameRate">
+					<xs:simpleType>
+						<xs:restriction base="xs:float">
+							<xs:enumeration value="25"/>
+							<xs:enumeration value="29.97"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ImageWidth" type="xs:int"/>
+				<xs:element name="ImageHeight" type="xs:int"/>
+				<xs:element name="KeyFrameRate" type="xs:int"/>
+			</xs:sequence>
+			<xs:element name="AudioFormat" type="xs:long"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="Channels" type="xs:int"/>
+				<xs:element name="SamplesPerSec" type="xs:long"/>
+				<xs:element name="BitsPerSample" type="xs:int"/>
+			</xs:sequence>
+			<xs:element name="Duration" type="xs:decimal"/>
+			<xs:element name="FileSize" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EditMediaMapType">
+		<xs:sequence>
+			<xs:element name="TrackID" type="xs:long"/>
+			<xs:element name="QualityType" type="xs:long"/>
+			<xs:element name="MediaChannel" type="xs:long"/>
+			<xs:element name="FileTypeID" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ClipFileItemType2">
+		<xs:annotation>
+			<xs:documentation>媒体文件数据结构</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupType" type="xs:string"/>
+			<xs:element name="MediaType" type="xs:string"/>
+			<xs:choice>
+				<xs:element name="FileName" type="xs:string"/>
+				<xs:element name="FileContent" type="xs:anyType"/>
+			</xs:choice>
+			<xs:element name="InPoint" type="xs:decimal"/>
+			<xs:element name="OutPoint" type="xs:decimal"/>
+			<xs:element name="VerifyCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="FileParam" type="MediaParamType" minOccurs="0"/>
+			<xs:element name="EditMediaMap" type="EditMediaMapType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TaskBaseInfoType">
+		<xs:annotation>
+			<xs:documentation>任务接收基础数据结构</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TaskGUID" type="xs:string"/>
+			<xs:element name="TaskName">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ColumnName" type="xs:string" minOccurs="0"/>
+			<xs:element name="TaskLength" type="xs:string" minOccurs="0"/>
+			<xs:element name="TaskPriority" type="xs:long" nillable="false" minOccurs="0"/>
+			<xs:element name="DispatchType" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="manual"/>
+						<xs:enumeration value="auto"/>
+						<xs:enumeration value="timing"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DispatchTime" type="xs:long" minOccurs="0"/>
+			<xs:element name="Controllable" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="PutinTime">
+				<xs:annotation>
+					<xs:documentation>YYYY-mm-ddTHH:MM:SS</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ColumnCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation> 栏目码</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FlowType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>流程码</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:long"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ShowTime" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>备播时间
+YYYY-mm-dd HH:MM:SS</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TaskExternalGUID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>外部扩展Guid</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PolicyContentType">
+		<xs:annotation>
+			<xs:documentation>策略内容数据结构</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ID" type="xs:int"/>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Remark" type="xs:string"/>
+			<xs:element name="Type" type="xs:string"/>
+			<xs:element name="Xml" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MachineInfoType">
+		<xs:annotation>
+			<xs:documentation>机器信息</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="HostName" type="xs:string"/>
+			<xs:element name="IpAddress" type="xs:string"/>
+			<xs:element name="SubSystem" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JobGuageType">
+		<xs:annotation>
+			<xs:documentation>任务进度数据结构</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="JobID" type="xs:long"/>
+			<xs:element name="JobType" type="xs:string"/>
+			<xs:element name="JobName" type="xs:string"/>
+			<xs:element name="Percentage" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchJobGuageType">
+		<xs:annotation>
+			<xs:documentation>任务进度数据结构</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="JobID" type="xs:long"/>
+			<xs:element name="JobType" type="xs:string"/>
+			<xs:element name="JobName" type="xs:string"/>
+			<xs:element name="Percentage" type="xs:int"/>
+			<xs:element name="Device" type="xs:string" minOccurs="0"/>
+			<xs:element name="Detail" type="xs:string" minOccurs="0"/>
+			<xs:element name="DependList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="StepID" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartTime" type="xs:string" minOccurs="0"/>
+			<xs:element name="FinishTime" type="xs:string" minOccurs="0"/>
+			<xs:element name="Status" type="xs:long" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ObjectFileParamType">
+		<xs:annotation>
+			<xs:documentation>目标输出文件参数数据结构</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupType" type="xs:string"/>
+			<xs:element name="VideoMediaType" type="xs:string" minOccurs="0"/>
+			<xs:element name="AudioMediaType" type="xs:string" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Advance mode</xs:documentation>
+				</xs:annotation>
+				<xs:element name="AudioUseChannel" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="PathFormat" type="xs:string"/>
+			<xs:element name="VideoFileFormat" type="xs:long" minOccurs="0"/>
+			<xs:element name="VideoFormat" type="xs:long" minOccurs="0"/>
+			<xs:element name="BitRate" type="xs:long" minOccurs="0"/>
+			<xs:element name="FrameRate" type="xs:float" minOccurs="0"/>
+			<xs:element name="VideoWidth" type="xs:int" minOccurs="0"/>
+			<xs:element name="VideoHeight" type="xs:int" minOccurs="0"/>
+			<xs:element name="KeyFrameRate" type="xs:int" minOccurs="0"/>
+			<xs:element name="AudioFileFormat" type="xs:long" minOccurs="0"/>
+			<xs:element name="AudioFormat" type="xs:long" minOccurs="0"/>
+			<xs:element name="AVMixed" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="SpecialParam" type="xs:anyType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JobExecuteParamType">
+		<xs:sequence>
+			<xs:element name="StepID" type="xs:int"/>
+			<xs:element name="JobType" type="xs:string"/>
+			<xs:element name="JobPriority" type="xs:long" nillable="false" minOccurs="0"/>
+			<xs:element name="Depends" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="JobInfo" type="TaskAttachType" minOccurs="0"/>
+			<xs:element name="JobSource" type="xs:string" minOccurs="0"/>
+			<xs:element name="JobObject" type="xs:string" minOccurs="0"/>
+			<xs:element name="NotifyMask" type="xs:int" default="-1" minOccurs="0"/>
+			<xs:element name="Bookto" type="xs:string" minOccurs="0"/>
+			<xs:element name="Remark" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TaskGuageInfoType">
+		<xs:annotation>
+			<xs:documentation>批量进度信息使用的任务进度信息结构</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RequestID" type="xs:string"/>
+			<xs:element name="TaskGUID" type="xs:string"/>
+			<xs:element name="TaskName" type="xs:string"/>
+			<xs:element name="TaskSrc" type="xs:string"/>
+			<xs:element name="ReceiveTime" type="xs:string"/>
+			<xs:element name="Priority" type="xs:long"/>
+			<xs:element name="TaskGuage" type="BatchJobGuageType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PolicylistItem">
+		<xs:annotation>
+			<xs:documentation>策略类表项</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PolicyID" type="xs:long"/>
+			<xs:element name="PolicyName" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AuditBugItem">
+		<xs:sequence>
+			<xs:element name="BugType">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="258"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ClipIn" type="xs:decimal"/>
+			<xs:element name="ClipOut" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AuditReportItem">
+		<xs:sequence>
+			<xs:element name="MediaFile" type="xs:string"/>
+			<xs:element name="StreamID" type="xs:integer"/>
+			<xs:element name="BugCount" type="xs:long"/>
+			<xs:element name="BugItem" type="AuditBugItem" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ShotDetectReportItem">
+		<xs:sequence>
+			<xs:element name="MediaFile" type="xs:string"/>
+			<xs:element name="ShotCount" type="xs:int"/>
+			<xs:element name="IconfilePath" type="xs:string" minOccurs="0"/>
+			<xs:element name="KeyFrame" type="xs:decimal" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VerifyCodeReportItem">
+		<xs:sequence>
+			<xs:element name="File" type="xs:string"/>
+			<xs:element name="CodeType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="md5code"/>
+						<xs:enumeration value="sha1code"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="VerifyCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KeyResourceType">
+		<xs:annotation>
+			<xs:documentation>关键资源类型</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ResName" type="xs:string"/>
+			<xs:element name="UsedVal" type="xs:long"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AuditReportInfo">
+		<xs:annotation>
+			<xs:documentation>技审结果报告</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportItem" type="AuditReportItem" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ShotDetectReportInfo">
+		<xs:annotation>
+			<xs:documentation>转场识别结果报告</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportItem" type="ShotDetectReportItem" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VerifyCodeReportInfo">
+		<xs:annotation>
+			<xs:documentation>文件验证码结果报告</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportItem" type="VerifyCodeReportItem" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -2,7 +2,7 @@ var newman = require('newman'); // require newman in your project
 var Step = require('step');
 var async = require('async');
 
-var dir = "/infinityfs1/hivefiles/sobeyhive/bucket-z/wfg/autotest/CCTV/";
+var dir = "/infinityfs1/hivefiles/sobeyhive/bucket-z/wfg/autotest/GEN2/";
 
 
 /*
@@ -42,7 +42,7 @@ function replaceFilePath(obj){
 	//console.log(fcpfilepath_guid);	
 
 	var _src = 				"/infinityfs1/hivefiles/sobeyhive/bucket-z/u20002/cmupload/2017-04-21/47e4f93b55cf4578ae4182be1012876cmyfly.mp4";
-	var _dst_filepath =		"/infinityfs1/hivefiles/sobeyhive/bucket-z/u20002/cmupload/2017-04-21/"+ filepath_guid +".mp4";//"d:\\1.mp4";//
+	var _dst_filepath =		"/infinityfs1/hivefiles/sobeyhive/bucket-z/u20011/cmupload/2017-04-21/"+ filepath_guid +".mp4";//"d:\\1.mp4";//
 	//var _dst_fcpfilepath = 	"/infinityfs1/hivefiles/sobeyhive/bucket-z/u20002/cmupload/2017-04-21/"+ fcpfilepath_guid +".mp4";
 
 	
@@ -65,7 +65,7 @@ function replaceFilePath(obj){
 	    }	   
 		if(findString(filepath,data))
 			console.log("find string : "+ filepath + " replace with :" + filepath_guid);
-		
+		//   /wfg/g
 	    data = data.replace(filepath,filepath_guid);
 	    
 		//if(findString(fcpfilepath,data))
@@ -99,7 +99,7 @@ function replacePefPath(obj){
 	//console.log(jovepef_guid);
 
 	var _src_pef =  		"/infinityfs1/hivefiles/sobeyhive/bucket-z/u20002/cmupload/2017-04-21/PEF_New_3abaf010db8c4f6686d670610dc92c21.pef";
-	var _dst_fcppef = 		"/infinityfs1/hivefiles/sobeyhive/bucket-z/u20240/"+ fcppef_guid +".pef";	
+	var _dst_fcppef = 		"/infinityfs1/hivefiles/sobeyhive/bucket-z/u20011/cmupload/2017-04-21/"+ fcppef_guid +".pef";	
 	//var _dst_jovepef=		"/infinityfs1/hivefiles/sobeyhive/bucket-z/u20240/"+ jovepef_guid +".pef";
 
 	var fcppef_path = "PEF_New_8b9d130321c54b82a34a06e4fa8a9b51";
@@ -154,7 +154,7 @@ function autoRun(obj){
 	    globals: require(dir+"globals.postman_globals1.json"),
 	    //environment: require("E:\\近期工作\\API\\11.postman_environment.json"),
 	    iterationCount:1,
-	    delayRequest:500,
+	    delayRequest:0,
 	    reporters: ['cli', 'html','json','junit' ]
 	}, function(err,summary) {
 	    //if (err) {
@@ -177,7 +177,7 @@ function autoRun(obj){
 	    } else {
 	        console.log('collection run completed.');
 			//obj.finishFlag = true;
-			setTimeout(function(){console.log("我已经做完了哟");process.exit(1);}, 30000);
+			setTimeout(function(){console.log("晶晶，我已经做完了哟\n，您看看对不对，\n不好理解的，找下老王！");process.exit(1);}, 30000);
 			
 			
 	    }
