@@ -1,4 +1,4 @@
-FROM java:letest
+FROM java:latest
 COPY ./ /usr/src/myapp
 WORKDIR /usr/src/myapp
 ADD ./run.sh /run.sh
