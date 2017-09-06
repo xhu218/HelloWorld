@@ -1,6 +1,15 @@
- var jdProcess = require("./jdProcess.js")
- var my_http = require("./http.js")
- 
+ var jdProcess = require("./jdProcess.js");
+ var my_http = require("./http.js");
+ var mail = require("./mail.js");
+
+
+var str = "我开始工作了哈";
+
+
+mail('67438964@qq.com','开始工作', str);
+
+
+
 
 jdProcess.job();
 
@@ -30,6 +39,10 @@ rl.on('line', function (input) {
     inputArr = [];
 
 });
+
+
+
+
          
 		 
 
@@ -37,20 +50,20 @@ rl.on('line', function (input) {
 
 
 
-            /*
-            var rule = new schedule.RecurrenceRule();　　
-            var times = [];　　
-            //for (var i = 1; i < 60; i++) 
-            {　　　　
-                times.push(1);　　
-            }
+/*
+var rule = new schedule.RecurrenceRule();　　
+var times = [];　　
+//for (var i = 1; i < 60; i++) 
+{　　　　
+    times.push(1);　　
+}
 
-            rule.second = times;　　
-            var c = 0;　　
-            var j = schedule.scheduleJob(rule, function() {　　
-                c++;　　
-                console.log(c);　　
-                job();
-            });
-            */
+rule.second = times;　　
+var c = 0;　　
+var j = schedule.scheduleJob(rule, function() {　　
+    c++;　　
+    console.log(c);　　
+    job();
+});
+*/
 

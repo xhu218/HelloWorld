@@ -1,4 +1,5 @@
 var jd = require("./jd.js");
+var sendmail = require("./mail.js");
 
 var jdProcess = {
     job: function() {
@@ -9,7 +10,7 @@ var jdProcess = {
         var docount = 0;
         var totalcount = 48;
         var myArray = [];
-		
+
         //r root_dir = "/ext_file_root/bucket-z/wfg/jd";
         var root_dir = __dirname;
 
@@ -58,9 +59,11 @@ var jdProcess = {
                     writetoFile(writeto, path, true);
                     writetoFile(writeto, datapath, false);
 
+                    sendmail('67438964@qq.com', '数据有更新', GetMailContent(result));
+
                     var time1 = sd.format(new Date(), 'YYYY-MM-DD HH:mm');
-                    var info = "var extentinfo = {    lastUpdateTime:'"+ time1 +"'}";
-                    writetoFile(info, extenpath, false);                    
+                    var info = "var extentinfo = {    lastUpdateTime:'" + time1 + "'}";
+                    writetoFile(info, extenpath, false);
 
                     //TODO 发送邮件提醒
                 } else {
@@ -69,6 +72,22 @@ var jdProcess = {
 
             }
         }
+
+        function GetMailContent(arr) {
+
+
+            var content = "<table style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px ;'> <caption>秒杀数据</caption> <thead> <tr style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>图片</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>京东价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>秒杀价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>降价</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>折扣</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>开始时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>结束时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>卖出比例</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>名字</th> </tr> </thead> <tbody> ";
+
+
+            for (var x = 0; x < arr.length; x++) {
+                content += "<tr> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '><img src='" + arr[x].imageurl + "' /></td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].jdPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].miaoShaPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].discount + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].rate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].startTimeShow + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + (arr[x].endRemainTime / 60 / 60).toFixed(0) + "小时后</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '><a href='https://search.jd.com/Search?enc=utf-8&keyword=" + arr[x].wname + "' target='_blank '>" + arr[x].wname + "</a></td> </tr>";
+            }
+
+            content += "</tbody> </table>";
+            return content;
+        }
+
+
 
         function isTheSameList(arr1, arr2) {
             console.log("arr1.length = " + arr1.length + "arr2.length = " + arr2.length);
@@ -156,14 +175,19 @@ var jdProcess = {
         ];
 
         for (var i = 1; i <= totalcount; i++) {
-            
+
             var url = "https://ai.jd.com/index_new?app=Seckill&action=pcMiaoShaAreaList&callback=pcMiaoShaAreaList&gid=" + i + "&_=1503102871402";
             //var url =        "https://ai.jd.com/index_new?app=Seckill&action=pcMiaoShaAreaList&callback=pcMiaoShaAreaList&gid=27&_=1503104593912";
             jd.setUrl(url);
-            var goods = jd.sendRequest(function(url, goods) {
-                //console.log(url, goods);
-                printgoods(url, goods.miaoShaList);
-            })
+            try {
+                var goods = jd.sendRequest(function(url, goods) {
+                    //console.log(url, goods);
+                    printgoods(url, goods.miaoShaList);
+                });
+            } catch (err) {
+                console.log(err);
+            }
+
         }
     }
 };

@@ -1,8 +1,8 @@
-mdule.exports = {
+module.exports = {
        //邮件配置
     email: {
-        service: 'QQ',
-        user: '67438964',
+        service: 'Hotmail',
+        user: 'xhu218@hotmail.com',
         pass: 'Pass2word321'
     }
 }

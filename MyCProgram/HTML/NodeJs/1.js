@@ -1,5 +1,9 @@
-function a(){
-var x = (time=null? 100:100)
-console.log(x);
+function a() {
+    var x = (time = null ? 100 : 100)
+    console.log(x)
 }
-a();
+
+setTimeout(a(),5000);
+//a()
+setInterval(a(),5000);
+

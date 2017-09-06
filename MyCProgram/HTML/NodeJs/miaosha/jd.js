@@ -30,7 +30,10 @@ var jd = {
         request(this.options, function(error, response, body) {
 
 
-            if (error) throw new Error(error);
+            if (error) {
+				 console.log(err);
+            	//throw new Error(error);
+            }
             var pcMiaoShaAreaList = {};
             try {
                 var strToJson = function(str) {

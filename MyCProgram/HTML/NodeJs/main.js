@@ -1,6 +1,6 @@
 var fs = require("fs");
 
-var data = fs.readFileSync('input.txt');
+var data = fs.readFileSync('test.js');
 
 console.log(data.toString());
 console.log("程序执行结束!");
@@ -9,7 +9,7 @@ console.log("-------------------------------");
 
 //var fs = require("fs");
 
-fs.readFile('input.txt', function (err, data) {
+fs.readFile('test.js', function (err, data) {
     if (err) return console.error(err);
     console.log(data.toString());
 });

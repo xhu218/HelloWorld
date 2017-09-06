@@ -46,4 +46,4 @@ var sendMail = function (recipient, subject, html) {
 module.exports = sendMail;
 
 
-sendMail('67438964@qq.com','00000000000000000000', 'H0000000000000');
+//sendMail('67438964@qq.com','00000000000000000000', 'H0000000000000');
