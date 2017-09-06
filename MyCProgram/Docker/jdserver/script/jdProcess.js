@@ -37,7 +37,7 @@ var jdProcess = {
 
                 var result = removeDup(myArray);
                 result.sort(function(a, b) {
-                    return a.wareId - b.wareId;
+                    return a.startTimeShow - b.startTimeShow;
                 });
 
                 var datapath = root_dir + "/data/data.js";
@@ -179,10 +179,15 @@ var jdProcess = {
             var url = "https://ai.jd.com/index_new?app=Seckill&action=pcMiaoShaAreaList&callback=pcMiaoShaAreaList&gid=" + i + "&_=1503102871402";
             //var url =        "https://ai.jd.com/index_new?app=Seckill&action=pcMiaoShaAreaList&callback=pcMiaoShaAreaList&gid=27&_=1503104593912";
             jd.setUrl(url);
-            var goods = jd.sendRequest(function(url, goods) {
-                //console.log(url, goods);
-                printgoods(url, goods.miaoShaList);
-            })
+            try {
+                var goods = jd.sendRequest(function(url, goods) {
+                    //console.log(url, goods);
+                    printgoods(url, goods.miaoShaList);
+                });
+            } catch (err) {
+                console.log(err);
+            }
+
         }
     }
 };
