@@ -5,7 +5,7 @@ body {
     }
 
     table {
-        border: 2px solid #42b983;
+        border: 1px solid #42b983;
         border-radius: 3px;
         background-color: #fff;
     }
@@ -22,6 +22,7 @@ body {
 
     td {
         background-color: #f9f9f9;
+
     }
 
     th,
@@ -29,7 +30,7 @@ body {
         min-width: 120px;
         padding: 10px 20px;
         border: solid;
-        border-width: 1px
+        border-width: 1px 1px 0px 0px;
     }
 
     th.active {

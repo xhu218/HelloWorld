@@ -31,7 +31,7 @@ var jd = {
 
 
             if (error) {
-				 console.log(err);
+				 console.log(error);
             	//throw new Error(error);
             }
             var pcMiaoShaAreaList = {};

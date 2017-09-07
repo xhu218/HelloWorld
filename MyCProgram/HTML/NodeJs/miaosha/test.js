@@ -1,9 +1,3 @@
-
-
-var m = require("./mail.js");
-
-m.sendMail('67438964@qq.com','00000000000000000000', 'H0000000000000');
-
 console.log(process.execPath)
 console.log(__dirname)
 console.log(process.cwd())
