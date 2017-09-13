@@ -13,8 +13,10 @@ namespace NhostDB
     {
         static void Main(string[] args)
         {
+            String num = "170.38461538461539";
+            ulong lng = ulong.Parse(num);
             //TestGen2SmmUserLoginInfo();
-            TestSelfTab1Info();
+            //TestSelfTab1Info();
             Console.Read();
 
 
