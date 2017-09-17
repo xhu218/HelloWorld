@@ -12,6 +12,7 @@
 
         //alert("hello");
         //$.cookie('the_cookie', 'the_value'); 
+        /*
         var num = 101;
         var num1 = num > 100 ? 0 : num;
 
@@ -29,6 +30,58 @@
             alert("is null");
 
         }
+
+        */
+        //alert("hello world");
+
+
+         function SaveObject(currentUploadClipName, currentFolderPath, currentFilePath, uploadfile) {
+                    dataJson = "";
+                    $.ajax({
+                        type: "post",
+                        url: "http://172.16.168.203:9020/Handler/MaterialList.ashx",
+                        data: {
+                            OperationType: "SaveObjectInfo",
+                            ObjName: currentUploadClipName,
+                            LogicPath: currentFolderPath,
+                            FilePath: currentFilePath,
+                            FileType: uploadfile.type,
+                            usertoken:"$.fn.uploadfiles.defaults.usertoken",
+                            siteCode: "S1"
+                            //FrameRate: fileFormatInfo.framerate,//改变了调用方式，直接调用whb接口返回完整的入库协议。
+                            //NtsctcMode: fileFormatInfo.ntsctcmode,
+                            //VideoStandard: fileFormatInfo.videostandard,
+                            //FileformatID: fileFormatInfo.fileformatid,
+                            //FileLength: fileFormatInfo.FileLength,
+                            //DBE:fileFormatInfo.DBeStreamChannel
+                        },
+                        dataType: "json",
+                        async: false,
+                        beforeSend: function () {
+                            //ShowWaitWindow();
+                        },
+                        error: function () {
+                            //jAlert("入库失败");
+                            alert("error");
+                        },
+                        success: function (data) {
+                            //jAlert("入库成功");
+                            if (data.R) {
+                                alert("success...");
+                               
+                            }
+
+
+                        },
+                        complete: function (data, textStatus) {
+                            //HideWaitWindow();
+                        }
+                    });
+                }
+
+
+                SaveObject("wfg","a","b","c");
+
 
 
 

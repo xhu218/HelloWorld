@@ -53,7 +53,7 @@ def testLogin(desc, username, password, result):
     browser.find_by_value('登录').first.click()  
     checkresult(result)  
   
-__testUrl = 'https://miaosha.jd.com/'  
+__testUrl = 'https://cart.jd.com/cart.action'  
   
 # chrome driver : http://code.google.com/p/selenium/wiki/ChromeDriver  
 # already support firefox  

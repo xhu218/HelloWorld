@@ -1,8 +1,8 @@
-1503067109070	geckodriver	INFO	Listening on 127.0.0.1:48098
-1503067111028	mozprofile::profile	INFO	Using profile path A:\AppData\Local\Temp\rust_mozprofile.FWKYdRAwtBsu
-1503067111046	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
-1503067111079	geckodriver::marionette	INFO	Connecting to Marionette on localhost:48114
-1503067113379	Marionette	INFO	Listening on port 48114
+1505577729757	geckodriver	INFO	Listening on 127.0.0.1:12570
+1505577731757	mozprofile::profile	INFO	Using profile path A:\AppData\Local\Temp\rust_mozprofile.HNwWTH9Pd1xr
+1505577731757	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+1505577731757	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12576
+1505577732689	Marionette	INFO	Listening on port 12576
 JavaScript warning: resource://addoninstaller/log4moz.js, line 494: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
 JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=s&json=1&p=3&sid=1458_21106_18559_17001&req=2&csor=1&cb=jQuery1102002515705176612848_1503067117243&_=1503067117245, line 1: TypeError: jQuery1102002515705176612848_1503067117243 is not a function
 on
