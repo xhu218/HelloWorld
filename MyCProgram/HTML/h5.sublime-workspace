@@ -1,0 +1,973 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"win",
+				"set_window_size\tfunction"
+			],
+			[
+				"jd",
+				"jdtime\tstatement"
+			],
+			[
+				"jdtime",
+				"jdtimeStr"
+			],
+			[
+				"jdt",
+				"jdtimeStr\tstatement"
+			],
+			[
+				"find",
+				"find_elements_by_id\tfunction"
+			],
+			[
+				"finde",
+				"find_element_by_class_name\tfunction"
+			],
+			[
+				"d",
+				"__doc__\tinstance"
+			],
+			[
+				"FIN",
+				"find_element_by_css_selector\tfunction"
+			],
+			[
+				"fin",
+				"find_element_by_link_text\tfunction"
+			],
+			[
+				"cl",
+				"click\tfunction"
+			],
+			[
+				"sett",
+				"setInterval〔function〕"
+			],
+			[
+				"getd",
+				"getDay〔function〕"
+			],
+			[
+				"get",
+				"getDay〔function〕"
+			],
+			[
+				"last",
+				"lastUpdateTime〔variable〕"
+			],
+			[
+				"set",
+				"setInterval〔function〕"
+			],
+			[
+				"las",
+				"lastUpdateTime"
+			],
+			[
+				"getm",
+				"getMonth〔function〕"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"pa",
+				"padding: 〔property〕"
+			],
+			[
+				"path",
+				"pathname"
+			],
+			[
+				"syte",
+				"style\tTag"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"ext",
+				"extenpath〔variable〕"
+			],
+			[
+				"re",
+				"replace"
+			],
+			[
+				"css",
+				"css\t.css() - single"
+			],
+			[
+				"add",
+				"address\t<address>"
+			],
+			[
+				"onm",
+				"onmouseout\tAttr"
+			],
+			[
+				"bo",
+				"border-radius"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"sytle",
+				"style\tAttr"
+			],
+			[
+				"fun",
+				"function〔keyword〕"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"removed",
+				"removeDup〔function〕"
+			],
+			[
+				"rep",
+				"repeat"
+			],
+			[
+				"wor",
+				"word-break"
+			],
+			[
+				"word",
+				"word-break"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"bor",
+				"border-width"
+			],
+			[
+				"bodr",
+				"border-style"
+			],
+			[
+				"scr",
+				"script\tTag"
+			],
+			[
+				"mia",
+				"miaoShaPrice"
+			],
+			[
+				"replace",
+				"replaceAll\t.replaceAll()"
+			],
+			[
+				"fo",
+				"footer\tstatement"
+			],
+			[
+				"findelement_bye",
+				"find_element_by_class_name\tfunction"
+			],
+			[
+				"find_elements",
+				"find_elements_by_link_text\tfunction"
+			],
+			[
+				"goo",
+				"goods_title\tstatement"
+			],
+			[
+				"Vo",
+				"VolunteerFactory"
+			],
+			[
+				"V",
+				"VolunteerFactory"
+			],
+			[
+				"Un",
+				"UnderGraduateFactory"
+			],
+			[
+				"Number",
+				"NumberB"
+			],
+			[
+				"Oper",
+				"OperationAdd"
+			],
+			[
+				"Op",
+				"OperationAdd"
+			],
+			[
+				"Write",
+				"WriteLine"
+			],
+			[
+				"ab",
+				"abstract"
+			],
+			[
+				"has",
+				"hasfinished〔variable〕"
+			],
+			[
+				"sear",
+				"searchString〔variable〕"
+			],
+			[
+				"sea",
+				"searchIndex"
+			],
+			[
+				"file",
+				"file_index"
+			],
+			[
+				"_dst",
+				"_dst_filepath"
+			],
+			[
+				"console",
+				"console.log"
+			],
+			[
+				"repl",
+				"replacePefPath〔function〕"
+			],
+			[
+				"settime",
+				"setTimeout(callback, after);"
+			],
+			[
+				"guid",
+				"guidGenerator〔function〕"
+			],
+			[
+				"log",
+				"console.log();"
+			],
+			[
+				"style",
+				"style\tAttr"
+			],
+			[
+				"ifrm",
+				"iframe\tTag"
+			],
+			[
+				"ifr",
+				"iframe\t<iframe>"
+			],
+			[
+				"FIND",
+				"find_element_by_xpath\tfunction"
+			],
+			[
+				"unde",
+				"undefined〔keyword〕"
+			],
+			[
+				"cm",
+				"CMAPI〔variable〕"
+			],
+			[
+				"e",
+				"ellipsis"
+			],
+			[
+				"br",
+				"break-word"
+			],
+			[
+				"max",
+				"maxlength\tAttr"
+			],
+			[
+				"sty",
+				"style\tAttr"
+			],
+			[
+				"append",
+				"appendTo\t.appendTo()"
+			],
+			[
+				"la",
+				"label\t<label>"
+			],
+			[
+				"lb",
+				"label\t<label> with <input>"
+			],
+			[
+				"read",
+				"ready\t$(document).ready"
+			],
+			[
+				"app",
+				"append\t.append()"
+			],
+			[
+				"inser",
+				"insertBefore\t.insertBefore()"
+			],
+			[
+				"ap",
+				"appendTo\t.appendTo()"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"load",
+				"load\t.load()"
+			],
+			[
+				"ajax",
+				"ajax\t$.ajax()"
+			],
+			[
+				"aj",
+				"ajax\tGoogle AJAX Libraries: jQuery"
+			],
+			[
+				"aja",
+				"ajax\tGoogle AJAX Libraries: Prototype"
+			],
+			[
+				"div",
+				"div\tTag"
+			],
+			[
+				"he",
+				"header\t<header>"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "h5.sublime-project",
+			"settings":
+			{
+				"buffer_size": 45,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/MyJava.sublime-build",
+					""
+				],
+				[
+					"Packages/User/MyJava.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/MyJava.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 236.0,
+		"last_filter": "view:to",
+		"selected_items":
+		[
+			[
+				"view:to",
+				"View: Toggle Menu"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"ss:js",
+				"Set Syntax: JSON"
+			],
+			[
+				"SS:SQL",
+				"Set Syntax: SQL"
+			],
+			[
+				"ss:sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"Package Control: ip",
+				"Package Control: Install Package"
+			],
+			[
+				"IP",
+				"Package Control: Install Package"
+			],
+			[
+				"ss:HTML",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss:json",
+				"Set Syntax: JSON"
+			],
+			[
+				"ss:html",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss:php",
+				"Set Syntax: PHP"
+			],
+			[
+				"ss:j",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"git",
+				"Set Syntax: Git Commit View"
+			],
+			[
+				"ss:ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss:",
+				"Set Syntax: Java"
+			],
+			[
+				"SS:XML",
+				"Set Syntax: XML"
+			],
+			[
+				"josn",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"JOSON",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"JSON",
+				"JsonTree: Show Tree"
+			],
+			[
+				"install",
+				"Nodejs::NPM::Install"
+			],
+			[
+				"SS:HTML",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss:css",
+				"Set Syntax: CSS"
+			],
+			[
+				"SS:JS",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss:h",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 540.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())",
+			"import  urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp)ifnotos.path.exists(ipp)elseNone;urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read());print('Please restart Sublime Text to finish installation')",
+			"import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())",
+			"import urllib.request,os,hashlib; h = '261dd1222b4693ce6d4f85f9c827ac06' + '6d5ab8ebdd020086947172a8a1356bb6'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())；",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": true,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": true,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Work/GitHub/HTML"
+	],
+	"file_history":
+	[
+		"/C/Users/WangFugui/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/WangFugui/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/E/Work/GitHub/HTML/python/test.py",
+		"/E/Work/GitHub/HTML/python/5.py",
+		"/E/Work/GitHub/HTML/JQuery/10.html",
+		"/E/Work/GitHub/HTML/python/bak.py",
+		"/E/Work/GitHub/HTML/Angularjs/jquery-1.11.3.js",
+		"/E/Work/Sonaps-GTM/5.4/GTMWEB/Sobey.Sonaps.Web.PlatForm/Js/Basic/jquery.js",
+		"/E/Work/GitHub/HTML/python/2.py",
+		"/E/Work/GitHub/HTML/NodeJs/tcp/server.js",
+		"/E/Work/GitHub/HTML/NodeJs/tcp/client.js",
+		"/E/Work/GitHub/HTML/python/4.py",
+		"/E/Work/GitHub/HTML/python/1.py",
+		"/E/Work/G2/G2Project/MOS/Sobey.S2.MOS/SobeyCode/Sobey.S2.MOS.S2IF/TCPSessionDealer.cs",
+		"/E/Work/GitHub/HTML/NodeJs/1.js",
+		"/E/Work/GitHub/HTML/JQuery/9.html",
+		"/A/AppData/Local/Temp/scp34140/home/wangfugui/docker/Java/script/start.sh",
+		"/A/AppData/Local/Temp/scp46604/home/administrator/Documents/jdserver/script/jdProcess.js",
+		"/A/AppData/Local/Temp/scp10782/sobeyhive/app/cmserver-1.1.0/CMServer/Config/CMApi/SNSServerConfig.xml--------------",
+		"/A/AppData/Local/Temp/scp49309/home/administrator/Documents/jdserver/Dockerfile",
+		"/A/AppData/Local/Temp/scp37907/home/wangfugui/docker/Node.js/my_nodejs_script_install.sh",
+		"/A/AppData/Local/Temp/scp46702/home/wangfugui/docker/hadoop/step2.sh",
+		"/A/AppData/Local/Temp/scp22660/home/wangfugui/docker/hadoop/my_hadoop_script_install.sh",
+		"/A/AppData/Local/Temp/scp35092/home/wangfugui/docker/Java/script/MANIFEST.MF",
+		"/A/AppData/Local/Temp/scp19042/home/wangfugui/docker/Java/my_java_script_install.sh",
+		"/A/AppData/Local/Temp/scp53813/home/wangfugui/docker/Java/start.sh",
+		"/A/AppData/Local/Temp/scp34140/home/wangfugui/docker/Java/script/test.java",
+		"/A/AppData/Local/Temp/scp34444/home/wangfugui/docker/Java/script/test1.java",
+		"/E/Work/GitHub/HTML/JQuery/uploadlargefile/index.html",
+		"/E/Work/GitHub/HTML/JQuery/uploadlargefile/UploadPlugin.js",
+		"/E/Work/GitHub/HTML/JQuery/大文件上传/index.html",
+		"/E/Work/GitHub/HTML/JQuery/大文件上传/UploadPlugin.js",
+		"/E/Work/GitHub/HTML/JQuery/max-length.html",
+		"/E/Work/GitHub/HTML/JQuery/字典文件处理.html",
+		"/E/Work/GitHub/HTML/foundation/2.html",
+		"/E/Work/GitHub/HTML/JQuery/事情绑定/绑定事件.html",
+		"/A/AppData/Local/Temp/scp35933/home/administrator/Documents/jdserver/script/jdProcess.js",
+		"/E/Work/Sonaps-GTM/5.4/GTMUI/Sonaps.GTM.ExternalIF/ExternalActor.cs",
+		"/E/Work/Sonaps-GTM/5.4/GTMCore/GTMCoreAPI/GTMCoreAPI.cpp",
+		"/E/Work/Sonaps-GTM/5.4/GTMCore/GTMCoreAPI/GTMDataAPI.cpp",
+		"/E/Work/Sonaps-GTM/5.4/GTMCore/GTMCoreAPI/GTMDataAPI.h",
+		"/E/Work/Sonaps-GTM/5.4/GTMCore/GTMCoreAPI/GTMControlAPI.cpp",
+		"/E/Work/Sonaps-GTM/5.4/GTMCore/GTMCoreAPI/GTMControlAPI.h",
+		"/A/AppData/Local/Temp/scp37830/home/administrator/Documents/jdserver/script/data/data.js",
+		"/E/Work/GitHub/HTML/NodeJs/main.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/sftp-config.json",
+		"/a/appdata/local/temp/sublime-svn-1503710881/SVN",
+		"/E/Work/GitHub/HTML/NodeJs/sftp-config.json",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/sample.html",
+		"/E/Work/GitHub/HTML/JQuery/PostMessasge/drag.html",
+		"/A/AppData/Local/Temp/scp58109/home/administrator/Documents/jdserver/script/jd.js",
+		"/A/AppData/Local/Temp/scp00389/home/administrator/Documents/jdserver/script/jdProcess.js",
+		"/A/AppData/Local/Temp/scp22556/home/administrator/Documents/jdserver/script/mail.js",
+		"/A/AppData/Local/Temp/scp45577/home/administrator/Documents/jdserver/script/base.js",
+		"/A/AppData/Local/Temp/scp44139/home/administrator/Documents/jdserver/script/index2.html",
+		"/A/AppData/Local/Temp/scp40588/home/administrator/Documents/jdserver/script/jdProcess.js",
+		"/A/AppData/Local/Temp/scp21614/home/administrator/Documents/jdserver/script/server.js",
+		"/A/AppData/Local/Temp/scp42225/home/administrator/Documents/jdserver/script/data/data.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/mail.js",
+		"/A/AppData/Local/Temp/scp34718/home/administrator/Documents/jdserver/package.json",
+		"/A/AppData/Local/Temp/scp00531/home/administrator/Documents/jdserver/script/config.js",
+		"/A/AppData/Local/Temp/scp14964/home/administrator/Documents/jdserver/script/mail.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/config.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/test.js",
+		"/A/AppData/Local/Temp/scp55896/home/administrator/Documents/jdserver/script/server.js",
+		"/A/AppData/Local/Temp/scp55899/home/administrator/Documents/jdserver/script/http.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/jdProcess.js",
+		"/A/AppData/Local/Temp/scp17817/home/administrator/Documents/jdserver/script/index2.html",
+		"/E/Work/GitHub/HTML/NodeJs/test.js",
+		"/A/AppData/Local/Temp/scp22154/home/administrator/Documents/jdserver/script/test.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/http.js",
+		"/A/AppData/Local/Temp/scp10625/home/administrator/Documents/jdserver/script/data/extentinfo.js",
+		"/A/AppData/Local/Temp/scp06591/home/administrator/Documents/jdserver/script/main.js",
+		"/A/AppData/Local/Temp/scp12005/home/administrator/Documents/jdserver/script/server1.js",
+		"/A/AppData/Local/Temp/scp57847/home/administrator/Documents/jdserver/script/jdProcess.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/server.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/main.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/mine.js",
+		"/E/Work/GitHub/HTML/JQuery/test.html",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/data/extentinfo.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/index2.html",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/data/data.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/base.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/base.css",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/jd.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/index.html",
+		"/E/Work/GitHub/HTML/Instagram-API/Instagram-API/src/Client.php",
+		"/E/Work/GitHub/HTML/NodeJs/newman1.js",
+		"/a/appdata/local/temp/sublime-svn-1503123098/SVN",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/data/2017-08-19 16-32.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/data.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/data1.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/2017-08-19 13-33.js",
+		"/C/Python27/lib/site-packages/selenium-3.0.2-py2.7.egg/selenium/webdriver/remote/webdriver.py",
+		"/C/Program Files (x86)/WinSCP/Files/Sublime",
+		"/E/Work/GitHub/HTML/NodeJs/CMAPI.postman_collection.json",
+		"/C/Users/WangFugui/Desktop/TODO.sql",
+		"/E/Work/GitHub/HTML/NodeJs/result.txt",
+		"/E/Work/GitHub/HTML/NodeJs/findrequest(step 1).js",
+		"/E/Work/GitHub/HTML/NodeJs/result/url2017-08-16 12-15txt",
+		"/E/Work/GitHub/HTML/python/3.py",
+		"/E/Work/GitHub/HTML/NodeJs/findString(step 2).js",
+		"/E/Work/GitHub/HTML/NodeJs/result2017-08-16 12-11txt",
+		"/C/Program Files (x86)/WinSCP/Text",
+		"/C/Program Files (x86)/WinSCP/3",
+		"/E/Work/GitHub/HTML/php/drag.htm",
+		"/E/Work/GitHub/HTML/php/index.php",
+		"/E/Work/GitHub/HTML/NodeJs/request.url",
+		"/C/Users/WangFugui/Desktop/Template/ADD663FFAE31455A932A0F5ED301BB32/ablityDescription.json",
+		"/C/Users/WangFugui/AppData/Local/Temp/scp32939/root/Instagram-API/examples/uploadfile/upload_file1.php",
+		"/J/20170718/mysql.txt",
+		"/C/Users/WangFugui/AppData/Roaming/Sublime Text 3/Packages/SqlBeautifier/SQL Beautifier.sublime-settings",
+		"/E/Work/GitHub/HTML/csharp/模板方法.cs",
+		"/E/Work/GitHub/HTML/csharp/测试程序.1.cs",
+		"/E/Work/GitHub/HTML/csharp/外观模式.cs",
+		"/E/Work/GitHub/HTML/csharp/建造者模式.cs",
+		"/E/Work/GitHub/HTML/csharp/?????.cs(92,15)",
+		"/E/Work/GitHub/HTML/csharp/?????.cs(66,16)",
+		"/E/Work/GitHub/HTML/csharp/?????.cs(26,26)",
+		"/E/Work/GitHub/HTML/csharp/测试程序.2.cs",
+		"/E/Work/GitHub/HTML/csharp/测试程序.cs",
+		"/E/Work/GitHub/HTML/csharp/????.cs(33,38)",
+		"/E/Work/GitHub/HTML/csharp/????.cs(5,7)",
+		"/E/Work/GitHub/HTML/csharp/????.cs(4,7)",
+		"/E/Work/GitHub/HTML/csharp/模板方法.cs(3,9)",
+		"/E/Work/GitHub/HTML/csharp/工厂方法.cs(7,38)",
+		"/E/Work/GitHub/HTML/csharp/工厂方法.cs",
+		"/E/Work/GitHub/HTML/csharp/原型模式.cs"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "h5.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45,
+								45
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"is_init_dirty_state": false,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 285.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.nodejs":
+	{
+		"height": 354.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "h5.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"expor",
+				"C:\\Users\\WangFugui\\AppData\\Local\\Temp\\scp53572\\sobeyhive\\app\\cmweb-1.0.0\\CMWeb\\js\\page\\ExportPlugin.js"
+			],
+			[
+				"cmapi",
+				"C:\\Users\\WangFugui\\AppData\\Local\\Temp\\scp49927\\usr\\local\\nginx\\conf\\nginx.d\\cmapi.forward"
+			],
+			[
+				"cm.",
+				"C:\\Users\\WangFugui\\AppData\\Local\\Temp\\scp49119\\usr\\local\\nginx\\conf\\nginx.d\\cm.forward"
+			],
+			[
+				"weblar",
+				"CMWeb\\Handler\\WebLargeFileUploadService.aspx"
+			],
+			[
+				"jquery.ad",
+				"CMWeb\\js\\plugins\\jquery.advancedsearch.js"
+			],
+			[
+				"jquery.full",
+				"CMWeb\\js\\plugins\\jquery.fulltextsearch.js"
+			],
+			[
+				"usersp",
+				"CMWeb\\js\\page\\UserSpace.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 475.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 173.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}
