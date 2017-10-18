@@ -19,6 +19,7 @@ __times =("06:00:00","08:00:00","10:00:00","12:00:00","14:00:00","16:00:00","18:
 __price = "¥1.00";
 __retrycount = 60;
 __beforeclosetime = 300;
+__miaoshasuccess = False;
 
 
 '''
@@ -84,15 +85,23 @@ while True:
 									
 									browser.find_element_by_class_name("submit-btn").click();
 									browser.find_element_by_id("order-submit").click();
+									__miaoshasuccess = True;	
+									break;
 
 								else:
 									print("try again");
 
 						time.sleep(__beforeclosetime);
+
 						if __close_after_test:
+							if __miaoshasuccess == True:
+								time.sleep(__beforeclosetime);
 							browser.quit();
+
 					except Exception,e : 
+
 						if __close_after_test:
+							time.sleep(__beforeclosetime);
 							browser.quit()
 						print e
 

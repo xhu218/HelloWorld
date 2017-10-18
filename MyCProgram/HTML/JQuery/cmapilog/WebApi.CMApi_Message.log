@@ -1,0 +1,39 @@
+[2017-10-10 00:00:02.3934][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://172.17.0.9:8999/CMApi/api/basic/account/testconnect
+
+
+[2017-10-10 00:00:02.3943][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "0",
+  "msg": "Welcome To CM Server",
+  "txt",[]
+}
+
+[2017-10-10 00:00:03.1309][TRACE][WebApi.CMApi_Message] 收到请求：
+GET http://hive.sobey.com:9023/CMApi/api/basic/account/getuserstoragebyname?usertoken=a2247bf9745693a872b8c245d009a58b&loginName=yl
+sobeyhive-http-site: S1
+sobeyhive-http-system: WEBCM
+sobeyhive-http-tool: WEBCM
+sobeyhive-http-token: a2247bf9745693a872b8c245d009a58b
+Host: hive.sobey.com:9023
+ORIG_CLIENT_IP: 172.17.0.11
+Connection: close
+
+
+[2017-10-10 00:00:03.1970][TRACE][WebApi.CMApi_Message] 发送应答：
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Accept
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+
+{
+  "code": "0",
+  "ext": {
+    "storagesize": 65498251264,
+    "storageusage": 8141329859,
+    "storagewarningpct": 0.8
+  }
+}
