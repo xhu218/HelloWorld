@@ -43,6 +43,7 @@ var request1 = {
                   callback(url,body);
             } catch (err) {
                 console.log(err);
+                callback(url,null);
                 //console.log(body);
             }
 

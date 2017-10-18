@@ -58,7 +58,7 @@ jijing_last3year
 jijing_sinceThisYear
 jijing_sinceestablish
 
-*/
+
 var obj = txt.split(",");
 
 var data  = {
@@ -85,3 +85,22 @@ jijing_sinceestablish:obj[15],
 console.log(JSON.stringify(data));
 console.log(data);
 
+
+console.log(1,2,3);
+
+
+
+
+var data = [1,2,-5,-4,3,-1,-2,-3];
+data.sort(function(b, a) {
+            return a - b;
+        });
+
+console.log(JSON.stringify(data));
+
+*/
+
+//console.log(parseInt(""));
+var s = "1";
+var b = (s==""?0:s);
+console.log(b);
