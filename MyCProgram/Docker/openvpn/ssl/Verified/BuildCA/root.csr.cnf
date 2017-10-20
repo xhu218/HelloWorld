@@ -1,0 +1,14 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=CN
+ST=Sichuan
+L=Chengdu
+O=Sobey
+OU=Sobey
+emailAddress=hdj@sobey.com
+CN=Sobey

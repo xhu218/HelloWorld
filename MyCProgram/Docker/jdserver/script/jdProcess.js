@@ -2,6 +2,8 @@ var jd = require("./jd.js");
 require('date-utils');
 var sendmail = require("./mail.js");
 var spuId = [];
+var lastUpdateTime = null;
+
 var jdProcess = {
     
     job: function () {
@@ -40,7 +42,7 @@ var jdProcess = {
 
                 var result = removeDup(myArray);
                 result.sort(function (a, b) {
-                    return a.startTimeShow - b.startTimeShow;
+                    return a.startTimeShow.replace(":","") - b.startTimeShow.replace(":","");
                 });
 
                 var datapath = root_dir + "/data/data.js";
@@ -58,7 +60,7 @@ var jdProcess = {
                     //针对超级秒杀，单独发邮件给13548180218@139.com
                     for (var i = 0; i < result.length; i++) {
                         var r = result[i];
-                        if (r.miaoShaPrice == 1) {
+                        if (r.miaoShaPrice == 1 || r.miaoShaPrice<10) {
 
 
                             //先判断此ID是否已经发送过了
@@ -69,15 +71,28 @@ var jdProcess = {
                             }
 
                             if (contains == false) {
-                                spuId.push(r.wareId);
 
+                                //时间换了一天，就把spuId清空掉再来
+                                if(lastUpdateTime == null){lastUpdateTime = new Date().getDay();}
+                                if(lastUpdateTime != new Date().getDay() ){
+								    //the days is changed.
+                                    lastUpdateTime = new Date().getDay();
+                                    spuId = [];
+                                }
+                                    
+                                spuId.push(r.wareId);
+                             
                                 //间隔十秒再发送消息
                                 var date = new Date();
                                 var dt = new Date(date.getFullYear() + " " + date.getMonth() + " " + date.getDate() + " " + r.startTimeShow);
                                 dt.addMonths(1);
-                                dt.addMinutes(6);
+                                // dt.addMinutes(7);
 
-                                var title = dt.toFormat("YYYY-MM-DD HH24:MI:SS") + " " + r.wname;
+                                if(date.compareTo(dt)==1){
+                                    dt.addDays(1);
+                                }                                    
+
+                                var title = dt.toFormat("YYYY-MM-DD HH24:MI") + " " + r.wname;
                                 var content = GetMailContent([r]);
                                 
                                 setTimeout((function(t,c) {
@@ -116,11 +131,20 @@ var jdProcess = {
         function GetMailContent(arr) {
 
 
-            var content = "<table style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px ;'> <caption>秒杀数据</caption> <thead> <tr style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>图片</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>京东价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>秒杀价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>降价</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>折扣</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>开始时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>结束时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>卖出比例</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>名字</th> </tr> </thead> <tbody> ";
+            var content = "<table style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px ;'> <caption>秒杀数据</caption> <thead> <tr style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>图片</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>京东价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>秒杀价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>降价</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>折扣</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>开始时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>结束时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>卖出比例</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>名字</th> </tr> </thead> <tbody> ";
 
 
             for (var x = 0; x < arr.length; x++) {
-                content += "<tr> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><img src='" + arr[x].imageurl + "' /></td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].jdPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].miaoShaPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].discount + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].rate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].startTimeShow + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + (arr[x].endRemainTime / 60 / 60).toFixed(0) + "小时后</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>" + arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '><a href='https://search.jd.com/Search?enc=utf-8&keyword=" + arr[x].wname + "' target='_blank '>" + arr[x].wname + "</a></td> </tr>";
+                content += "<tr> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><img src='" 
+                + arr[x].imageurl + "' /></td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
+                + arr[x].jdPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
+                + arr[x].miaoShaPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
+                + arr[x].discount + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
+                + arr[x].rate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
+                + arr[x].startTimeShow + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
+                + (arr[x].endRemainTime / 60 / 60).toFixed(0) + "小时后</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
+                + arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='https://search.jd.com/Search?enc=utf-8&keyword=" 
+                + arr[x].wname + "' target='_blank '>" + arr[x].wname + "</a></td> </tr>";
             }
 
             content += "</tbody> </table>";
