@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpClientTest", "TcpClientT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myWebClient", "myWebClient\myWebClient.csproj", "{B153562C-F95D-4870-8DEF-8BB3BBB53931}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sony.S2.MOS.MOSGWService", "Sony.S2.MOS.MOSGWService\Sony.S2.MOS.MOSGWService.csproj", "{A0256066-9813-4F4B-9A5D-9FC04361E1B7}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -47,6 +49,10 @@ Global
 		{B153562C-F95D-4870-8DEF-8BB3BBB53931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B153562C-F95D-4870-8DEF-8BB3BBB53931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B153562C-F95D-4870-8DEF-8BB3BBB53931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0256066-9813-4F4B-9A5D-9FC04361E1B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0256066-9813-4F4B-9A5D-9FC04361E1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0256066-9813-4F4B-9A5D-9FC04361E1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0256066-9813-4F4B-9A5D-9FC04361E1B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
