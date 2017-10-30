@@ -1,3 +1,4 @@
+/*
 console.log(process.execPath)
 console.log(__dirname)
 console.log(process.cwd())
@@ -36,3 +37,14 @@ console.log(process.cwd())
     }
 
     //test1();
+
+    */
+
+
+var mail = require("./mail.js");
+
+
+var str = "我开始工作了哈";
+
+
+mail('67438964@qq.com', '开始工作', str);

@@ -9,7 +9,7 @@ define('S3_KEY',    '5zICAtLUtlGbbMfDB2ucQ9OxyO3zwQTG6I5do11P');
 define('S3_SECRET', 'c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7');
 
 
-echo getdate()[0];
+//echo getdate()[0];
 // Stop Here
 
 $algorithm = "AWS4-HMAC-SHA1";
@@ -34,7 +34,7 @@ $policy = [
    
 ];
 
-echo json_encode($policy);
+//echo json_encode($policy);
 $base64Policy = base64_encode(json_encode($policy));
 //$base64Policy = "eyJzY29wZSI6IiIsImRlYWRsaW5lIjoxNDUwMDg4Mzg1fQ==";
 
@@ -68,6 +68,8 @@ $signature = S3_KEY.":".$signature.":".$base64Policy;
                 background: #85C220;
             }
             .bar.red { background: tomato; }
+
+            input {width:1200px;}
         </style>
     </head>
     <body>
@@ -76,11 +78,14 @@ $signature = S3_KEY.":".$signature.":".$base64Policy;
 		
 		<form method="post" action="http://upload.qiniu.com/" enctype="multipart/form-data">
 				<input name="key"  value="orignal.mp4">
+                <br />
 				<input name="token"  value="<?php echo $signature; ?>">
+                <br />
 				<input name="file" type="file" />
-				<button type="submit" value="提交" style="width:100px;height:20px" ></button>
+                <br />
+				<button type="submit" value="提交" style="width:100px;height:20px" >提交</button>
 		</form>
-<!--
+
         <script src="//code.jquery.com/jquery-2.1.4.min.js?version=20150824"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js?version=20150824"></script>
         <script src="fileupload/jquery.fileupload.js?version=20150824"></script>
@@ -128,6 +133,6 @@ $signature = S3_KEY.":".$signature.":".$base64Policy;
                 });
             });
         </script>
-		-->
+		
     </body>
 </html>

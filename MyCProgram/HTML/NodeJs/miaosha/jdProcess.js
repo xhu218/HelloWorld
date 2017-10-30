@@ -5,8 +5,8 @@ var spuId = [];
 var lastUpdateTime = null;
 
 var jdProcess = {
-    
-    job: function () {
+
+    job: function() {
 
         var cut = 0.3;
         var jdPrice = 1000;
@@ -14,7 +14,7 @@ var jdProcess = {
         var docount = 0;
         var totalcount = 48;
         var myArray = [];
-        
+
 
         //r root_dir = "/ext_file_root/bucket-z/wfg/jd";
         var root_dir = __dirname;
@@ -25,7 +25,7 @@ var jdProcess = {
             docount++;
             console.log(docount);
             //console.log(goods);
-            goods.forEach(function (good, index) {
+            goods.forEach(function(good, index) {
                 if (good.miaoShaPrice / good.jdPrice < cut) {
 
                     //console.log(index, item.jdPrice, item.miaoShaPrice, item.miaoShaPrice / item.jdPrice, item.wname);
@@ -41,8 +41,8 @@ var jdProcess = {
 
 
                 var result = removeDup(myArray);
-                result.sort(function (a, b) {
-                    return a.startTimeShow.replace(":","") - b.startTimeShow.replace(":","");
+                result.sort(function(a, b) {
+                    return a.startTimeShow.replace(":", "") - b.startTimeShow.replace(":", "");
                 });
 
                 var datapath = root_dir + "/data/data.js";
@@ -60,7 +60,7 @@ var jdProcess = {
                     //针对超级秒杀，单独发邮件给13548180218@139.com
                     for (var i = 0; i < result.length; i++) {
                         var r = result[i];
-                        if (r.miaoShaPrice == 1 || r.miaoShaPrice<10) {
+                        if (r.miaoShaPrice == 1 || r.miaoShaPrice < 10) {
 
 
                             //先判断此ID是否已经发送过了
@@ -73,33 +73,33 @@ var jdProcess = {
                             if (contains == false) {
 
                                 //时间换了一天，就把spuId清空掉再来
-                                if(lastUpdateTime == null){lastUpdateTime = new Date().getDay();}
-                                if(lastUpdateTime != new Date().getDay() ){
-								    //the days is changed.
+                                if (lastUpdateTime == null) { lastUpdateTime = new Date().getDay(); }
+                                if (lastUpdateTime != new Date().getDay()) {
+                                    //the days is changed.
                                     lastUpdateTime = new Date().getDay();
                                     spuId = [];
                                 }
-                                    
+
                                 spuId.push(r.wareId);
-                             
+
                                 //间隔十秒再发送消息
                                 var date = new Date();
                                 var dt = new Date(date.getFullYear() + " " + date.getMonth() + " " + date.getDate() + " " + r.startTimeShow);
                                 dt.addMonths(1);
                                 // dt.addMinutes(7);
 
-                                if(date.compareTo(dt)==1){
+                                if (date.compareTo(dt) == 1) {
                                     dt.addDays(1);
-                                }                                    
+                                }
 
                                 var title = dt.toFormat("YYYY-MM-DD HH24:MI") + " " + r.wname;
-                                var content = GetMailContent([r]);
-                                
-                                setTimeout((function(t,c) {
+                                var content = GetMailContent([r], "13548180218@139.com");
+
+                                setTimeout((function(t, c) {
                                     return function() {
                                         sendmail("13548180218@139.com", t, c);
                                     }
-                                })(title,content), index * 10000);
+                                })(title, content), index * 10000);
 
 
                             }
@@ -114,7 +114,41 @@ var jdProcess = {
                     writetoFile(writeto, path, true);
                     writetoFile(writeto, datapath, false);
 
-                    sendmail('67438964@qq.com', '数据有更新', GetMailContent(result));
+
+                    var request = require("request")
+
+                    var url = "http://172.16.134.238:8888/user.json";//http://qxu1194650105.my3w.com/data/user.json"
+
+                    request({
+                        url: url,
+                        json: true
+                    }, function(error, response, users) {
+
+                        if (!error && response.statusCode === 200) {
+                            //console.log(users) // Print the json response
+                            //var users = JSON.parse(users);
+                            //console.log(users.length);
+                            for (var i = 0; i < users.length; i++) {
+                                console.log(users[i]);
+                                if (users[i].enable == true) {
+
+                                    setTimeout((function(email,t, c) {
+                                        return function() {
+                                            sendmail(email, t, c);
+                                        }
+                                    })(users[i].email,"秒杀数据更新", GetMailContent(result, users[i].email)), i * 10000);
+
+
+                                    //sendmail(users[i].email, '秒杀数据更新', GetMailContent(result, users[i].email));
+                                }
+
+                            }
+                        }
+                    })
+
+
+
+
 
                     var time1 = sd.format(new Date(), 'YYYY-MM-DD HH:mm');
                     var info = "var extentinfo = {    lastUpdateTime:'" + time1 + "'}";
@@ -128,23 +162,30 @@ var jdProcess = {
             }
         }
 
-        function GetMailContent(arr) {
+        function GetMailContent(arr, email) {
 
-
-            var content = "<table style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px ;'> <caption>秒杀数据</caption> <thead> <tr style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>图片</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>京东价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>秒杀价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>降价</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>折扣</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>开始时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>结束时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>卖出比例</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>名字</th> </tr> </thead> <tbody> ";
+            var content = "<div style=\"float:right\"> <a href=\"http:\/\/qxu1194650105.my3w.com/subscribe.php?email="+email+"&enable=0\" >取消关注</a> </div> <br/> <hr style=\"clear: both\"> "    
+            content += "<table style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px ;'> <caption>秒杀数据</caption> <thead> <tr style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>图片</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>京东价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>秒杀价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>降价</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>折扣</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>开始时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>结束时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>卖出比例</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>名字</th> </tr> </thead> <tbody> ";
 
 
             for (var x = 0; x < arr.length; x++) {
-                content += "<tr> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><img src='" 
-                + arr[x].imageurl + "' /></td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
-                + arr[x].jdPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
-                + arr[x].miaoShaPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
-                + arr[x].discount + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
-                + arr[x].rate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
-                + arr[x].startTimeShow + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
-                + (arr[x].endRemainTime / 60 / 60).toFixed(0) + "小时后</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" 
-                + arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='https://search.jd.com/Search?enc=utf-8&keyword=" 
-                + arr[x].wname + "' target='_blank '>" + arr[x].wname + "</a></td> </tr>";
+
+                var url = "https://item.jd.com/" + arr[x].wareId + ".html"; //.toString('base64');
+                //url = url.replace("+","-").replace("/","_").replace("=","");
+                //url = url.replace(/+/g,"-").replace(///g,"_").replace(=/g,"");
+
+
+                content += "<tr> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><img src='" +
+                    arr[x].imageurl + "' /></td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
+                    arr[x].jdPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
+                    arr[x].miaoShaPrice + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
+                    arr[x].discount + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
+                    arr[x].rate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
+                    arr[x].startTimeShow + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
+                    (arr[x].endRemainTime / 60 / 60).toFixed(0) + "小时后</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
+                   // arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='http://qxu1194650105.my3w.com/index.php?email=" + email + "&url=" +
+                    arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='" +
+                    url + "' target='_blank '>" + arr[x].wname + "</a></td> </tr>";
             }
 
             content += "</tbody> </table>";
@@ -188,9 +229,9 @@ var jdProcess = {
         function removeDup(arr) {
             /*没有提前返回，这么调没有问题*/
             var result = [];
-            arr.forEach(function (itemX, indexX) {
+            arr.forEach(function(itemX, indexX) {
                 var repeat = false;
-                arr.forEach(function (itemY, indexY) {
+                arr.forEach(function(itemY, indexY) {
                     if (isTheSame(itemX, itemY) && indexX != indexY) {
                         repeat = true;
                     }
@@ -206,7 +247,7 @@ var jdProcess = {
         function writetoFile(content, file, append) {
             var fs = require("fs");
             if (append) {
-                fs.appendFile(file, content, function (err) {
+                fs.appendFile(file, content, function(err) {
                     if (err) {
                         console.log("fail" + err)
                     } else {
@@ -215,7 +256,7 @@ var jdProcess = {
 
                 });
             } else {
-                fs.writeFile(file, content, function (err) {
+                fs.writeFile(file, content, function(err) {
                     if (err) {
                         console.log("fail" + err)
                     } else {
@@ -244,7 +285,7 @@ var jdProcess = {
             //var url =        "https://ai.jd.com/index_new?app=Seckill&action=pcMiaoShaAreaList&callback=pcMiaoShaAreaList&gid=27&_=1503104593912";
             jd.setUrl(url);
             try {
-                var goods = jd.sendRequest(function (url, goods) {
+                var goods = jd.sendRequest(function(url, goods) {
                     //console.log(url, goods);
                     printgoods(url, goods.miaoShaList);
                 });

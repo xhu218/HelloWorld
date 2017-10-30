@@ -1,16 +1,18 @@
 
 
-
+/*
 var sd = require('silly-datetime');
 var time=sd.format(new Date(), 'YYYY-MM-DD HH:mm');
 console.log(time);
+*/
 
-
-var str = "123wfgabcwfg321";
-var tt = str.replace(/wfg/g,'lxx'); 
+var str = "123+wf+/ga/bc=============wfg321";
+var tt = str.replace('/+/g',"-");   
 console.log(tt);
 
 
+
+/*
   var schedule = require("node-schedule");
 
 　var rule = new schedule.RecurrenceRule();
@@ -30,3 +32,5 @@ console.log(tt);
      　　 c++;
       　　console.log(c);
 　　});
+
+*/

@@ -20,7 +20,7 @@ var jijingProcess = {
 
             var doingCount = 0;
 
-            var top = 50
+            var top = 200
 
             for (var index = 1; index <= allpages; index++) {
 
@@ -70,10 +70,11 @@ var jijingProcess = {
 
                             alllist.push(data);
                         }
-                       
-                        writetoFile(JSON.stringify(alllist,null, "\t"), __dirname + "\\alllist.json", false);
+
+                        writetoFile(JSON.stringify(alllist, null, "\t"), __dirname + "\\alllist.json", false);
 
 
+                        /*begin for replace method*/
 
                         var last3year = alllist.sort(function(b, a) {
 
@@ -81,6 +82,7 @@ var jijingProcess = {
                         });
                         var last3yeartop100 = [];
                         for (var i = 0; i < top; i++) {
+                            last3year[i].Sort = i;
                             last3yeartop100.push(last3year[i]);
                         }
                         writetoFile(JSON.stringify(last3year, null, "\t"), __dirname + "\\last3Year.json", false);
@@ -91,6 +93,7 @@ var jijingProcess = {
                         });
                         var last2yeartop100 = [];
                         for (var i = 0; i < top; i++) {
+                            last2year[i].Sort = i;
                             last2yeartop100.push(last2year[i]);
                         }
                         writetoFile(JSON.stringify(last2year, null, "\t"), __dirname + "\\last2Year.json", false);
@@ -100,6 +103,7 @@ var jijingProcess = {
                         });
                         var last1yeartop100 = [];
                         for (var i = 0; i < top; i++) {
+                            last1year[i].Sort = i;
                             last1yeartop100.push(last1year[i]);
                         }
                         writetoFile(JSON.stringify(last1year, null, "\t"), __dirname + "\\last1Year.json", false);
@@ -109,6 +113,7 @@ var jijingProcess = {
                         });
                         var last6Monthtop100 = [];
                         for (var i = 0; i < top; i++) {
+                            last6Month[i].Sort = i;
                             last6Monthtop100.push(last6Month[i]);
                         }
                         writetoFile(JSON.stringify(last6Month, null, "\t"), __dirname + "\\last6Month.json", false);
@@ -118,6 +123,7 @@ var jijingProcess = {
                         });
                         var last3Monthtop100 = [];
                         for (var i = 0; i < top; i++) {
+                            last3Month[i].Sort = i;
                             last3Monthtop100.push(last3Month[i]);
                         }
                         writetoFile(JSON.stringify(last3Month, null, "\t"), __dirname + "\\last3Month.json", false);
@@ -128,6 +134,7 @@ var jijingProcess = {
                         });
                         var lastMonthtop100 = [];
                         for (var i = 0; i < top; i++) {
+                            lastMonth[i].Sort = i;
                             lastMonthtop100.push(lastMonth[i]);
                         }
                         writetoFile(JSON.stringify(lastMonth, null, "\t"), __dirname + "\\last1Month.json", false);
@@ -138,6 +145,7 @@ var jijingProcess = {
 
                         var lastWeektop100 = [];
                         for (var i = 0; i < top; i++) {
+                            lastWeek[i].Sort = i;
                             lastWeektop100.push(lastWeek[i]);
                         }
                         writetoFile(JSON.stringify(lastWeek, null, "\t"), __dirname + "\\lastWeek.json", false);
@@ -146,14 +154,14 @@ var jijingProcess = {
 
                         console.log(last3yeartop100.length, last2yeartop100.length, last1yeartop100.length, last6Monthtop100.length, last3Monthtop100.length, lastMonthtop100.length, lastWeektop100.length);
 
-                        for (var a = 0; a < lastWeektop100.length; a++) {
+                        for (var a = 0; a < last6Monthtop100.length; a++) {
                             console.log(a);
-                            if (isInList(lastWeektop100[a].jijing_Code, lastMonthtop100)
-                                //&& isInList(lastWeektop100[a].jijing_Code, last3Monthtop100) 
-                                //&& isInList(lastWeektop100[a].jijing_Code, last6Monthtop100) 
-                                //&& isInList(lastWeektop100[a].jijing_Code, last1yeartop100) 
-                                //&& isInList(lastWeektop100[a].jijing_Code, last2yeartop100)
-                                //&&isInList(lastWeektop100[a].jijing_Code, last3yeartop100)
+                            if (isInList(last6Monthtop100[a].jijing_Code, last3Month)
+                                //&& isInList(last1yeartop100[a].jijing_Code, last3Monthtop100) 
+                                // && isInList(lastWeektop100[a].jijing_Code, last6Monthtop100) 
+                                // && isInList(lastWeektop100[a].jijing_Code, last1yeartop100) 
+                                // && isInList(lastWeektop100[a].jijing_Code, last2yeartop100)
+                                // &&isInList(lastWeektop100[a].jijing_Code, last3yeartop100)
                             ) {
                                 result.push(lastWeektop100[a]);
 
@@ -169,6 +177,8 @@ var jijingProcess = {
                         console.log("i have finished...");
 
                         console.log(JSON.stringify(result));
+
+                        /*end for replace method*/
                     }
 
 
@@ -217,7 +227,7 @@ var jijingProcess = {
 
     readfile: function() {
 
-        var top = 500;
+        var top = 1000;
 
         function isInList(item, list) {
 
@@ -258,8 +268,11 @@ var jijingProcess = {
             }
         }
 
+
+
         var alllist = JSON.parse(readfromFile(__dirname + "\\alllist.json"));
 
+        /*begin replace  for download method*/
         var last3year = alllist.sort(function(b, a) {
 
             return parseInt(a.jijing_last3year) - parseInt(b.jijing_last3year);
@@ -338,21 +351,19 @@ var jijingProcess = {
 
         console.log(last3yeartop100.length, last2yeartop100.length, last1yeartop100.length, last6Monthtop100.length, last3Monthtop100.length, lastMonthtop100.length, lastWeektop100.length);
 
-        for (var a = 0; a < lastWeektop100.length; a++) {
+        for (var a = 0; a < last6Monthtop100.length; a++) {
             console.log(a);
-            if (isInList(lastWeektop100[a].jijing_Code, lastMonthtop100)
-              //  && isInList(lastWeektop100[a].jijing_Code, last3Monthtop100) 
-               // && isInList(lastWeektop100[a].jijing_Code, last6Monthtop100) 
-               // && isInList(lastWeektop100[a].jijing_Code, last1yeartop100) 
-               // && isInList(lastWeektop100[a].jijing_Code, last2yeartop100)
-               // &&isInList(lastWeektop100[a].jijing_Code, last3yeartop100)
+            if (isInList(last6Monthtop100[a].jijing_Code, last3Month)
+                //&& isInList(last1yeartop100[a].jijing_Code, last3Monthtop100) 
+                // && isInList(lastWeektop100[a].jijing_Code, last6Monthtop100) 
+                // && isInList(lastWeektop100[a].jijing_Code, last1yeartop100) 
+                // && isInList(lastWeektop100[a].jijing_Code, last2yeartop100)
+                // &&isInList(lastWeektop100[a].jijing_Code, last3yeartop100)
             ) {
                 result.push(lastWeektop100[a]);
 
             }
         }
-
-
 
         writetoFile(JSON.stringify(result, null, "\t"), __dirname + "\\result.json", false);
 
@@ -361,6 +372,8 @@ var jijingProcess = {
         console.log("i have finished...");
 
         console.log(JSON.stringify(result));
+
+        /*end for replace method*/
     }
 
 

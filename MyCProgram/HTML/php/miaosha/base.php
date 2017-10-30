@@ -1,8 +1,4 @@
-<html>
-
-<?php  
-
-
+<?php
 //解析URL参数
 function parseUrlParam($query){
     $queryArr = explode('&', $query);
@@ -35,13 +31,17 @@ function getUrlParam($cparam, $url = ''){
     return isset($params[$cparam]) ? $params[$cparam] : '';
 }
 
-echo getUrlParam("url");
-echo getUrlParam("email");
-header("location: ".getUrlParam("url"));
-exit;
-?>
+function urlsafe_b64decode($string) {
+   $data = str_replace(array('-','_'),array('+','/'),$string);
+   $mod4 = strlen($data) % 4;
+   if ($mod4) {
+       $data .= substr('====', $mod4);
+   }
+   return base64_decode($data);
+}
 
-<body>
-   
-</body>
-</html>
+function sayHello( $string){
+  echo "hello " . $string;
+}
+
+?>
