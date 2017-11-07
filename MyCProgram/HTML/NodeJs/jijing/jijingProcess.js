@@ -8,11 +8,6 @@ var jijingProcess = {
     download: function() {
         try {
 
-            /*    
-            var date = new Date();
-            date.addMonths(1);
-            var d = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
-            */
 
             var dt = new Date();
             var d = dt.toFormat("YYYY-MM-DD");
@@ -78,126 +73,16 @@ var jijingProcess = {
                             alllist.push(data);
                         }
 
-                        writetoFile(JSON.stringify(alllist, null, "\t"), __dirname + "\\AllList.json", false);
-                        writetoFile(JSON.stringify(alllist, null, "\t"), __dirname + "\\AllList\\" + d + ".json", false);
+                        var file = require("./fileHelper.js");
+                        file.writetoFile(JSON.stringify(alllist, null, "\t"), __dirname + "\\AllList.json", false);
+                        file.writetoFile(JSON.stringify(alllist, null, "\t"), __dirname + "\\AllList\\" + d + ".json", false);
 
 
                         /*begin for replace method*/
 
-                        var last3year = alllist.sort(function(b, a) {
-
-                            return parseInt(a.jijing_last3year) - parseInt(b.jijing_last3year);
-                        });
-                        var last3yeartop100 = [];
-                        for (var i = 0; i < alllist.length; i++) {
-                            last3year[i].Sort = i;
-                            if (i <= top)
-                                last3yeartop100.push(last3year[i]);
-                        }
-                        writetoFile(JSON.stringify(last3year, null, "\t"), __dirname + "\\Last3Year.json", false);
-                        writetoFile(JSON.stringify(last3year, null, "\t"), __dirname + "\\Last3Year\\" + d + ".json", false);
-
-
-                        var last2year = alllist.sort(function(b, a) {
-                            return parseInt(a.jijing_last2year) - parseInt(b.jijing_last2year);
-                        });
-                        var last2yeartop100 = [];
-                        for (var i = 0; i < alllist.length; i++) {
-                            last2year[i].Sort = i;
-                            if (i <= top)
-                                last2yeartop100.push(last2year[i]);
-                        }
-                        writetoFile(JSON.stringify(last2year, null, "\t"), __dirname + "\\Last2Year.json", false);
-                        writetoFile(JSON.stringify(last2year, null, "\t"), __dirname + "\\Last2Year\\" + d + ".json", false);
-
-                        var last1year = alllist.sort(function(b, a) {
-                            return parseInt(a.jijing_last1year) - parseInt(b.jijing_last1year);
-                        });
-                        var last1yeartop100 = [];
-                        for (var i = 0; i < alllist.length; i++) {
-                            last1year[i].Sort = i;
-                            if (i <= top)
-                                last1yeartop100.push(last1year[i]);
-                        }
-                        writetoFile(JSON.stringify(last1year, null, "\t"), __dirname + "\\Last1Year.json", false);
-                        writetoFile(JSON.stringify(last1year, null, "\t"), __dirname + "\\Last1Year\\"+d+".json", false);
-
-                        var last6Month = alllist.sort(function(b, a) {
-                            return parseInt(a.jijing_last6Month) - parseInt(b.jijing_last6Month);
-                        });
-                        var last6Monthtop100 = [];
-                        for (var i = 0; i < alllist.length; i++) {
-                            last6Month[i].Sort = i;
-                            if (i <= top)
-                                last6Monthtop100.push(last6Month[i]);
-                        }
-                        writetoFile(JSON.stringify(last6Month, null, "\t"), __dirname + "\\Last6Month.json", false);
-                        writetoFile(JSON.stringify(last6Month, null, "\t"), __dirname + "\\Last6Month\\" + d + ".json", false);
-
-                        var last3Month = alllist.sort(function(b, a) {
-                            return parseInt(a.jijing_last3Month) - parseInt(b.jijing_last3Month);
-                        });
-                        var last3Monthtop100 = [];
-                        for (var i = 0; i < alllist.length; i++) {
-                            last3Month[i].Sort = i;
-                            if (i <= top)
-                                last3Monthtop100.push(last3Month[i]);
-                        }
-                        writetoFile(JSON.stringify(last3Month, null, "\t"), __dirname + "\\Last3Month.json", false);
-                        writetoFile(JSON.stringify(last3Month, null, "\t"), __dirname + "\\Last3Month\\" + d + ".json", false);
-
-                        var lastMonth = alllist.sort(function(b, a) {
-                            return parseInt(a.jijing_lastMonth, null, "\t") - parseInt(b.jijing_lastMonth);
-                        });
-                        var lastMonthtop100 = [];
-                        for (var i = 0; i < alllist.length; i++) {
-                            lastMonth[i].Sort = i;
-                            if (i <= top)
-                                lastMonthtop100.push(lastMonth[i]);
-                        }
-                        writetoFile(JSON.stringify(lastMonth, null, "\t"), __dirname + "\\Last1Month.json", false);
-                        writetoFile(JSON.stringify(lastMonth, null, "\t"), __dirname + "\\Last1Month\\" + d + ".json", false);
-
-                        var lastWeek = alllist.sort(function(b, a) {
-                            return parseInt(a.jijing_lastWeek) - parseInt(b.jijing_lastWeek);
-                        });
-
-                        var lastWeektop100 = [];
-                        for (var i = 0; i < alllist.length; i++) {
-                            lastWeek[i].Sort = i;
-                            if (i <= top)
-                                lastWeektop100.push(lastWeek[i]);
-                        }
-                        writetoFile(JSON.stringify(lastWeek, null, "\t"), __dirname + "\\LastWeek.json", false);
-                        writetoFile(JSON.stringify(lastWeek, null, "\t"), __dirname + "\\LastWeek\\" + d + ".json", false);
-
-                        var result = [];
-
-                        console.log(last3yeartop100.length, last2yeartop100.length, last1yeartop100.length, last6Monthtop100.length, last3Monthtop100.length, lastMonthtop100.length, lastWeektop100.length);
-
-                        for (var a = 0; a < last6Monthtop100.length; a++) {
-                            console.log(a);
-                            if (isInList(last6Monthtop100[a].jijing_Code, last3Month)
-                                //&& isInList(last1yeartop100[a].jijing_Code, last3Monthtop100) 
-                                // && isInList(lastWeektop100[a].jijing_Code, last6Monthtop100) 
-                                // && isInList(lastWeektop100[a].jijing_Code, last1yeartop100) 
-                                // && isInList(lastWeektop100[a].jijing_Code, last2yeartop100)
-                                // &&isInList(lastWeektop100[a].jijing_Code, last3yeartop100)
-                            ) {
-                                result.push(lastWeektop100[a]);
-
-                            }
-                        }
-
-
-
-                        writetoFile(JSON.stringify(result, null, "\t"), __dirname + "\\result.json", false);
-
-
-
-                        console.log("i have finished...");
-
-                        console.log(JSON.stringify(result));
+                        var base = require("./jijingbase.js");
+                        base.WritetoFile(alllist);
+                        //base.sayHello();
 
                         /*end for replace method*/
                     }
@@ -210,197 +95,25 @@ var jijingProcess = {
         } catch (err) {
             console.log(err);
         }
-
-        function isInList(item, list) {
-
-            for (var i = list.length - 1; i >= 0; i--) {
-                if (item == list[i].jijing_Code) {
-                    return true;
-                }
-                return false;
-            }
-        }
-
-        function writetoFile(content, file, append) {
-            var fs = require("fs");
-            if (append) {
-                fs.appendFile(file, content, function(err) {
-                    if (err) {
-                        console.log("fail" + err)
-                    } else {
-                        console.log("写入文件成功");
-                    }
-
-                });
-            } else {
-                fs.writeFile(file, content, function(err) {
-                    if (err) {
-                        console.log("fail" + err)
-                    } else {
-                        console.log("写入文件成功");
-                    }
-
-                });
-            }
-        }
-
     },
 
     readfile: function() {
 
-        var top = 1000;
 
-        function isInList(item, list) {
 
-            for (var i = list.length - 1; i >= 0; i--) {
-                if (item == list[i].jijing_Code) {
-                    return true;
-                }
-                return false;
-            }
-        }
-
-        function readfromFile(file) {
-            var rf = require("fs");
-            var data = rf.readFileSync(file, "utf-8");
-            return data;
-        }
-
-        function writetoFile(content, file, append) {
-            var fs = require("fs");
-            if (append) {
-                fs.appendFile(file, content, function(err) {
-                    if (err) {
-                        console.log("fail" + err)
-                    } else {
-                        console.log("写入文件成功");
-                    }
-
-                });
-            } else {
-                fs.writeFile(file, content, function(err) {
-                    if (err) {
-                        console.log("fail" + err)
-                    } else {
-                        console.log("写入文件成功");
-                    }
-
-                });
-            }
-        }
 
 
 
         var alllist = JSON.parse(readfromFile(__dirname + "\\alllist.json"));
 
         /*begin replace  for download method*/
-        var last3year = alllist.sort(function(b, a) {
-
-            return parseInt(a.jijing_last3year) - parseInt(b.jijing_last3year);
-        });
-        var last3yeartop100 = [];
-        for (var i = 0; i < top; i++) {
-            last3year[i].Sort = i;
-            last3yeartop100.push(last3year[i]);
-        }
-        writetoFile(JSON.stringify(last3year, null, "\t"), __dirname + "\\last3Year.json", false);
 
 
-        var last2year = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_last2year) - parseInt(b.jijing_last2year);
-        });
-        var last2yeartop100 = [];
-        for (var i = 0; i < top; i++) {
-            last2year[i].Sort = i;
-            last2yeartop100.push(last2year[i]);
-        }
-        writetoFile(JSON.stringify(last2year, null, "\t"), __dirname + "\\last2Year.json", false);
-
-        var last1year = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_last1year) - parseInt(b.jijing_last1year);
-        });
-        var last1yeartop100 = [];
-        for (var i = 0; i < top; i++) {
-            last1year[i].Sort = i;
-            last1yeartop100.push(last1year[i]);
-        }
-        writetoFile(JSON.stringify(last1year, null, "\t"), __dirname + "\\last1Year.json", false);
-
-        var last6Month = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_last6Month) - parseInt(b.jijing_last6Month);
-        });
-        var last6Monthtop100 = [];
-        for (var i = 0; i < top; i++) {
-            last6Month[i].Sort = i;
-            last6Monthtop100.push(last6Month[i]);
-        }
-        writetoFile(JSON.stringify(last6Month, null, "\t"), __dirname + "\\last6Month.json", false);
-
-        var last3Month = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_last3Month) - parseInt(b.jijing_last3Month);
-        });
-        var last3Monthtop100 = [];
-        for (var i = 0; i < top; i++) {
-            last3Month[i].Sort = i;
-            last3Monthtop100.push(last3Month[i]);
-        }
-        writetoFile(JSON.stringify(last3Month, null, "\t"), __dirname + "\\last3Month.json", false);
-
-
-        var lastMonth = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_lastMonth, null, "\t") - parseInt(b.jijing_lastMonth);
-        });
-        var lastMonthtop100 = [];
-        for (var i = 0; i < top; i++) {
-            lastMonth[i].Sort = i;
-            lastMonthtop100.push(lastMonth[i]);
-        }
-        writetoFile(JSON.stringify(lastMonth, null, "\t"), __dirname + "\\last1Month.json", false);
-
-        var lastWeek = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_lastWeek) - parseInt(b.jijing_lastWeek);
-        });
-
-        var lastWeektop100 = [];
-        for (var i = 0; i < top; i++) {
-            lastWeek[i].Sort = i;
-            lastWeektop100.push(lastWeek[i]);
-        }
-        writetoFile(JSON.stringify(lastWeek, null, "\t"), __dirname + "\\lastWeek.json", false);
-
-        var result = [];
-
-        console.log(last3yeartop100.length, last2yeartop100.length, last1yeartop100.length, last6Monthtop100.length, last3Monthtop100.length, lastMonthtop100.length, lastWeektop100.length);
-
-        for (var a = 0; a < last6Monthtop100.length; a++) {
-            console.log(a);
-            if (isInList(last6Monthtop100[a].jijing_Code, last3Month)
-                //&& isInList(last1yeartop100[a].jijing_Code, last3Monthtop100) 
-                // && isInList(lastWeektop100[a].jijing_Code, last6Monthtop100) 
-                // && isInList(lastWeektop100[a].jijing_Code, last1yeartop100) 
-                // && isInList(lastWeektop100[a].jijing_Code, last2yeartop100)
-                // &&isInList(lastWeektop100[a].jijing_Code, last3yeartop100)
-            ) {
-                result.push(lastWeektop100[a]);
-
-            }
-        }
-
-        writetoFile(JSON.stringify(result, null, "\t"), __dirname + "\\result.json", false);
-
-
-
-        console.log("i have finished...");
-
-        console.log(JSON.stringify(result));
+        var jijingbase = require("./jijingbase.js");
+        jijingbase.log(alllist);
 
         /*end for replace method*/
     }
-
-
-
-
-
 }
 
 module.exports = jijingProcess;
