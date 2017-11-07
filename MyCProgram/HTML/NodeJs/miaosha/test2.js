@@ -38,33 +38,24 @@ console.log(a);
 
 */
 
-/*
+
 var request = require("request")
 
-var url = "http://qxu1194650105.my3w.com/data/user.json"
+var url = "http://xhu219.s3.91sc.top/data/data.js";
 
 request({
     url: url,
-    json: true
+    json: false
 }, function(error, response, users) {
 
     console.log(response.statusCode);
 
     if (!error && response.statusCode === 200) {
-        //console.log(user) // Print the json response
+        console.log(users) // Print the json response
         //var users = JSON.parse(user);
         //console.log(users.length);
         
-        for (var i = 0; i < users.length; i++) {
-            //console.log(users[i]);
-            if (users[i].enable == true) {
-
-                    console.log(users[i]);
-
-
-                //sendmail(users[i].email, '秒杀数据更新', GetMailContent(result, users[i].email));
-            }
-        }
+        
         
     }
     else{
@@ -72,8 +63,10 @@ request({
     }
 });
 
-*/
 
+
+
+/*
 
 varClient = require('ftp');
 
@@ -100,3 +93,7 @@ c.on('ready', function() {
 // connect to localhost:21 as anonymous
 
 c.connect();
+
+*/
+
+//console.log(Math.floor(Math.random()*(1,4)+1));

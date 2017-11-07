@@ -15,9 +15,9 @@ define('S3_SECRET', 'c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7');
 $algorithm = "AWS4-HMAC-SHA1";
 
 $policy = [
-   'scope'=>S3_BUCKET,
+   'scope'=>S3_BUCKET.":wfg",
    'deadline'=>getdate()[0]+3600,
-   'insertOnly'=>1,
+   'insertOnly'=>0,
    'endUser'=>'wfg',
    //'returnUrl'=>'http://www.baidu.com',
    //'returnBody'=>,
@@ -27,7 +27,7 @@ $policy = [
    //'callbackBodyType'=>,
    'callbackFetchKey'=>0,
    'persistentOps'=>'avthumb/flv|saveas/eGh1MjE4OmEuZmx2;vframe/png/offset/1/w/200/h/100|saveas/eGh1MjE4OndmZy5wbmc=',
-   'persistentPipeline'=>'sobeymps',
+   //'persistentPipeline'=>'sobeymps',
    'persistentNotifyUrl'=>'http://123.57.66.247:8080/yoga',
    //'saveKey'=>'wfg-'.
    'detectMime'=>1

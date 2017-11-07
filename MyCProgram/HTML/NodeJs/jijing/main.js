@@ -4,9 +4,9 @@ require('date-utils');
 
 
 
-//jijing.download();
+jijing.download();
 
-jijing.readfile();
+//jijing.readfile();
 
 
 

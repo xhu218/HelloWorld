@@ -33,7 +33,7 @@ var request1 = {
 
 
             if (error) {
-				 console.log(error);
+				 console.log(url + error);
             	//throw new Error(error);
             }
            
@@ -44,7 +44,7 @@ var request1 = {
                     
                   callback(url,body);
             } catch (err) {
-                console.log(err);
+                console.log(url + err);
                 callback(url,null);
                 //console.log(body);
             }

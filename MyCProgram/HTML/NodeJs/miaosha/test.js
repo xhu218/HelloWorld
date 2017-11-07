@@ -1,3 +1,4 @@
+var felixmail = require("./felixemail.js");
 /*
 console.log(process.execPath)
 console.log(__dirname)
@@ -41,10 +42,19 @@ console.log(process.cwd())
     */
 
 
+/*
 var mail = require("./mail.js");
-
-
 var str = "我开始工作了哈";
-
-
 mail('67438964@qq.com', '开始工作', str);
+*/
+
+
+var config = [{service: 'Hotmail', user: 'xhu218@hotmail.com', pass: 'Pass2word321'}, {service: 'Hotmail', user: 'xhu218@hotmail.com', pass: 'Pass2word321'} ];
+//var conf = ["a","b"];
+
+felixmail.init();
+
+
+//console.log(config[0].service);
+var str = "一个重要的事情";
+felixmail.sendMail('xhu218@163.com', '真的很重要哟', str);

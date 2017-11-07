@@ -8,11 +8,17 @@ var jijingProcess = {
     download: function() {
         try {
 
+            /*    
             var date = new Date();
             date.addMonths(1);
             var d = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
+            */
 
-            var allpages = 73;
+            var dt = new Date();
+            var d = dt.toFormat("YYYY-MM-DD");
+            console.log(d);
+
+            var allpages = 74;
 
             var alldata = [];
 
@@ -30,6 +36,7 @@ var jijingProcess = {
 
                 var goods = request1.sendRequest(function(url, content) {
                     doingCount++;
+                    console.log(doingCount);
                     if (content == null)
                         return;
 

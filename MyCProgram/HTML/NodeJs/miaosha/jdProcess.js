@@ -45,6 +45,8 @@ var jdProcess = {
                     return a.startTimeShow.replace(":", "") - b.startTimeShow.replace(":", "");
                 });
 
+
+
                 var datapath = root_dir + "/data/data.js";
                 var extenpath = root_dir + "/data/extentinfo.js"
                 var fromfile = readfromFile(datapath);
@@ -55,7 +57,8 @@ var jdProcess = {
                 console.log("from is ok ");
                 var f = isTheSameList(result, from);
                 console.log("current f is :" + f);
-                if (!f) {
+                if (!f)//(true) //(!f) 
+				{
 
                     //针对超级秒杀，单独发邮件给13548180218@139.com
                     for (var i = 0; i < result.length; i++) {
@@ -117,7 +120,7 @@ var jdProcess = {
 
                     var request = require("request")
 
-                    var url = "http://172.16.134.238:8888/user.json";//http://qxu1194650105.my3w.com/data/user.json"
+                    var url = "http://xhu218.s3.91sc.top/user.json?t="+Math.random();//http://qxu1194650105.my3w.com/data/user.json"
 
                     request({
                         url: url,
@@ -128,16 +131,18 @@ var jdProcess = {
                             //console.log(users) // Print the json response
                             //var users = JSON.parse(users);
                             //console.log(users.length);
+							console.log("url = " + url + "wfg...");
                             for (var i = 0; i < users.length; i++) {
-                                console.log(users[i]);
+                                
                                 if (users[i].enable == true) {
-
+									console.log("wfg================"+JSON.stringify(users[i]));
+									
                                     setTimeout((function(email,t, c) {
                                         return function() {
                                             sendmail(email, t, c);
                                         }
-                                    })(users[i].email,"秒杀数据更新", GetMailContent(result, users[i].email)), i * 10000);
-
+                                    })(users[i].email,time + "数据更新", GetMailContent(result, users[i].email)), i * 10000);
+									
 
                                     //sendmail(users[i].email, '秒杀数据更新', GetMailContent(result, users[i].email));
                                 }
@@ -151,8 +156,12 @@ var jdProcess = {
 
 
                     var time1 = sd.format(new Date(), 'YYYY-MM-DD HH:mm');
-                    var info = "var extentinfo = {    lastUpdateTime:'" + time1 + "'}";
+                    var info = "{    \"lastUpdateTime\":\"" + time1 + "\"}";
                     writetoFile(info, extenpath, false);
+					
+					var qn = require("./nodejs-sdk-7.1.1/examples/form_upload_simple.js");
+					qn.Test1("data/data.js");
+					qn.Test1("data/extentinfo.js");
 
                     //TODO 发送邮件提醒
                 } else {
@@ -183,8 +192,8 @@ var jdProcess = {
                     arr[x].rate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
                     arr[x].startTimeShow + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
                     (arr[x].endRemainTime / 60 / 60).toFixed(0) + "小时后</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
-                   // arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='http://qxu1194650105.my3w.com/index.php?email=" + email + "&url=" +
-                    arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='" +
+                    arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='http://91sc.top/index.php?email=" + email + "&url=" +
+                   // arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='" +
                     url + "' target='_blank '>" + arr[x].wname + "</a></td> </tr>";
             }
 
