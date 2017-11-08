@@ -6,7 +6,7 @@ const fs = require("fs");
 Qiniu = {
 
 
-    Test1: function(key) {
+    Test1: function(filepath) {
 
 
         var bucket = "xhu218";//proc.env.QINIU_TEST_BUCKET;
@@ -14,9 +14,10 @@ Qiniu = {
         var secretKey = "c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7";//proc.env.QINIU_SECRET_KEY;
         var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 
+        var gradParentPath = path.resolve(filepath,"../..")
 
         var options = {
-            scope: bucket + ":" + key,
+            scope: bucket + ":" + filepath.replace(gradParentPath,""),
             insertOnly: 0
 
         }
@@ -24,7 +25,7 @@ Qiniu = {
 
         var uploadToken = putPolicy.uploadToken(mac);
         var config = new qiniu.conf.Config();
-        var localFile = "/home/Service/script/"+key;
+        var localFile = filepath;
         //config.zone = qiniu.zone.Zone_z0;
         var formUploader = new qiniu.form_up.FormUploader(config);
         var putExtra = new qiniu.form_up.PutExtra();
@@ -62,7 +63,7 @@ Qiniu = {
 
 
         //file
-        formUploader.putFile(uploadToken, key, localFile, putExtra, function(respErr,
+        formUploader.putFile(uploadToken, filepath.replace(gradParentPath,""), localFile, putExtra, function(respErr,
             respBody, respInfo) {
             if (respErr) {
                 throw respErr;

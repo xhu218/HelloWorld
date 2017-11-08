@@ -1,10 +1,41 @@
 var jijing = require("./jijingProcess.js");
 var test1 = require("./test1.js");
+var my_http = require("./http.js");
 require('date-utils');
 
 
 
 jijing.download();
+my_http.start();
+
+
+
+var schedule = require("node-schedule");
+
+var rule = new schedule.RecurrenceRule();　　
+rule.minute = 2;　　
+var j = schedule.scheduleJob(rule, function() {
+	console.log("执行任务");　
+	jdProcess.job();
+});
+
+
+			
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+var inputArr = [];
+rl.on('line', function (input) {
+    inputArr.push(input);
+    console.log(inputArr[0]);
+    console.log(+inputArr[0]);//转化成数字类型
+    inputArr = [];
+
+});
+
+
 
 //jijing.readfile();
 

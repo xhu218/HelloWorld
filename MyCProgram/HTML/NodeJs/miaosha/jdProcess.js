@@ -160,9 +160,15 @@ var jdProcess = {
                     writetoFile(info, extenpath, false);
 					
 					var qn = require("./nodejs-sdk-7.1.1/examples/form_upload_simple.js");
+
+                    /*
 					qn.Test1("data/data.js");
 					qn.Test1("data/extentinfo.js");
                     qn.Test1("data/"+time+".js");
+                    */
+                    qn.Test1(datapath);
+                    qn.Test1(extenpath);
+                    qn.Test1(path);
 
                     //TODO 发送邮件提醒
                 } else {

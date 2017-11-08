@@ -17,7 +17,7 @@ var my_http = {
                 var pathname = url.parse(request.url).pathname;
                 if(pathname =="/"){
 
-                          pathname = "/index2.html";
+                          pathname = "/index.html";
 
                 }
                 console.log(pathname);

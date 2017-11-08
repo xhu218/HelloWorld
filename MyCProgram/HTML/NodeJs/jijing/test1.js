@@ -48,7 +48,7 @@ console.log(dt.toFormat("YYYY-MM-DD HH24:MI:SS"));
 
 */
 
-/*
+
 var fs = require("fs");
 var path = require("path");
 fs.exists("./Data", function(exists) {
@@ -66,7 +66,7 @@ var parentFolder = path.join(__dirname, "Data", "Last3Year");
 var file = path.join(parentFolder, "200.josn");
 var content = "hello wfg";
 
-console.log(path.resolve(file,".."));
+console.log("test..."+ path.resolve(file,"../.."));
 
 if (!fs.existsSync(parentFolder)) {
     fs.mkdirSync(parentFolder);
@@ -81,7 +81,6 @@ fs.writeFile(file, content, function(err) {
 
 });
 
-*/
 
 var str = "wfglxx";
 var str1 = str.replace("wfg","lxx");
