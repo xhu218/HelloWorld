@@ -1,0 +1,51 @@
+{
+  "name": "StagingFinancial",
+  "version": "0.0.1",
+  "description": "Pages for Staging Financial App",
+  "devDependencies": {
+    "@types/node": "^8.0.3",
+    "agentkeepalive": "3.3.0",
+    "babel": "^5.8.34",
+    "before": "0.0.1",
+    "blanket": "*",
+    "body-parser": "^1.8.1",
+    "browser-sync": "*",
+    "crc32": "0.2.2",
+    "del": "*",
+    "express": "^4.9.0",
+    "formstream": "1.1.0",
+    "gulp": "*",
+    "gulp-asset-rev": "*",
+    "gulp-concat": "*",
+    "gulp-if": "*",
+    "gulp-jshint": "*",
+    "gulp-load-plugins": "*",
+    "gulp-minify-css": "^*",
+    "gulp-minify-html": "*",
+    "gulp-sass": "*",
+    "gulp-size": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-useref": "*",
+    "jshint": "^2.9.4",
+    "mime": "1.3.6",
+    "mocha": "^4.0.1",
+    "nodemailer": "^4.3.1",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "pedding": "*",
+    "run-sequence": "*",
+    "should": "1.2.2",
+    "silly-datetime": "^0.1.2",
+    "travis-cov": "*",
+    "tunnel-agent": "0.6.0",
+    "urlencode": "1.1.0",
+    "urllib": "2.22.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.17.1"
+  }
+}
