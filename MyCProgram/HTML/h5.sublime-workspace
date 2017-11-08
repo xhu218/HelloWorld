@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"rev",
+				"resolve\t.resolve()"
+			],
+			[
 				"load",
 				"loadScript"
 			],
@@ -460,30 +464,60 @@
 	"buffers":
 	[
 		{
-			"file": "NodeJs/miaosha/index.html",
+			"file": "NodeJs/jijing/test1.js",
 			"settings":
 			{
-				"buffer_size": 4545,
+				"buffer_size": 1660,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "NodeJs/jijing/last3Month.json",
+			"file": "NodeJs/jijing/jijingProcess.js",
 			"settings":
 			{
-				"buffer_size": 1618298,
+				"buffer_size": 4017,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "NodeJs/jijing/jijingbase.js",
+			"settings":
+			{
+				"buffer_size": 6148,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "NodeJs/jijing/fileHelper.js",
+			"settings":
+			{
+				"buffer_size": 1002,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "NodeJs/jijing/main.js",
+			"settings":
+			{
+				"buffer_size": 284,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "[\n\t{\n\t\t\"jijing_Code\": \"162605\",\n\t\t\"jijing_Name\": \"景顺长城鼎益混合(LOF)\",\n\t\t\"jijing_Mask\": \"JSCCDYHHLOF\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.3170\",\n\t\t\"jijing_totalValue\": \"4.0050\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.0759\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 15,\n\t\t\"jijing_last3Month\": 22,\n\t\t\"jijing_last6Month\": 33,\n\t\t\"jijing_last1year\": 46,\n\t\t\"jijing_last2year\": 44,\n\t\t\"jijing_last3year\": 122,\n\t\t\"jijing_sinceThisYear\": 51,\n\t\t\"jijing_sinceestablish\": 782\n\t},\n\t{\n\t\t\"jijing_Code\": \"000362\",\n\t\t\"jijing_Name\": \"国泰聚信价值优势灵活配置A\",\n\t\t\"jijing_Mask\": \"GTJXJZYSLHPZA\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.2810\",\n\t\t\"jijing_totalValue\": \"2.2790\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.1848\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 6,\n\t\t\"jijing_last6Month\": 10,\n\t\t\"jijing_last1year\": 9,\n\t\t\"jijing_last2year\": 26,\n\t\t\"jijing_last3year\": 121,\n\t\t\"jijing_sinceThisYear\": 10,\n\t\t\"jijing_sinceestablish\": 135\n\t},\n\t{\n\t\t\"jijing_Code\": \"460009\",\n\t\t\"jijing_Name\": \"华泰柏瑞量化先行混合\",\n\t\t\"jijing_Mask\": \"HTBRLHXHHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.5410\",\n\t\t\"jijing_totalValue\": \"2.0720\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.13\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 0,\n\t\t\"jijing_last3Month\": 3,\n\t\t\"jijing_last6Month\": 17,\n\t\t\"jijing_last1year\": 20,\n\t\t\"jijing_last2year\": 30,\n\t\t\"jijing_last3year\": 121,\n\t\t\"jijing_sinceThisYear\": 22,\n\t\t\"jijing_sinceestablish\": 108\n\t},\n\t{\n\t\t\"jijing_Code\": \"710002\",\n\t\t\"jijing_Name\": \"富安达策略精选混合\",\n\t\t\"jijing_Mask\": \"FADCLJXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.4686\",\n\t\t\"jijing_totalValue\": \"2.5086\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7386\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 9,\n\t\t\"jijing_last6Month\": 21,\n\t\t\"jijing_last1year\": 20,\n\t\t\"jijing_last2year\": 37,\n\t\t\"jijing_last3year\": 119,\n\t\t\"jijing_sinceThisYear\": 25,\n\t\t\"jijing_sinceestablish\": 155\n\t},\n\t{\n\t\t\"jijing_Code\": \"160222\",\n\t\t\"jijing_Name\": \"国泰国证食品饮料行业指数分级\",\n\t\t\"jijing_Mask\": \"GTGZSPYLHYZSFJ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.3111\",\n\t\t\"jijing_totalValue\": \"1.9324\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.3950\",\n\t\t\"jijing_lastWeek\": 3,\n\t\t\"jijing_lastMonth\": 12,\n\t\t\"jijing_last3Month\": 24,\n\t\t\"jijing_last6Month\": 41,\n\t\t\"jijing_last1year\": 53,\n\t\t\"jijing_last2year\": 70,\n\t\t\"jijing_last3year\": 119,\n\t\t\"jijing_sinceThisYear\": 54,\n\t\t\"jijing_sinceestablish\": 118\n\t},\n\t{\n\t\t\"jijing_Code\": \"160127\",\n\t\t\"jijing_Name\": \"南方新兴消费分级\",\n\t\t\"jijing_Mask\": \"NFXXXFFJ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.2420\",\n\t\t\"jijing_totalValue\": \"2.5180\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.3231\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 27,\n\t\t\"jijing_last1year\": 38,\n\t\t\"jijing_last2year\": 58,\n\t\t\"jijing_last3year\": 118,\n\t\t\"jijing_sinceThisYear\": 35,\n\t\t\"jijing_sinceestablish\": 151\n\t},\n\t{\n\t\t\"jijing_Code\": \"000311\",\n\t\t\"jijing_Name\": \"景顺长城沪深300增强\",\n\t\t\"jijing_Mask\": \"JSCCHS300ZQ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.1020\",\n\t\t\"jijing_totalValue\": \"2.4420\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6223\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 8,\n\t\t\"jijing_last6Month\": 23,\n\t\t\"jijing_last1year\": 33,\n\t\t\"jijing_last2year\": 34,\n\t\t\"jijing_last3year\": 118,\n\t\t\"jijing_sinceThisYear\": 32,\n\t\t\"jijing_sinceestablish\": 147\n\t},\n\t{\n\t\t\"jijing_Code\": \"000308\",\n\t\t\"jijing_Name\": \"建信创新中国混合\",\n\t\t\"jijing_Mask\": \"JXCXZGHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.5760\",\n\t\t\"jijing_totalValue\": \"2.5760\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.1163\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 1,\n\t\t\"jijing_last3Month\": 8,\n\t\t\"jijing_last6Month\": 15,\n\t\t\"jijing_last1year\": 12,\n\t\t\"jijing_last2year\": 28,\n\t\t\"jijing_last3year\": 117,\n\t\t\"jijing_sinceThisYear\": 17,\n\t\t\"jijing_sinceestablish\": 157\n\t},\n\t{\n\t\t\"jijing_Code\": \"000751\",\n\t\t\"jijing_Name\": \"嘉实新兴产业股票\",\n\t\t\"jijing_Mask\": \"JSXXCYGP\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.2380\",\n\t\t\"jijing_totalValue\": \"2.2380\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.0447\",\n\t\t\"jijing_lastWeek\": 3,\n\t\t\"jijing_lastMonth\": 12,\n\t\t\"jijing_last3Month\": 20,\n\t\t\"jijing_last6Month\": 37,\n\t\t\"jijing_last1year\": 42,\n\t\t\"jijing_last2year\": 41,\n\t\t\"jijing_last3year\": 117,\n\t\t\"jijing_sinceThisYear\": 51,\n\t\t\"jijing_sinceestablish\": 123\n\t},\n\t{\n\t\t\"jijing_Code\": \"160716\",\n\t\t\"jijing_Name\": \"嘉实基本面50\",\n\t\t\"jijing_Mask\": \"JSJBM50\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.5321\",\n\t\t\"jijing_totalValue\": \"1.5321\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.1154\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 5,\n\t\t\"jijing_last6Month\": 21,\n\t\t\"jijing_last1year\": 29,\n\t\t\"jijing_last2year\": 32,\n\t\t\"jijing_last3year\": 117,\n\t\t\"jijing_sinceThisYear\": 26,\n\t\t\"jijing_sinceestablish\": 53\n\t},\n\t{\n\t\t\"jijing_Code\": \"161219\",\n\t\t\"jijing_Name\": \"国投瑞银新兴产业\",\n\t\t\"jijing_Mask\": \"GTRYXXCY\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.3880\",\n\t\t\"jijing_totalValue\": \"2.4420\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.1443\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 2,\n\t\t\"jijing_last3Month\": 12,\n\t\t\"jijing_last6Month\": 8,\n\t\t\"jijing_last1year\": 15,\n\t\t\"jijing_last2year\": 20,\n\t\t\"jijing_last3year\": 117,\n\t\t\"jijing_sinceThisYear\": 15,\n\t\t\"jijing_sinceestablish\": 209\n\t},\n\t{\n\t\t\"jijing_Code\": \"000259\",\n\t\t\"jijing_Name\": \"农银区间收益混合\",\n\t\t\"jijing_Mask\": \"NYQJSYHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.3765\",\n\t\t\"jijing_totalValue\": \"2.3765\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.2193\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 11,\n\t\t\"jijing_last6Month\": 21,\n\t\t\"jijing_last1year\": 21,\n\t\t\"jijing_last2year\": 24,\n\t\t\"jijing_last3year\": 116,\n\t\t\"jijing_sinceThisYear\": 25,\n\t\t\"jijing_sinceestablish\": 137\n\t},\n\t{\n\t\t\"jijing_Code\": \"519714\",\n\t\t\"jijing_Name\": \"交银消费新驱动股票\",\n\t\t\"jijing_Mask\": \"JYXFXQDGP\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.0430\",\n\t\t\"jijing_totalValue\": \"2.5130\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.3850\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 13,\n\t\t\"jijing_last6Month\": 19,\n\t\t\"jijing_last1year\": 28,\n\t\t\"jijing_last2year\": 34,\n\t\t\"jijing_last3year\": 116,\n\t\t\"jijing_sinceThisYear\": 29,\n\t\t\"jijing_sinceestablish\": 163\n\t},\n\t{\n\t\t\"jijing_Code\": \"570008\",\n\t\t\"jijing_Name\": \"诺德周期策略混合\",\n\t\t\"jijing_Mask\": \"NDZQCLHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.8880\",\n\t\t\"jijing_totalValue\": \"2.6230\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.1248\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 9,\n\t\t\"jijing_last3Month\": 16,\n\t\t\"jijing_last6Month\": 20,\n\t\t\"jijing_last1year\": 27,\n\t\t\"jijing_last2year\": 26,\n\t\t\"jijing_last3year\": 115,\n\t\t\"jijing_sinceThisYear\": 33,\n\t\t\"jijing_sinceestablish\": 185\n\t},\n\t{\n\t\t\"jijing_Code\": \"160505\",\n\t\t\"jijing_Name\": \"博时主题行业混合(LOF)\",\n\t\t\"jijing_Mask\": \"BSZTHYHHLOF\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.9850\",\n\t\t\"jijing_totalValue\": \"5.5180\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4047\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 12,\n\t\t\"jijing_last6Month\": 19,\n\t\t\"jijing_last1year\": 27,\n\t\t\"jijing_last2year\": 30,\n\t\t\"jijing_last3year\": 115,\n\t\t\"jijing_sinceThisYear\": 26,\n\t\t\"jijing_sinceestablish\": 1223\n\t},\n\t{\n\t\t\"jijing_Code\": \"000273\",\n\t\t\"jijing_Name\": \"华润元大安鑫灵活配置混合\",\n\t\t\"jijing_Mask\": \"HRYDAXLHPZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.5280\",\n\t\t\"jijing_totalValue\": \"2.25\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6588\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 16,\n\t\t\"jijing_last6Month\": 28,\n\t\t\"jijing_last1year\": 30,\n\t\t\"jijing_last2year\": 27,\n\t\t\"jijing_last3year\": 115,\n\t\t\"jijing_sinceThisYear\": 29,\n\t\t\"jijing_sinceestablish\": 132\n\t},\n\t{\n\t\t\"jijing_Code\": \"000020\",\n\t\t\"jijing_Name\": \"景顺长城品质投资混合\",\n\t\t\"jijing_Mask\": \"JSCCPZTZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.3060\",\n\t\t\"jijing_totalValue\": \"2.3060\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.8308\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 15,\n\t\t\"jijing_last6Month\": 27,\n\t\t\"jijing_last1year\": 33,\n\t\t\"jijing_last2year\": 25,\n\t\t\"jijing_last3year\": 114,\n\t\t\"jijing_sinceThisYear\": 41,\n\t\t\"jijing_sinceestablish\": 130\n\t},\n\t{\n\t\t\"jijing_Code\": \"000547\",\n\t\t\"jijing_Name\": \"建信健康民生混合\",\n\t\t\"jijing_Mask\": \"JXJKMSHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.3840\",\n\t\t\"jijing_totalValue\": \"2.3840\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.5008\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 2,\n\t\t\"jijing_last3Month\": 8,\n\t\t\"jijing_last6Month\": 9,\n\t\t\"jijing_last1year\": 12,\n\t\t\"jijing_last2year\": 19,\n\t\t\"jijing_last3year\": 114,\n\t\t\"jijing_sinceThisYear\": 14,\n\t\t\"jijing_sinceestablish\": 138\n\t},\n\t{\n\t\t\"jijing_Code\": \"110003\",\n\t\t\"jijing_Name\": \"易方达上证50指数A\",\n\t\t\"jijing_Mask\": \"YFDSZ50ZSA\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.4246\",\n\t\t\"jijing_totalValue\": \"3.2746\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7924\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 9,\n\t\t\"jijing_last3Month\": 13,\n\t\t\"jijing_last6Month\": 31,\n\t\t\"jijing_last1year\": 35,\n\t\t\"jijing_last2year\": 31,\n\t\t\"jijing_last3year\": 113,\n\t\t\"jijing_sinceThisYear\": 36,\n\t\t\"jijing_sinceestablish\": 332\n\t},\n\t{\n\t\t\"jijing_Code\": \"519690\",\n\t\t\"jijing_Name\": \"交银稳健配置混合A\",\n\t\t\"jijing_Mask\": \"JYWJPZHHA\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.6764\",\n\t\t\"jijing_totalValue\": \"3.8594\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.5217\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 8,\n\t\t\"jijing_last3Month\": 22,\n\t\t\"jijing_last6Month\": 36,\n\t\t\"jijing_last1year\": 48,\n\t\t\"jijing_last2year\": 36,\n\t\t\"jijing_last3year\": 113,\n\t\t\"jijing_sinceThisYear\": 54,\n\t\t\"jijing_sinceestablish\": 522\n\t},\n\t{\n\t\t\"jijing_Code\": \"000592\",\n\t\t\"jijing_Name\": \"建信改革红利股票\",\n\t\t\"jijing_Mask\": \"JXGGHLGP\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.3380\",\n\t\t\"jijing_totalValue\": \"2.3380\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.0855\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 3,\n\t\t\"jijing_last3Month\": 9,\n\t\t\"jijing_last6Month\": 22,\n\t\t\"jijing_last1year\": 25,\n\t\t\"jijing_last2year\": 18,\n\t\t\"jijing_last3year\": 113,\n\t\t\"jijing_sinceThisYear\": 29,\n\t\t\"jijing_sinceestablish\": 133\n\t},\n\t{\n\t\t\"jijing_Code\": \"519712\",\n\t\t\"jijing_Name\": \"交银阿尔法核心混合\",\n\t\t\"jijing_Mask\": \"JYAEFHXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.85\",\n\t\t\"jijing_totalValue\": \"2.51\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.2589\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 2,\n\t\t\"jijing_last3Month\": 12,\n\t\t\"jijing_last6Month\": 17,\n\t\t\"jijing_last1year\": 9,\n\t\t\"jijing_last2year\": 21,\n\t\t\"jijing_last3year\": 113,\n\t\t\"jijing_sinceThisYear\": 11,\n\t\t\"jijing_sinceestablish\": 157\n\t},\n\t{\n\t\t\"jijing_Code\": \"110013\",\n\t\t\"jijing_Name\": \"易方达科翔混合\",\n\t\t\"jijing_Mask\": \"YFDKXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.9680\",\n\t\t\"jijing_totalValue\": \"7.96\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7126\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 16,\n\t\t\"jijing_last6Month\": 25,\n\t\t\"jijing_last1year\": 26,\n\t\t\"jijing_last2year\": 23,\n\t\t\"jijing_last3year\": 113,\n\t\t\"jijing_sinceThisYear\": 31,\n\t\t\"jijing_sinceestablish\": 331\n\t},\n\t{\n\t\t\"jijing_Code\": \"519017\",\n\t\t\"jijing_Name\": \"大成积极成长混合\",\n\t\t\"jijing_Mask\": \"DCJJCZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.2390\",\n\t\t\"jijing_totalValue\": \"2.9120\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.8137\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 13,\n\t\t\"jijing_last1year\": 16,\n\t\t\"jijing_last2year\": 17,\n\t\t\"jijing_last3year\": 112,\n\t\t\"jijing_sinceThisYear\": 19,\n\t\t\"jijing_sinceestablish\": 180\n\t},\n\t{\n\t\t\"jijing_Code\": \"000390\",\n\t\t\"jijing_Name\": \"华商优势行业\",\n\t\t\"jijing_Mask\": \"HSYSHY\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.14\",\n\t\t\"jijing_totalValue\": \"2.13\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.0878\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 13,\n\t\t\"jijing_last6Month\": 11,\n\t\t\"jijing_last1year\": 12,\n\t\t\"jijing_last2year\": 12,\n\t\t\"jijing_last3year\": 112,\n\t\t\"jijing_sinceThisYear\": 13,\n\t\t\"jijing_sinceestablish\": 140\n\t},\n\t{\n\t\t\"jijing_Code\": \"481012\",\n\t\t\"jijing_Name\": \"工银深证红利联接\",\n\t\t\"jijing_Mask\": \"GYSZHLLJ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.3795\",\n\t\t\"jijing_totalValue\": \"1.5577\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.0475\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 9,\n\t\t\"jijing_last3Month\": 14,\n\t\t\"jijing_last6Month\": 30,\n\t\t\"jijing_last1year\": 40,\n\t\t\"jijing_last2year\": 47,\n\t\t\"jijing_last3year\": 112,\n\t\t\"jijing_sinceThisYear\": 42,\n\t\t\"jijing_sinceestablish\": 63\n\t},\n\t{\n\t\t\"jijing_Code\": \"202023\",\n\t\t\"jijing_Name\": \"南方优选成长\",\n\t\t\"jijing_Mask\": \"NFYXCZ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.49\",\n\t\t\"jijing_totalValue\": \"2.49\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6467\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 11,\n\t\t\"jijing_last6Month\": 17,\n\t\t\"jijing_last1year\": 25,\n\t\t\"jijing_last2year\": 33,\n\t\t\"jijing_last3year\": 112,\n\t\t\"jijing_sinceThisYear\": 28,\n\t\t\"jijing_sinceestablish\": 149\n\t},\n\t{\n\t\t\"jijing_Code\": \"202011\",\n\t\t\"jijing_Name\": \"南方优选价值混合A\",\n\t\t\"jijing_Mask\": \"NFYXJZHHA\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.1890\",\n\t\t\"jijing_totalValue\": \"2.97\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6774\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 14,\n\t\t\"jijing_last1year\": 20,\n\t\t\"jijing_last2year\": 17,\n\t\t\"jijing_last3year\": 112,\n\t\t\"jijing_sinceThisYear\": 24,\n\t\t\"jijing_sinceestablish\": 328\n\t},\n\t{\n\t\t\"jijing_Code\": \"040025\",\n\t\t\"jijing_Name\": \"华安科技动力混合\",\n\t\t\"jijing_Mask\": \"HAKJDLHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.3250\",\n\t\t\"jijing_totalValue\": \"3.88\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.8187\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 3,\n\t\t\"jijing_last3Month\": 8,\n\t\t\"jijing_last6Month\": 16,\n\t\t\"jijing_last1year\": 17,\n\t\t\"jijing_last2year\": 39,\n\t\t\"jijing_last3year\": 112,\n\t\t\"jijing_sinceThisYear\": 18,\n\t\t\"jijing_sinceestablish\": 290\n\t},\n\t{\n\t\t\"jijing_Code\": \"530015\",\n\t\t\"jijing_Name\": \"建信深证60联接\",\n\t\t\"jijing_Mask\": \"JXSZ60LJ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.9507\",\n\t\t\"jijing_totalValue\": \"1.9507\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.0359\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 8,\n\t\t\"jijing_last3Month\": 12,\n\t\t\"jijing_last6Month\": 28,\n\t\t\"jijing_last1year\": 38,\n\t\t\"jijing_last2year\": 45,\n\t\t\"jijing_last3year\": 112,\n\t\t\"jijing_sinceThisYear\": 39,\n\t\t\"jijing_sinceestablish\": 95\n\t},\n\t{\n\t\t\"jijing_Code\": \"165312\",\n\t\t\"jijing_Name\": \"建信央视50\",\n\t\t\"jijing_Mask\": \"JXYS50\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.9037\",\n\t\t\"jijing_totalValue\": \"2.0362\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4803\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 8,\n\t\t\"jijing_last3Month\": 16,\n\t\t\"jijing_last6Month\": 33,\n\t\t\"jijing_last1year\": 45,\n\t\t\"jijing_last2year\": 48,\n\t\t\"jijing_last3year\": 111,\n\t\t\"jijing_sinceThisYear\": 48,\n\t\t\"jijing_sinceestablish\": 112\n\t},\n\t{\n\t\t\"jijing_Code\": \"090013\",\n\t\t\"jijing_Name\": \"大成竞争优势混合\",\n\t\t\"jijing_Mask\": \"DCJZYSHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.2840\",\n\t\t\"jijing_totalValue\": \"2.2940\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.2342\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 3,\n\t\t\"jijing_last3Month\": 8,\n\t\t\"jijing_last6Month\": 17,\n\t\t\"jijing_last1year\": 25,\n\t\t\"jijing_last2year\": 33,\n\t\t\"jijing_last3year\": 111,\n\t\t\"jijing_sinceThisYear\": 28,\n\t\t\"jijing_sinceestablish\": 159\n\t},\n\t{\n\t\t\"jijing_Code\": \"540002\",\n\t\t\"jijing_Name\": \"汇丰晋信龙腾混合\",\n\t\t\"jijing_Mask\": \"HFJXLTHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.6998\",\n\t\t\"jijing_totalValue\": \"3.5358\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6633\",\n\t\t\"jijing_lastWeek\": -1,\n\t\t\"jijing_lastMonth\": 0,\n\t\t\"jijing_last3Month\": 4,\n\t\t\"jijing_last6Month\": 13,\n\t\t\"jijing_last1year\": 19,\n\t\t\"jijing_last2year\": 21,\n\t\t\"jijing_last3year\": 110,\n\t\t\"jijing_sinceThisYear\": 18,\n\t\t\"jijing_sinceestablish\": 443\n\t},\n\t{\n\t\t\"jijing_Code\": \"162213\",\n\t\t\"jijing_Name\": \"泰达宏利财富大盘指数A\",\n\t\t\"jijing_Mask\": \"TDHLCFDPZSA\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.4761\",\n\t\t\"jijing_totalValue\": \"1.9161\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7990\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 6,\n\t\t\"jijing_last6Month\": 20,\n\t\t\"jijing_last1year\": 25,\n\t\t\"jijing_last2year\": 26,\n\t\t\"jijing_last3year\": 109,\n\t\t\"jijing_sinceThisYear\": 26,\n\t\t\"jijing_sinceestablish\": 110\n\t},\n\t{\n\t\t\"jijing_Code\": \"398061\",\n\t\t\"jijing_Name\": \"中海消费混合\",\n\t\t\"jijing_Mask\": \"ZHXFHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.8110\",\n\t\t\"jijing_totalValue\": \"3.0210\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4287\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 9,\n\t\t\"jijing_last3Month\": 23,\n\t\t\"jijing_last6Month\": 37,\n\t\t\"jijing_last1year\": 25,\n\t\t\"jijing_last2year\": 22,\n\t\t\"jijing_last3year\": 109,\n\t\t\"jijing_sinceThisYear\": 37,\n\t\t\"jijing_sinceestablish\": 235\n\t},\n\t{\n\t\t\"jijing_Code\": \"020001\",\n\t\t\"jijing_Name\": \"国泰金鹰增长灵活配置\",\n\t\t\"jijing_Mask\": \"GTJYZZLHPZ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.1236\",\n\t\t\"jijing_totalValue\": \"5.0024\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.8527\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 1,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 24,\n\t\t\"jijing_last1year\": 29,\n\t\t\"jijing_last2year\": 42,\n\t\t\"jijing_last3year\": 108,\n\t\t\"jijing_sinceThisYear\": 34,\n\t\t\"jijing_sinceestablish\": 1263\n\t},\n\t{\n\t\t\"jijing_Code\": \"310318\",\n\t\t\"jijing_Name\": \"申万菱信沪深300指数增强\",\n\t\t\"jijing_Mask\": \"SWLXHS300ZSZQ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.3523\",\n\t\t\"jijing_totalValue\": \"3.1448\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7625\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 2,\n\t\t\"jijing_last3Month\": 3,\n\t\t\"jijing_last6Month\": 17,\n\t\t\"jijing_last1year\": 22,\n\t\t\"jijing_last2year\": 18,\n\t\t\"jijing_last3year\": 108,\n\t\t\"jijing_sinceThisYear\": 21,\n\t\t\"jijing_sinceestablish\": 361\n\t},\n\t{\n\t\t\"jijing_Code\": \"090007\",\n\t\t\"jijing_Name\": \"大成策略回报混合\",\n\t\t\"jijing_Mask\": \"DCCLHBHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.1550\",\n\t\t\"jijing_totalValue\": \"2.7690\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.1735\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 3,\n\t\t\"jijing_last3Month\": 7,\n\t\t\"jijing_last6Month\": 14,\n\t\t\"jijing_last1year\": 20,\n\t\t\"jijing_last2year\": 28,\n\t\t\"jijing_last3year\": 108,\n\t\t\"jijing_sinceThisYear\": 20,\n\t\t\"jijing_sinceestablish\": 351\n\t},\n\t{\n\t\t\"jijing_Code\": \"166001\",\n\t\t\"jijing_Name\": \"中欧新趋势混合(LOF)A\",\n\t\t\"jijing_Mask\": \"ZOXQSHHLOFA\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.2890\",\n\t\t\"jijing_totalValue\": \"1.9810\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6874\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 8,\n\t\t\"jijing_last3Month\": 13,\n\t\t\"jijing_last6Month\": 21,\n\t\t\"jijing_last1year\": 23,\n\t\t\"jijing_last2year\": 27,\n\t\t\"jijing_last3year\": 107,\n\t\t\"jijing_sinceThisYear\": 25,\n\t\t\"jijing_sinceestablish\": 123\n\t},\n\t{\n\t\t\"jijing_Code\": \"160133\",\n\t\t\"jijing_Name\": \"南方天元\",\n\t\t\"jijing_Mask\": \"NFTY\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.2130\",\n\t\t\"jijing_totalValue\": \"2.2130\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6824\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 12,\n\t\t\"jijing_last6Month\": 16,\n\t\t\"jijing_last1year\": 25,\n\t\t\"jijing_last2year\": 22,\n\t\t\"jijing_last3year\": 107,\n\t\t\"jijing_sinceThisYear\": 28,\n\t\t\"jijing_sinceestablish\": 121\n\t},\n\t{\n\t\t\"jijing_Code\": \"257040\",\n\t\t\"jijing_Name\": \"国联安红利混合\",\n\t\t\"jijing_Mask\": \"GLAHLHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.40\",\n\t\t\"jijing_totalValue\": \"2.3530\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.0714\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 18,\n\t\t\"jijing_last6Month\": 26,\n\t\t\"jijing_last1year\": 20,\n\t\t\"jijing_last2year\": 12,\n\t\t\"jijing_last3year\": 107,\n\t\t\"jijing_sinceThisYear\": 26,\n\t\t\"jijing_sinceestablish\": 218\n\t},\n\t{\n\t\t\"jijing_Code\": \"000574\",\n\t\t\"jijing_Name\": \"宝盈新价值混合\",\n\t\t\"jijing_Mask\": \"BYXJZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.4850\",\n\t\t\"jijing_totalValue\": \"2.1730\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.2016\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 8,\n\t\t\"jijing_last6Month\": 15,\n\t\t\"jijing_last1year\": 0,\n\t\t\"jijing_last2year\": 0,\n\t\t\"jijing_last3year\": 106,\n\t\t\"jijing_sinceThisYear\": 6,\n\t\t\"jijing_sinceestablish\": 123\n\t},\n\t{\n\t\t\"jijing_Code\": \"180013\",\n\t\t\"jijing_Name\": \"银华领先策略混合\",\n\t\t\"jijing_Mask\": \"YHLXCLHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.8137\",\n\t\t\"jijing_totalValue\": \"2.8997\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.0552\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 11,\n\t\t\"jijing_last3Month\": 21,\n\t\t\"jijing_last6Month\": 31,\n\t\t\"jijing_last1year\": 24,\n\t\t\"jijing_last2year\": 15,\n\t\t\"jijing_last3year\": 106,\n\t\t\"jijing_sinceThisYear\": 28,\n\t\t\"jijing_sinceestablish\": 260\n\t},\n\t{\n\t\t\"jijing_Code\": \"690009\",\n\t\t\"jijing_Name\": \"民生加银红利回报\",\n\t\t\"jijing_Mask\": \"MSJYHLHB\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.8880\",\n\t\t\"jijing_totalValue\": \"2.1860\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.0530\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 10,\n\t\t\"jijing_last1year\": 7,\n\t\t\"jijing_last2year\": 8,\n\t\t\"jijing_last3year\": 105,\n\t\t\"jijing_sinceThisYear\": 14,\n\t\t\"jijing_sinceestablish\": 136\n\t},\n\t{\n\t\t\"jijing_Code\": \"160918\",\n\t\t\"jijing_Name\": \"大成中小盘混合(LOF)\",\n\t\t\"jijing_Mask\": \"DCZXPHHLOF\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.07\",\n\t\t\"jijing_totalValue\": \"4.8750\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.3393\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 17,\n\t\t\"jijing_last1year\": 14,\n\t\t\"jijing_last2year\": 1,\n\t\t\"jijing_last3year\": 105,\n\t\t\"jijing_sinceThisYear\": 21,\n\t\t\"jijing_sinceestablish\": 129\n\t},\n\t{\n\t\t\"jijing_Code\": \"040015\",\n\t\t\"jijing_Name\": \"华安动态灵活配置\",\n\t\t\"jijing_Mask\": \"HADTLHPZ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.5750\",\n\t\t\"jijing_totalValue\": \"2.1880\",\n\t\t\"jijing_daliyIncreaseRate\": \"2.2064\",\n\t\t\"jijing_lastWeek\": 3,\n\t\t\"jijing_lastMonth\": 0,\n\t\t\"jijing_last3Month\": 6,\n\t\t\"jijing_last6Month\": 17,\n\t\t\"jijing_last1year\": 11,\n\t\t\"jijing_last2year\": 14,\n\t\t\"jijing_last3year\": 104,\n\t\t\"jijing_sinceThisYear\": 11,\n\t\t\"jijing_sinceestablish\": 142\n\t},\n\t{\n\t\t\"jijing_Code\": \"000063\",\n\t\t\"jijing_Name\": \"长盛电子信息主题灵活配置混合\",\n\t\t\"jijing_Mask\": \"CSDZXXZTLHPZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.9750\",\n\t\t\"jijing_totalValue\": \"1.9750\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.3557\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 20,\n\t\t\"jijing_last6Month\": 15,\n\t\t\"jijing_last1year\": 0,\n\t\t\"jijing_last2year\": -17,\n\t\t\"jijing_last3year\": 104,\n\t\t\"jijing_sinceThisYear\": 10,\n\t\t\"jijing_sinceestablish\": 97\n\t},\n\t{\n\t\t\"jijing_Code\": \"000127\",\n\t\t\"jijing_Name\": \"农银行业领先混合\",\n\t\t\"jijing_Mask\": \"NYHYLXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.3710\",\n\t\t\"jijing_totalValue\": \"2.3710\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.0253\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 21,\n\t\t\"jijing_last6Month\": 31,\n\t\t\"jijing_last1year\": 24,\n\t\t\"jijing_last2year\": 41,\n\t\t\"jijing_last3year\": 104,\n\t\t\"jijing_sinceThisYear\": 29,\n\t\t\"jijing_sinceestablish\": 137\n\t},\n\t{\n\t\t\"jijing_Code\": \"377240\",\n\t\t\"jijing_Name\": \"上投摩根新兴动力混合A\",\n\t\t\"jijing_Mask\": \"STMGXXDLHHA\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.2830\",\n\t\t\"jijing_totalValue\": \"3.2830\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.0305\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 8,\n\t\t\"jijing_last3Month\": 25,\n\t\t\"jijing_last6Month\": 45,\n\t\t\"jijing_last1year\": 48,\n\t\t\"jijing_last2year\": 34,\n\t\t\"jijing_last3year\": 104,\n\t\t\"jijing_sinceThisYear\": 58,\n\t\t\"jijing_sinceestablish\": 228\n\t},\n\t{\n\t\t\"jijing_Code\": \"070022\",\n\t\t\"jijing_Name\": \"嘉实领先成长混合\",\n\t\t\"jijing_Mask\": \"JSLXCZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.1630\",\n\t\t\"jijing_totalValue\": \"2.6080\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.0924\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 10,\n\t\t\"jijing_last3Month\": 15,\n\t\t\"jijing_last6Month\": 18,\n\t\t\"jijing_last1year\": 13,\n\t\t\"jijing_last2year\": 8,\n\t\t\"jijing_last3year\": 104,\n\t\t\"jijing_sinceThisYear\": 20,\n\t\t\"jijing_sinceestablish\": 166\n\t},\n\t{\n\t\t\"jijing_Code\": \"519156\",\n\t\t\"jijing_Name\": \"新华行业灵活配置混合A\",\n\t\t\"jijing_Mask\": \"XHHYLHPZHHA\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.5740\",\n\t\t\"jijing_totalValue\": \"2.5180\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.3187\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": -1,\n\t\t\"jijing_last3Month\": 2,\n\t\t\"jijing_last6Month\": 2,\n\t\t\"jijing_last1year\": 12,\n\t\t\"jijing_last2year\": 11,\n\t\t\"jijing_last3year\": 200,\n\t\t\"jijing_sinceThisYear\": 9,\n\t\t\"jijing_sinceestablish\": 198\n\t},\n\t{\n\t\t\"jijing_Code\": \"160212\",\n\t\t\"jijing_Name\": \"国泰估值优势混合(LOF)\",\n\t\t\"jijing_Mask\": \"GTGZYSHHLOF\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.0630\",\n\t\t\"jijing_totalValue\": \"3.0630\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.6487\",\n\t\t\"jijing_lastWeek\": -1,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 17,\n\t\t\"jijing_last6Month\": 19,\n\t\t\"jijing_last1year\": 33,\n\t\t\"jijing_last2year\": 65,\n\t\t\"jijing_last3year\": 199,\n\t\t\"jijing_sinceThisYear\": 38,\n\t\t\"jijing_sinceestablish\": 206\n\t},\n\t{\n\t\t\"jijing_Code\": \"000619\",\n\t\t\"jijing_Name\": \"东方红产业升级混合\",\n\t\t\"jijing_Mask\": \"DFHCYSJHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.2090\",\n\t\t\"jijing_totalValue\": \"3.2090\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.2499\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 19,\n\t\t\"jijing_last6Month\": 33,\n\t\t\"jijing_last1year\": 47,\n\t\t\"jijing_last2year\": 56,\n\t\t\"jijing_last3year\": 190,\n\t\t\"jijing_sinceThisYear\": 47,\n\t\t\"jijing_sinceestablish\": 220\n\t},\n\t{\n\t\t\"jijing_Code\": \"000742\",\n\t\t\"jijing_Name\": \"国泰新经济灵活配置混合\",\n\t\t\"jijing_Mask\": \"GTXJJLHPZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.4750\",\n\t\t\"jijing_totalValue\": \"2.76\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4057\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 15,\n\t\t\"jijing_last6Month\": 40,\n\t\t\"jijing_last1year\": 52,\n\t\t\"jijing_last2year\": 66,\n\t\t\"jijing_last3year\": 185,\n\t\t\"jijing_sinceThisYear\": 52,\n\t\t\"jijing_sinceestablish\": 191\n\t},\n\t{\n\t\t\"jijing_Code\": \"540006\",\n\t\t\"jijing_Name\": \"汇丰晋信大盘股票A\",\n\t\t\"jijing_Mask\": \"HFJXDPGPA\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.2480\",\n\t\t\"jijing_totalValue\": \"3.3080\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.8070\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 1,\n\t\t\"jijing_last3Month\": 5,\n\t\t\"jijing_last6Month\": 18,\n\t\t\"jijing_last1year\": 30,\n\t\t\"jijing_last2year\": 38,\n\t\t\"jijing_last3year\": 183,\n\t\t\"jijing_sinceThisYear\": 25,\n\t\t\"jijing_sinceestablish\": 244\n\t},\n\t{\n\t\t\"jijing_Code\": \"160211\",\n\t\t\"jijing_Name\": \"国泰中小盘成长混合(LOF)\",\n\t\t\"jijing_Mask\": \"GTZXPCZHHLOF\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.1430\",\n\t\t\"jijing_totalValue\": \"4.3560\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.6951\",\n\t\t\"jijing_lastWeek\": -1,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 17,\n\t\t\"jijing_last6Month\": 18,\n\t\t\"jijing_last1year\": 31,\n\t\t\"jijing_last2year\": 60,\n\t\t\"jijing_last3year\": 175,\n\t\t\"jijing_sinceThisYear\": 37,\n\t\t\"jijing_sinceestablish\": 270\n\t},\n\t{\n\t\t\"jijing_Code\": \"000410\",\n\t\t\"jijing_Name\": \"益民服务领先混合\",\n\t\t\"jijing_Mask\": \"YMFWLXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.8690\",\n\t\t\"jijing_totalValue\": \"2.8690\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7374\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 2,\n\t\t\"jijing_last3Month\": 2,\n\t\t\"jijing_last6Month\": 10,\n\t\t\"jijing_last1year\": 11,\n\t\t\"jijing_last2year\": 11,\n\t\t\"jijing_last3year\": 173,\n\t\t\"jijing_sinceThisYear\": 11,\n\t\t\"jijing_sinceestablish\": 186\n\t},\n\t{\n\t\t\"jijing_Code\": \"762001\",\n\t\t\"jijing_Name\": \"国金国鑫发起\",\n\t\t\"jijing_Mask\": \"GJGXFQ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.0770\",\n\t\t\"jijing_totalValue\": \"2.7070\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7226\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 2,\n\t\t\"jijing_last3Month\": 6,\n\t\t\"jijing_last6Month\": 10,\n\t\t\"jijing_last1year\": 11,\n\t\t\"jijing_last2year\": 25,\n\t\t\"jijing_last3year\": 167,\n\t\t\"jijing_sinceThisYear\": 11,\n\t\t\"jijing_sinceestablish\": 233\n\t},\n\t{\n\t\t\"jijing_Code\": \"000577\",\n\t\t\"jijing_Name\": \"安信价值精选股票\",\n\t\t\"jijing_Mask\": \"AXJZJXGP\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.9050\",\n\t\t\"jijing_totalValue\": \"2.9050\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4495\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 13,\n\t\t\"jijing_last6Month\": 24,\n\t\t\"jijing_last1year\": 37,\n\t\t\"jijing_last2year\": 56,\n\t\t\"jijing_last3year\": 161,\n\t\t\"jijing_sinceThisYear\": 37,\n\t\t\"jijing_sinceestablish\": 190\n\t},\n\t{\n\t\t\"jijing_Code\": \"180012\",\n\t\t\"jijing_Name\": \"银华富裕主题混合\",\n\t\t\"jijing_Mask\": \"YHFYZTHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.8375\",\n\t\t\"jijing_totalValue\": \"3.7905\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.1447\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 9,\n\t\t\"jijing_last3Month\": 16,\n\t\t\"jijing_last6Month\": 36,\n\t\t\"jijing_last1year\": 53,\n\t\t\"jijing_last2year\": 69,\n\t\t\"jijing_last3year\": 160,\n\t\t\"jijing_sinceThisYear\": 53,\n\t\t\"jijing_sinceestablish\": 475\n\t},\n\t{\n\t\t\"jijing_Code\": \"180031\",\n\t\t\"jijing_Name\": \"银华中小盘混合\",\n\t\t\"jijing_Mask\": \"YHZXPHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.70\",\n\t\t\"jijing_totalValue\": \"3.94\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.2586\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 16,\n\t\t\"jijing_last6Month\": 28,\n\t\t\"jijing_last1year\": 29,\n\t\t\"jijing_last2year\": 40,\n\t\t\"jijing_last3year\": 160,\n\t\t\"jijing_sinceThisYear\": 31,\n\t\t\"jijing_sinceestablish\": 342\n\t},\n\t{\n\t\t\"jijing_Code\": \"519700\",\n\t\t\"jijing_Name\": \"交银主题优选\",\n\t\t\"jijing_Mask\": \"JYZTYX\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.1320\",\n\t\t\"jijing_totalValue\": \"2.0590\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.2522\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 1,\n\t\t\"jijing_last3Month\": 7,\n\t\t\"jijing_last6Month\": 15,\n\t\t\"jijing_last1year\": 13,\n\t\t\"jijing_last2year\": 16,\n\t\t\"jijing_last3year\": 159,\n\t\t\"jijing_sinceThisYear\": 13,\n\t\t\"jijing_sinceestablish\": 119\n\t},\n\t{\n\t\t\"jijing_Code\": \"070032\",\n\t\t\"jijing_Name\": \"嘉实优化红利混合\",\n\t\t\"jijing_Mask\": \"JSYHHLHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.4860\",\n\t\t\"jijing_totalValue\": \"2.3390\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.2023\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 12,\n\t\t\"jijing_last3Month\": 20,\n\t\t\"jijing_last6Month\": 39,\n\t\t\"jijing_last1year\": 42,\n\t\t\"jijing_last2year\": 42,\n\t\t\"jijing_last3year\": 157,\n\t\t\"jijing_sinceThisYear\": 52,\n\t\t\"jijing_sinceestablish\": 187\n\t},\n\t{\n\t\t\"jijing_Code\": \"020026\",\n\t\t\"jijing_Name\": \"国泰成长优选混合\",\n\t\t\"jijing_Mask\": \"GTCZYXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.2880\",\n\t\t\"jijing_totalValue\": \"3.81\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.1215\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 9,\n\t\t\"jijing_last3Month\": 19,\n\t\t\"jijing_last6Month\": 32,\n\t\t\"jijing_last1year\": 48,\n\t\t\"jijing_last2year\": 72,\n\t\t\"jijing_last3year\": 156,\n\t\t\"jijing_sinceThisYear\": 49,\n\t\t\"jijing_sinceestablish\": 295\n\t},\n\t{\n\t\t\"jijing_Code\": \"020003\",\n\t\t\"jijing_Name\": \"国泰金龙行业精选\",\n\t\t\"jijing_Mask\": \"GTJLHYJX\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"0.6910\",\n\t\t\"jijing_totalValue\": \"5.4880\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.5755\",\n\t\t\"jijing_lastWeek\": -1,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 13,\n\t\t\"jijing_last6Month\": 14,\n\t\t\"jijing_last1year\": 26,\n\t\t\"jijing_last2year\": 54,\n\t\t\"jijing_last3year\": 155,\n\t\t\"jijing_sinceThisYear\": 30,\n\t\t\"jijing_sinceestablish\": 978\n\t},\n\t{\n\t\t\"jijing_Code\": \"519066\",\n\t\t\"jijing_Name\": \"汇添富蓝筹稳健\",\n\t\t\"jijing_Mask\": \"HTFLCWJ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.5960\",\n\t\t\"jijing_totalValue\": \"3.4060\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7764\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 11,\n\t\t\"jijing_last3Month\": 18,\n\t\t\"jijing_last6Month\": 28,\n\t\t\"jijing_last1year\": 42,\n\t\t\"jijing_last2year\": 43,\n\t\t\"jijing_last3year\": 154,\n\t\t\"jijing_sinceThisYear\": 45,\n\t\t\"jijing_sinceestablish\": 344\n\t},\n\t{\n\t\t\"jijing_Code\": \"519068\",\n\t\t\"jijing_Name\": \"汇添富成长焦点混合\",\n\t\t\"jijing_Mask\": \"HTFCZJDHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.0348\",\n\t\t\"jijing_totalValue\": \"3.2238\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.9125\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 12,\n\t\t\"jijing_last3Month\": 19,\n\t\t\"jijing_last6Month\": 28,\n\t\t\"jijing_last1year\": 41,\n\t\t\"jijing_last2year\": 40,\n\t\t\"jijing_last3year\": 153,\n\t\t\"jijing_sinceThisYear\": 45,\n\t\t\"jijing_sinceestablish\": 317\n\t},\n\t{\n\t\t\"jijing_Code\": \"110011\",\n\t\t\"jijing_Name\": \"易方达中小盘混合\",\n\t\t\"jijing_Mask\": \"YFDZXPHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.7906\",\n\t\t\"jijing_totalValue\": \"4.1806\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.2421\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 12,\n\t\t\"jijing_last3Month\": 15,\n\t\t\"jijing_last6Month\": 22,\n\t\t\"jijing_last1year\": 42,\n\t\t\"jijing_last2year\": 55,\n\t\t\"jijing_last3year\": 150,\n\t\t\"jijing_sinceThisYear\": 44,\n\t\t\"jijing_sinceestablish\": 332\n\t},\n\t{\n\t\t\"jijing_Code\": \"040035\",\n\t\t\"jijing_Name\": \"华安逆向策略混合\",\n\t\t\"jijing_Mask\": \"HANXCLHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.8040\",\n\t\t\"jijing_totalValue\": \"3.1840\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6461\",\n\t\t\"jijing_lastWeek\": -1,\n\t\t\"jijing_lastMonth\": 1,\n\t\t\"jijing_last3Month\": 8,\n\t\t\"jijing_last6Month\": 10,\n\t\t\"jijing_last1year\": 3,\n\t\t\"jijing_last2year\": 21,\n\t\t\"jijing_last3year\": 148,\n\t\t\"jijing_sinceThisYear\": 5,\n\t\t\"jijing_sinceestablish\": 297\n\t},\n\t{\n\t\t\"jijing_Code\": \"163406\",\n\t\t\"jijing_Name\": \"兴全合润分级混合\",\n\t\t\"jijing_Mask\": \"XQHRFJHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.3313\",\n\t\t\"jijing_totalValue\": \"3.4547\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6350\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 11,\n\t\t\"jijing_last3Month\": 19,\n\t\t\"jijing_last6Month\": 30,\n\t\t\"jijing_last1year\": 16,\n\t\t\"jijing_last2year\": 22,\n\t\t\"jijing_last3year\": 146,\n\t\t\"jijing_sinceThisYear\": 23,\n\t\t\"jijing_sinceestablish\": 245\n\t},\n\t{\n\t\t\"jijing_Code\": \"000136\",\n\t\t\"jijing_Name\": \"民生加银策略精选混合\",\n\t\t\"jijing_Mask\": \"MSJYCLJXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.2840\",\n\t\t\"jijing_totalValue\": \"2.6450\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.0875\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 11,\n\t\t\"jijing_last1year\": 6,\n\t\t\"jijing_last2year\": 9,\n\t\t\"jijing_last3year\": 146,\n\t\t\"jijing_sinceThisYear\": 13,\n\t\t\"jijing_sinceestablish\": 165\n\t},\n\t{\n\t\t\"jijing_Code\": \"000480\",\n\t\t\"jijing_Name\": \"东方红新动力混合\",\n\t\t\"jijing_Mask\": \"DFHXDLHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.5610\",\n\t\t\"jijing_totalValue\": \"2.6490\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.1173\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 11,\n\t\t\"jijing_last6Month\": 20,\n\t\t\"jijing_last1year\": 27,\n\t\t\"jijing_last2year\": 36,\n\t\t\"jijing_last3year\": 145,\n\t\t\"jijing_sinceThisYear\": 26,\n\t\t\"jijing_sinceestablish\": 172\n\t},\n\t{\n\t\t\"jijing_Code\": \"519069\",\n\t\t\"jijing_Name\": \"汇添富价值精选混合\",\n\t\t\"jijing_Mask\": \"HTFJZJXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.4110\",\n\t\t\"jijing_totalValue\": \"3.8390\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.0830\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 13,\n\t\t\"jijing_last6Month\": 19,\n\t\t\"jijing_last1year\": 25,\n\t\t\"jijing_last2year\": 25,\n\t\t\"jijing_last3year\": 144,\n\t\t\"jijing_sinceThisYear\": 27,\n\t\t\"jijing_sinceestablish\": 428\n\t},\n\t{\n\t\t\"jijing_Code\": \"000408\",\n\t\t\"jijing_Name\": \"民生加银城镇化混合\",\n\t\t\"jijing_Mask\": \"MSJYCZHHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.5680\",\n\t\t\"jijing_totalValue\": \"2.4630\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4484\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 8,\n\t\t\"jijing_last3Month\": 14,\n\t\t\"jijing_last6Month\": 18,\n\t\t\"jijing_last1year\": 25,\n\t\t\"jijing_last2year\": 22,\n\t\t\"jijing_last3year\": 142,\n\t\t\"jijing_sinceThisYear\": 21,\n\t\t\"jijing_sinceestablish\": 172\n\t},\n\t{\n\t\t\"jijing_Code\": \"519697\",\n\t\t\"jijing_Name\": \"交银优势行业混合\",\n\t\t\"jijing_Mask\": \"JYYSHYHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.77\",\n\t\t\"jijing_totalValue\": \"3.1760\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.2057\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 2,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 12,\n\t\t\"jijing_last1year\": 7,\n\t\t\"jijing_last2year\": 23,\n\t\t\"jijing_last3year\": 142,\n\t\t\"jijing_sinceThisYear\": 9,\n\t\t\"jijing_sinceestablish\": 247\n\t},\n\t{\n\t\t\"jijing_Code\": \"519736\",\n\t\t\"jijing_Name\": \"交银新成长混合\",\n\t\t\"jijing_Mask\": \"JYXCZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.0520\",\n\t\t\"jijing_totalValue\": \"2.4520\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.6345\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 14,\n\t\t\"jijing_last6Month\": 25,\n\t\t\"jijing_last1year\": 30,\n\t\t\"jijing_last2year\": 44,\n\t\t\"jijing_last3year\": 139,\n\t\t\"jijing_sinceThisYear\": 34,\n\t\t\"jijing_sinceestablish\": 148\n\t},\n\t{\n\t\t\"jijing_Code\": \"519732\",\n\t\t\"jijing_Name\": \"交银定期支付双息平衡混合\",\n\t\t\"jijing_Mask\": \"JYDQZFSXPHHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.7680\",\n\t\t\"jijing_totalValue\": \"2.7680\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.8746\",\n\t\t\"jijing_lastWeek\": 3,\n\t\t\"jijing_lastMonth\": 8,\n\t\t\"jijing_last3Month\": 23,\n\t\t\"jijing_last6Month\": 29,\n\t\t\"jijing_last1year\": 32,\n\t\t\"jijing_last2year\": 46,\n\t\t\"jijing_last3year\": 137,\n\t\t\"jijing_sinceThisYear\": 33,\n\t\t\"jijing_sinceestablish\": 176\n\t},\n\t{\n\t\t\"jijing_Code\": \"110022\",\n\t\t\"jijing_Name\": \"易方达消费行业\",\n\t\t\"jijing_Mask\": \"YFDXFHY\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.2560\",\n\t\t\"jijing_totalValue\": \"2.2560\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.0886\",\n\t\t\"jijing_lastWeek\": 3,\n\t\t\"jijing_lastMonth\": 12,\n\t\t\"jijing_last3Month\": 19,\n\t\t\"jijing_last6Month\": 33,\n\t\t\"jijing_last1year\": 62,\n\t\t\"jijing_last2year\": 73,\n\t\t\"jijing_last3year\": 137,\n\t\t\"jijing_sinceThisYear\": 59,\n\t\t\"jijing_sinceestablish\": 125\n\t},\n\t{\n\t\t\"jijing_Code\": \"160215\",\n\t\t\"jijing_Name\": \"国泰价值经典混合(LOF)\",\n\t\t\"jijing_Mask\": \"GTJZJDHHLOF\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.6660\",\n\t\t\"jijing_totalValue\": \"2.1940\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.8475\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 1,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 24,\n\t\t\"jijing_last1year\": 29,\n\t\t\"jijing_last2year\": 45,\n\t\t\"jijing_last3year\": 136,\n\t\t\"jijing_sinceThisYear\": 33,\n\t\t\"jijing_sinceestablish\": 137\n\t},\n\t{\n\t\t\"jijing_Code\": \"519704\",\n\t\t\"jijing_Name\": \"交银先进制造混合\",\n\t\t\"jijing_Mask\": \"JYXJZZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.5330\",\n\t\t\"jijing_totalValue\": \"3.0830\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4760\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 15,\n\t\t\"jijing_last6Month\": 19,\n\t\t\"jijing_last1year\": 17,\n\t\t\"jijing_last2year\": 34,\n\t\t\"jijing_last3year\": 136,\n\t\t\"jijing_sinceThisYear\": 17,\n\t\t\"jijing_sinceestablish\": 219\n\t},\n\t{\n\t\t\"jijing_Code\": \"100056\",\n\t\t\"jijing_Name\": \"富国低碳环保混合\",\n\t\t\"jijing_Mask\": \"FGDTHBHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.9530\",\n\t\t\"jijing_totalValue\": \"2.9530\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.2036\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 5,\n\t\t\"jijing_last3Month\": 17,\n\t\t\"jijing_last6Month\": 19,\n\t\t\"jijing_last1year\": 30,\n\t\t\"jijing_last2year\": 9,\n\t\t\"jijing_last3year\": 134,\n\t\t\"jijing_sinceThisYear\": 35,\n\t\t\"jijing_sinceestablish\": 195\n\t},\n\t{\n\t\t\"jijing_Code\": \"260112\",\n\t\t\"jijing_Name\": \"景顺长城能源基建混合\",\n\t\t\"jijing_Mask\": \"JSCCNYJJHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.6870\",\n\t\t\"jijing_totalValue\": \"2.3920\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7766\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 9,\n\t\t\"jijing_last6Month\": 17,\n\t\t\"jijing_last1year\": 27,\n\t\t\"jijing_last2year\": 25,\n\t\t\"jijing_last3year\": 134,\n\t\t\"jijing_sinceThisYear\": 26,\n\t\t\"jijing_sinceestablish\": 155\n\t},\n\t{\n\t\t\"jijing_Code\": \"202005\",\n\t\t\"jijing_Name\": \"南方成份精选混合\",\n\t\t\"jijing_Mask\": \"NFCFJXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.2645\",\n\t\t\"jijing_totalValue\": \"1.8939\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4369\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 12,\n\t\t\"jijing_last6Month\": 24,\n\t\t\"jijing_last1year\": 27,\n\t\t\"jijing_last2year\": 39,\n\t\t\"jijing_last3year\": 133,\n\t\t\"jijing_sinceThisYear\": 29,\n\t\t\"jijing_sinceestablish\": 123\n\t},\n\t{\n\t\t\"jijing_Code\": \"040008\",\n\t\t\"jijing_Name\": \"华安策略优选混合\",\n\t\t\"jijing_Mask\": \"HACLYXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.5844\",\n\t\t\"jijing_totalValue\": \"3.1207\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.2073\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 10,\n\t\t\"jijing_last6Month\": 31,\n\t\t\"jijing_last1year\": 42,\n\t\t\"jijing_last2year\": 40,\n\t\t\"jijing_last3year\": 132,\n\t\t\"jijing_sinceThisYear\": 49,\n\t\t\"jijing_sinceestablish\": 58\n\t},\n\t{\n\t\t\"jijing_Code\": \"000527\",\n\t\t\"jijing_Name\": \"南方新优享\",\n\t\t\"jijing_Mask\": \"NFXYX\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.5030\",\n\t\t\"jijing_totalValue\": \"2.5030\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4011\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 11,\n\t\t\"jijing_last6Month\": 19,\n\t\t\"jijing_last1year\": 29,\n\t\t\"jijing_last2year\": 47,\n\t\t\"jijing_last3year\": 131,\n\t\t\"jijing_sinceThisYear\": 29,\n\t\t\"jijing_sinceestablish\": 150\n\t},\n\t{\n\t\t\"jijing_Code\": \"519702\",\n\t\t\"jijing_Name\": \"交银趋势混合\",\n\t\t\"jijing_Mask\": \"JYQSHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.4270\",\n\t\t\"jijing_totalValue\": \"1.9270\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.5575\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 8,\n\t\t\"jijing_last3Month\": 18,\n\t\t\"jijing_last6Month\": 20,\n\t\t\"jijing_last1year\": 18,\n\t\t\"jijing_last2year\": 35,\n\t\t\"jijing_last3year\": 130,\n\t\t\"jijing_sinceThisYear\": 19,\n\t\t\"jijing_sinceestablish\": 107\n\t},\n\t{\n\t\t\"jijing_Code\": \"163412\",\n\t\t\"jijing_Name\": \"兴全轻资产混合(LOF)\",\n\t\t\"jijing_Mask\": \"XQQZCHHLOF\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.1570\",\n\t\t\"jijing_totalValue\": \"4.2210\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6376\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 11,\n\t\t\"jijing_last3Month\": 19,\n\t\t\"jijing_last6Month\": 29,\n\t\t\"jijing_last1year\": 16,\n\t\t\"jijing_last2year\": 23,\n\t\t\"jijing_last3year\": 130,\n\t\t\"jijing_sinceThisYear\": 23,\n\t\t\"jijing_sinceestablish\": 341\n\t},\n\t{\n\t\t\"jijing_Code\": \"320011\",\n\t\t\"jijing_Name\": \"诺安中小盘精选混合\",\n\t\t\"jijing_Mask\": \"NAZXPJXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.9830\",\n\t\t\"jijing_totalValue\": \"3.0430\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.7770\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 7,\n\t\t\"jijing_last3Month\": 12,\n\t\t\"jijing_last6Month\": 15,\n\t\t\"jijing_last1year\": 16,\n\t\t\"jijing_last2year\": 25,\n\t\t\"jijing_last3year\": 129,\n\t\t\"jijing_sinceThisYear\": 16,\n\t\t\"jijing_sinceestablish\": 214\n\t},\n\t{\n\t\t\"jijing_Code\": \"340008\",\n\t\t\"jijing_Name\": \"兴全有机增长混合\",\n\t\t\"jijing_Mask\": \"XQYJZZHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.6912\",\n\t\t\"jijing_totalValue\": \"3.5112\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.3917\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 10,\n\t\t\"jijing_last3Month\": 20,\n\t\t\"jijing_last6Month\": 30,\n\t\t\"jijing_last1year\": 34,\n\t\t\"jijing_last2year\": 51,\n\t\t\"jijing_last3year\": 129,\n\t\t\"jijing_sinceThisYear\": 40,\n\t\t\"jijing_sinceestablish\": 289\n\t},\n\t{\n\t\t\"jijing_Code\": \"460005\",\n\t\t\"jijing_Name\": \"华泰柏瑞价值增长混合\",\n\t\t\"jijing_Mask\": \"HTBRJZZCHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.5431\",\n\t\t\"jijing_totalValue\": \"3.3961\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.1535\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 0,\n\t\t\"jijing_last3Month\": 2,\n\t\t\"jijing_last6Month\": 10,\n\t\t\"jijing_last1year\": 2,\n\t\t\"jijing_last2year\": -3,\n\t\t\"jijing_last3year\": 128,\n\t\t\"jijing_sinceThisYear\": 5,\n\t\t\"jijing_sinceestablish\": 323\n\t},\n\t{\n\t\t\"jijing_Code\": \"450009\",\n\t\t\"jijing_Name\": \"国富中小盘\",\n\t\t\"jijing_Mask\": \"GFZXP\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.8730\",\n\t\t\"jijing_totalValue\": \"2.3910\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4828\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 3,\n\t\t\"jijing_last3Month\": 13,\n\t\t\"jijing_last6Month\": 23,\n\t\t\"jijing_last1year\": 21,\n\t\t\"jijing_last2year\": 30,\n\t\t\"jijing_last3year\": 127,\n\t\t\"jijing_sinceThisYear\": 26,\n\t\t\"jijing_sinceestablish\": 148\n\t},\n\t{\n\t\t\"jijing_Code\": \"206007\",\n\t\t\"jijing_Name\": \"鹏华消费优选混合\",\n\t\t\"jijing_Mask\": \"PHXFYXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.31\",\n\t\t\"jijing_totalValue\": \"2.31\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.0433\",\n\t\t\"jijing_lastWeek\": 3,\n\t\t\"jijing_lastMonth\": 13,\n\t\t\"jijing_last3Month\": 17,\n\t\t\"jijing_last6Month\": 29,\n\t\t\"jijing_last1year\": 44,\n\t\t\"jijing_last2year\": 28,\n\t\t\"jijing_last3year\": 127,\n\t\t\"jijing_sinceThisYear\": 50,\n\t\t\"jijing_sinceestablish\": 131\n\t},\n\t{\n\t\t\"jijing_Code\": \"340007\",\n\t\t\"jijing_Name\": \"兴全社会责任混合\",\n\t\t\"jijing_Mask\": \"XQSHZRHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.9030\",\n\t\t\"jijing_totalValue\": \"4.0930\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.9049\",\n\t\t\"jijing_lastWeek\": 2,\n\t\t\"jijing_lastMonth\": 12,\n\t\t\"jijing_last3Month\": 26,\n\t\t\"jijing_last6Month\": 38,\n\t\t\"jijing_last1year\": 41,\n\t\t\"jijing_last2year\": 39,\n\t\t\"jijing_last3year\": 127,\n\t\t\"jijing_sinceThisYear\": 46,\n\t\t\"jijing_sinceestablish\": 342\n\t},\n\t{\n\t\t\"jijing_Code\": \"519185\",\n\t\t\"jijing_Name\": \"万家精选混合\",\n\t\t\"jijing_Mask\": \"WJJXHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.2103\",\n\t\t\"jijing_totalValue\": \"2.2983\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.4482\",\n\t\t\"jijing_lastWeek\": -2,\n\t\t\"jijing_lastMonth\": 0,\n\t\t\"jijing_last3Month\": 1,\n\t\t\"jijing_last6Month\": 4,\n\t\t\"jijing_last1year\": 8,\n\t\t\"jijing_last2year\": 26,\n\t\t\"jijing_last3year\": 126,\n\t\t\"jijing_sinceThisYear\": 8,\n\t\t\"jijing_sinceestablish\": 143\n\t},\n\t{\n\t\t\"jijing_Code\": \"000457\",\n\t\t\"jijing_Name\": \"上投摩根核心成长\",\n\t\t\"jijing_Mask\": \"STMGHXCZ\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.2270\",\n\t\t\"jijing_totalValue\": \"2.5360\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.2250\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 15,\n\t\t\"jijing_last6Month\": 26,\n\t\t\"jijing_last1year\": 44,\n\t\t\"jijing_last2year\": 51,\n\t\t\"jijing_last3year\": 126,\n\t\t\"jijing_sinceThisYear\": 45,\n\t\t\"jijing_sinceestablish\": 160\n\t},\n\t{\n\t\t\"jijing_Code\": \"000083\",\n\t\t\"jijing_Name\": \"汇添富消费行业混合\",\n\t\t\"jijing_Mask\": \"HTFXFHYHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"3.2920\",\n\t\t\"jijing_totalValue\": \"3.2920\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.0304\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 12,\n\t\t\"jijing_last3Month\": 19,\n\t\t\"jijing_last6Month\": 32,\n\t\t\"jijing_last1year\": 43,\n\t\t\"jijing_last2year\": 30,\n\t\t\"jijing_last3year\": 126,\n\t\t\"jijing_sinceThisYear\": 47,\n\t\t\"jijing_sinceestablish\": 229\n\t},\n\t{\n\t\t\"jijing_Code\": \"570005\",\n\t\t\"jijing_Name\": \"诺德成长优势混合\",\n\t\t\"jijing_Mask\": \"NDCZYSHH\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.9120\",\n\t\t\"jijing_totalValue\": \"2.8320\",\n\t\t\"jijing_daliyIncreaseRate\": \"-0.0523\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 9,\n\t\t\"jijing_last6Month\": 18,\n\t\t\"jijing_last1year\": 21,\n\t\t\"jijing_last2year\": 32,\n\t\t\"jijing_last3year\": 125,\n\t\t\"jijing_sinceThisYear\": 22,\n\t\t\"jijing_sinceestablish\": 201\n\t},\n\t{\n\t\t\"jijing_Code\": \"000363\",\n\t\t\"jijing_Name\": \"国泰聚信价值优势灵活配置C\",\n\t\t\"jijing_Mask\": \"GTJXJZYSLHPZC\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.3080\",\n\t\t\"jijing_totalValue\": \"2.3020\",\n\t\t\"jijing_daliyIncreaseRate\": \"1.2384\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 6,\n\t\t\"jijing_last6Month\": 10,\n\t\t\"jijing_last1year\": 11,\n\t\t\"jijing_last2year\": 28,\n\t\t\"jijing_last3year\": 124,\n\t\t\"jijing_sinceThisYear\": 10,\n\t\t\"jijing_sinceestablish\": 140\n\t},\n\t{\n\t\t\"jijing_Code\": \"540003\",\n\t\t\"jijing_Name\": \"汇丰晋信动态策略\",\n\t\t\"jijing_Mask\": \"HFJXDTCL\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"1.9463\",\n\t\t\"jijing_totalValue\": \"2.5863\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.6724\",\n\t\t\"jijing_lastWeek\": 0,\n\t\t\"jijing_lastMonth\": 4,\n\t\t\"jijing_last3Month\": 9,\n\t\t\"jijing_last6Month\": 18,\n\t\t\"jijing_last1year\": 19,\n\t\t\"jijing_last2year\": 21,\n\t\t\"jijing_last3year\": 123,\n\t\t\"jijing_sinceThisYear\": 21,\n\t\t\"jijing_sinceestablish\": 190\n\t},\n\t{\n\t\t\"jijing_Code\": \"160916\",\n\t\t\"jijing_Name\": \"大成优选混合(LOF)\",\n\t\t\"jijing_Mask\": \"DCYXHHLOF\",\n\t\t\"jijing_Date\": \"2017-11-07\",\n\t\t\"jijing_unitValue\": \"2.8150\",\n\t\t\"jijing_totalValue\": \"2.2010\",\n\t\t\"jijing_daliyIncreaseRate\": \"0.1779\",\n\t\t\"jijing_lastWeek\": 1,\n\t\t\"jijing_lastMonth\": 6,\n\t\t\"jijing_last3Month\": 12,\n\t\t\"jijing_last6Month\": 19,\n\t\t\"jijing_last1year\": 24,\n\t\t\"jijing_last2year\": 30,\n\t\t\"jijing_last3year\": 122,\n\t\t\"jijing_sinceThisYear\": 27,\n\t\t\"jijing_sinceestablish\": 181\n\t}\n]",
+			"file": "NodeJs/jijing/alllist.json",
+			"file_size": 48828,
+			"file_write_time": 131545949865774085,
+			"settings":
+			{
+				"buffer_size": 47198,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "NodeJs/miaosha/jdProcess.js",
-			"settings":
-			{
-				"buffer_size": 13341,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -543,7 +577,7 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "ip",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -678,11 +712,25 @@
 	},
 	"expanded_folders":
 	[
+		"/E/Work/GitHub/HTML",
+		"/E/Work/GitHub/HTML/NodeJs",
+		"/E/Work/GitHub/HTML/NodeJs/jijing",
+		"/E/Work/GitHub/HTML/NodeJs/jijing/Data"
 	],
 	"file_history":
 	[
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/jdProcess.js",
+		"/E/Work/GitHub/HTML/NodeJs/jijing/main.js",
+		"/E/Work/GitHub/HTML/JQuery/miaosha/index.html",
+		"/E/Work/GitHub/HTML/NodeJs/jijing/jijingProcess.js",
+		"/E/Work/GitHub/HTML/NodeJs/jijing/Select.json",
+		"/E/Work/GitHub/HTML/NodeJs/jijing/last1Month.json",
+		"/E/Work/GitHub/HTML/NodeJs/jijing/test1.js",
+		"/E/Work/GitHub/HTML/NodeJs/miaosha/index.html",
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/base.js",
+		"/E/Work/GitHub/HTML/NodeJs/jijing/Dog.js",
+		"/E/Work/GitHub/HTML/NodeJs/jijing/request.js",
+		"/E/Work/GitHub/HTML/NodeJs/jijing/alllist.json",
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/data/extentinfo.js",
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/nodejs-sdk-7.1.1/examples/form_upload_simple.js",
 		"/E/Work/GitHub/HTML/php/Qiniu.php",
@@ -694,8 +742,6 @@
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/test2.js",
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/felixemail.js",
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/config.js",
-		"/E/Work/GitHub/HTML/NodeJs/jijing/main.js",
-		"/E/Work/GitHub/HTML/NodeJs/miaosha/index.html",
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/base.css",
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/test.js",
 		"/E/Work/GitHub/HTML/php/index.php",
@@ -706,7 +752,6 @@
 		"/E/Work/GitHub/HTML/php/miaosha/index.php",
 		"/E/Work/GitHub/HTML/php/miaosha/subscribe.php",
 		"/E/Work/GitHub/HTML/NodeJs/miaosha/mail.js",
-		"/E/Work/GitHub/HTML/NodeJs/jijing/jijingProcess.js",
 		"/E/Work/GitHub/HTML/NodeJs/jijing/result.json",
 		"/E/Work/GitHub/HTML/php/miaosha/test.php",
 		"/E/Work/GitHub/HTML/php/miaosha/data/user.json",
@@ -727,10 +772,7 @@
 		"/E/Work/GitHub/HTML/php/site/upload.php",
 		"/E/Work/GitHub/HTML/php/site/upload1.php",
 		"/E/Work/GitHub/HTML/JQuery/video.html",
-		"/E/Work/GitHub/HTML/NodeJs/jijing/test1.js",
 		"/E/Work/GitHub/HTML/NodeJs/jijing/Person.js",
-		"/E/Work/GitHub/HTML/NodeJs/jijing/Dog.js",
-		"/E/Work/GitHub/HTML/NodeJs/jijing/request.js",
 		"/E/Work/GitHub/HTML/php/site/head.htm",
 		"/E/Work/GitHub/HTML/php/site/index.htm",
 		"/E/Work/GitHub/HTML/php/site/html5upload.html",
@@ -744,7 +786,6 @@
 		"/E/Work/GitHub/HTML/more op.sh",
 		"/E/Work/GitHub/HTML/NodeJs/jijing/test.js",
 		"/E/Work/GitHub/HTML/NodeJs/jijing/log.txt",
-		"/E/Work/GitHub/HTML/NodeJs/jijing/alllist.json",
 		"/E/Work/GitHub/HTML/JQuery/cmapilog/pre.js",
 		"/E/Work/GitHub/HTML/JQuery/cmapilog/WebApi.CMApi_Message.log",
 		"/C/Users/WangFugui/Desktop/folder size.sql",
@@ -805,10 +846,7 @@
 		"/E/Work/GitHub/HTML/JQuery/PostMessasge/drag.html",
 		"/A/AppData/Local/Temp/scp58109/home/administrator/Documents/jdserver/script/jd.js",
 		"/A/AppData/Local/Temp/scp00389/home/administrator/Documents/jdserver/script/jdProcess.js",
-		"/A/AppData/Local/Temp/scp22556/home/administrator/Documents/jdserver/script/mail.js",
-		"/A/AppData/Local/Temp/scp45577/home/administrator/Documents/jdserver/script/base.js",
-		"/A/AppData/Local/Temp/scp44139/home/administrator/Documents/jdserver/script/index2.html",
-		"/A/AppData/Local/Temp/scp40588/home/administrator/Documents/jdserver/script/jdProcess.js"
+		"/A/AppData/Local/Temp/scp22556/home/administrator/Documents/jdserver/script/mail.js"
 	],
 	"find":
 	{
@@ -826,6 +864,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"200.josn",
+			".json\"",
+			"\".json\"",
+			"rootDir",
+			"__dirname",
+			"\\\\last",
+			"last",
+			"top",
+			"003120",
+			"110022",
+			"519601",
 			"JSON",
 			"json",
 			"http://xhu218.s3.91sc.top/",
@@ -859,6 +908,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			".json\")",
+			"\".json\")",
+			"path.join(rootDir",
+			"rootDir",
+			"\\\\Last",
+			"alllist.length",
 			"",
 			"top",
 			"true",
@@ -873,24 +928,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "NodeJs/miaosha/index.html",
+					"file": "NodeJs/jijing/test1.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4545,
+						"buffer_size": 1660,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1604,
-								1604
+								1660,
+								1660
 							]
 						],
 						"settings":
@@ -901,130 +956,6 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										1603,
-										1604
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1518,
-										1519
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"incomplete_sync": null,
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "NodeJs/jijing/last3Month.json",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1618298,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
 								},
 								"icon":
 								{
@@ -1038,41 +969,21 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1092,11 +1003,620 @@
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
 							],
 							"incomplete_sync": null,
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 546.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "NodeJs/jijing/jijingProcess.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4017,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3683,
+								3683
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3688,
+										3689
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3675,
+										3676
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 936.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "NodeJs/jijing/jijingbase.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								316,
+								356
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										145,
+										146
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "NodeJs/jijing/fileHelper.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1002,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20,
+								32
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										971,
+										972
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										13,
+										14
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "NodeJs/jijing/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								284,
+								284
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "NodeJs/jijing/alllist.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 47198,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								765,
+								765
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										959,
+										960
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										484,
+										485
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
@@ -1106,122 +1626,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "NodeJs/miaosha/jdProcess.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13341,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5944,
-								5944
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-									"1":
-									[
-										6355,
-										6356
-									]
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"incomplete_sync": null,
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2340.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1260,7 +1665,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 155.0
+		"height": 327.0
 	},
 	"output.find_results":
 	{

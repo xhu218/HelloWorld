@@ -13,7 +13,7 @@ var jijingProcess = {
             var d = dt.toFormat("YYYY-MM-DD");
             console.log(d);
 
-            var allpages = 74;
+            var allpages = 2; //;
 
             var alldata = [];
 
@@ -73,11 +73,6 @@ var jijingProcess = {
                             alllist.push(data);
                         }
 
-                        var file = require("./fileHelper.js");
-                        file.writetoFile(JSON.stringify(alllist, null, "\t"), __dirname + "\\AllList.json", false);
-                        file.writetoFile(JSON.stringify(alllist, null, "\t"), __dirname + "\\AllList\\" + d + ".json", false);
-
-
                         /*begin for replace method*/
 
                         var base = require("./jijingbase.js");
@@ -101,16 +96,18 @@ var jijingProcess = {
 
 
 
-
-
-
-        var alllist = JSON.parse(readfromFile(__dirname + "\\alllist.json"));
+        var file = require("./fileHelper.js");
+        var path = require("path");
+        var alldataPath = path.join(__dirname, "Data", "AllList.json");
+        var data = file.readfromFile(alldataPath)
+        console.log(data);
+        var alllist = JSON.parse(data);
 
         /*begin replace  for download method*/
 
 
-        var jijingbase = require("./jijingbase.js");
-        jijingbase.log(alllist);
+        var base = require("./jijingbase.js");
+        base.WritetoFile(alllist);
 
         /*end for replace method*/
     }

@@ -29,6 +29,8 @@ var test1 = {
 module.exports = test1;
 
 */
+
+/*
 require('date-utils');
 var date = new Date();
 date.addMonths(1);
@@ -43,3 +45,44 @@ var dt1 = dt.toFormat("YYYY-MM-DD");
 console.log(dt1);
 
 console.log(dt.toFormat("YYYY-MM-DD HH24:MI:SS"));
+
+*/
+
+/*
+var fs = require("fs");
+var path = require("path");
+fs.exists("./Data", function(exists) {
+    if (exists) {
+        console.log("文件存在")
+    }
+    if (!exists) {
+        console.log("文件不存在")
+    }
+});
+
+var fs = require("fs");
+
+var parentFolder = path.join(__dirname, "Data", "Last3Year");
+var file = path.join(parentFolder, "200.josn");
+var content = "hello wfg";
+
+console.log(path.resolve(file,".."));
+
+if (!fs.existsSync(parentFolder)) {
+    fs.mkdirSync(parentFolder);
+}
+
+fs.writeFile(file, content, function(err) {
+    if (err) {
+        console.log("fail" + err)
+    } else {
+        console.log("写入文件成功 : " + file);
+    }
+
+});
+
+*/
+
+var str = "wfglxx";
+var str1 = str.replace("wfg","lxx");
+console.log(str1);

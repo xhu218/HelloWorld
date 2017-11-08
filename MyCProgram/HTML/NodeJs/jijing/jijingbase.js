@@ -1,5 +1,6 @@
+var path = require("path");
 jijingbase = {
-    sayHello:function(){
+    sayHello: function() {
         console.log("hello...");
     },
     WritetoFile: function(alllist) {
@@ -8,8 +9,15 @@ jijingbase = {
         var d = dt.toFormat("YYYY-MM-DD HH24 MI SS");
         console.log(d);
         console.log("start...");
-
         var file = require("./fileHelper.js");
+
+
+        var rootDir = path.join(__dirname, "Data");
+
+
+        file.writetoFile(JSON.stringify(alllist, null, "\t"), path.join(rootDir, "AllList.json"), false);
+        file.writetoFile(JSON.stringify(alllist, null, "\t"), path.join(rootDir, "AllList", d + ".json"), false);
+
 
         var last3year = alllist.sort(function(b, a) {
 
@@ -21,8 +29,10 @@ jijingbase = {
             if (i <= top)
                 last3yeartop100.push(last3year[i]);
         }
-        file.writetoFile(JSON.stringify(last3year, null, "\t"), __dirname + "\\Last3Year.json", false);
-        file.writetoFile(JSON.stringify(last3year, null, "\t"), __dirname + "\\Last3Year\\" + d + ".json", false);
+
+
+        file.writetoFile(JSON.stringify(last3year, null, "\t"), path.join(rootDir, "Last3Year.json"), false);
+        file.writetoFile(JSON.stringify(last3year, null, "\t"), path.join(rootDir, "Last3Year", d + ".json"), false);
 
 
         var last2year = alllist.sort(function(b, a) {
@@ -34,8 +44,8 @@ jijingbase = {
             if (i <= top)
                 last2yeartop100.push(last2year[i]);
         }
-        file.writetoFile(JSON.stringify(last2year, null, "\t"), __dirname + "\\Last2Year.json", false);
-        file.writetoFile(JSON.stringify(last2year, null, "\t"), __dirname + "\\Last2Year\\" + d + ".json", false);
+        file.writetoFile(JSON.stringify(last2year, null, "\t"), path.join(rootDir, "Last2Year.json"), false);
+        file.writetoFile(JSON.stringify(last2year, null, "\t"), path.join(rootDir, "Last2Year", d + ".json"), false);
 
         var last1year = alllist.sort(function(b, a) {
             return parseInt(a.jijing_last1year) - parseInt(b.jijing_last1year);
@@ -46,8 +56,8 @@ jijingbase = {
             if (i <= top)
                 last1yeartop100.push(last1year[i]);
         }
-        file.writetoFile(JSON.stringify(last1year, null, "\t"), __dirname + "\\Last1Year.json", false);
-        file.writetoFile(JSON.stringify(last1year, null, "\t"), __dirname + "\\Last1Year\\" + d + ".json", false);
+        file.writetoFile(JSON.stringify(last1year, null, "\t"), path.join(rootDir, "Last1Year.json"), false);
+        file.writetoFile(JSON.stringify(last1year, null, "\t"), path.join(rootDir, "Last1Year", d + ".json"), false);
 
         var last6Month = alllist.sort(function(b, a) {
             return parseInt(a.jijing_last6Month) - parseInt(b.jijing_last6Month);
@@ -58,8 +68,8 @@ jijingbase = {
             if (i <= top)
                 last6Monthtop100.push(last6Month[i]);
         }
-        file.writetoFile(JSON.stringify(last6Month, null, "\t"), __dirname + "\\Last6Month.json", false);
-        file.writetoFile(JSON.stringify(last6Month, null, "\t"), __dirname + "\\Last6Month\\" + d + ".json", false);
+        file.writetoFile(JSON.stringify(last6Month, null, "\t"), path.join(rootDir, "Last6Month.json"), false);
+        file.writetoFile(JSON.stringify(last6Month, null, "\t"), path.join(rootDir, "Last6Month", d + ".json"), false);
 
         var last3Month = alllist.sort(function(b, a) {
             return parseInt(a.jijing_last3Month) - parseInt(b.jijing_last3Month);
@@ -70,8 +80,8 @@ jijingbase = {
             if (i <= top)
                 last3Monthtop100.push(last3Month[i]);
         }
-        file.writetoFile(JSON.stringify(last3Month, null, "\t"), __dirname + "\\Last3Month.json", false);
-        file.writetoFile(JSON.stringify(last3Month, null, "\t"), __dirname + "\\Last3Month\\" + d + ".json", false);
+        file.writetoFile(JSON.stringify(last3Month, null, "\t"), path.join(rootDir, "Last3Month.json"), false);
+        file.writetoFile(JSON.stringify(last3Month, null, "\t"), path.join(rootDir, "Last3Month", d + ".json"), false);
 
         var lastMonth = alllist.sort(function(b, a) {
             return parseInt(a.jijing_lastMonth, null, "\t") - parseInt(b.jijing_lastMonth);
@@ -82,8 +92,8 @@ jijingbase = {
             if (i <= top)
                 lastMonthtop100.push(lastMonth[i]);
         }
-        file.writetoFile(JSON.stringify(lastMonth, null, "\t"), __dirname + "\\Last1Month.json", false);
-        file.writetoFile(JSON.stringify(lastMonth, null, "\t"), __dirname + "\\Last1Month\\" + d + ".json", false);
+        file.writetoFile(JSON.stringify(lastMonth, null, "\t"), path.join(rootDir, "Last1Month.json"), false);
+        file.writetoFile(JSON.stringify(lastMonth, null, "\t"), path.join(rootDir, "Last1Month", d + ".json"), false);
 
         var lastWeek = alllist.sort(function(b, a) {
             return parseInt(a.jijing_lastWeek) - parseInt(b.jijing_lastWeek);
@@ -95,8 +105,8 @@ jijingbase = {
             if (i <= top)
                 lastWeektop100.push(lastWeek[i]);
         }
-        file.writetoFile(JSON.stringify(lastWeek, null, "\t"), __dirname + "\\LastWeek.json", false);
-        file.writetoFile(JSON.stringify(lastWeek, null, "\t"), __dirname + "\\LastWeek\\" + d + ".json", false);
+        file.writetoFile(JSON.stringify(lastWeek, null, "\t"), path.join(rootDir, "LastWeek.json"), false);
+        file.writetoFile(JSON.stringify(lastWeek, null, "\t"), path.join(rootDir, "LastWeek", d + ".json"), false);
 
         var result = [];
 
@@ -128,7 +138,7 @@ jijingbase = {
 
 
 
-        file.writetoFile(JSON.stringify(result, null, "\t"), __dirname + "\\result.json", false);
+        file.writetoFile(JSON.stringify(result, null, "\t"), path.join(rootDir, "result.json"), false);
 
 
 

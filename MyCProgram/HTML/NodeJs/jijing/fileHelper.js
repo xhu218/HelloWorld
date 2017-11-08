@@ -8,12 +8,19 @@ fileHelper = {
 
     writetoFile: function(content, file, append) {
         var fs = require("fs");
+        var path = require("path");
+        var parentFolder = path.resolve(file, "..");
+
+        if (!fs.existsSync(parentFolder)) {
+            fs.mkdirSync(parentFolder);
+        }
+
         if (append) {
             fs.appendFile(file, content, function(err) {
                 if (err) {
                     console.log("fail" + err)
                 } else {
-                    console.log("写入文件成功 : "+file);
+                    console.log("写入文件成功 : " + file);
                 }
 
             });
@@ -22,10 +29,14 @@ fileHelper = {
                 if (err) {
                     console.log("fail" + err)
                 } else {
-                    console.log("写入文件成功 : "+file);
+                    var qn = require("./nodejs-sdk-7.1.1/examples/form_upload_simple.js");
+                    qn.Test1(file.replace("/home/Service/script/",""));
+                    console.log("写入文件成功 : " + file);
                 }
 
             });
+
+
         }
     }
 }

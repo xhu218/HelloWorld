@@ -162,6 +162,7 @@ var jdProcess = {
 					var qn = require("./nodejs-sdk-7.1.1/examples/form_upload_simple.js");
 					qn.Test1("data/data.js");
 					qn.Test1("data/extentinfo.js");
+                    qn.Test1("data/"+time+".js");
 
                     //TODO 发送邮件提醒
                 } else {
