@@ -1,3 +1,4 @@
+var qn = require("./nodejs-sdk-7.1.1/examples/form_upload_simple.js");
 fileHelper = {
 
     readfromFile: function(file) {
@@ -29,10 +30,13 @@ fileHelper = {
                 if (err) {
                     console.log("fail" + err)
                 } else {
-                    var qn = require("./nodejs-sdk-7.1.1/examples/form_upload_simple.js");
-                    //qn.Test1(file.replace("/home/Service/script/",""));
-                    qn.Test1(file);
-
+                    /*
+                    try {
+                        
+                        //qn.Test1(file.replace("/home/Service/script/",""));
+                        qn.Test1(file);
+                    } catch (error) { console.log(error); }
+*/
                     console.log("写入文件成功 : " + file);
                 }
 

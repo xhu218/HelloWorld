@@ -5,7 +5,8 @@ require('date-utils');
 
 
 
-jijing.download();
+//jijing.download();
+jijing.readfile()
 my_http.start();
 
 

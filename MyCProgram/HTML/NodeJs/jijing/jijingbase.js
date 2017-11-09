@@ -20,14 +20,15 @@ jijingbase = {
 
 
         var last3year = alllist.sort(function(b, a) {
-
             return parseInt(a.jijing_last3year) - parseInt(b.jijing_last3year);
         });
         var last3yeartop100 = [];
+        var last3yearDict = new Array();
         for (var i = 0; i < alllist.length; i++) {
             last3year[i].Sort = i;
             if (i <= top)
                 last3yeartop100.push(last3year[i]);
+            
         }
 
 
