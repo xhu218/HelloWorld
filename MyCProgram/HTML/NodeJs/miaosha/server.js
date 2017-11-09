@@ -1,12 +1,12 @@
  var jdProcess = require("./jdProcess.js");
  var my_http = require("./http.js");
- //var mail = require("./mail.js");
+ var mail = require("./mail.js");
 
 
 var str = "我开始工作了哈";
 
 
-//mail('67438964@qq.com','开始工作', str);
+mail('67438964@qq.com','开始工作', str);
 
 
 
