@@ -1,5 +1,5 @@
 var jijing = require("./jijingProcess.js");
-var test1 = require("./test1.js");
+//var test1 = require("./test1.js");
 var my_http = require("./http.js");
 require('date-utils');
 
@@ -16,7 +16,7 @@ var rule = new schedule.RecurrenceRule();　　
 rule.minute = 2;　　
 var j = schedule.scheduleJob(rule, function() {
 	console.log("执行任务");　
-	jdProcess.job();
+	jijing.download();
 });
 
 
