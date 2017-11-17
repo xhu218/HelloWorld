@@ -3,7 +3,7 @@ var url = require('url');
 var fs = require('fs');
 var mine = require('./mine').types;
 var path = require('path');
-var basepath = __dirname;
+var basepath = "E:\\Work\\HelloWorld.git\\trunk\\MyCProgram\\HTML\\JQuery\\jijing";__dirname;
 var my_http = {
     PORT: 8888,
 
@@ -65,7 +65,9 @@ var my_http = {
 
     ),
     start: function() {
-        this.server.listen(8888);
+
+        this.server.listen(9911);
+
         console.log("Server runing at port: " + 8888 + ".");
     }
 };
