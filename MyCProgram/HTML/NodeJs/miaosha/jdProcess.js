@@ -168,7 +168,8 @@ var jdProcess = {
                     */
                     qn.Test1(datapath);
                     qn.Test1(extenpath);
-                    qn.Test1(path);
+                    //这个文件应该放在阿里上面
+                    //qn.Test1(path);
 
                     //TODO 发送邮件提醒
                 } else {

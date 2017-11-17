@@ -14,7 +14,7 @@ Qiniu = {
         var secretKey = "c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7";//proc.env.QINIU_SECRET_KEY;
         var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 
-        var gradParentPath = path.resolve(filepath,"../..")
+        var gradParentPath = path.resolve(filepath,"../..")+"/";
 
         var options = {
             scope: bucket + ":" + filepath.replace(gradParentPath,""),

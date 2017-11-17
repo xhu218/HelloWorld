@@ -1,0 +1,26 @@
+Sub insertPic()
+
+
+Application.ScreenUpdating = False
+Dim MR As Range
+For Each MR In Selection
+If Not IsEmpty(MR) And Dir(ActiveWorkbook.Path & "\allimage\" & MR.Value & ".png") <> "" Then
+MR.Select
+ML = MR.Left
+MT = MR.Top
+MW = MR.Width
+MH = MR.Height
+ActiveSheet.Shapes.AddShape(msoShapeRectangle, ML, MT, MW, MH).Select
+Selection.ShapeRange.Fill.UserPicture _
+ActiveWorkbook.Path & "\allimage\" & MR.Value & ".png"
+End If
+
+Next
+Set MR = Nothing
+Application.ScreenUpdating = True '开启屏幕更新 End Sub
+
+
+
+
+End Sub
+' 宏由 www.winekar.com 万加美酒编写，时间: 2009-6-1 ' Dir函数批量获取指定目录下所有文件名和内容 On Error Resume Next

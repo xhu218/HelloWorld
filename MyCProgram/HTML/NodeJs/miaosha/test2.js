@@ -39,6 +39,8 @@ console.log(a);
 */
 
 
+/*
+
 var request = require("request")
 
 var url = "http://xhu219.s3.91sc.top/data/data.js";
@@ -63,7 +65,7 @@ request({
     }
 });
 
-
+*/
 
 
 /*
@@ -97,3 +99,6 @@ c.connect();
 */
 
 //console.log(Math.floor(Math.random()*(1,4)+1));
+
+
+console.log(__dirname);
