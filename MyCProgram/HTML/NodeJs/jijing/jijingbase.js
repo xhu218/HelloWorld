@@ -1,4 +1,5 @@
 var path = require("path");
+var config = require('./config')
 jijingbase = {
     sayHello: function() {
         console.log("hello...");
@@ -13,7 +14,7 @@ jijingbase = {
 
 
         //var rootDir = path.join(__dirname, "Data");
-        var rootDir = path.join("E:\\Work\\HelloWorld.git\\trunk\\MyCProgram\\HTML\\JQuery\\jijing", "Data"); 
+        var rootDir = path.join(config.config.basepath, "Data"); 
 
         //All List
 
