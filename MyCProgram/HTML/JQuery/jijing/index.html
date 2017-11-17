@@ -2,127 +2,100 @@
 <html>
 
 <head>
-    <title>超级秒杀</title>
+    <title>基金专业分析</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <!--
-         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-
-    <script src="http://xhu218.s3.91sc.top/data/data.js?t=2222"></script>
-    <script src="http://xhu218.s3.91sc.top/data/extentinfo.js?t=1"></script>
--->
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
-    <link rel="stylesheet" href="http://xhu218.s3.91sc.top/base.css" type="text/css" />
     <!--
-    <script src="data/data.js?t=1"></script>
-    <script src="data/extentinfo.js?t=1"></script>
-    <script src="jquery.min.js"></script>
-    <script src="vue.js"></script>
-    <link rel="stylesheet" href="base.css" type="text/css" />   
-
-
+    <link rel="stylesheet" href="http://xhu218.s3.91sc.top/base.css" type="text/css" />
 -->
+    <link rel="stylesheet" href="./base.css" type="text/css" />
 </head>
 
 <body>
     <!-- component template -->
-    <script type="text/x-template" id="grid-template">
-        <table style="clear: both;">
-            <thead>
-                <tr id="header">
-                    <th v-for="key in columns" @click="sortBy(key)" :class="{ active: sortKey == key }">
-                        {{ key | changeHeader }}
-                        <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
-          </span>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="entry in filteredData">
-                    <td v-for="key in columns">
-                        <div v-if="displayLink(key)" style="font-size: 20px"> <a :href="'http://91sc.top?email=web@web.com&url=https://item.jd.com/'+entry['wareId']+'.html'" target="_blank">{{entry['wname']}}</a> </div>
-                        <div v-if="displayInDiv(key)" style="font-size: 20px">{{entry[key] }}</div>
-                        <div v-if="displayForRemianTime(key)" style="font-size: 20px">{{(entry[key]/60/60).toFixed(0) }} 小时后</div>
-                        <div v-if="displayImage(key)" width="200px" height="200px"><img width="160px" height="160px" v-bind:src=entry[key] /></div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </script>
-    <!-- demo root element -->
-    <div id="demo">
-        <form id="search">
-            <div style="float: right;font-size: 40px;font-weight: bold">
-                记录条数:&nbsp;&nbsp;
-                <span id="counter"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 更新时间:&nbsp;&nbsp;&nbsp;&nbsp;
-                <span id="updatetime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input name="query" v-model="searchQuery" width="200px" height="60px" style="font-size: 40px"> <b style="font-size: 40px">Search</b>
-            </div>
-            <div style="clear:both" />
-            <br />
+    <div width=100%>
+        <script type="text/x-template" id="grid-template">
             <hr style="border-width: 2px ;border-color: red" />
+            <table style="clear: both;">
+                <thead>
+                    <tr id="header">
+                        <th v-for="key in columns" @click="sortBy(key)" :class="{ active: sortKey == key }">
+                            {{ key | changeHeader }}
+                            <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="entry in filteredData">
+                        <td v-for="key in columns">
+                            <div v-if="displayInDiv(key)">{{entry[key] }}</div>
+                            <div style="width: 5px" v-if="displayInNum(key)">{{ parseInt(entry[key]).toFixed(0)}}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <br />
-        </form>
-        <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery">
-        </demo-grid>
-    </div>
-    <script>
-    function loadScript(url, callback) {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        if (typeof(callback) != "undefined") {
-            if (script.readyState) {
-                script.onreadystatechange = function() {
-                    if (script.readyState == "loaded" || script.readyState == "complete") {
-                        script.onreadystatechange = null;
+        </script>
+        <!-- demo root element -->
+        <div id="demo">
+            <div class="title">Last 1 Year(Selected)</div>
+            <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></demo-grid>
+        </div>
+        <div id="month1">
+            <div class="title">Last 1 Month</div>
+            <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></demo-grid>
+        </div>
+        <div id="month1">
+            <div class="title">Last 1 Month</div>
+            <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></demo-grid>
+        </div>
+        <div id="month1">
+            <div class="title">Last 1 Month</div>
+            <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></demo-grid>
+        </div>
+        
+        
+        <script>
+        function loadScript(url, callback) {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            if (typeof(callback) != "undefined") {
+                if (script.readyState) {
+                    script.onreadystatechange = function() {
+                        if (script.readyState == "loaded" || script.readyState == "complete") {
+                            script.onreadystatechange = null;
+                            callback();
+                        }
+                    };
+                } else {
+                    script.onload = function() {
                         callback();
-                    }
-                };
-            } else {
-                script.onload = function() {
-                    callback();
-                };
+                    };
+                }
             }
+            script.src = url;
+            document.body.appendChild(script);
         }
-        script.src = url;
-        document.body.appendChild(script);
-    }
+
+        $(document).ready(function() {
+
+            loadScript("./data/Select.json?t=" + Math.random(), function() { //get all the select item
+
+                loadScript("./data/Last1Monthtopn.json?t=" + Math.random(), function() { //get all the select item
+
+                    loadScript("./base.js", function() {
+                        loadScript("./jjhelper.js", function() {});
+
+                    });
+
+                });
+
+            });
 
 
-    //window.onload = function()
-
-    loadScript("http://xhu218.s3.91sc.top/data/data.js?t=" + Math.random(), function() {
-        loadScript("http://xhu218.s3.91sc.top/base.js", function() {});
-    });
-
-
-
-
-
-
-    $(document).ready(function() {
-
-        var url = "http://xhu218.s3.91sc.top/data/extentinfo.js?t=" + Math.random();
-        $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: 'json',
-            timeout: 1000,
-            cache: false,
-            beforeSend: function(){}, //加载执行方法    
-            error: function(err){console.log(err);}, //错误执行方法    
-            success: function(data){console.log(data);
-                    $("#updatetime").text(data.lastUpdateTime);
-                     $("#counter").text(goods.length);
-
-            } //成功执行方法    
-        })
-
-
-
-    });
-    </script>
+        });
+        </script>
 </body>
 
 </html>

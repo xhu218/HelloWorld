@@ -95,7 +95,7 @@
         el: '#demo',
         data: {
             searchQuery: '',
-            gridColumns: ['imageurl', 'jdPrice', 'miaoShaPrice', 'discount', 'rate', 'startTimeShow', 'endRemainTime', 'soldRate', 'wareId'],
+            gridColumns: ['imageurl', 'jdPrice', 'miaoShaPrice', 'discount', 'rate','wareId', 'startTimeShow', 'endRemainTime'  ],
             gridData: goods
         }
     })

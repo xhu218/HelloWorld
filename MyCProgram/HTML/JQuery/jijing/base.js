@@ -46,26 +46,36 @@
             changeHeader: function(str) {
 
 
-                if (str == "imageurl") {
-                    return "图片";
-                } else if (str == "jdPrice") {
-                    return "京东价格";
-                } else if (str == "miaoShaPrice") {
-                    return "秒杀价格";
-                } else if (str == "discount") {
-                    return "降价";
-                } else if (str == "rate") {
-                    return "折扣";
-                } else if (str == "startTimeShow") {
-                    return "开始时间";
-                } else if (str == "endRemainTime") {
-                    return "线束时间";
-                } else if (str == "soldRate") {
-                    return "卖出比例";
-                } else if (str == "wname") {
-                    return "名字";
-                } else if (str == "wareId"){
-                    return "链接"
+                if (str == "jijing_Code") {
+                    return "基金代码";
+                } else if (str == "jijing_Name") {
+                    return "基金简称";
+                } else if (str == "jijing_unitValue") {
+                    return "单位净值";
+                } else if (str == "jijing_totalValue") {
+                    return "累计净值";
+                } else if (str == "jijing_daliyIncreaseRate") {
+                    return "日增长率";
+                } else if (str == "jijing_lastWeek") {
+                    return "近1周";
+                } else if (str == "jijing_lastMonth") {
+                    return "近1月";
+                } else if (str == "jijing_last3Month") {
+                    return "近3月";
+                } else if (str == "jijing_last6Month") {
+                    return "近6月"
+                } else if (str == "jijing_last1year") {
+                    return "近1年"
+                } else if (str == "jijing_last2year") {
+                    return "近2年"
+                } else if (str == "jijing_last3year") {
+                    return "近3年"
+                } else if (str == "jijing_sinceThisYear") {
+                    return "今年来"
+                } else if (str == "jijing_sinceestablish") {
+                    return "成立来"
+                } else {
+                    return "排序"
                 }
 
             }
@@ -76,10 +86,10 @@
                 this.sortOrders[key] = this.sortOrders[key] * -1
             },
             displayInDiv: function(key) {
-                return key != "imageurl" && key != "endRemainTime" && key !="wareId"
+                return key == "jijing_Code" || key == "jijing_Name"
             },
-            displayForRemianTime: function(key) {
-                return key == "endRemainTime";
+            displayInNum: function(key) {
+                return key != "jijing_Code" && key != "jijing_Name"
             },
             displayImage: function(key) {
                 return key == "imageurl";
@@ -91,14 +101,71 @@
     })
 
 
-    var demo = new Vue({
+     var demo = new Vue({
         el: '#demo',
         data: {
             searchQuery: '',
-            gridColumns: ['imageurl', 'jdPrice', 'miaoShaPrice', 'discount', 'rate', 'startTimeShow', 'endRemainTime', 'soldRate', 'wareId'],
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
+            gridData: goods
+        }
+    });
+
+    var month1 = new Vue({
+        el: '#month1',
+        data: {
+            searchQuery: '',
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
+            gridData: month1
+        }
+    });
+
+/*
+    var demo = new Vue({
+        el: '#month3',
+        data: {
+            searchQuery: '',
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
             gridData: goods
         }
     })
+
+    var demo = new Vue({
+        el: '#month6',
+        data: {
+            searchQuery: '',
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
+            gridData: goods
+        }
+    })
+
+    var demo = new Vue({
+        el: '#year1',
+        data: {
+            searchQuery: '',
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
+            gridData: goods
+        }
+    })
+
+    var demo = new Vue({
+        el: '#year2',
+        data: {
+            searchQuery: '',
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
+            gridData: goods
+        }
+    })
+
+    var demo = new Vue({
+        el: '#year3',
+        data: {
+            searchQuery: '',
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
+            gridData: goods
+        }
+    })
+    */
+
 
 
     window.onload = function() {

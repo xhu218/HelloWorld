@@ -2,12 +2,26 @@ body {
         font-family: Helvetica Neue, Arial, sans-serif;
         font-size: 14px;
         color: #444;
+       
+       //text-align:center
+
+    }
+
+    #demo {
+        margin:0 auto; 
+        width:90%;
+        //height:100px; 
+        //border:1px solid #F00
     }
 
     table {
-        border: 1px solid #42b983;
+        width:100%;
+         margin:0 auto; 
+        //border: 1px solid #42b983;
         border-radius: 3px;
         background-color: #fff;
+        //text-align:center
+
     }
 
     th {
