@@ -26,26 +26,15 @@ function QueryStatus(url) {
             for (var index = 0; index < alllist.length; index++) {
                 data[alllist[index].jijing_Code] = alllist[index];
             }
-
-            do(goods,  data, url);
-            do(month1, data, url);
-
-            if (++finishcount == urls.length) {
-
-                console.log(goods);
-
-                for (var index = 0; index < goods.length; index++) {
-                    //Vue.set(goods, index, goods[index]);
-                }
-            }
+            do1(data, url);
+           
         }
     });
-
 }
 
 
-function do(part, data, url) {
-    var goods = part;
+function do1(data, url) {
+   
     for (var x = 0; x < goods.length; x++) {
         var item = goods[x];
         //console.log(x);

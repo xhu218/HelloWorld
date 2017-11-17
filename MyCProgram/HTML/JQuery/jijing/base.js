@@ -89,10 +89,11 @@
                 return key == "jijing_Code" || key == "jijing_Name"
             },
             displayInNum: function(key) {
-                return key != "jijing_Code" && key != "jijing_Name"
+                return key == "jijing_last1year" || key == "jijing_last2year" || key == "jijing_last3year" || key == "jijing_last6Month" ||
+                key == "jijing_last3Month" || key == "jijing_lastMonth" || key == "jijing_lastWeek" || key=="jijing_sinceestablish" || key == "jijing_sinceThisYear"
             },
-            displayImage: function(key) {
-                return key == "imageurl";
+            displayInSort: function(key) {
+                return key.indexOf("sort")>0;
             },
             displayLink: function(key) {
                 return key == "wareId";
@@ -105,7 +106,7 @@
         el: '#demo',
         data: {
             searchQuery: '',
-            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish'],
             gridData: goods
         }
     });
@@ -114,7 +115,7 @@
         el: '#month1',
         data: {
             searchQuery: '',
-            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish'],
             gridData: month1
         }
     });

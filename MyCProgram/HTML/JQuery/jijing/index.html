@@ -30,7 +30,8 @@
                     <tr v-for="entry in filteredData">
                         <td v-for="key in columns">
                             <div v-if="displayInDiv(key)">{{entry[key] }}</div>
-                            <div style="width: 5px" v-if="displayInNum(key)">{{ parseInt(entry[key]).toFixed(0)}}</div>
+                            <div style="width: 5px" v-if="displayInNum(key)">{{ parseInt(entry[key]).toFixed(2)}}</div>
+                            <div style="width: 5px" v-if="displayInSort(key)">{{ parseInt(entry[key]).toFixed(0)}}</div>
                         </td>
                     </tr>
                 </tbody>
