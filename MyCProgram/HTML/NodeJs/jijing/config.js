@@ -11,5 +11,9 @@ module.exports = {
             user: 'xhu218@163.com',
             pass: 'Pass2word163'
 			*/
+    },
+    config : {
+        basepath : '/private/var/root/Documents/GitHub/HelloWorld/MyCProgram/HTML/JQuery/jijing'
     }
+
 }
