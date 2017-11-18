@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+    <script src="./data/2017-11-19.json"></script>
     <!--
     <link rel="stylesheet" href="http://xhu218.s3.91sc.top/base.css" type="text/css" />
 -->
@@ -13,10 +14,9 @@
 </head>
 
 <body>
-    <!-- component template -->
     <div width=100%>
         <script type="text/x-template" id="grid-template">
-            <hr style="border-width: 2px ;border-color: red" />
+            <hr style="border-width: 1px ;border-color: red" />
             <table style="clear: both;">
                 <thead>
                     <tr id="header">
@@ -29,34 +29,29 @@
                 <tbody>
                     <tr v-for="entry in filteredData">
                         <td v-for="key in columns">
-                            <div v-if="displayInDiv(key)">{{entry[key] }}</div>
+                            <div >{{entry[key] }}</div>
+                            <!--
                             <div style="width: 5px" v-if="displayInNum(key)">{{ parseInt(entry[key]).toFixed(2)}}</div>
                             <div style="width: 5px" v-if="displayInSort(key)">{{ parseInt(entry[key]).toFixed(0)}}</div>
+                        -->
                         </td>
                     </tr>
                 </tbody>
             </table>
             <br />
         </script>
-        <!-- demo root element -->
         <div id="demo">
-            <div class="title">Last 1 Year(Selected)</div>
+            <form id="search">
+                <br />
+                <div style="font-size: 40px;font-weight: bold">
+                    <input name="query" v-model="searchQuery" width="50px" height="60px" style="font-size: 40px"> <b style="font-size: 40px">Search</b>
+                </div>
+                <div style="clear:both" />
+                <br />
+            </form>
             <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></demo-grid>
         </div>
-        <div id="month1">
-            <div class="title">Last 1 Month</div>
-            <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></demo-grid>
-        </div>
-        <div id="month1">
-            <div class="title">Last 1 Month</div>
-            <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></demo-grid>
-        </div>
-        <div id="month1">
-            <div class="title">Last 1 Month</div>
-            <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></demo-grid>
-        </div>
-        
-        
+        <script src="base.js"></script>
         <script>
         function loadScript(url, callback) {
             var script = document.createElement("script");
@@ -81,20 +76,15 @@
 
         $(document).ready(function() {
 
-            loadScript("./data/Select.json?t=" + Math.random(), function() { //get all the select item
+           
+            
 
-                loadScript("./data/Last1Monthtopn.json?t=" + Math.random(), function() { //get all the select item
-
-                    loadScript("./base.js", function() {
-                        loadScript("./jjhelper.js", function() {});
-
-                    });
-
+            /* loadScript("./data/2017-11-19.json?t=" + Math.random(), function() { //get all the select item
+                loadScript("./base.js", function() {
+                   
                 });
-
             });
-
-
+            */
         });
         </script>
 </body>

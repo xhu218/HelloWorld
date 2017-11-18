@@ -104,3 +104,7 @@ console.log(JSON.stringify(data));
 var s = "1";
 var b = (s==""?0:s);
 console.log(b);
+
+
+var a = 1.24555;
+console.log(a.toFixed(2));

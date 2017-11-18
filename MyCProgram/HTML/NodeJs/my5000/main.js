@@ -5,6 +5,7 @@ var readLines = require("./readline.js");
 var writelog = require("./writelog.js");
 var path = require("path")
 var request = require('request');
+var basemethod = require('./basemethod.js')
 
 var arguments = process.argv.splice(2);
 writelog('所传递的参数是：', arguments);
@@ -45,7 +46,7 @@ function anlysis() {
             var arr = data.split(",");
 
             var _no = arr[0];
-            var _type = arr[1].replace("\r", "").replace("?", "");
+            var _type = basemethod.filter(basemethod.trim(arr[1]));
 
 
             var parentFolder = path.join(__dirname, "Image2", _type);

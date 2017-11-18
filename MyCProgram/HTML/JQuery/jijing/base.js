@@ -23,11 +23,14 @@
                 var order = this.sortOrders[sortKey] || 1
                 var data = this.data
                 if (filterKey) {
+
                     data = data.filter(function(row) {
                         return Object.keys(row).some(function(key) {
                             return String(row[key]).toLowerCase().indexOf(filterKey) > -1
                         })
                     })
+
+
                 }
                 if (sortKey) {
                     data = data.slice().sort(function(a, b) {
@@ -86,14 +89,14 @@
                 this.sortOrders[key] = this.sortOrders[key] * -1
             },
             displayInDiv: function(key) {
-                return key == "jijing_Code" || key == "jijing_Name"
+                return key == "jijing_Code" || key == "jijing_Name" || key == "select"
             },
             displayInNum: function(key) {
                 return key == "jijing_last1year" || key == "jijing_last2year" || key == "jijing_last3year" || key == "jijing_last6Month" ||
-                key == "jijing_last3Month" || key == "jijing_lastMonth" || key == "jijing_lastWeek" || key=="jijing_sinceestablish" || key == "jijing_sinceThisYear"
+                    key == "jijing_last3Month" || key == "jijing_lastMonth" || key == "jijing_lastWeek" || key == "jijing_sinceestablish" || key == "jijing_sinceThisYear" || key == "jijing_unitValue" || key == "jijing_totalValue" || key == "jijing_daliyIncreaseRate"
             },
             displayInSort: function(key) {
-                return key.indexOf("sort")>0;
+                return key.indexOf("sort") > 0;
             },
             displayLink: function(key) {
                 return key == "wareId";
@@ -102,74 +105,43 @@
     })
 
 
-     var demo = new Vue({
+    var demo = new Vue({
         el: '#demo',
         data: {
             searchQuery: '',
-            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish'],
+            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'select'],
             gridData: goods
         }
     });
 
-    var month1 = new Vue({
-        el: '#month1',
-        data: {
-            searchQuery: '',
-            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish'],
-            gridData: month1
-        }
+
+
+    $(document).ready(function() {
+        var color = "#b9e8e8"
+
+
+
+        //$("tr").attr("bgColor", "#b9e8e8");
+        //$("tr:even").css("background-color", "#93b1b1");
+
+        $("tr").each(function(index) {
+            if ($(this).children().last().text().trim() == "true") {
+                $(this).attr("bgColor", "#ff0000");
+            }
+        });
+        $("tr :nth-child(7)").css("background", color);
+        $("tr :nth-child(9)").css("background", color);
+        $("tr :nth-child(11)").css("background", color);
+        $("tr :nth-child(13)").css("background", color);
+        $("tr :nth-child(15)").css("background", color);
+        $("tr :nth-child(17)").css("background", color);
+        $("tr :nth-child(19)").css("background", color);
     });
-
-/*
-    var demo = new Vue({
-        el: '#month3',
-        data: {
-            searchQuery: '',
-            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
-            gridData: goods
-        }
-    })
-
-    var demo = new Vue({
-        el: '#month6',
-        data: {
-            searchQuery: '',
-            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
-            gridData: goods
-        }
-    })
-
-    var demo = new Vue({
-        el: '#year1',
-        data: {
-            searchQuery: '',
-            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
-            gridData: goods
-        }
-    })
-
-    var demo = new Vue({
-        el: '#year2',
-        data: {
-            searchQuery: '',
-            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
-            gridData: goods
-        }
-    })
-
-    var demo = new Vue({
-        el: '#year3',
-        data: {
-            searchQuery: '',
-            gridColumns: ['jijing_Code', 'jijing_Name', 'jijing_unitValue', 'jijing_totalValue', 'jijing_daliyIncreaseRate', 'jijing_lastWeek', 'jijing_lastWeek_sort', 'jijing_lastMonth', 'jijing_lastMonth_sort', 'jijing_last3Month', 'jijing_last3Month_sort', 'jijing_last6Month', 'jijing_last6Month_sort', 'jijing_last1year', 'jijing_last1year_sort', 'jijing_last2year', 'jijing_last2year_sort', 'jijing_last3year', 'jijing_last3year_sort', 'jijing_sinceThisYear', 'jijing_sinceestablish', 'Sort'],
-            gridData: goods
-        }
-    })
-    */
-
 
 
     window.onload = function() {
+
+
         var imgs = document.getElementsByTagName("img");
         for (var i = 0; i < imgs.length; i++) {
 
@@ -201,27 +173,32 @@
         }
 
 
+
     }
 
     function doMouseover1() {
 
-        //this.css('property', 'value');
-        //this.style.backColor="#ffffff";
-        if (this.id != "header")
-            for (var i = 0; i < this.cells.length; i++) {
-                console.log(this.cells[i].style.backgroundColor);
-                //this.cells[i].style.background-color="#ffffff";
-                this.cells[i].style.backgroundColor = "#d5f4fe";
-            }
-
+        if (this.id != "header") {
+            //this.css("background-color", "red");
+            this["backcolor"] = this.style.backgroundColor;
+            this.style.backgroundColor = "#ffff00";
+        }
+        /*
+        for (var i = 0; i < this.cells.length; i++) {
+            //console.log(this.cells[i].style.backgroundColor);
+            //this.cells[i].style.background-color="#ffffff";
+            this.cells[i].style.backgroundColor = "#c";
+        }*/
     }
 
     function doMouseout1() {
         if (this.id != "header")
-            for (var i = 0; i < this.cells.length; i++) {
-                //this.cells[i].style.background-color="#ffffff";
-                this.cells[i].style.backgroundColor = "#f9f9f9";
-            }
+            this.style.backgroundColor = this["backcolor"];
+        /*
+        for (var i = 0; i < this.cells.length; i++) {
+            //this.cells[i].style.background-color="#ffffff";
+            this.cells[i].style.backgroundColor = "#f9f9f9";
+        }*/
     }
 
 

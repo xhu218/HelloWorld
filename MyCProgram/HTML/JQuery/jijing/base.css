@@ -1,81 +1,75 @@
 body {
-        font-family: Helvetica Neue, Arial, sans-serif;
-        font-size: 14px;
-        color: #444;
-       
-       //text-align:center
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-size: 14px;
+    color: #444;
+}
 
-    }
+#demo,
+#month1 {
+    margin: 0 auto;
+    width: 100%;
+}
 
-    #demo,#month1 {
-        margin:0 auto; 
-        width:80%;
-        //height:100px; 
-        //border:1px solid #F00
-    }
+.title {
+    font-weight: bold;
+}
 
-    .title{
-        font-weight: bold;
-    }
+table {
+    width: 98%;
+    margin: 0 auto;
 
-    table {
-        width:100%;
-         margin:0 auto; 
-        //border: 1px solid #42b983;
-        border-radius: 3px;
-        background-color: #fff;
-        //text-align:center
+    border-radius: 3px;
+    background-color: #fff;
+}
 
-    }
+th {
+    background-color: #42b983;
+    color: rgba(255, 255, 255, 0.66);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
-    th {
-        background-color: #42b983;
-        color: rgba(255, 255, 255, 0.66);
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
+td {
+    /*background-color: #f9f9f9;*/
+}
 
-    td {
-        background-color: #f9f9f9;
+th,
+td {
+    /*min-width: 20px;*/
+    padding: 10px 20px;
+    
+    border: solid;
+    border-width: 1px 1px 0px 0px;
+}
 
-    }
+th.active {
+    color: #fff;
+}
 
-    th,
-    td {
-        min-width: 120px;
-        padding: 10px 20px;
-        border: solid;
-        border-width: 1px 1px 0px 0px;
-    }
+th.active .arrow {
+    opacity: 1;
+}
 
-    th.active {
-        color: #fff;
-    }
+.arrow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    opacity: 0.66;
+}
 
-    th.active .arrow {
-        opacity: 1;
-    }
+.arrow.asc {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid #fff;
+}
 
-    .arrow {
-        display: inline-block;
-        vertical-align: middle;
-        width: 0;
-        height: 0;
-        margin-left: 5px;
-        opacity: 0.66;
-    }
-
-    .arrow.asc {
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-bottom: 4px solid #fff;
-    }
-
-    .arrow.dsc {
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 4px solid #fff;
-    }
+.arrow.dsc {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #fff;
+}
