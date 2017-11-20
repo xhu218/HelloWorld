@@ -77,8 +77,12 @@
                     return "今年来"
                 } else if (str == "jijing_sinceestablish") {
                     return "成立来"
-                } else {
+                } else if(str =="jijing_last3year_sort" || str == "jijing_last2year_sort" || str == "jijing_last1year_sort" || str == "jijing_last6Month_sort" 
+                    || str == "jijing_last3Month_sort" || str == "jijing_lastMonth_sort" || str == "jijing_lastWeek_sort") {
+
                     return "排序"
+                }else if (str == "select"){
+                    return "选择";
                 }
 
             }
@@ -89,17 +93,7 @@
                 this.sortOrders[key] = this.sortOrders[key] * -1
             },
             displayInDiv: function(key) {
-                return key == "jijing_Code" || key == "jijing_Name" || key == "select"
-            },
-            displayInNum: function(key) {
-                return key == "jijing_last1year" || key == "jijing_last2year" || key == "jijing_last3year" || key == "jijing_last6Month" ||
-                    key == "jijing_last3Month" || key == "jijing_lastMonth" || key == "jijing_lastWeek" || key == "jijing_sinceestablish" || key == "jijing_sinceThisYear" || key == "jijing_unitValue" || key == "jijing_totalValue" || key == "jijing_daliyIncreaseRate"
-            },
-            displayInSort: function(key) {
-                return key.indexOf("sort") > 0;
-            },
-            displayLink: function(key) {
-                return key == "wareId";
+                return key == "jijing_Code" || key == "jijing_Name" 
             }
         }
     })
@@ -114,21 +108,52 @@
         }
     });
 
+    function GetTail() {
+        $.ajax({
+            url: './data/2017-11-19-tail-1.json',
+            type: 'GET', //GET
+            async: true, //或false,是否异步 
+            timeout: 10000, //超时时间
+            dataType: 'json', //返回的数据格式：json/xml/html/script/jsonp/text
+            beforeSend: function(xhr) {
+                console.log(xhr)
+                console.log('发送前')
+            },
+            success: function(data, textStatus, jqXHR) {
+                console.log(data)
+                for (var i = 0; i < data.length; i++) {
+
+                    Vue.set(goods, 1000 + i, data[i]);
+                }
+               
+               
 
 
-    $(document).ready(function() {
+                console.log(textStatus)
+                console.log(jqXHR)
+            },
+            error: function(xhr, textStatus) {
+                console.log('错误')
+                console.log(xhr)
+                console.log(textStatus)
+            },
+            complete: function() {
+                console.log('结束') 
+                setTimeout(changeStyle(), 10000);
+            }
+        })
+    }
+
+    function changeStyle() {
+        console.log("start to chage style...")
+        console.log($("tr").length);
         var color = "#b9e8e8"
 
-
-
         //$("tr").attr("bgColor", "#b9e8e8");
+
         //$("tr:even").css("background-color", "#93b1b1");
 
-        $("tr").each(function(index) {
-            if ($(this).children().last().text().trim() == "true") {
-                $(this).attr("bgColor", "#ff0000");
-            }
-        });
+        
         $("tr :nth-child(7)").css("background", color);
         $("tr :nth-child(9)").css("background", color);
         $("tr :nth-child(11)").css("background", color);
@@ -136,6 +161,17 @@
         $("tr :nth-child(15)").css("background", color);
         $("tr :nth-child(17)").css("background", color);
         $("tr :nth-child(19)").css("background", color);
+        $("tr").each(function(index) {
+            if ($(this).children().last().text().trim() == "true") {
+                $(this).attr("bgColor", "#93b1b1");
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        changeStyle();
+        //setTimeout(function() { GetTail() }, 3000);
+
     });
 
 
@@ -179,26 +215,14 @@
     function doMouseover1() {
 
         if (this.id != "header") {
-            //this.css("background-color", "red");
             this["backcolor"] = this.style.backgroundColor;
             this.style.backgroundColor = "#ffff00";
         }
-        /*
-        for (var i = 0; i < this.cells.length; i++) {
-            //console.log(this.cells[i].style.backgroundColor);
-            //this.cells[i].style.background-color="#ffffff";
-            this.cells[i].style.backgroundColor = "#c";
-        }*/
     }
 
     function doMouseout1() {
         if (this.id != "header")
             this.style.backgroundColor = this["backcolor"];
-        /*
-        for (var i = 0; i < this.cells.length; i++) {
-            //this.cells[i].style.background-color="#ffffff";
-            this.cells[i].style.backgroundColor = "#f9f9f9";
-        }*/
     }
 
 

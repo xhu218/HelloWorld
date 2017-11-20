@@ -14,7 +14,7 @@ jijingbase = {
 
 
         //var rootDir = path.join(__dirname, "Data");
-        var rootDir = path.join(config.config.basepath, "Data");
+        var rootDir = path.join(config.config.basepath, "data");
 
         //All List
 
@@ -45,7 +45,7 @@ jijingbase = {
             allDict[last3year[i].jijing_Code].jijing_last2year_sort = i;
         }
 
-      
+
         //Last6Month
 
         var last6Month = alllist.sort(function(b, a) {
@@ -86,7 +86,7 @@ jijingbase = {
             allDict[last3year[i].jijing_Code].jijing_lastWeek_sort = i;
         }
 
-          //Last1Year
+        //Last1Year
 
         var last1year = alllist.sort(function(b, a) {
             return parseInt(a.jijing_last1year) - parseInt(b.jijing_last1year);
@@ -110,7 +110,7 @@ jijingbase = {
 
         var data = [];
         for (var i = 0; i < alllist.length; i++) {
-            
+
             alllist[i].jijing_last3year = parseInt(alllist[i].jijing_last3year).toFixed(2);
             alllist[i].jijing_last2year = parseInt(alllist[i].jijing_last2year).toFixed(2);
             alllist[i].jijing_last1year = parseInt(alllist[i].jijing_last1year).toFixed(2);
@@ -120,7 +120,9 @@ jijingbase = {
             alllist[i].jijing_lastWeek = parseInt(alllist[i].jijing_lastWeek).toFixed(2);
 
 
-
+            alllist[i].jijing_totalValue = parseInt(alllist[i].jijing_totalValue).toFixed(2);
+            alllist[i].jijing_daliyIncreaseRate = parseInt(alllist[i].jijing_daliyIncreaseRate).toFixed(2);
+            alllist[i].jijing_unitValue = parseInt(alllist[i].jijing_unitValue).toFixed(2);
 
             data.push(allDict[alllist[i].jijing_Code]);
         }

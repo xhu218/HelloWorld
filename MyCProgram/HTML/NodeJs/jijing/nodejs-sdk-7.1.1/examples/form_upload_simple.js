@@ -18,7 +18,7 @@ Qiniu = {
 
 
         var options = {
-            scope: bucket + ":" + filepath.replace(gradParentFolder,""),
+            scope: bucket + ":" + filepath.replace(gradParentFolder+"/",""),
             insertOnly: 0
 
         }
@@ -64,7 +64,7 @@ Qiniu = {
 
 
         //file
-        formUploader.putFile(uploadToken, filepath.replace(gradParentFolder,""), localFile, putExtra, function(respErr,
+        formUploader.putFile(uploadToken, filepath.replace(gradParentFolder+"/",""), localFile, putExtra, function(respErr,
             respBody, respInfo) {
             if (respErr) {
                 throw respErr;

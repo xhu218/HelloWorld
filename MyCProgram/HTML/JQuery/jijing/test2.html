@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+            th,
+            td {
+                min-width: 200px;
+                height: 50px;
+            }
+            #sTable {
+                margin: 300px
+            }
+            .fixedCol{
+                position: fixed;
+                left: 0;
+                background: lightblue;
+                z-index: 1;
+            }
+            #fHeader {
+                background: lightblue;
+                position: fixed;
+                top: 0;
+                z-index: 1;
+            }
+            .fixedA1{
+                background: lightblue;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index:2;
+            }
+            [v-cloak]{
+                display: none;
+            }
+        </style>
+    </head>
+    <body v-cloak>
+        <!--固定A1-->
+        <table border="1" cellspacing="0" class="fixedA1" v-show="fixedA1">
+            <thead>
+                <tr>
+                    <th v-for="item in th" v-if="$index==0">{{item.key}}</th>
+                </tr>
+            </thead>
+        </table>
+        <!--固定列头-->
+        <table border="1" cellspacing="0" class="fixedCol" v-show="fixedCol">
+            <thead>
+                <tr>
+                    <th v-for="item in th" v-if="$index==0">{{item.key}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in tl">
+                    <td  v-for="list in item" v-if="$index==0">{{list.key}}</td>
+                </tr>
+            </tbody>
+        </table >
+        <!--固定表头-->
+        <table border="1" id="fHeader" cellspacing="0" v-show="fixedHeader"> 
+            <thead>
+                <tr >
+                    <th v-for="item in th">{{item.key}}</th>
+                </tr>
+            </thead>
+        </table>
+        <!--活动的表格-->
+        <table id="sTable" border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th v-for="item in th">{{item.key}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in tl">
+                    <td  v-for="list in item">{{list.key}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="vue.js"></script>
+        <script src="jquery.js"></script>
+        <script>
+            var vm = new Vue({
+                el: "body",
+                data: function() {
+                    return {
+                        th: [],
+                        tl: [],
+                        temp: [],
+                        fixedCol: false,
+                        fixedHeader:false,
+                        fixedA1:false,
+                        hLeft:0,
+                        hHeight:0,
+                    }
+                },
+                methods: {
+                    //生成表格
+                    CTable: function() {
+                        for(var i = 0; i < 10; i++) {
+                            this.th.push({
+                                key: "head" + i
+                            })
+                        }
+                        for(var i = 0; i < 100; i++) {
+                            for(var j = 0; j < 10; j++) {
+                                this.temp.push({
+                                    key: j + "body" + i
+                                })
+                            }
+                            this.tl.push(this.temp)
+                            this.temp = []
+                        }
+                    },
+                    //监控表头、列头位置
+                    monitor:function(){
+                        var self=this
+                        $(document).scroll(function(){
+                            self.setPosition()
+                            //当滚动条达到左偏移值的时候，出现固定列头
+                            if($(this).scrollLeft()>self.hLeft){
+                                self.fixedCol=true
+                            }else{
+                                self.fixedCol=false
+                            }
+                            //当滚动条达到上偏移值的时候，出现固定表头
+                            if($(this).scrollTop()>self.hHeight){
+                                self.fixedHeader=true
+                            }else{
+                                self.fixedHeader=false
+                            }
+                            //当表格移到左上角时，出现固定的A1表格
+                            if($(this).scrollLeft()>self.hLeft&&$(this).scrollTop()>self.hHeight){
+                                self.fixedA1=true
+                            }else{
+                                self.fixedA1=false
+                            }
+                        })
+                    },
+                    //使固定表头与列头的偏差与当前表格的偏移值相等
+                    setPosition:function(){
+                        $("#fHeader").css("left",this.hLeft-$(document).scrollLeft())
+                        $(".fixedCol").css("top",this.hHeight-$(document).scrollTop())
+                    }
+                             
+                },
+                ready: function() {
+                    this.CTable();
+                    this.hLeft=$("#sTable").offset().left;
+                    this.hHeight=$("#sTable").offset().top;
+                    this.monitor()
+                },
+            })
+        </script>
+    </body>
+ 
+</html>
