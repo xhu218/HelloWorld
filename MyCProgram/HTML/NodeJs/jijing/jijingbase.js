@@ -97,9 +97,13 @@ jijingbase = {
         }
 
         var content = file.readfromFile(path.join(rootDir, "Select.json"));
-
+        var select = null;
         console.log(content);
-        var select = JSON.parse(content);
+        try {
+            select = JSON.parse(content);
+        } catch (err) {
+            console.log(err);
+        }
 
         for (var i = select.length - 1; i >= 0; i--) {
             if (allDict[select[i].jijing_Code] != null) {

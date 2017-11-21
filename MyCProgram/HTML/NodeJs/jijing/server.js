@@ -5,16 +5,18 @@ require('date-utils');
 
 
 
-//jijing.download();
-jijing.readfile()
-my_http.start();
+jijing.download();
+//jijing.readfile()
+//my_http.start();
 
 
 
 var schedule = require("node-schedule");
 
 var rule = new schedule.RecurrenceRule();　　
-rule.minute = 2;　　
+//rule.minute = 2;　　
+var times3    = [1,13];  
+rule.hour  = times3; 
 var j = schedule.scheduleJob(rule, function() {
 	console.log("执行任务");　
 	jijing.download();

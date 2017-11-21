@@ -13,7 +13,7 @@ module.exports = {
 			*/
     },
     config : {
-        basepath : '/private/var/root/Documents/GitHub/HelloWorld/MyCProgram/HTML/JQuery/jijing'
+        basepath : __dirname//'/private/var/root/Documents/GitHub/HelloWorld/MyCProgram/HTML/JQuery/jijing'
     }
 
 }
