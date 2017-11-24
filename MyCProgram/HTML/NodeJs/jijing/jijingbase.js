@@ -132,7 +132,7 @@ jijingbase = {
         }
 
 
-        file.writetoFile("var goods = " + JSON.stringify(data, null, "\t"), path.join(rootDir, d + ".json"), false);
+        file.writetoFile("var good = " + JSON.stringify(data, null, "\t"), path.join(rootDir, d + ".json"), false);
         //file.writetoFile(JSON.stringify(d, null, "\t"), path.join(rootDir, "AllList", d + ".json"), false);
 
         function isInList(item, list) {

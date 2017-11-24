@@ -30,11 +30,12 @@ fileHelper = {
                 if (err) {
                     console.log("fail" + err)
                 } else {
-                    
+
                     try {
-                        
+
                         //qn.Test1(file.replace("/home/Service/script/",""));
-                        qn.Test1(file);
+                        if (file.indexOf("MyCProgram") < 0)
+                            qn.Test1(file);
                     } catch (error) { console.log(error); }
 
                     console.log("写入文件成功 : " + file);

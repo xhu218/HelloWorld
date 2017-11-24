@@ -6,11 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
-    <!--
-    <script src="./data/2017-11-19-top100.json"></script>
-     <link rel="stylesheet" href="./base.css" type="text/css" />
---> <link rel="stylesheet" href="http://xhu219.s3.91sc.top/base.css?t=20171118" type="text/css" />
-  
+    <!--<link rel="stylesheet" href="./base.css" type="text/css" />
+    
+-->
+     <link rel="stylesheet" href="http://xhu219.s3.91sc.top/base.css?t=201711221757" type="text/css" />
 </head>
 
 <body>
@@ -49,61 +48,12 @@
             </form>
             <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></demo-grid>
         </div>
-        <!--<script src="base.js"></script>-->
-        <script>
-        // 对Date的扩展，将 Date 转化为指定格式的String  
-        // 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，   
-        // 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)   
-        Date.prototype.Format = function(fmt) { //author: meizz   
-            var o = {
-                "M+": this.getMonth() + 1, //月份   
-                "d+": this.getDate()-1, //日   
-                "H+": this.getHours(), //小时   
-                "m+": this.getMinutes(), //分   
-                "s+": this.getSeconds(), //秒   
-                "q+": Math.floor((this.getMonth() + 3) / 3), //季度   
-                "S": this.getMilliseconds() //毫秒   
-            };
-            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-            for (var k in o)
-                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-            return fmt;
-        }
-
-        var time1 = new Date().Format("yyyy-MM-dd");
-        
-
-        function loadScript(url, callback) {
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            if (typeof(callback) != "undefined") {
-                if (script.readyState) {
-                    script.onreadystatechange = function() {
-                        if (script.readyState == "loaded" || script.readyState == "complete") {
-                            script.onreadystatechange = null;
-                            callback();
-                        }
-                    };
-                } else {
-                    script.onload = function() {
-                        callback();
-                    };
-                }
-            }
-            script.src = url;
-            document.body.appendChild(script);
-        }
-
-        $(document).ready(function() {
-
-            loadScript("http://xhu219.s3.91sc.top/data/"+time1+".json?t=" + Math.random(), function() { //get all the select item
-                loadScript("http://xhu219.s3.91sc.top/base.js?t="+Math.random(), function() {
-
-                });
-            });
-
-        });
-        </script>
+        <!---
+            please change the ref to server.
+            <script src="base.js?v=20171122"></script>
+            
+        -->
+        <script src="http://xhu219.s3.91sc.top/base.js?v=201711241000"></script>
 </body>
 
 </html>

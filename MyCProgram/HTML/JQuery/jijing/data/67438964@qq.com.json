@@ -1,4 +1,4 @@
-[{
+var users = [{
     "jijing_Code": "161725",
     "jijing_Name": "招商中证白酒指数分级",
     "jijing_Mask": "ZSZZBJZSFJ",

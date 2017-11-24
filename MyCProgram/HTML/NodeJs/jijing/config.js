@@ -14,6 +14,7 @@ module.exports = {
     },
     config : {
         basepath : __dirname//'/private/var/root/Documents/GitHub/HelloWorld/MyCProgram/HTML/JQuery/jijing'
+        //basepath :'/private/var/root/Documents/GitHub/HelloWorld/MyCProgram/HTML/JQuery/jijing'
     }
 
 }
