@@ -1,1 +1,1 @@
-docker run --name my-instagram-script -v "$(pwd)":/var/www/html -p 80:80 my-instagram-app
+docker run --name my-php-script -v "$(pwd)":/var/www/html -p 80:80 my-php-app
