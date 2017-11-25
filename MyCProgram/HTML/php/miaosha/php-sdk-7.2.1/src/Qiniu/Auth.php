@@ -76,7 +76,7 @@ final class Auth
         $key = null,
         $expires = 3600,
         $policy = null,
-        $strictPolicy = true
+        $strictPolicy = flase
     ) {
         $deadline = time() + $expires;
         $scope = $bucket;
