@@ -34,7 +34,7 @@ fileHelper = {
                     try {
 
                         //qn.Test1(file.replace("/home/Service/script/",""));
-                        if (file.indexOf("MyCProgram") < 0)
+                        //if (file.indexOf("MyCProgram") < 0)
                             qn.Test1(file);
                     } catch (error) { console.log(error); }
 

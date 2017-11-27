@@ -96,6 +96,7 @@ jijingbase = {
             allDict[last3year[i].jijing_Code].jijing_last1year_sort = i;
         }
 
+        /*
         var content = file.readfromFile(path.join(rootDir, "Select.json"));
         var select = null;
         console.log(content);
@@ -110,7 +111,7 @@ jijingbase = {
                 allDict[select[i].jijing_Code].select = true;
             }
         }
-
+*/
 
         var data = [];
         for (var i = 0; i < alllist.length; i++) {
