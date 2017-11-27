@@ -1,4 +1,5 @@
-var qn = require("./nodejs-sdk-7.1.1/examples/form_upload_simple.js");
+var qn = require("./form_upload_simple.js");
+
 fileHelper = {
 
     readfromFile: function(file) {

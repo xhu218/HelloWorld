@@ -14,7 +14,7 @@ var jijingProcess = {
             var d = dt.toFormat("YYYY-MM-DD");
             console.log(d);
 
-            var allpages = 20; //;
+            var allpages = 74; //;
 
             var alldata = [];
 

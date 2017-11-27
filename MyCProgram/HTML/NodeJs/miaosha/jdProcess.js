@@ -159,7 +159,7 @@ var jdProcess = {
                     var info = "{    \"lastUpdateTime\":\"" + time1 + "\"}";
                     writetoFile(info, extenpath, false);
 					
-					var qn = require("./nodejs-sdk-7.1.1/examples/form_upload_simple.js");
+					var qn = require("./form_upload_simple.js");
 
                     /*
 					qn.Test1("data/data.js");
