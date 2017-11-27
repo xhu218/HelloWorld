@@ -96,6 +96,7 @@ jijingbase = {
             allDict[last3year[i].jijing_Code].jijing_last1year_sort = i;
         }
 
+        //20171127 wfg 个人选择的功能，直接在前端处理，因此去掉这段逻辑
         /*
         var content = file.readfromFile(path.join(rootDir, "Select.json"));
         var select = null;
