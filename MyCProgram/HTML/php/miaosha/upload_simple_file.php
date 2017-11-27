@@ -1,34 +1,64 @@
+
 <?php
-include 'base.php';
-require_once '../php-sdk-7.2.1/autoload.php';
+include './base.php';
+require_once './php-sdk-7.2.1/autoload.php';
 
 // 引入鉴权类
 use Qiniu\Auth;
 
 // 引入上传类
 use Qiniu\Storage\UploadManager;
+$userid = getUrlParam("userid");
+$operation = getUrlParam("operation");
+$jjcode = getUrlParam("jjcode");
 
-var $userid = getUrlParam("userid");
-var $operation = getUrlParam("operation");
-var $jjcode = getUrlParam("jjcode");
+$url = "http://xhu219.s3.91sc.top/data/".$userid.".json";
+echo $url;
+$file = file_get_contents($url);
+//echo $file;
 
-var $url = "http://xhu219.s3.91sc.top/data/".$userid.".json";
-var $file = file_get_contents($url);
-var $jjlist=unserialize(file.replace("var users = ",""));
 
-var $filename=$userid."json";
-if(operation=="add"){
-	Array.Array_push(jjlist,{ "jijing_Code": jijing_Code});
-	  file_put_contents('./'.fileName,serialze($jjlist));
+
+echo "---------------------------------------------------------------";
+$t = str_replace("var users = ","",$file);
+//echo $t;
+
+
+
+$jjlist=json_decode($t);
+//echo $jjlist;
+
+//echo "jj length = ".$jjlist.length;
+
+file_put_contents("./wfg.txt", "hello wfg");
+
+$filePath=$userid.".json";
+echo $filePath;
+
+//echo "wfgwfg".$jjlist[0][0];
+
+if($operation=="add"){
+	$temp = ["jijing_Code"=> $jjcode];
+	Array_push($jjlist,$temp);
+	  file_put_contents('./'.$filePath,"var users = ".json_encode($jjlist));
 }
-else if(operation =="sub"){
-	var $newjjlist = new ArrayListay();
-	for(var i=0;i<jjlist.length;i++){
-		if(jijing_Code!=jjlist[i].jijing_Code){
-			Array.Array_push(newjjlist,jjlist[i]);
-		}
+else if($operation =="sub"){
+	$newjjlist=Array();
+	//console.log($jjlist.length);
+	for($i=0;$i<count($jjlist);$i++){
+		//var_dump($jjlist[$i]);
+		echo $jjlist[$i]->jijing_Code;
+	    //echo json_encode($jjlist[$i]);
+		echo "-----------------------------------------------";
+		if($jjcode!=$jjlist[$i]->jijing_Code)
+		{
+
+			
+			Array_push($newjjlist,$jjlist[$i]);
+		
+			}
 	}
-	  file_put_contents('./'.fileName,serialze($newjjlist));
+	  file_put_contents('./'.$filePath,"var users = ".json_encode($newjjlist));
 }
 
 
@@ -39,13 +69,12 @@ else if(operation =="sub"){
 $auth = new Auth($accessKey, $secretKey);
 
 // 上传到七牛后保存的文件名
-$key = 'data\\'.userid."json";
+$key = 'data/'.$userid.".json";
 
 // 生成上传 Token
 $token = $auth->uploadToken($bucket,$key);
 
 // 要上传文件的本地路径
-$filePath = './php-logo.png';
 
 
 
@@ -60,3 +89,4 @@ if ($err !== null) {
 } else {
     var_dump($ret);
 }
+
