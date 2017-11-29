@@ -45,15 +45,6 @@ function sayHello( $string){
 }
 
 
-define('S3_BUCKET', 'xhu218');
-
-define('S3_KEY',    '5zICAtLUtlGbbMfDB2ucQ9OxyO3zwQTG6I5do11P');
-define('S3_SECRET', 'c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7');
-
-// 需要填写你的 Access Key 和 Secret Key
-$accessKey = "5zICAtLUtlGbbMfDB2ucQ9OxyO3zwQTG6I5do11P";//getenv('QINIU_ACCESS_KEY');
-$secretKey = "c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7";//getenv('QINIU_SECRET_KEY');
-$bucket = "xhu219";//getenv('QINIU_TEST_BUCKET');
 
 
 define('S3_BUCKET', 'xhu218');
@@ -65,5 +56,8 @@ define('S3_SECRET', 'c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7');
 $accessKey = "5zICAtLUtlGbbMfDB2ucQ9OxyO3zwQTG6I5do11P";//getenv('QINIU_ACCESS_KEY');
 $secretKey = "c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7";//getenv('QINIU_SECRET_KEY');
 $bucket = "xhu219";//getenv('QINIU_TEST_BUCKET');
+
+header("Access-Control-Allow-Origin: *"); // 允许任意域名发起的跨域请求  
+header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With'); 
 
 ?>

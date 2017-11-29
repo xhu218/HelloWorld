@@ -5,7 +5,7 @@ require('date-utils');
 
 
 
-jijing.download();
+//jijing.download();
 //jijing.readfile()
 my_http.start();
 
@@ -19,7 +19,7 @@ var times3    = [1,13];
 rule.hour  = times3; 
 var j = schedule.scheduleJob(rule, function() {
 	console.log("执行任务");　
-	jijing.download();
+	//jijing.download();
 });
 
 

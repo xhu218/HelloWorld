@@ -3,67 +3,63 @@
 include './base.php';
 require_once './php-sdk-7.2.1/autoload.php';
 
+header("Access-Control-Allow-Origin: *"); // 允许任意域名发起的跨域请求  
+header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With'); 
+
 // 引入鉴权类
 use Qiniu\Auth;
 
 // 引入上传类
 use Qiniu\Storage\UploadManager;
+
 $userid = getUrlParam("userid");
-$operation = getUrlParam("operation");
 $jjcode = getUrlParam("jjcode");
 
-$url = "http://xhu219.s3.91sc.top/data/".$userid.".json";
-echo $url;
+$url = "http://xhu219.s3.91sc.top/data/".$userid.".json?v=".date("Ymd-His") . '-' . rand(100,999);;
 $file = file_get_contents($url);
-//echo $file;
-
-
-
-echo "---------------------------------------------------------------";
 $t = str_replace("var users = ","",$file);
-//echo $t;
-
-
-
 $jjlist=json_decode($t);
-//echo $jjlist;
 
-//echo "jj length = ".$jjlist.length;
 
-file_put_contents("./wfg.txt", "hello wfg");
+$filePath=$userid.".json"; 
 
-$filePath=$userid.".json";
-echo $filePath;
 
-//echo "wfgwfg".$jjlist[0][0];
 
-if($operation=="add"){
-	$temp = ["jijing_Code"=> $jjcode];
-	Array_push($jjlist,$temp);
-	  file_put_contents('./'.$filePath,"var users = ".json_encode($jjlist));
+for($i=0;$i<count($jjlist);$i++)
+{
+	$find = false;
+	if($jjcode==$jjlist[$i]->jijing_Code)
+	{
+		$find = true;	
+		
+	}		
 }
-else if($operation =="sub"){
+echo "i have find". $find	;
+if($find == true)
+{
 	$newjjlist=Array();
-	//console.log($jjlist.length);
-	for($i=0;$i<count($jjlist);$i++){
-		//var_dump($jjlist[$i]);
-		echo $jjlist[$i]->jijing_Code;
-	    //echo json_encode($jjlist[$i]);
-		echo "-----------------------------------------------";
+	for($i=0;$i<count($jjlist);$i++)
+	{			
 		if($jjcode!=$jjlist[$i]->jijing_Code)
 		{
-
-			
-			Array_push($newjjlist,$jjlist[$i]);
-		
-			}
+			Array_push($newjjlist,$jjlist[$i]);	
+		}		
 	}
-	  file_put_contents('./'.$filePath,"var users = ".json_encode($newjjlist));
 }
-
-
-
-
+else
+{
+		$temp = ["jijing_Code"=> $jjcode];
+		Array_push($jjlist,$temp);
+	
+}
+if($find == true)
+{
+	file_put_contents($filePath,"var users = ".json_encode($newjjlist));
+}
+else
+{
+	file_put_contents($filePath,"var users = ".json_encode($jjlist));
+}
 
 // 构建鉴权对象
 $auth = new Auth($accessKey, $secretKey);

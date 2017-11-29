@@ -28,8 +28,8 @@
  var goods = [];
 
  $(document).ready(function() {
-     var baseurl ="http://xhu219.s3.91sc.top/";
-     //var baseurl = "";
+     //var baseurl ="http://xhu219.s3.91sc.top/";
+     var baseurl = "";
      var user = getUrlParam("user")
      console.log(user)
 

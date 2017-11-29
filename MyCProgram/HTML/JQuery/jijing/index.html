@@ -9,7 +9,19 @@
     <!--<link rel="stylesheet" href="./base.css" type="text/css" />
     
 -->
-     <link rel="stylesheet" href="http://xhu219.s3.91sc.top/base.css?t=201711221757" type="text/css" />
+    <link rel="stylesheet" href="http://xhu219.s3.91sc.top/base.css?t=201711221757" type="text/css" />
+    <script>
+    function sayHello(jjcode) {
+        console.log(jjcode)
+        $.ajax({
+            url: "http://91sc.top/upload_simple_file.php?userid=67438964@qq.com&jjcode="+jjcode,            
+            success: function() {
+                console.log("调用成功");
+               
+            }
+        });
+    }
+    </script>
 </head>
 
 <body>
@@ -29,8 +41,12 @@
                 <tbody>
                     <tr v-for="entry in filteredData">
                         <td v-for="key in columns">
-                            <div v-if="displayInDiv(key)"><a :href="'http://fund.eastmoney.com/'+entry['jijing_Code']+'.html?spm=search'" target="_blank">{{entry[key] }}</a></div>
-                            <div v-else>{{entry[key] }}</div>
+                            <!--"'http://91sc.top/upload_simple_file.php?userid=67438964@qq.com&jjcode='+entry['jijing_Code']"-->
+                            <div v-if="displayInSelect(key)"><a href="#" onclick="sayHello('{{entry['jijing_Code']}}')">{{entry[key]=="1"?"true":"false" }}</a></div>
+                            <template v-else>
+                                <div v-if="displayInDiv(key)"><a :href="'http://fund.eastmoney.com/'+entry['jijing_Code']+'.html?spm=search'" target="_blank">{{entry[key] }}</a></div>
+                                <div v-else>{{entry[key] }}</div>
+                            </template>
                         </td>
                     </tr>
                 </tbody>
@@ -50,10 +66,10 @@
         </div>
         <!---
             please change the ref to server.
-            <script src="base.js?v=20171122"></script>
-            
+           
+           <script src="base.js?v=20171122"></script>
         -->
-        <script src="http://xhu219.s3.91sc.top/base.js?v=201711241000"></script>
+          <script src="http://xhu219.s3.91sc.top/base.js?v=20171128"></script>
 </body>
 
 </html>

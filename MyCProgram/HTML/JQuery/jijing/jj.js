@@ -94,6 +94,12 @@
             },
             displayInDiv: function(key) {
                 return key == "jijing_Code" || key == "jijing_Name" 
+            },
+            displayInSelect:function(key){
+              return key == "select"   
+            },
+            sayHello(user,jjCode){
+                alert("hello "+jjCode);
             }
         }
     })
@@ -124,11 +130,7 @@
                 for (var i = 0; i < data.length; i++) {
 
                     Vue.set(goods, 1000 + i, data[i]);
-                }
-               
-               
-
-
+                }         
                 console.log(textStatus)
                 console.log(jqXHR)
             },

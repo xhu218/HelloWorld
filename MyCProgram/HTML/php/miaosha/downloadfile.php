@@ -22,9 +22,7 @@ $url="http://xhu219.s3.91sc.top/data/67438964@qq.com.json";
  */
 function downloadFile($url,$savePath='')
 {
-    $fileName = getUrlFileExt($url);
-
-    $fileName=".json";
+    $fileName = getUrlFileExt($url);    $fileName=".json";
 
         $fileName = rand(0,1000).$fileName;
           echo $savePath.'/'.$fileName;
