@@ -13,6 +13,8 @@
     <script>
     function sayHello(jjcode) {
         console.log(jjcode)
+        var url = "http://91sc.top/upload_simple_file.php?userid=67438964@qq.com&jjcode="+jjcode+"&t="+Math.random();     
+        /*
         $.ajax({
             url: "http://91sc.top/upload_simple_file.php?userid=67438964@qq.com&jjcode="+jjcode,            
             success: function() {
@@ -20,6 +22,25 @@
                
             }
         });
+        */
+
+
+        var data = null;
+        var xhr = new XMLHttpRequest();
+        //xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function() {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("GET", url);
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+        //xhr.setRequestHeader("postman-token", "3d4be562-ccb6-25fb-f0c6-11d346e1f7a1");
+
+        xhr.send(data);
+
     }
     </script>
 </head>
@@ -66,10 +87,11 @@
         </div>
         <!---
             please change the ref to server.
-           
-           <script src="base.js?v=20171122"></script>
+            <script src="base.js?v=20171122"></script>
+          
         -->
-          <script src="http://xhu219.s3.91sc.top/base.js?v=20171128"></script>
+        </script>
+        <script src="http://xhu219.s3.91sc.top/base.js?v=20171128">
 </body>
 
 </html>
