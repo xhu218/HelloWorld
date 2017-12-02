@@ -68,7 +68,7 @@ req1(alljjlisturl, function(error, response, body) {
                                             for (var sProp in goupiao) {
                                                 //console.log(sProp);
                                                 if (jjlist[i][sProp] == null) {
-                                                    jjlist[i][sProp] = null;
+                                                    jjlist[i][sProp] = "";
                                                 }
 
                                             }
