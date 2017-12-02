@@ -11,7 +11,7 @@
  Date.prototype.Format = function(fmt) { //author: meizz   
      var o = {
          "M+": this.getMonth() + 1, //月份   
-         "d+": this.getDate() - 1, //日   
+         "d+": this.getDate(), //日   
          "H+": this.getHours(), //小时   
          "m+": this.getMinutes(), //分   
          "s+": this.getSeconds(), //秒   
@@ -28,8 +28,8 @@
  var goods = [];
 
  $(document).ready(function() {
-     //var baseurl ="http://xhu219.s3.91sc.top/";
-     var baseurl = "";
+     var baseurl ="http://xhu219.s3.91sc.top/";
+     //var baseurl = "";
      var user = getUrlParam("user")
      console.log(user)
 
@@ -45,8 +45,9 @@
                      }
                  }
              }
-
+                
              for (var k = 0; k < good.length; k++) {
+                if(k>1000) break;
                  //goods.push(good[k]);
                  Vue.set(goods, k, good[k]);
 
