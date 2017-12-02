@@ -8,7 +8,7 @@ fileHelper = {
         return data;
     },
 
-    writetoFile: function(content, file, append) {
+    writetoFile: function(content, file, append,callback) {
         var fs = require("fs");
         var path = require("path");
         var parentFolder = path.resolve(file, "..");
@@ -40,6 +40,9 @@ fileHelper = {
                     } catch (error) { console.log(error); }
 
                     console.log("写入文件成功 : " + file);
+                    if(typeof callback == "function"){
+                        callback(file)
+                    }
                 }
 
             });

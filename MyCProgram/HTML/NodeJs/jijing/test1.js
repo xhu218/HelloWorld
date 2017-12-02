@@ -1,87 +1,141 @@
-/*
-
-var request1 = require("./request.js");
-var test1 = {
-
-    fun1: function() {
-
-        console.log("start...");
-
-        var tempStr = "http://www.baidu.com";
-        var url = tempStr; // "http://fund.eastmoney.com/data/rankhandler.aspx?op=ph&dt=kf&ft=all&rs=&gs=0&sc=3nzf&st=desc&sd=2016-10-18&ed=2017-10-18&qdii=&tabSubtype=,,,,,&pi=2&pn=50&dx=1&v=0.005266926352829326";
-        request1.setUrl(url);
-
-        var goods = request1.sendRequest(function(url, content) {
-
-            //console.log(url. content);
-            console.log(url);
-            console.log("end...");
-            this.fun2();
-
-        });
-
-    },
-    fun2: function(){
-        console.log("this is fun2");
-    }
-}
-
-module.exports = test1;
-
-*/
-
-/*
-require('date-utils');
-var date = new Date();
-date.addMonths(1);
-
-var d = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
-console.log(d);
-
-
-
-var dt = new Date();
-var dt1 = dt.toFormat("YYYY-MM-DD");
-console.log(dt1);
-
-console.log(dt.toFormat("YYYY-MM-DD HH24:MI:SS"));
-
-*/
-
-
-var fs = require("fs");
 var path = require("path");
-fs.exists("./Data", function(exists) {
-    if (exists) {
-        console.log("文件存在")
+var file = require("./fileHelper.js");
+var writelog = require("./writelog.js");
+
+
+
+var url = "http://fund.eastmoney.com/161725.html?spm=search";
+var alljjlisturl = "http://xhu219.s3.91sc.top/data/2017-12-02.json";
+
+var total = 3665;
+var current = 0;
+var goupiao = {};
+var jjlist = [];
+
+var req1 = require('request');
+req1(alljjlisturl, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+        //console.log(body);
+        var jj = body.replace("var good =", "");
+        var jjObjs = JSON.parse(jj);
+
+        for (var i = jjObjs.length - 1; i >= 0; i--) {
+
+
+            if (i < jjObjs.length - total) {
+                break;
+            }
+
+
+            setTimeout(
+
+                ((function(jijing_Code) {
+                    return function() {
+
+                        try {
+
+                            var url = "http://fund.eastmoney.com/" + jijing_Code + ".html?spm=search";
+                            var request = require('request');
+                            request(url, function(error, response, body) {
+                                if (!error && response.statusCode == 200) {
+                                    current++;
+                                    console.log(current + "\t" + url);
+
+                                    doit(jijing_Code, body);
+
+                                    if (current == total) {
+                                        console.log("我已经做完所有的事情了");
+                                        //console.log("股票数据的的长度 ＝ " + sizeof(goupiao));
+
+                                        var props = [];
+                                        for (var prop in goupiao) {
+                                            props.push(prop);
+                                        }
+                                        props.sort(function(a, b) {
+                                            return a - b;
+                                        })
+
+                                        var head = "基金名称\t"
+
+                                        for (var i = 0; i < props.length; i++) {
+                                            head += props[i] + "\t";
+                                        }
+                                        head += "\n"
+                                        //console.log(head);
+
+                                        //console.log(jjlist);
+                                        for (var i = jjlist.length - 1; i >= 0; i--) {
+                                            for (var sProp in goupiao) {
+                                                //console.log(sProp);
+                                                if (jjlist[i][sProp] == null) {
+                                                    jjlist[i][sProp] = null;
+                                                }
+
+                                            }
+                                            var jjinfo = jjlist[i].jijing_Code + "\t";
+                                            for (var j = 0; j < props.length; j++) {
+                                                jjinfo += jjlist[i][props[j]] + "\t";
+                                            }
+                                            jjinfo += "\n";
+
+                                            head += jjinfo;
+
+                                            //console.log("\n\n");
+                                            //console.log(JSON.stringify(jjlist[i]));
+                                        }
+                                        //console.log(head);
+                                        file.writetoFile(head, "result.txt", false, function(filepath) {
+                                            console.log("已经成功写入文件" + filepath);
+                                        })
+
+                                    }
+
+                                } else {
+                                    writelog(url + "出错了");
+                                }
+
+                            });
+                        } catch (err) {
+                            writelog(err + jijing_Code);
+                        }
+
+                    }
+
+                })(jjObjs[i].jijing_Code)), i * 50);
+        }
     }
-    if (!exists) {
-        console.log("文件不存在")
+})
+
+
+
+
+
+
+
+//var filecontent = file.readfromFile("wfg.html");
+//doit(filecontent);
+
+function doit(jijing_Code, content) {
+
+    var regTab = /<li class=\"position_shares\" id=\"position_shares\">[\s\S]*?<\/li>/gi;
+    var regTr = /<tr>[\s\S]*?<\/tr>/g;
+    var regTdName = /<td class=\"alignLeft\">   <a href=[^>]*>([\S]*?)<\/a>  <\/td>  <td class=\"alignRight bold\">(.*?)<\/td>  <td class=\"alignRight bold\" stockcode=\".*?\"><span class=[^>]*?>(.*?)<\/span>  <\/td>/g
+
+    var data = regTab.exec(content);
+    //console.log(data[0]);
+
+    var jj = { "jijing_Code": jijing_Code };
+    jjlist.push(jj);
+    while (tr = regTr.exec(data[0])) {
+        // console.log(tr[0]);
+
+        while (td = regTdName.exec(tr[0])) {
+            //console.log(td);
+            //console.log(td[1], td[2], td[3]);
+            jj[td[1]] = td[2];
+
+            goupiao[td[1]] = 1;
+        }
     }
-});
 
-var fs = require("fs");
-
-var parentFolder = path.join(__dirname, "Data", "Last3Year");
-var file = path.join(parentFolder, "200.josn");
-var content = "hello wfg";
-
-console.log("test..."+ path.resolve(file,"../.."));
-
-if (!fs.existsSync(parentFolder)) {
-    fs.mkdirSync(parentFolder);
 }
-
-fs.writeFile(file, content, function(err) {
-    if (err) {
-        console.log("fail" + err)
-    } else {
-        console.log("写入文件成功 : " + file);
-    }
-
-});
-
-
-var str = "wfglxx";
-var str1 = str.replace("wfg","lxx");
-console.log(str1);
