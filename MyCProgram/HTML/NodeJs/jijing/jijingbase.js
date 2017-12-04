@@ -1,5 +1,7 @@
 var path = require("path");
 var config = require('./config')
+var fund_mysql = require("./fund_mysql.js");
+
 jijingbase = {
     sayHello: function() {
         console.log("hello...");
@@ -117,6 +119,7 @@ jijingbase = {
         var data = [];
         for (var i = 0; i < alllist.length; i++) {
 
+/*
             alllist[i].jijing_last3year = parseInt(alllist[i].jijing_last3year).toFixed(2);
             alllist[i].jijing_last2year = parseInt(alllist[i].jijing_last2year).toFixed(2);
             alllist[i].jijing_last1year = parseInt(alllist[i].jijing_last1year).toFixed(2);
@@ -129,10 +132,14 @@ jijingbase = {
             alllist[i].jijing_totalValue = parseInt(alllist[i].jijing_totalValue).toFixed(2);
             alllist[i].jijing_daliyIncreaseRate = parseInt(alllist[i].jijing_daliyIncreaseRate).toFixed(2);
             alllist[i].jijing_unitValue = parseInt(alllist[i].jijing_unitValue).toFixed(2);
-
+*/
             data.push(allDict[alllist[i].jijing_Code]);
-        }
 
+        }
+        try {
+
+            fund_mysql.insertall(data);
+        } catch (error) { console.log(error); }
 
         file.writetoFile("var good = " + JSON.stringify(data, null, "\t"), path.join(rootDir, d + ".json"), false);
         //file.writetoFile(JSON.stringify(d, null, "\t"), path.join(rootDir, "AllList", d + ".json"), false);

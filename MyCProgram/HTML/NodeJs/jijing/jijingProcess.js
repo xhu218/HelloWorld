@@ -59,15 +59,15 @@ var jijingProcess = {
                                 jijing_unitValue: obj[4],
                                 jijing_totalValue: obj[5],
                                 jijing_daliyIncreaseRate: obj[6],
-                                jijing_lastWeek: obj[7] == "" ? 0 : (parseInt(obj[7])),
-                                jijing_lastMonth: obj[8] == "" ? 0 : (parseInt(obj[8])),
-                                jijing_last3Month: obj[9] == "" ? 0 : (parseInt(obj[9])),
-                                jijing_last6Month: obj[10] == "" ? 0 : (parseInt(obj[10])),
-                                jijing_last1year: obj[11] == "" ? 0 : (parseInt(obj[11])),
-                                jijing_last2year: obj[12] == "" ? 0 : (parseInt(obj[12])),
-                                jijing_last3year: obj[13] == "" ? 0 : (parseInt(obj[13])),
-                                jijing_sinceThisYear: obj[14] == "" ? 0 : (parseInt(obj[14])),
-                                jijing_sinceestablish: obj[15] == "" ? 0 : (parseInt(obj[15]))
+                                jijing_lastWeek: obj[7] == "" ? 0 : ((obj[7])),
+                                jijing_lastMonth: obj[8] == "" ? 0 : ((obj[8])),
+                                jijing_last3Month: obj[9] == "" ? 0 : ((obj[9])),
+                                jijing_last6Month: obj[10] == "" ? 0 : ((obj[10])),
+                                jijing_last1year: obj[11] == "" ? 0 : ((obj[11])),
+                                jijing_last2year: obj[12] == "" ? 0 : ((obj[12])),
+                                jijing_last3year: obj[13] == "" ? 0 : ((obj[13])),
+                                jijing_sinceThisYear: obj[14] == "" ? 0 : ((obj[14])),
+                                jijing_sinceestablish: obj[15] == "" ? 0 : ((obj[15]))
 
                             };
 
@@ -99,9 +99,9 @@ var jijingProcess = {
 
         var file = require("./fileHelper.js");
         var path = require("path");
-        var alldataPath = path.join(config.config.basepath, "Data", "AllList.json");
+        var alldataPath = path.join(config.config.basepath, "data", "AllList.json");
         var data = file.readfromFile(alldataPath)
-        console.log(data);
+        //console.log(data);
         var alllist = JSON.parse(data);
 
         /*begin replace  for download method*/
