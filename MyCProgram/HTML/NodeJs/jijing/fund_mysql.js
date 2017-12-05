@@ -108,7 +108,7 @@ fund_mysql = {
 
         var dt = new Date();
         var d = dt.toFormat("YYYY-MM-DD");
-        var d = '2017-12-02';
+        //var d = '2017-12-02';
 
         var addSql = "INSERT INTO `FUND` (`FUND_CODE`, `FUND_NAME`, `FUND_UNITVALUE`, `FUND_TOTALVALUE`, `FUND_DALIYINCREASE`, `FUND_LASTWEEK`, `FUND_LASTMONTH`, `FUND_LAST3MONTH`, `FUND_LAST6MONTH`, `FUND_LASTYEAR`, `FUND_LAST2YEAR`, `FUND_LAST3YEAR`, `FUND_LASTTHISYEAR`, `FUND_SINCECONSTRUCT`, `FUND_DATE`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         var addSqlParams = [fund.jijing_Code, fund.jijing_Name, fund.jijing_unitValue, fund.jijing_totalValue, fund.jijing_daliyIncreaseRate, fund.jijing_lastWeek, fund.jijing_lastMonth, fund.jijing_last3Month, fund.jijing_last6Month, fund.jijing_last1year, fund.jijing_last2year, fund.jijing_last3year, fund.jijing_sinceThisYear, fund.jijing_sinceestablish, d];

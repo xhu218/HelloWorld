@@ -100,7 +100,7 @@ var jdProcess = {
 
                                 setTimeout((function(t, c) {
                                     return function() {
-                                        sendmail("13548180218@139.com", t, c);
+                                        sendmail("18100835672@139.com", t, c);
                                     }
                                 })(title, content), index * 10000);
 
