@@ -1,7 +1,7 @@
 require('date-utils');
 var writelog = require("./writelog.js");
 
-var $host = 'centos1';
+var $host = 'mysql';
 var $user = 'mysql';
 var $password = 'mysql';
 var $database = 'mydatabase';

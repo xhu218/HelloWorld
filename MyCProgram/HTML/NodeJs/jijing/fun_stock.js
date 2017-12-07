@@ -8,7 +8,7 @@ console.log("hello wfg");
 var url = "http://fund.eastmoney.com/161725.html?spm=search";
 var alljjlisturl = "http://xhu219.s3.91sc.top/data/2017-12-02.json";
 
-var total =  3665;
+var total =  2;
 //var total = 20;
 var current = 0;
 
