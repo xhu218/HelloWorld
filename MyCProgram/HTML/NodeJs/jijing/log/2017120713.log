@@ -1,0 +1,17 @@
+2017-12-07 13:00:07	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:00:14	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:06:02	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:08:10	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:08:41	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:08:53	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:08:58	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:09:07	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:09:18	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:09:22	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:09:39	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:09:59	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:10:27	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:10:56	doit method 121TypeError: Cannot read property '0' of null
+2017-12-07 13:27:31	doit method 121SyntaxError: Invalid regular expression: /<td class=\"alignLeft\">   <a href=[^>]*>([\S]*?)<\/a>  <\/td>  <td class=\"alignRight bold\">(.*?)<\/td>  <td class=\"alignRight bold\" stockcode=\"\(.*?)\"><span class=[^>]*?>(.*?)<\/span>  <\/td>/: Unmatched ')'
+2017-12-07 13:28:55	doit method 121SyntaxError: Invalid regular expression: /<td class=\"alignLeft\">   <a href=[^>]*>([\S]*?)<\/a>  <\/td>  <td class=\"alignRight bold\">(.*?)<\/td>  <td class=\"alignRight bold\" stockcode=\"\(.*?)\"><span class=[^>]*?>(.*?)<\/span>  <\/td>/: Unmatched ')'
+2017-12-07 13:29:26	doit method 121SyntaxError: Invalid regular expression: /<td class=\"alignLeft\">   <a href=[^>]*?>([\S]*?)<\/a>  <\/td>  <td class=\"alignRight bold\">(.*?)<\/td>  <td class=\"alignRight bold\" stockcode=\"\(.*?)\"><span class=[^>]*?>(.*?)<\/span>  <\/td>/: Unmatched ')'
