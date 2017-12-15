@@ -5,52 +5,63 @@
 
 
  var total = 365 * 10;
- //var total = 3; //365 * 10;
- for (var index = 0; index < total; index++) {
-     var dt = new Date().addDays(-index);
-     var d = dt.toFormat("YYYY-MM-DD");
-     console.log(d);
+ //var total = 3;
+ var files = [];
 
-     var parentFolder = __dirname;
+ function Getfiles() {
 
-     var child = path.join(parentFolder, d);
+     //var total = 3; //365 * 10;
+     for (var index = 0; index < total; index++) {
+         var dt = new Date().addDays(-index);
+         var d = dt.toFormat("YYYY-MM-DD");
+         console.log(d);
 
-     if (!fs.existsSync(child)) {
-         fs.mkdirSync(child);
+         var parentFolder = path.join(__dirname, "files");
 
-     }
-     //var filecount = 3;
-     var filecount = 40;
-     for (var indexY = 0; indexY < filecount; indexY++) {
-         setTimeout((function(child,index,indexY) {
-             return function() {
-                 var fs1 = require("fs");
-                 var filename = null;
-                 if(indexY % 4 ==0){
-                    filename = path.join(child, indexY.toString()+".mp3");
-                 }
-                 else if(indexY % 4 == 1){
-                  filename = path.join(child, indexY.toString()+".mxf");  
-                 }
-                 else if(indexY % 4 == 2){
-                  filename = path.join(child, indexY.toString()+".avi");  
-                 }
-                 
-                 else if(indexY % 4 == 3){
-                  filename = path.join(child, indexY.toString()+".avi");  
-                 }
-                 
-                 console.log(indexY,filename);
+         var child = path.join(parentFolder, d);
 
-                 fs1.writeFile(filename, "hello world "+indexY, function(err) {
-                     if (err)
-                         console.log(err)
-                     else
-                         console.log(index,indexY,filename);
-                 });
-                 
+         if (!fs.existsSync(child)) {
+             fs.mkdirSync(child);
+
+         }
+         var filecount = 40;
+         //var filecount = 3;
+
+         for (var indexY = 0; indexY < filecount; indexY++) {
+
+             var filename = null;
+             if (indexY % 4 == 0) {
+                 filename = path.join(child, indexY.toString() + ".mp3");
+             } else if (indexY % 4 == 1) {
+                 filename = path.join(child, indexY.toString() + ".mxf");
+             } else if (indexY % 4 == 2) {
+                 filename = path.join(child, indexY.toString() + ".avi");
+             } else if (indexY % 4 == 3) {
+                 filename = path.join(child, indexY.toString() + ".avi");
              }
-         })(child,index,indexY), 500*index+indexY*10);
 
+             files.push(filename);
+
+
+         }
      }
  }
+ var index = 0;
+
+ function CreateFile() {
+
+     var fs = require("fs");
+     console.log(index ,files[index]);
+     fs.writeFile(files[index], files[index], function(err) {
+         if (err) {
+             console.log("fail" + err)
+         } else {
+             index++;
+             //console.log(index, files[index]);
+             if (index < files.length)
+                 CreateFile();
+         }
+     });
+ }
+ Getfiles();
+ CreateFile();
