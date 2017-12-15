@@ -2,64 +2,38 @@ var jijing = require("./jijingProcess.js");
 //var test1 = require("./test1.js");
 var my_http = require("./http.js");
 require('date-utils');
-var fund_stock = require("./fund_stock.js");
-
-//fund_stock.getalltheinfo();
 
 
 
-
-
-//jijing.download();
+jijing.download();
 //jijing.readfile()
-//my_http.start();
-
-
+my_http.start();
 
 
 
 var schedule = require("node-schedule");
 
-var rule1 = new schedule.RecurrenceRule();　　
-rule1.dayOfWeek = [0, new schedule.Range(1, 5)];　
-rule1.hour = 15;　
-rule1.minute = 30;
-var job1 = schedule.scheduleJob(rule1, function() {
-    console.log("执行任务");　
-    jijing.download();
-    fund_stock.getalltheinfo();
-
+var rule = new schedule.RecurrenceRule();　　
+//rule.minute = 2;　　
+var times3    = [1,13];  
+rule.hour  = times3; 
+var j = schedule.scheduleJob(rule, function() {
+	console.log("执行任务");　
+	//jijing.download();
 });
 
 
-
-
-var rule2 = new schedule.RecurrenceRule();　　
-rule2.dayOfWeek = [0, new schedule.Range(1, 5)];　
-rule2.hour = 16;　
-rule2.minute = 30;
-var job1 = schedule.scheduleJob(rule2, function() {
-
-
-    console.log("执行任务");　
-
-});
-
-
-
-
-
-
+			
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 var inputArr = [];
-rl.on('line', function(input) {
+rl.on('line', function (input) {
     inputArr.push(input);
     console.log(inputArr[0]);
-    console.log(+inputArr[0]); //转化成数字类型
+    console.log(+inputArr[0]);//转化成数字类型
     inputArr = [];
 
 });
