@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Tabs - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $(function() {
+
+        $.ajax({
+
+            url: 'http://xhu219.s3.91sc.top/data/67438964@qq.com.json?t=' + Math.random(),
+            type: 'GET', //GET
+            async: true, //或false,是否异步 
+            timeout: 10000, //超时时间
+            dataType: 'text', //返回的数据格式：json/xml/html/script/jsonp/text
+            beforeSend: function(xhr) {
+                console.log(xhr)
+                console.log('发送前')
+            },
+            success: function(data, textStatus, jqXHR) {
+                //console.log(data)
+                var str = data.replace("var users = ", "");
+                var jjlist = $.parseJSON(str);
+
+                for (var index = 0; index < jjlist.length; index++) {
+                    //http://fund.eastmoney.com/502023.html
+                    console.log(jjlist[index].jijing_Code);
+
+                    var li = "<li><a href=\"#tabs-" + index + "\">"+jjlist[index].jijing_Name+"</a></li>";
+                    $(li).mouseover(function(e){
+                      console.log(e);
+                      $(this).click()
+                    }).appendTo($("#ul"));
+
+                    var div = null;
+                    div = "<div id=\"tabs-" + index + "\" class=\"container\"> <iframe src=\"http://fund.eastmoney.com/"+jjlist[index].jijing_Code+".html\" ></iframe> </div>";
+
+                    $(div).appendTo($("#tabs"));
+
+
+                }
+
+                $("#tabs").tabs({  event: "mouseover" });
+
+                console.log(textStatus)
+                console.log(jqXHR)
+            },
+            error: function(xhr, textStatus) {
+                console.log('错误')
+                console.log(xhr)
+                console.log(textStatus)
+            },
+            complete: function() {
+                console.log('结束')
+
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+    });
+    </script>
+    <style type="text/css">
+    iframe .container {
+        width: 100%;
+        height: 2000px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 2000px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="tabs" class="container">
+        <ul id="ul">
+        </ul>
+    </div>
+</body>
+
+</html>
