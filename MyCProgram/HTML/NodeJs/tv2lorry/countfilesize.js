@@ -8,42 +8,59 @@ var path = require("path");
 var remotePath = "/resource/fd/promote/201507/qixi/";
 
 //获取当前目录绝对路径，这里resolve()不传入参数
-var filePath = path.join(__dirname, "files1");
+var filePath = path.join(__dirname, "files");
 
 //读取文件存储数组
 var fileArr = [];
 
 var doingcount = 0;
+var size = 0;
 
 function GetAllTheFiles(root) {
     //读取文件目录
-    fs.readdir(root, function(err, files) {
+    var fs1 = require("fs");
+    fs1.readdir(root, function(err, files) {
         if (err) {
             console.log(err);
             return;
         }
         for (var i = 0; i < files.length; i++) {
             var filename = path.join(root, files[i]);
+           
+            var fs2 = require("fs");
 
-            fs.stat(filename, function(err, stats) {
-                if (err) throw err;
-                //console.log(new Date());
-                 console.log(filename);
-                if (stats.isFile()) {
+            (function(filename) {
 
-                    if (getdir(filename) == 'mp3' || getdir(filename) == "mp4" || getdir(filename) == "avi") {
-                        //console.log(filename);
-                        fileArr.push(filename);
+                    fs2.stat(filename, function(err, stats) {
+                        if (err) throw err;
+                       
 
-                        writeFile(fileArr);
+                        if (stats.isFile()) {
+                            
+
+                            
+                            if (getdir(filename) == "mp3" || getdir(filename) == "mp4" || getdir(filename) == "avi") {
+                                //console.log(filename,stats.size);
+                                size = size+stats.size
+                                console.log(size);
 
 
-                    }
+                                //writeFile(fileArr);
 
-                } else if (stats.isDirectory()) {
-                    GetAllTheFiles(filename);
+
+                            }
+
+                        } else if (stats.isDirectory()) {
+                            //console.log("wfg", filename);
+                            GetAllTheFiles(filename);
+                        }
+                    })
+
                 }
-            });
+
+            )(filename);
+
+
         }
 
 

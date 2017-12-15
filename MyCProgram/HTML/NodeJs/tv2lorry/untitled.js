@@ -5,7 +5,7 @@
 
 
  var total = 365 * 10;
- //var total = 3;
+ var total = 3;
  var files = [];
 
  function Getfiles() {
@@ -25,7 +25,7 @@
 
          }
          var filecount = 40;
-         //var filecount = 3;
+         var filecount = 4;
 
          for (var indexY = 0; indexY < filecount; indexY++) {
 
@@ -35,7 +35,7 @@
              } else if (indexY % 4 == 1) {
                  filename = path.join(child, indexY.toString() + ".mxf");
              } else if (indexY % 4 == 2) {
-                 filename = path.join(child, indexY.toString() + ".avi");
+                 filename = path.join(child, indexY.toString() + ".mp4");
              } else if (indexY % 4 == 3) {
                  filename = path.join(child, indexY.toString() + ".avi");
              }
