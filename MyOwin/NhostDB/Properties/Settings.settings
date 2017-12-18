@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NhostDB.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="connStr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">server={0};user id={1};password={2};database={3};pooling=True;allowzerodatetime=True;allowuservariables=True;minpoolsize=10;characterset=utf8</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

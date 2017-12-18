@@ -31,17 +31,8 @@ namespace Sony.S2.MOS.MOSGWService
             }
              * */
 
-            while (true)
-            {
-                ulong sum = 0;
-                for (ulong i = 0; i < ulong.MaxValue; i++)
-                {
-                    sum += i;
-                    //Console.WriteLine(sum);
-                }
-            }
 
-            /*
+            
             for (int j = 0; j < 20; j++)
             {
 
@@ -60,7 +51,7 @@ namespace Sony.S2.MOS.MOSGWService
                 });
                 task.Start();
             }
-             */
+             
 
         }
 

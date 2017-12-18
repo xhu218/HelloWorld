@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+using MySql.Data.MySqlClient;
 using Sobey.Data;
 using Sobey.Data.DataMapper;
 using System;
@@ -13,10 +14,23 @@ namespace NhostDB
     {
         static void Main(string[] args)
         {
-            String num = "170.38461538461539";
-            ulong lng = ulong.Parse(num);
+
             //TestGen2SmmUserLoginInfo();
             //TestSelfTab1Info();
+
+            for (var index = 0; index < 80; index++)
+            {
+                int j = index;
+                Task task = new Task(delegate()
+                {
+
+                    Ado ado = new Ado();
+                    ado.doTest(j);
+                });
+                task.Start();
+
+
+            }
             Console.Read();
 
 
@@ -36,7 +50,7 @@ namespace NhostDB
                 DatabaseServer = "centos1",
                 Pooling = true,
                 MaximumPoolSize = 10,
-                 
+
 
 
             };
@@ -75,15 +89,60 @@ namespace NhostDB
 
             SmmUserlogininfoTable user = new SmmUserlogininfoTable(db);
 
-            var x = user.Login();
-            Console.WriteLine(String.Format("Current Date Count is :{0} ", x.ToString()));
+            for (var index = 0; index < 100; index++)
+            {
+                Console.WriteLine(index);
 
-            Console.WriteLine(String.Format("the add fun result is :{0}", user.Add()));
+                var x = user.Login();
+                Console.WriteLine(String.Format("Current Date Count is :{0} ", x.ToString()));
 
-            Console.WriteLine(String.Format("Current Date Count is :{0} ", user.Login().ToString()));
+                Console.WriteLine(String.Format("the add fun result is :{0}", user.Add()));
+
+                Console.WriteLine(String.Format("Current Date Count is :{0} ", user.Login().ToString()));
+
+                System.Threading.Thread.Sleep(10);
+            }
         }
     }
 
+
+
+
+    public class Ado
+    {
+        static int count = 0;
+        private object _locker = new object();
+        public void doTest(int index)
+        {
+            for (var i = 0; i < 5; i++)
+            {
+                //var connStr = String.Format("server={0};user id={1};password={2};database={3};pooling=True;allowzerodatetime=True;allowuservariables=True;minpoolsize=10;characterset=utf8",
+                //   "10.0.100.10", "sdba", "sdba", "mldb");
+
+                var connStr = "server=172.16.168.205;user id=sdba;password=sdba;database=mldb;pooling=True;allowzerodatetime=True;allowuservariables=True;characterset=utf8";
+                //var connStr = "server=10.0.100.11;user id=mldba;password=mldba;database=mldb;pooling=True";
+                //connStr = Properties.Settings.Default.connStr;
+                MySqlConnection conn = new MySqlConnection(connStr);
+                conn.Open();
+                var strsql = "select count(*) from cmapi_ding where usercode='" + Guid.NewGuid().ToString("N") + "'";
+                MySqlCommand mycmd = new MySqlCommand(strsql, conn);
+
+                var c = mycmd.ExecuteScalar();
+                System.Threading.Thread.Sleep(1000);
+                conn.Close();
+                //lock (_locker)
+                //    count++;
+                Console.WriteLine(String.Format("{0}   {1}   {2}   {3}    *{4}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), index, i, c, count));
+
+
+
+            }
+
+
+        }
+
+
+    }
 
     public class tab1
     {
@@ -203,20 +262,21 @@ namespace NhostDB
         {
 
         }
-     
+
         protected override IDataRowMapContext<SmmUserlogininfo> MappingColumn()
         {
             return MapAllProperties()
                 .DoNotMap(x => x.loginpwd)
                 .PrimaryKey(x => x.logininfoid)
                 .DoNotMap(x => x.pwdchangetime);
-                
+
         }
 
         public int Add()
         {
-            return this.Add(new SmmUserlogininfo{ 
-                loginip = "127.0.0.1", 
+            return this.Add(new SmmUserlogininfo
+            {
+                loginip = "127.0.0.1",
                 loginname = "wfg",
                 loginpwd = "wfg",
                 loginsubsystem = "ML",
@@ -228,22 +288,22 @@ namespace NhostDB
                 windowname = "localhost",
                 usertoken = Guid.NewGuid().ToString("n")
             });
-            
+
         }
 
 
 
-        public long  Login()
+        public long Login()
         {
 
             try
             {
                 var loginObjs = from l in this.AsQueryable()
-                                
-                                select l;
-                return  loginObjs.ToList().LongCount();
 
-               
+                                select l;
+                return loginObjs.ToList().LongCount();
+
+
 
 
             }
@@ -252,9 +312,9 @@ namespace NhostDB
                 throw ex;
             }
         }
-      
 
-       
+
+
     }
-   
+
 }
