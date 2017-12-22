@@ -6,3 +6,11 @@ var str1 = "299904 Archive_8238W299904low_audio1_1612.mp3";
 str1 = str1.replace(/\S*\.(.*)$/gi,"$1");
 console.log(str1);
 
+var str2 = "abc\t123";
+var data = str2.split("\t");
+console.log(data);
+console.log(data[0].toUpperCase())
+
+
+var str3 = "wfG";
+console.log(str3.toUpperCase())
