@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary2", "ClassLibra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayoutDb", "PlayoutDb\PlayoutDb.csproj", "{6EB777D5-5AE0-4876-963A-AFA74AD121A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{1236113B-A213-4B4F-95B5-C06ED2BFB2D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{AF6ACCDD-5DBF-4C2C-8603-0AF844F55D1B}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -65,6 +69,14 @@ Global
 		{6EB777D5-5AE0-4876-963A-AFA74AD121A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EB777D5-5AE0-4876-963A-AFA74AD121A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EB777D5-5AE0-4876-963A-AFA74AD121A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1236113B-A213-4B4F-95B5-C06ED2BFB2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1236113B-A213-4B4F-95B5-C06ED2BFB2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1236113B-A213-4B4F-95B5-C06ED2BFB2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1236113B-A213-4B4F-95B5-C06ED2BFB2D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF6ACCDD-5DBF-4C2C-8603-0AF844F55D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF6ACCDD-5DBF-4C2C-8603-0AF844F55D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF6ACCDD-5DBF-4C2C-8603-0AF844F55D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF6ACCDD-5DBF-4C2C-8603-0AF844F55D1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

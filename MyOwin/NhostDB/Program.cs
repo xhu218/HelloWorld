@@ -12,17 +12,47 @@ namespace NhostDB
 {
     class Program
     {
+
+        static DatabaseConfiguration config = new DatabaseConfiguration
+        {
+            DatabaseType = DatabaseType.MySql,
+            Encoding = "utf8",
+            DatabaseName = "mldb",
+            Username = "mldba",
+            Password = "sobeydba",
+            DatabaseServer = "172.16.168.205",
+            Pooling = true,
+            MaximumPoolSize = 5
+
+
+        };
+
+
+
+
+        static Database db = DatabaseHelper.CreateDatabase(config);
+
         static void Main(string[] args)
         {
 
-            //TestGen2SmmUserLoginInfo();
-            //TestSelfTab1Info();
+            CMApi_IngestWFTable ingest = new CMApi_IngestWFTable(db);
+            ingest.AddIngestWF(new CMApi_IngestWF { CREATETIME = DateTime.Now, DSTOBJID = "wfg", SRCOBJID = "wfg", TARGETMOSID = "wfg", USERTOKEN = "wfg" });
 
+
+            //TestSelfTab1Info();
+            //TestGen2SmmUserLoginInfo();
+            Console.WriteLine(db.ConnectionString);
+            Console.ReadLine();
+            
+
+            /*
+            
             for (var index = 0; index < 80; index++)
             {
                 int j = index;
                 Task task = new Task(delegate()
                 {
+
 
                     Ado ado = new Ado();
                     ado.doTest(j);
@@ -31,6 +61,9 @@ namespace NhostDB
 
 
             }
+            */
+
+
             Console.Read();
 
 
@@ -40,67 +73,90 @@ namespace NhostDB
 
         private static void TestSelfTab1Info()
         {
-            DatabaseConfiguration config = new DatabaseConfiguration
+            for (var index = 0; index < 10; index++)
             {
-                DatabaseType = DatabaseType.MySql,
-                Encoding = "ascii",
-                DatabaseName = "mydatabase",
-                Username = "mysql",
-                Password = "mysql",
-                DatabaseServer = "centos1",
-                Pooling = true,
-                MaximumPoolSize = 10,
+
+                DatabaseConfiguration config = new DatabaseConfiguration
+                {
+                    DatabaseType = DatabaseType.MySql,
+                    Encoding = "ascii",
+                    DatabaseName = "mydatabase",
+                    Username = "mysql",
+                    Password = "mysql",
+                    DatabaseServer = "centos1",
+                    Pooling = true,
+                    MaximumPoolSize = 10,
 
 
 
-            };
+                };
+
+                var j = index;
+
+                Task task = new Task(delegate()
+               {
+                   Database db = DatabaseHelper.CreateDatabase(config);
+
+                   tab1Table user = new tab1Table(db);
+
+                   for (var i = 0; i < 200; i++)
+                   {
+
+                       var x = user.Login();
+
+                       Console.WriteLine(String.Format("{0} {1}   {2} {3}", j, x.ToString(), user.Add(), user.Login()));
+
+                       //Console.WriteLine(String.Format("Current Date Count is :{0} ", x.ToString()));
+
+                       //Console.WriteLine(String.Format("the add fun result is :{0}", user.Add()));
+
+                       //Console.WriteLine(String.Format("Current Date Count is :{0} ", user.Login().ToString()));
+                   }
+
+               });
+                task.Start();
 
 
-            Database db = DatabaseHelper.CreateDatabase(config);
-
-            tab1Table user = new tab1Table(db);
-
-            var x = user.Login();
-            Console.WriteLine(String.Format("Current Date Count is :{0} ", x.ToString()));
-
-            Console.WriteLine(String.Format("the add fun result is :{0}", user.Add()));
-
-            Console.WriteLine(String.Format("Current Date Count is :{0} ", user.Login().ToString()));
+            }
         }
 
-        private static void TestGen2SmmUserLoginInfo()
+        private static void  TestGen2SmmUserLoginInfo()
         {
-            DatabaseConfiguration config = new DatabaseConfiguration
+
+
+
+            for (var index = 0; index < 80; index++)
             {
-                DatabaseType = DatabaseType.MySql,
-                Encoding = "utf8",
-                DatabaseName = "mldb",
-                Username = "mldba",
-                Password = "sobeydba",
-                DatabaseServer = "172.16.168.205",
-                Pooling = true,
-                MaximumPoolSize = 10
 
+              
 
-            };
+         
 
+                Task task = new Task(delegate()
+                {
+                   
 
-            Database db = DatabaseHelper.CreateDatabase(config);
+                    for (var i = 0; i < 1000; i++)
+                    {
 
-            SmmUserlogininfoTable user = new SmmUserlogininfoTable(db);
+                        SmmUserlogininfoTable user = new SmmUserlogininfoTable(db);
 
-            for (var index = 0; index < 100; index++)
-            {
-                Console.WriteLine(index);
+                        var db1 = db;
+                        var user1 = user;
 
-                var x = user.Login();
-                Console.WriteLine(String.Format("Current Date Count is :{0} ", x.ToString()));
+                        var x = user1.Login();
 
-                Console.WriteLine(String.Format("the add fun result is :{0}", user.Add()));
+                        Console.WriteLine(String.Format("{0} {1}   {2} {3}", i, x.ToString(), user1.Add(), user1.Login()));
 
-                Console.WriteLine(String.Format("Current Date Count is :{0} ", user.Login().ToString()));
+                        //Console.WriteLine(String.Format("Current Date Count is :{0} ", x.ToString()));
 
-                System.Threading.Thread.Sleep(10);
+                        //Console.WriteLine(String.Format("the add fun result is :{0}", user.Add()));
+
+                        //Console.WriteLine(String.Format("Current Date Count is :{0} ", user.Login().ToString()));
+                    }
+
+                });
+                task.Start();
             }
         }
     }
@@ -114,22 +170,24 @@ namespace NhostDB
         private object _locker = new object();
         public void doTest(int index)
         {
-            for (var i = 0; i < 5; i++)
+            for (var i = 0; i < 1000; i++)
             {
                 //var connStr = String.Format("server={0};user id={1};password={2};database={3};pooling=True;allowzerodatetime=True;allowuservariables=True;minpoolsize=10;characterset=utf8",
                 //   "10.0.100.10", "sdba", "sdba", "mldb");
 
-                var connStr = "server=172.16.168.205;user id=sdba;password=sdba;database=mldb;pooling=True;allowzerodatetime=True;allowuservariables=True;characterset=utf8";
+                var connStr = "server=172.16.168.205;user id=sdba;password=sdba;database=mldb;pooling=True;minpoolsize=0;maxpoolsize=5;allowzerodatetime=True;allowuservariables=True;characterset=utf8";
                 //var connStr = "server=10.0.100.11;user id=mldba;password=mldba;database=mldb;pooling=True";
                 //connStr = Properties.Settings.Default.connStr;
                 MySqlConnection conn = new MySqlConnection(connStr);
                 conn.Open();
+               // Console.WriteLine("ADO OPEN");
                 var strsql = "select count(*) from cmapi_ding where usercode='" + Guid.NewGuid().ToString("N") + "'";
                 MySqlCommand mycmd = new MySqlCommand(strsql, conn);
 
                 var c = mycmd.ExecuteScalar();
-                System.Threading.Thread.Sleep(1000);
-                conn.Close();
+                //System.Threading.Thread.Sleep(5000);
+                conn.Dispose();
+                //System.Threading.Thread.Sleep(1);
                 //lock (_locker)
                 //    count++;
                 Console.WriteLine(String.Format("{0}   {1}   {2}   {3}    *{4}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), index, i, c, count));
@@ -293,14 +351,15 @@ namespace NhostDB
 
 
 
-        public long Login()
+        public long  Login()
         {
 
             try
             {
                 var loginObjs = from l in this.AsQueryable()
-
+                                where l.loginip == Guid.NewGuid().ToString("N")
                                 select l;
+                                 
                 return loginObjs.ToList().LongCount();
 
 
