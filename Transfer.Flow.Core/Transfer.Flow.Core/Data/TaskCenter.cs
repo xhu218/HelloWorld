@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,37 +23,81 @@ namespace Transfer.Flow.Core.Data
             this.MaxTaskCount = taskcount;
             for (var index = 0; index < MaxTaskCount; index++)
             {
-                this.AddTask(new Transfer.Flow.Core.TaskInfo());
+                TaskInfo taskInfo = new Transfer.Flow.Core.TaskInfo();
+                taskInfo.TaskChanged += taskInfo_TaskChanged;
+                this.AddTask(taskInfo);
+                Trace.Write(String.Format("Add new task {0}", taskInfo.ToString()));
+
+            }
+        }
+
+        void taskInfo_TaskChanged(object sender, TaskInfo e)
+        {
+            Trace.Write(String.Format("Task Guid = {0} task status = {1}", e.TaskGuid, e.TaskStatus));
+            if (e.TaskStatus == TaskStatus.Successed || e.TaskStatus == TaskStatus.Failed)
+            {
+                try
+                {
+                    this.tasklist.RemoveAll(task => task.TaskGuid == e.TaskGuid);
+                }
+                catch { }
             }
         }
 
         public virtual void TaskExecute()
         {
-            Task monitor = new Task(() => {            
-                         
-            while (true)
+            Task monitor = new Task(() =>
             {
-                var excutingCount = this.tasklist.Count(i=>i.TaskStatus == TaskStatus.Excuting);               
-                if(excutingCount <MaxTaskCount)
+
+                while (true)
                 {
-                    for(var index=excutingCount;index<=MaxTaskCount;index++)
+                    try
                     {
-                        TaskInfo taskInfo =  this.tasklist.Find(i => i.TaskStatus == TaskStatus.Wait);
-                        if (taskInfo != null)
+
+                        var excutingCount = this.tasklist.Count(i => i.TaskStatus == TaskStatus.Excuting);
+                        var waitCount = this.tasklist.Count(i => i.TaskStatus == TaskStatus.Wait);
+
+                        Trace.WriteLine(String.Format("Excuting task count = {0}, wait task count = {1}, task queue count = {2} max task count ={3}", excutingCount, waitCount, this.tasklist.Count, this.MaxTaskCount));
+                        if (excutingCount < MaxTaskCount)
                         {
-                            Task task = new Task(() => { taskInfo.Start(); });
-                            task.Start();
-                         
+                            for (var index = excutingCount; index <= MaxTaskCount; index++)
+                            {
+                                TaskInfo taskInfo = this.tasklist.Find(i => i.TaskStatus == TaskStatus.Wait);
+                                if (taskInfo != null)
+                                {
+                                    taskInfo.TaskStatus = TaskStatus.Excuting;
+                                    Task task = new Task(() =>
+                                    {
+                                      
+                                        taskInfo.Start();
+                                        Trace.Write(String.Format("start new task {0}", taskInfo.ToString()));
+
+                                    });
+                                    task.Start();
+
+                                }
+                                else
+                                {
+                                    TaskInfo t = new Transfer.Flow.Core.TaskInfo();
+                                    t.TaskChanged += taskInfo_TaskChanged;
+
+                                    this.AddTask(t);
+                                    Trace.Write(String.Format("Add new task {0}", t.ToString()));
+                                }
+                            }
                         }
+                        System.Threading.Thread.Sleep(5000);
                     }
-                }             
-                System.Threading.Thread.Sleep(10);
-            
-            }
+                    catch (Exception ex)
+                    {
+                        Trace.TraceError(ex.ToString());
+                    }
+
+                }
             });
 
-            
-            
+
+
             monitor.Start();
 
         }
@@ -67,7 +112,7 @@ namespace Transfer.Flow.Core.Data
 
         public virtual bool Remove(TaskInfo task)
         {
-            tasklist.RemoveAll(x => x.TaskId == task.TaskId);
+            tasklist.RemoveAll(x => x.TaskGuid == task.TaskGuid);
             return true;
         }
 

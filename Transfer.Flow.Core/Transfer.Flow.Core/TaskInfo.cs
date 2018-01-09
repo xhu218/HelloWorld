@@ -13,7 +13,7 @@ namespace Transfer.Flow.Core
         /// <summary>
         /// 
         /// </summary>
-        public string TaskId { get; set; }
+        public string TaskGuid { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -37,12 +37,20 @@ namespace Transfer.Flow.Core
 
         public TaskInfo() 
         {
+            System.Threading.Thread.Sleep(2);
+            this.TaskGuid = Guid.NewGuid().ToString("n");
+
             Steps = new List<IStep>();
 
             Steps.Add(new GetArhiveMaterialIdStep());
             Steps.Add(new GetArchiveMaterialInfoStep());
             Steps.Add(new CheckArchiveMaterialFileStatusStep());
 
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Task Guid = {0} task status = {1}", this.TaskGuid, this.TaskStatus);
         }
 
         public bool Start() 

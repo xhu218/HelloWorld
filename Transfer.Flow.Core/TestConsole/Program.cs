@@ -17,8 +17,8 @@ namespace TestConsole
 
 
            
-            TaskCenter taskCenter = new TaskCenter(10);
-            taskCenter.AddTask(new Transfer.Flow.Core.TaskInfo { TaskProtocol = "111" });
+            TaskCenter taskCenter = new TaskCenter(3);
+            //taskCenter.AddTask(new Transfer.Flow.Core.TaskInfo { TaskProtocol = "111" });
           
             taskCenter.TaskExecute();
            

@@ -58,7 +58,9 @@ namespace Transfer.Flow.Core.Process
         public bool Execute(TaskInfo taskInfo)
         {
             Trace.WriteLine(this.StepName);
-            return false;
+            System.Threading.Thread.Sleep(3000);
+            return true;
+            //return false;
         }
 
         public bool Revoke()

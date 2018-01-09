@@ -63,6 +63,7 @@ namespace Transfer.Flow.Core.Process
             }
 
             Trace.WriteLine(this.StepName);
+            System.Threading.Thread.Sleep(3000);
             return true;
         }
 

@@ -57,7 +57,9 @@ namespace Transfer.Flow.Core.Process
 
         public bool Execute(TaskInfo taskInfo)
         {
+
             Trace.WriteLine(this.StepName);
+            System.Threading.Thread.Sleep(3000);
             Random ran = new Random();
             var r = ran.Next(1, 3);
             r=2;
