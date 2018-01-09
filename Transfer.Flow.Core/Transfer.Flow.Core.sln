@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transfer.Flow.Core", "Transfer.Flow.Core\Transfer.Flow.Core.csproj", "{6A3AFE0A-85D0-4C0A-A9CC-7016FAA6CAF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{0070B91B-0AB3-4510-89AA-CA390BE63BB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A3AFE0A-85D0-4C0A-A9CC-7016FAA6CAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A3AFE0A-85D0-4C0A-A9CC-7016FAA6CAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A3AFE0A-85D0-4C0A-A9CC-7016FAA6CAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A3AFE0A-85D0-4C0A-A9CC-7016FAA6CAF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0070B91B-0AB3-4510-89AA-CA390BE63BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0070B91B-0AB3-4510-89AA-CA390BE63BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0070B91B-0AB3-4510-89AA-CA390BE63BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0070B91B-0AB3-4510-89AA-CA390BE63BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
