@@ -7,66 +7,9 @@ using System.Threading.Tasks;
 
 namespace Transfer.Flow.Core.Process
 {
-    class GenerateArhiveMaterialLowQualityStep:IStep
+    class GenerateArhiveMaterialLowQualityStep:StepBase
     {
-        public string StepGuid
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public GenerateArhiveMaterialLowQualityStep(TaskInfo taskInfo) : base(taskInfo) { }
 
-        public int StepIndex
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string StepName
-        {
-            get { return "GenerateArhiveMaterialLowQualityStep"; }
-        }
-
-        public int SetpId
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public TaskInfo CurrentStatus
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool Execute(TaskInfo taskInfo)
-        {
-            Trace.WriteLine(this.StepName);
-            System.Threading.Thread.Sleep(3000);
-            return true;
-            //return false;
-        }
-
-        public bool Revoke()
-        {
-            Trace.WriteLine(this.StepName);
-            return true;
-        }
     }
 }

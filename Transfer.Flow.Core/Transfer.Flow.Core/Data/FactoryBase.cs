@@ -10,9 +10,9 @@ namespace Transfer.Flow.Core.Data
     public class FactoryBase
     {
         public static FactoryBase PluginInstance{get;set;}
-        public List<IStep> GetPlugins()
+        public List<StepBase> GetPlugins()
         {
-            List<IStep> FlowList = new List<IStep>();
+            List<StepBase> FlowList = new List<StepBase>();
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Plugin");
             if (!Directory.Exists(path))
             {
@@ -22,8 +22,8 @@ namespace Transfer.Flow.Core.Data
             foreach(var file in Files)
             {
                 Assembly assemlys = Assembly.LoadFrom(file);
-                Type type = assemlys.GetTypes().FirstOrDefault(x => x.GetInterfaces().FirstOrDefault(t=>t.Name == typeof(IStep).Name) !=null);
-                var obj = Activator.CreateInstance(type) as IStep;
+                Type type = assemlys.GetTypes().FirstOrDefault(x => x.GetInterfaces().FirstOrDefault(t=>t.Name == typeof(StepBase).Name) !=null);
+                var obj = Activator.CreateInstance(type) as StepBase;
                 FlowList.Add(obj);
             }
             FlowList = FlowList.OrderBy(x => x.SetpId).ToList();

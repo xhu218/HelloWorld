@@ -7,65 +7,21 @@ using System.Threading.Tasks;
 
 namespace Transfer.Flow.Core.Process
 {
-    class UpdateArchiveMaterialHighLostStep:IStep
+    public class UpdateArchiveMaterialHighLostStep:StepBase
     {
-        public string StepGuid
+        public UpdateArchiveMaterialHighLostStep(TaskInfo taskInfo) : base(taskInfo) 
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+
         }
 
-        public int StepIndex
+        public override bool Execute()
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            return base.Execute();
         }
 
-        public string StepName
+        public override bool Revoke()
         {
-            get { return "UpdateArchiveMaterialHighLostStep"; }
-        }
-
-        public int SetpId
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public TaskInfo CurrentStatus
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool Execute(TaskInfo taskInfo)
-        {
-            Trace.WriteLine(this.StepName);
-            System.Threading.Thread.Sleep(3000);
-            return true;
-        }
-
-        public bool Revoke()
-        {
-            Trace.WriteLine(this.StepName);
-            return true;
+            return base.Revoke();
         }
     }
 }

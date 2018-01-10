@@ -48,7 +48,7 @@
     <Compile Include="Process\GenerateArhiveMaterialLowQualityStep.cs" />
     <Compile Include="Process\GetArchiveMaterialInfoStep.cs" />
     <Compile Include="Process\GetArhiveMaterialIdStep.cs" />
-    <Compile Include="IStep.cs" />
+    <Compile Include="StepBase.cs" />
     <Compile Include="Process\InsertArchiveMaterial2HiveStep.cs" />
     <Compile Include="Process\UpdateArchiveMaterialHighLostStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

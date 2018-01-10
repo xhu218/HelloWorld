@@ -38,6 +38,7 @@ namespace Transfer.Flow.Core.Data
             {
                 try
                 {
+                    e.TaskChanged -= taskInfo_TaskChanged;
                     this.tasklist.RemoveAll(task => task.TaskGuid == e.TaskGuid);
                 }
                 catch { }
@@ -48,13 +49,11 @@ namespace Transfer.Flow.Core.Data
         {
             Task monitor = new Task(() =>
             {
-
                 while (true)
                 {
                     try
                     {
-
-                        var excutingCount = this.tasklist.Count(i => i.TaskStatus == TaskStatus.Excuting);
+                        var excutingCount = this.tasklist.Count(i => i.TaskStatus == TaskStatus.Migrating);
                         var waitCount = this.tasklist.Count(i => i.TaskStatus == TaskStatus.Wait);
 
                         Trace.WriteLine(String.Format("Excuting task count = {0}, wait task count = {1}, task queue count = {2} max task count ={3}", excutingCount, waitCount, this.tasklist.Count, this.MaxTaskCount));
@@ -65,12 +64,10 @@ namespace Transfer.Flow.Core.Data
                                 TaskInfo taskInfo = this.tasklist.Find(i => i.TaskStatus == TaskStatus.Wait);
                                 if (taskInfo != null)
                                 {
-                                    taskInfo.TaskStatus = TaskStatus.Excuting;
+                                    taskInfo.TaskStatus = TaskStatus.Migrating;
                                     Task task = new Task(() =>
-                                    {
-                                      
-                                        taskInfo.Start();
-                                        Trace.Write(String.Format("start new task {0}", taskInfo.ToString()));
+                                    {                                      
+                                        taskInfo.Start();                                       
 
                                     });
                                     task.Start();
@@ -80,7 +77,6 @@ namespace Transfer.Flow.Core.Data
                                 {
                                     TaskInfo t = new Transfer.Flow.Core.TaskInfo();
                                     t.TaskChanged += taskInfo_TaskChanged;
-
                                     this.AddTask(t);
                                     Trace.Write(String.Format("Add new task {0}", t.ToString()));
                                 }

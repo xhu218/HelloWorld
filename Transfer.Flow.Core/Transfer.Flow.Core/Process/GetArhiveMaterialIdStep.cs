@@ -10,67 +10,41 @@ namespace Transfer.Flow.Core.Process
     /// <summary>
     /// 
     /// </summary>
-    class GetArhiveMaterialIdStep:IStep
+    public class GetArhiveMaterialIdStep:StepBase
     {
-        private String stepGuid;
-        public string StepGuid
+        public GetArhiveMaterialIdStep(TaskInfo taskInfo)
+            : base(taskInfo)
         {
-            get { return stepGuid; }
-            set { stepGuid = value; }
+            /*
+             * 记录素材的GUID
+             */
+            this.InputArgs = taskInfo.ClipGuid;
         }
 
-
-
-        public string StepName
-        {
-            get { return "GetArhiveMaterialIdStep"; }
-        }
-
-        private int stepId;
-        public int SetpId
-        {
-            get {return stepId; }
-            set { stepId = value; }
-        }
-
-        private TaskInfo currentStatus;
-
-        public TaskInfo CurrentStatus
-        {
-            get 
-           {
-               return currentStatus;
-            }
-            set 
+        public override bool Execute()
+        {            
+            return base.Execute();
+            if (String.IsNullOrEmpty(this.InputArgs.ToString()))
             {
-                currentStatus = value;
+                //如果为空，那么从SQLLITE当中获取到素材的的ENTITYID,CLIPGUI,FOLDERPATH,CLIP NAME
+
+                //TODO: MYQ
+                this.TaskInfo.ClipGuid = "";
+                this.TaskInfo.EntityId = 0;
+                this.TaskInfo.TaskName = "wfg" + "clip name";
+                this.TaskInfo.LogicalPath = "";
+
             }
-        }
-
-        public bool Execute(TaskInfo taskInfo)
-        {
-
-            if (taskInfo.TaskProtocol == null)
+            else 
             {
-                //从数据库里获取ID
-                taskInfo.TaskProtocol = "123";
-                this.CurrentStatus.TaskProtocol = "123";
-            }
-            else if (taskInfo.TaskProtocol is string) {
 
-                //保存当前状态
-                this.CurrentStatus.TaskProtocol = taskInfo.TaskProtocol;
             }
-
-            Trace.WriteLine(this.StepName);
-            System.Threading.Thread.Sleep(3000);
-            return true;
         }
 
-        public bool Revoke()
+        public override bool Revoke()
         {
-            Trace.WriteLine(this.StepName);
-            return true;
+            return base.Revoke();
         }
+       
     }
 }
