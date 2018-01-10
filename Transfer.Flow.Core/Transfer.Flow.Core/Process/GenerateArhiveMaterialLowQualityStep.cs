@@ -9,7 +9,21 @@ namespace Transfer.Flow.Core.Process
 {
     class GenerateArhiveMaterialLowQualityStep:StepBase
     {
-        public GenerateArhiveMaterialLowQualityStep(TaskInfo taskInfo) : base(taskInfo) { }
+        public GenerateArhiveMaterialLowQualityStep(TaskInfo taskInfo) : base(taskInfo) {
+            this.StepName = "Create Low";
+        }
+
+        public override bool Execute()
+        {
+            //TODO:YRF 构造MPC协议，产生生成低质量任务
+            return base.Execute();
+        }
+
+        public override bool Revoke()
+        {
+            //不需要干任何事情
+            return base.Revoke();
+        }
 
     }
 }

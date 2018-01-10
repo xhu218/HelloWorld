@@ -11,6 +11,37 @@ namespace Transfer.Flow.Core.Process
     {
         public InsertArchiveMaterial2HiveStep(TaskInfo taskInfo)
             : base(taskInfo)
-        { }
+        {
+            this.StepName = "Save Clip";
+        }
+
+        public override bool Execute()
+        {
+            //TODO:请根据TaskInfo.FileStatus 的状态构造入库协议
+            switch (this.TaskInfo.FileStatus)
+            {
+                case FileStatus.CLIP_WITH_NO_RES:
+                    //逻辑都到这里了，不存在这种情况
+                    break;
+                case FileStatus.CLIP_WITH_ONLY_LOW_RES:
+                    //只入低质量
+                    break;
+                case FileStatus.TRANSCODING_LOW_RES:
+                   //只入高质量
+                    break;
+                case FileStatus.MIGRATING_DRIECTLY:
+                    //高低质量都入
+                    break;
+                default:
+                    break;
+            }
+            return base.Execute();
+        }
+
+        public override bool Revoke()
+        {
+            return base.Revoke();
+            //不干任何事情
+        }
     }
 }
