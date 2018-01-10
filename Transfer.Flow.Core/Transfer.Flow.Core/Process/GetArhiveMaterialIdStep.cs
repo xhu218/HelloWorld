@@ -15,16 +15,13 @@ namespace Transfer.Flow.Core.Process
         public GetArhiveMaterialIdStep(TaskInfo taskInfo)
             : base(taskInfo)
         {
-            /*
-             * 记录素材的GUID
-             */
-            this.InputArgs = taskInfo.ClipGuid;
+            this.StepName = "Get Material ID";
         }
 
         public override bool Execute()
         {            
             return base.Execute();
-            if (String.IsNullOrEmpty(this.InputArgs.ToString()))
+            if (String.IsNullOrEmpty(TaskInfo.ClipGuid))
             {
                 //如果为空，那么从SQLLITE当中获取到素材的的ENTITYID,CLIPGUI,FOLDERPATH,CLIP NAME
 
@@ -37,13 +34,14 @@ namespace Transfer.Flow.Core.Process
             }
             else 
             {
-
+                //通过界面REDO触发的，因此不用做任何处理
             }
         }
 
         public override bool Revoke()
         {
             return base.Revoke();
+            //不用做任何处理
         }
        
     }

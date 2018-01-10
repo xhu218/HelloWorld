@@ -48,6 +48,18 @@ namespace Transfer.Flow.Core
             }
         }
 
+        private object taskProtocol;
+        public object TaskProtocol {
+
+            get { return taskProtocol; }
+            set { this.taskProtocol = value; }
+        }
+
+        private FileStatus fileStatus;
+        public FileStatus FileStatus {
+            get { return fileStatus; }
+            set { this.fileStatus = value; }
+        }
 
         public string TaskGuid { get; set; }
 
@@ -152,7 +164,7 @@ namespace Transfer.Flow.Core
         Failed = 3
     }
 
-    public enum TaskType
+    public enum FileStatus
     {
         CLIP_WITH_NO_RES = 1,
         CLIP_WITH_ONLY_LOW_RES = 2,
