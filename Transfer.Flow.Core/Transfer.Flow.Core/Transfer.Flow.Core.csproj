@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Data\FactoryBase.cs" />
     <Compile Include="Data\TaskCenter.cs" />
-    <Compile Include="InsertArchiveMaterial2HiveStep.cs" />
+    <Compile Include="Process\InsertArchiveMaterial2HiveStep.cs" />
     <Compile Include="Process\CheckArchiveMaterialFileStatusStep.cs" />
     <Compile Include="Process\CopyArchiveMaterialLowQualityStep.cs" />
     <Compile Include="Process\GenerateArhiveMaterialLowQualityStep.cs" />
