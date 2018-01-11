@@ -16,6 +16,8 @@ namespace TestConsole
         //private const long m_maxfileszie = 1024;
         private StreamWriter streamWriter;
 
+        private static object locker = new object();
+
         public LogerTraceListener()
         {
             GeneratFileName();
@@ -51,8 +53,11 @@ namespace TestConsole
             message = Format(message);
             CheckFileSize();
             //File.AppendAllText(m_fileName, message);
-            streamWriter.Write(message);
-            streamWriter.Flush();
+            lock (locker)
+            {
+                streamWriter.Write(message);
+                streamWriter.Flush();
+            }
             Console.Write(message);
         }
 
@@ -82,7 +87,7 @@ namespace TestConsole
             builder.AppendFormat("{0}\t{1}\t{2}\t{3}\r\n", 
                 DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), 
                 System.Threading.Thread.CurrentThread.ManagedThreadId,
-                sf[5].GetMethod().Name,
+                sf[6].GetMethod().Name,
                 category);
 
 

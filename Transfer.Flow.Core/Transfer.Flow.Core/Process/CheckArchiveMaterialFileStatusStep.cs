@@ -9,15 +9,27 @@ namespace Transfer.Flow.Core.Process
 {
     class CheckArchiveMaterialFileStatusStep:StepBase
     {
+        public CheckArchiveMaterialFileStatusStep() { }
         public CheckArchiveMaterialFileStatusStep(TaskInfo taskInfo) : base(taskInfo) {
 
             this.StepName = "check material file status";
         }
         public override bool Execute()
         {
-            
-            //TODO:MYQ
-            this.TaskInfo.FileStatus = FileStatus.CLIP_WITH_NO_RES;
+            base.Execute();
+            //TODO:MYQ,
+            /*根据文件列表,给文件状态赋值
+             FileState = FileState_Online  QualityType = 0 表示Cache低质量
+             FileState = FileState_Archived  QualityType = 1 代表Raid上面的高质量
+             注意文件列表里是有重复的，判断的时候不用每个都判断
+             */
+
+           // this.TaskInfo.FileStatus = FileStatus.CLIP_WITH_NO_RES;//TODO:MYQ请给它赋值
+
+            Random random = new Random();
+
+            this.TaskInfo.FileStatus = (FileStatus)random.Next(1, 4);
+
             switch (this.TaskInfo.FileStatus)
             {
                 case FileStatus.CLIP_WITH_NO_RES:
@@ -44,13 +56,15 @@ namespace Transfer.Flow.Core.Process
                 default:
                     break;
             }
-            return base.Execute();
+            return true;
         }
 
         public override bool Revoke()
         {
             //不做任何事情
-            return base.Revoke();
+            base.Revoke();
+
+            return true;
         }
         
     }

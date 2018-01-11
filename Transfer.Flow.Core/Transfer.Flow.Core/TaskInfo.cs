@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 using Transfer.Flow.Core.Process;
 namespace Transfer.Flow.Core
 {
     public class TaskInfo
     {
+
+
         public event EventHandler<TaskInfo> TaskChanged;
 
-        private int entityId;
-        public int EntityId
+        private ulong entityId;
+        public ulong EntityId
         {
             get
             {
@@ -48,15 +53,18 @@ namespace Transfer.Flow.Core
             }
         }
 
+        [XmlIgnore]
         private object taskProtocol;
-        public object TaskProtocol {
+        public object TaskProtocol
+        {
 
             get { return taskProtocol; }
             set { this.taskProtocol = value; }
         }
 
         private FileStatus fileStatus;
-        public FileStatus FileStatus {
+        public FileStatus FileStatus
+        {
             get { return fileStatus; }
             set { this.fileStatus = value; }
         }
@@ -70,15 +78,18 @@ namespace Transfer.Flow.Core
         public TaskStatus TaskStatus { get; set; }
 
         public int CurrentStepIndex { get; set; }
+
+        public String ClipName { get; set; }
         /// <summary>
         /// 
         /// </summary>
+
+        [XmlIgnore]
         public List<StepBase> Steps { get; set; }
 
         public TaskInfo()
         {
-            System.Threading.Thread.Sleep(2);
-            this.TaskGuid = Guid.NewGuid().ToString("n");
+
 
             Steps = new List<StepBase>();
 
@@ -97,25 +108,60 @@ namespace Transfer.Flow.Core
 
         public override string ToString()
         {
-            return String.Format("Task Guid = {0} task status = {1}", this.TaskGuid, this.TaskStatus);
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine(String.Format("\r\nTask Guid : \t\t {0}",this.TaskGuid));
+                sb.AppendLine(String.Format("Task Name : \t\t {0}",this.TaskName));
+                sb.AppendLine(String.Format("Task Status : \t\t {0}",this.TaskStatus));
+                sb.AppendLine(String.Format("File Status : \t\t {0}",this.FileStatus));
+
+                sb.AppendLine(String.Format("Current Step : \t\t {0} / {1}\t{2} ", this.CurrentStepIndex, this.Steps.Count, this.Steps[this.CurrentStepIndex].StepName));               
+                
+                sb.AppendLine(String.Format("Clip Guid : \t\t {0}",this.clipGuid));
+                sb.AppendLine(String.Format("Entity id : \t\t {0}",this.EntityId));
+                sb.AppendLine(String.Format("Clip Name : \t\t {0}", this.ClipName));
+                sb.AppendLine(String.Format("Logic Path : \t\t {0}",this.logicalPath));                   
+
+                sb.AppendLine(String.Format("STEP ID \t STEP GUID \t\t\t\t STEP NAME"));
+                sb.AppendLine("------------------------------------------------------------------------");
+                var index = 0;
+                foreach (var step in this.Steps)
+                {
+                    sb.AppendLine(String.Format("{0} \t\t {1} \t {2}",index++,step.StepGuid,step.StepName));
+                }
+                
+                
+
+                return sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceError(ex.ToString());
+                return ex.ToString();
+
+            }
         }
 
         public bool Start()
         {
-            this.TaskStatus = TaskStatus.Migrating;
-            Trace.Write(String.Format("start new task {0}", this.ToString()));
+            this.TaskStatus = TaskStatus.Excuting;
+            Trace.TraceInformation(String.Format("start new task  \r\n{0}", this.ToString()));
 
-            while (CurrentStepIndex < this.Steps.Count)
+
+            do
             {
                 try
                 {
                     if (this.Steps[CurrentStepIndex].Execute() == true)
                     {
-                        CurrentStepIndex++;
+
+                        //做成功了，只用通知上界面层
                         if (this.TaskChanged != null)
                         {
                             this.TaskChanged(this, this);
                         }
+
                     }
                     else
                     {
@@ -128,10 +174,16 @@ namespace Transfer.Flow.Core
                     HandleErrorStep(ex);
                     break;
                 }
-            }
+            } while (CurrentStepIndex++ < this.Steps.Count);
             if (this.TaskChanged != null)
             {
+                if (this.TaskStatus != Core.TaskStatus.Failed)
+                {
+                    this.TaskStatus = Core.TaskStatus.Successed;
+                }
                 this.TaskChanged(this, this);
+                //TODO:MYQ UPDATE TO DB ,
+                //this.FileStatus,  this.TaskStatus,this.ErrorMessage,  this.CompleteTime
             }
 
             return true;
@@ -139,16 +191,17 @@ namespace Transfer.Flow.Core
 
         private void HandleErrorStep(Exception ex)
         {
-            //当前这步做失败了，需要通知上去，并且入库
+
             this.TaskStatus = Core.TaskStatus.Failed;
-            this.ErrorMessage = String.Format("Step {0} failed :{1}", this.Steps[i].StepName, ex.Message);
+            this.ErrorMessage = String.Format("Step {0} failed :{1}", this.Steps[CurrentStepIndex].StepName, ex.Message);
             for (var i = CurrentStepIndex; i >= 0; i--)
             {
                 this.Steps[i].Revoke();
             }
-            //TODO: 更新记录到任务表里，
-            //状态设置为FAILED,并且附带详细信息，哪一步失败了，错误的详细信息是什么
-
+            if (this.TaskChanged != null)
+            {
+                this.TaskChanged(this, this);
+            }
         }
 
     }
@@ -159,13 +212,14 @@ namespace Transfer.Flow.Core
     public enum TaskStatus
     {
         Wait = 0,
-        Migrating = 1,
+        Excuting = 1,
         Successed = 2,
         Failed = 3
     }
 
     public enum FileStatus
     {
+        UNKOWN = 0,
         CLIP_WITH_NO_RES = 1,
         CLIP_WITH_ONLY_LOW_RES = 2,
         TRANSCODING_LOW_RES = 3,

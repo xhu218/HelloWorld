@@ -9,6 +9,7 @@ namespace Transfer.Flow.Core.Process
 {
     class InsertArchiveMaterial2HiveStep:StepBase
     {
+        public InsertArchiveMaterial2HiveStep() { }
         public InsertArchiveMaterial2HiveStep(TaskInfo taskInfo)
             : base(taskInfo)
         {
@@ -17,6 +18,7 @@ namespace Transfer.Flow.Core.Process
 
         public override bool Execute()
         {
+            base.Execute();
             //TODO:请根据TaskInfo.FileStatus 的状态构造入库协议
             switch (this.TaskInfo.FileStatus)
             {
@@ -35,13 +37,15 @@ namespace Transfer.Flow.Core.Process
                 default:
                     break;
             }
-            return base.Execute();
+            return true;
         }
 
         public override bool Revoke()
         {
-            return base.Revoke();
+            base.Revoke();
             //不干任何事情
+
+            return true;
         }
     }
 }

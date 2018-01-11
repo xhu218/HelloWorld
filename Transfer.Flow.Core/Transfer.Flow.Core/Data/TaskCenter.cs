@@ -18,30 +18,37 @@ namespace Transfer.Flow.Core.Data
 
         private int MaxTaskCount { get; set; }
 
+        //通过此开关控制是否运行
+        private bool Running { get; set; }
+
+
+
         public TaskCenter(int taskcount)
         {
+            Running = true;
             this.MaxTaskCount = taskcount;
             for (var index = 0; index < MaxTaskCount; index++)
             {
-                TaskInfo taskInfo = new Transfer.Flow.Core.TaskInfo();
-                taskInfo.TaskChanged += taskInfo_TaskChanged;
+                TaskInfo taskInfo = GetTaskFromDB();
                 this.AddTask(taskInfo);
-                Trace.Write(String.Format("Add new task {0}", taskInfo.ToString()));
+                Trace.TraceInformation(String.Format("Add new task {0}", taskInfo.ToString()));
 
             }
         }
 
         void taskInfo_TaskChanged(object sender, TaskInfo e)
         {
-            Trace.Write(String.Format("Task Guid = {0} task status = {1}", e.TaskGuid, e.TaskStatus));
+            Trace.TraceInformation(e.ToString());
             if (e.TaskStatus == TaskStatus.Successed || e.TaskStatus == TaskStatus.Failed)
             {
                 try
-                {
-                    e.TaskChanged -= taskInfo_TaskChanged;
-                    this.tasklist.RemoveAll(task => task.TaskGuid == e.TaskGuid);
+                {                  
+                    this.Remove(e);
                 }
-                catch { }
+                catch (Exception ex)
+                {
+                    Trace.TraceError(ex.ToString());
+                }
             }
         }
 
@@ -51,44 +58,47 @@ namespace Transfer.Flow.Core.Data
             {
                 while (true)
                 {
-                    try
+                    if (Running)
                     {
-                        var excutingCount = this.tasklist.Count(i => i.TaskStatus == TaskStatus.Migrating);
-                        var waitCount = this.tasklist.Count(i => i.TaskStatus == TaskStatus.Wait);
-
-                        Trace.WriteLine(String.Format("Excuting task count = {0}, wait task count = {1}, task queue count = {2} max task count ={3}", excutingCount, waitCount, this.tasklist.Count, this.MaxTaskCount));
-                        if (excutingCount < MaxTaskCount)
+                        try
                         {
-                            for (var index = excutingCount; index <= MaxTaskCount; index++)
+                            var excutingCount = this.tasklist.Count(i => i.TaskStatus == TaskStatus.Excuting);
+                            var waitCount = this.tasklist.Count(i => i.TaskStatus == TaskStatus.Wait);
+
+                            Trace.TraceInformation(String.Format("Excuting task count = {0}, wait task count = {1}, task queue count = {2} max task count ={3}", excutingCount, waitCount, this.tasklist.Count, this.MaxTaskCount));
+                            if (excutingCount < MaxTaskCount)
                             {
-                                TaskInfo taskInfo = this.tasklist.Find(i => i.TaskStatus == TaskStatus.Wait);
-                                if (taskInfo != null)
+                                for (var index = excutingCount; index <= MaxTaskCount; index++)
                                 {
-                                    taskInfo.TaskStatus = TaskStatus.Migrating;
-                                    Task task = new Task(() =>
-                                    {                                      
-                                        taskInfo.Start();                                       
+                                    TaskInfo taskInfo = this.tasklist.Find(i => i.TaskStatus == TaskStatus.Wait);
+                                    if (taskInfo != null)
+                                    {
+                                        taskInfo.TaskStatus = TaskStatus.Excuting;
+                                        Task task = new Task(() =>
+                                        {
+                                            taskInfo.Start();
 
-                                    });
-                                    task.Start();
+                                        });
+                                        task.Start();
 
-                                }
-                                else
-                                {
-                                    TaskInfo t = new Transfer.Flow.Core.TaskInfo();
-                                    t.TaskChanged += taskInfo_TaskChanged;
-                                    this.AddTask(t);
-                                    Trace.Write(String.Format("Add new task {0}", t.ToString()));
+                                    }
+                                    else
+                                    {
+
+                                        TaskInfo t = GetTaskFromDB();
+                                        this.AddTask(t);
+                                        Trace.TraceInformation(String.Format("Add new task {0}", t.ToString()));
+                                    }
                                 }
                             }
+                            System.Threading.Thread.Sleep(1000);
                         }
-                        System.Threading.Thread.Sleep(5000);
-                    }
-                    catch (Exception ex)
-                    {
-                        Trace.TraceError(ex.ToString());
-                    }
+                        catch (Exception ex)
+                        {
+                            Trace.TraceError(ex.ToString());
+                        }
 
+                    }
                 }
             });
 
@@ -98,17 +108,44 @@ namespace Transfer.Flow.Core.Data
 
         }
 
+        private TaskInfo GetTaskFromDB()
+        {
+            //从SQLLITE当中获取到素材的的ENTITYID,CLIPGUI,FOLDERPATH,CLIP NAME
+
+            //TODO: MYQ
+            TaskInfo taskInfo = new TaskInfo();
+            taskInfo.EntityId = (ulong)DateTime.Now.Ticks;
+            taskInfo.ClipGuid = Guid.NewGuid().ToString("n").ToUpper();
+            taskInfo.ClipName = "wfg test clip" + DateTime.Now.Ticks;
+
+            taskInfo.TaskGuid = taskInfo.ClipGuid;
+            taskInfo.TaskName = "tv2 lorry migration task" + taskInfo.ClipName;
+            taskInfo.LogicalPath = @"public material\ingest material\";
+
+            return taskInfo;
+
+          
+        }
+
         public virtual bool AddTask(TaskInfo task)
         {
-
-            tasklist.Add(task);
-
+            task.TaskChanged += taskInfo_TaskChanged;
+            lock (locker)
+            {
+                tasklist.Add(task);
+            }
             return true;
         }
 
         public virtual bool Remove(TaskInfo task)
         {
-            tasklist.RemoveAll(x => x.TaskGuid == task.TaskGuid);
+            task.TaskChanged -= taskInfo_TaskChanged;
+            lock (locker)
+            {
+                tasklist.RemoveAll(x => x.TaskGuid == task.TaskGuid);
+              
+
+            }
             return true;
         }
 

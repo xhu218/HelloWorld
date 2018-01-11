@@ -10,6 +10,8 @@ namespace Transfer.Flow.Core
     public class StepBase
     {
 
+        public StepBase() { }
+
         public StepBase(TaskInfo taskInfo) 
         {
             this.TaskInfo = taskInfo;
@@ -32,6 +34,8 @@ namespace Transfer.Flow.Core
         /// 
         /// </summary>
         public TaskInfo TaskInfo { get; set; }
+
+
         
         /// <summary>
         /// 请直接使用当前线程操作，做不了就抛异常出来
@@ -39,7 +43,9 @@ namespace Transfer.Flow.Core
         /// <returns></returns>
         public virtual bool Execute() 
         {
-            Trace.Write(String.Format("start...{0}", this.StepName));
+            Trace.TraceInformation(String.Format("start...{0}", this.StepName));
+            
+            //System.Threading.Thread.Sleep(3000);
             return true;
         }
         
@@ -49,7 +55,7 @@ namespace Transfer.Flow.Core
         /// <returns></returns>
         public virtual bool Revoke()
         {
-            Trace.Write(String.Format("revoke...{0}", this.StepName));
+            Trace.TraceInformation(String.Format("revoke...{0}", this.StepName));
             return true;
         }
 
