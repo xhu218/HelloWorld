@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sobey.Sonaps.SearchService;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -36,6 +37,15 @@ namespace Transfer.Flow.Core
                 return ex.ToString();
 
             }
+
+        }
+
+        public static DCMContentDefine FromXml(String file)
+        {
+            String xml = File.ReadAllText(String.Format(@"{0}\data\{1}.xml", AppDomain.CurrentDomain.BaseDirectory, "636513771333560365"));
+            XmlSerializer xs = new XmlSerializer(typeof(DCMContentDefine));
+            DCMContentDefine root = (DCMContentDefine)xs.Deserialize(new StringReader(xml));
+            return root;
 
         }
 

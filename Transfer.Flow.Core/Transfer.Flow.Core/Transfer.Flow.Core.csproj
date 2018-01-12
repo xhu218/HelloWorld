@@ -50,7 +50,6 @@
     <Compile Include="Process\CopyArchiveMaterialLowQualityStep.cs" />
     <Compile Include="Process\GenerateArhiveMaterialLowQualityStep.cs" />
     <Compile Include="Process\GetArchiveMaterialInfoStep.cs" />
-    <Compile Include="Process\GetArhiveMaterialIdStep.cs" />
     <Compile Include="Reference.cs" />
     <Compile Include="StepBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

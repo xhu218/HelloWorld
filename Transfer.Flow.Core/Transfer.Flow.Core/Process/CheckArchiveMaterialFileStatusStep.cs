@@ -37,7 +37,7 @@ namespace Transfer.Flow.Core.Process
                     throw new Exception("both H & L lost");                    
                 
                 case FileStatus.CLIP_WITH_ONLY_LOW_RES:
-
+                    this.TaskInfo.Steps.Add(new CopyArchiveMaterialLowQualityStep(this.TaskInfo));
                     this.TaskInfo.Steps.Add(new InsertArchiveMaterial2HiveStep(this.TaskInfo));
                     break;
 

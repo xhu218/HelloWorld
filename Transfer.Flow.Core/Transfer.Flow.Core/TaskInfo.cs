@@ -94,7 +94,7 @@ namespace Transfer.Flow.Core
 
             Steps = new List<StepBase>();
 
-            Steps.Add(new GetArhiveMaterialIdStep(this));
+           // Steps.Add(new GetArhiveMaterialIdStep(this));
             Steps.Add(new GetArchiveMaterialInfoStep(this));
             Steps.Add(new CheckArchiveMaterialFileStatusStep(this));
 

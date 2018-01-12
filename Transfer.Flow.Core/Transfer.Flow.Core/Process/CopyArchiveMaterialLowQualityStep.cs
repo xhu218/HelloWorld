@@ -21,6 +21,7 @@ namespace Transfer.Flow.Core.Process
             //TODO:获取POOL路径
             /*
              * 不能把文件直接COPY到POOL目录下面，需要COPY之前的父级目录到POOL
+             * Z:\1\2\3\A.MP3  ----->    Z:\MYQ\1\2\3\A.MP3
              * 请同时更新低质量文件路径到this.TaskInfo.TaskProtocol
              */
 

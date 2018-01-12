@@ -42,8 +42,14 @@ namespace Transfer.Flow.Core.Data
             if (e.TaskStatus == TaskStatus.Successed || e.TaskStatus == TaskStatus.Failed)
             {
                 try
-                {                  
+                {  
+                    //TODO;MYQ更新到数据库
+                    
                     this.Remove(e);
+                    if (this.TaskChanged != null)
+                    {
+                        this.TaskChanged(this, e);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -85,13 +91,13 @@ namespace Transfer.Flow.Core.Data
                                     else
                                     {
 
-                                        TaskInfo t = GetTaskFromDB();
+                                        TaskInfo t = GetTaskFromDB(/*N*/);
                                         this.AddTask(t);
                                         Trace.TraceInformation(String.Format("Add new task {0}", t.ToString()));
                                     }
                                 }
                             }
-                            System.Threading.Thread.Sleep(5000);
+                            System.Threading.Thread.Sleep(1000);
                         }
                         catch (Exception ex)
                         {
@@ -108,9 +114,12 @@ namespace Transfer.Flow.Core.Data
 
         }
 
+        public void Stop() { }
+
         private TaskInfo GetTaskFromDB()
         {
-            //从SQLLITE当中获取到素材的的ENTITYID,CLIPGUI,FOLDERPATH,CLIP NAME
+            //TODO:MQY 从SQLLITE当中获取到素材的的ENTITYID,CLIPGUI,FOLDERPATH,CLIP NAME
+            //把数据库整个状态。
 
             //TODO: MYQ
             TaskInfo taskInfo = new TaskInfo();

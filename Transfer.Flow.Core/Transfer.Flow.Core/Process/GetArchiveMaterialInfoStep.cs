@@ -66,10 +66,6 @@ namespace Transfer.Flow.Core.Process
                       EntityTypeID = "ClipEntity"
                   });
 
-
-
-
-
                   this.TaskInfo.ClipContent = content;
                   Trace.TraceInformation(util.ToXml(content));
                   System.IO.File.WriteAllText(String.Format("{0}/data/{1}.xml", AppDomain.CurrentDomain.BaseDirectory, this.TaskInfo.EntityId),util.ToXml(content));
@@ -78,7 +74,13 @@ namespace Transfer.Flow.Core.Process
             }
             catch (Exception ex)
             {
-                throw ex;   
+                //throw ex;
+                //TODO:MYQ 暂时从文件里取一个元数据出来跑后面流程
+                DCMContentDefine content = util.FromXml(null);
+                this.TaskInfo.ClipContent = content;
+                Trace.TraceInformation(util.ToXml(content));
+                System.IO.File.WriteAllText(String.Format("{0}/data/{1}.xml", AppDomain.CurrentDomain.BaseDirectory, this.TaskInfo.EntityId), util.ToXml(content));
+   
             }
  
          
