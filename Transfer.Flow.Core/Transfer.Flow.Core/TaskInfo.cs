@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sobey.Sonaps.SearchService;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -54,12 +55,12 @@ namespace Transfer.Flow.Core
         }
 
         [XmlIgnore]
-        private object taskProtocol;
-        public object TaskProtocol
+        private DCMContentDefine clipContent;
+        public DCMContentDefine ClipContent
         {
 
-            get { return taskProtocol; }
-            set { this.taskProtocol = value; }
+            get { return clipContent; }
+            set { this.clipContent = value; }
         }
 
         private FileStatus fileStatus;
@@ -111,27 +112,30 @@ namespace Transfer.Flow.Core
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine(String.Format("\r\nTask Guid : \t\t {0}",this.TaskGuid));
-                sb.AppendLine(String.Format("Task Name : \t\t {0}",this.TaskName));
-                sb.AppendLine(String.Format("Task Status : \t\t {0}",this.TaskStatus));
-                sb.AppendLine(String.Format("File Status : \t\t {0}",this.FileStatus));
+                sb.AppendLine(String.Format("\r\nTask Guid : \t\t {0}", this.TaskGuid));
+                sb.AppendLine(String.Format("Task Name : \t\t {0}", this.TaskName));
+                sb.AppendLine(String.Format("Task Status : \t\t {0}", this.TaskStatus));
+                sb.AppendLine(String.Format("File Status : \t\t {0}", this.FileStatus));
 
-                sb.AppendLine(String.Format("Current Step : \t\t {0} / {1}\t{2} ", this.CurrentStepIndex, this.Steps.Count, this.Steps[this.CurrentStepIndex].StepName));               
-                
-                sb.AppendLine(String.Format("Clip Guid : \t\t {0}",this.clipGuid));
-                sb.AppendLine(String.Format("Entity id : \t\t {0}",this.EntityId));
+                sb.AppendLine(String.Format("Current Step : \t\t {0} / {1}\t{2} ", this.CurrentStepIndex, this.Steps.Count, this.Steps[this.CurrentStepIndex].StepName));
+
+                if (!String.IsNullOrEmpty(this.ErrorMessage))
+                    sb.AppendLine(String.Format("Error Message : \t\t {0}", this.ErrorMessage));
+
+                sb.AppendLine(String.Format("Clip Guid : \t\t {0}", this.clipGuid));
+                sb.AppendLine(String.Format("Entity id : \t\t {0}", this.EntityId));
                 sb.AppendLine(String.Format("Clip Name : \t\t {0}", this.ClipName));
-                sb.AppendLine(String.Format("Logic Path : \t\t {0}",this.logicalPath));                   
+                sb.AppendLine(String.Format("Logic Path : \t\t {0}", this.logicalPath));
 
                 sb.AppendLine(String.Format("STEP ID \t STEP GUID \t\t\t\t STEP NAME"));
                 sb.AppendLine("------------------------------------------------------------------------");
                 var index = 0;
                 foreach (var step in this.Steps)
                 {
-                    sb.AppendLine(String.Format("{0} \t\t {1} \t {2}",index++,step.StepGuid,step.StepName));
+                    sb.AppendLine(String.Format("{0} \t\t {1} \t {2}", index++, step.StepGuid, step.StepName));
                 }
-                
-                
+
+
 
                 return sb.ToString();
             }
@@ -140,6 +144,16 @@ namespace Transfer.Flow.Core
                 Trace.TraceError(ex.ToString());
                 return ex.ToString();
 
+            }
+        }
+
+        private void Notify()
+        {
+            //做成功了，只用通知上界面层
+            if (this.TaskChanged != null)
+            {
+                Trace.TraceInformation("Notify ; " + this.ToString());
+                this.TaskChanged(this, this);
             }
         }
 
@@ -156,11 +170,7 @@ namespace Transfer.Flow.Core
                     if (this.Steps[CurrentStepIndex].Execute() == true)
                     {
 
-                        //做成功了，只用通知上界面层
-                        if (this.TaskChanged != null)
-                        {
-                            this.TaskChanged(this, this);
-                        }
+                        Notify();
 
                     }
                     else
@@ -175,16 +185,15 @@ namespace Transfer.Flow.Core
                     break;
                 }
             } while (CurrentStepIndex++ < this.Steps.Count);
-            if (this.TaskChanged != null)
+            if (this.TaskStatus != Core.TaskStatus.Failed)
             {
-                if (this.TaskStatus != Core.TaskStatus.Failed)
-                {
-                    this.TaskStatus = Core.TaskStatus.Successed;
-                }
-                this.TaskChanged(this, this);
+                this.TaskStatus = Core.TaskStatus.Successed;
+            }
+            Notify();
+           
                 //TODO:MYQ UPDATE TO DB ,
                 //this.FileStatus,  this.TaskStatus,this.ErrorMessage,  this.CompleteTime
-            }
+          
 
             return true;
         }
@@ -193,15 +202,12 @@ namespace Transfer.Flow.Core
         {
 
             this.TaskStatus = Core.TaskStatus.Failed;
-            this.ErrorMessage = String.Format("Step {0} failed :{1}", this.Steps[CurrentStepIndex].StepName, ex.Message);
+            this.ErrorMessage = String.Format("Step {0} failed :{1}", this.Steps[CurrentStepIndex].StepName, ex.ToString());
             for (var i = CurrentStepIndex; i >= 0; i--)
             {
                 this.Steps[i].Revoke();
             }
-            if (this.TaskChanged != null)
-            {
-                this.TaskChanged(this, this);
-            }
+            Notify();
         }
 
     }

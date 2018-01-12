@@ -91,7 +91,7 @@ namespace Transfer.Flow.Core.Data
                                     }
                                 }
                             }
-                            System.Threading.Thread.Sleep(1000);
+                            System.Threading.Thread.Sleep(5000);
                         }
                         catch (Exception ex)
                         {

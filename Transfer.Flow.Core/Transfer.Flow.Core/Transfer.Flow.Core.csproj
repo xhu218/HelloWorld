@@ -32,6 +32,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +51,7 @@
     <Compile Include="Process\GenerateArhiveMaterialLowQualityStep.cs" />
     <Compile Include="Process\GetArchiveMaterialInfoStep.cs" />
     <Compile Include="Process\GetArhiveMaterialIdStep.cs" />
+    <Compile Include="Reference.cs" />
     <Compile Include="StepBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskInfo.cs" />
@@ -55,6 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InterFace\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
