@@ -39,7 +39,7 @@
                     }).appendTo($("#ul"));
 
                     var div = null;
-                    div = "<div id=\"tabs-" + index + "\" class=\"container\"> <iframe src=\"http://fund.eastmoney.com/"+jjlist[index].jijing_Code+".html\" ></iframe> </div>";
+                    div = "<div id=\"tabs-" + index + "\" class=\"container\"> <iframe src=\"http://fund.eastmoney.com/"+jjlist[index].jijing_Code+".html?t="+(new Date()).getMilliseconds()+"\" ></iframe> </div>";
 
                     $(div).appendTo($("#tabs"));
 

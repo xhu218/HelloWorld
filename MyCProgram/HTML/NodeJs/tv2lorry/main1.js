@@ -1,9 +1,14 @@
+/*
+得出低质量的所有类别
+根据DIR命 令的处理
+*/
+
 var fs = require("fs");
 var path = require("path");
 var readLines = require("./readline.js");
 
 //var input = fs.createReadStream("a:\\20171220 153407.txt");
-var input = fs.createReadStream("/private/var/root/Downloads/file2.txt");
+var input = fs.createReadStream("C:\\Users\\WangFugui\\Desktop\\file\\file.txt");
 readLines(input, func);
 require('date-utils');
 
@@ -43,9 +48,9 @@ function func(line, end) {  
                 var key = d[1].toUpperCase();
                 var val = parseInt(d[0]);
                 if (data[key] != null) {
-                    data[key] = data[key] + val;
+                    data[key] = data[key] + 1;
                 } else {
-                    data[key] = val;
+                    data[key] = 1;
                 }
             }
 
@@ -70,9 +75,18 @@ function func(line, end) {  
 
         }
         if (end == "end") {
-            console.log(data);
+            //console.log(data);
             var fs1 = require("fs");
-            fs1.writeFile(path.join(__dirname, "result.json"), JSON.stringify(data), function(err) {
+            var data1 = {};
+            for (var a in data) {
+                if (parseInt(data[a]) > 1) {
+                    console.log(data[a]);
+                    data1[a] = data[a];
+                }
+
+            }
+
+            fs1.writeFile(path.join(__dirname, "result.json"), JSON.stringify(data1), function(err) {
                 if (err) {
                     console.log(err);
                 }

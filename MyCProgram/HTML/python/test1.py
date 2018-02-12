@@ -19,10 +19,13 @@ browser = None;
 browser = webdriver.Chrome();
 
 
-browser.get("http://91sc.top/test.html");
+browser.get("http://91sc.top/test2.html");
+'''
 lst =  browser.find_elements_by_class_name("ember-view");
 counter = 0
 for l in lst:
 
 	counter= counter+1;
 print  counter;
+'''
+browser.find_element_by_link_text("Load More...").click();

@@ -1,9 +1,15 @@
+/*
+
+获取出文件的名称以及大小
+
+*/
+
 var fs = require("fs");
 var path = require("path");
 var readLines = require("./readline.js");
 
 //var input = fs.createReadStream("a:\\20171220 153407.txt");
-var input = fs.createReadStream("/private/var/root/Downloads/file.txt");
+var input = fs.createReadStream("C:\\Users\\WangFugui\\Desktop\\file\\file.txt");
 readLines(input, func);
 require('date-utils');
 

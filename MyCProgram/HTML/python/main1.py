@@ -45,38 +45,41 @@ try:
 
 	browser.get("https://web.hotline.io/inbox/2/0");
 
-	time.sleep(10)
+	time.sleep(1)
 	
 	#browser.find_element_by_class_name("link-login").click()
 	#browser.find_element_by_link_text("账户登录").click();
 	browser.find_element_by_id("email").send_keys("chenxl@itaojin.cn")
 	browser.find_element_by_id("password").send_keys("56d55886-3ffb-444e-bea5-9d57dab1cd22");
-	time.sleep(5)
+	time.sleep(1)
 
 	browser.find_element_by_id("ember656").click();
-	time.sleep(5)
+	time.sleep(1)
 
 	
 
 
 
 
-	#js = "var q=document.documentElement.getElementById('').scrollTop=10000";
-	#browser.execute_script(js);
 	
 	index = 1;
 
-	while index<20:
+	while index<10:
 		index=index+1;
 		print index;
-		#item = browser.find_element_by_class_name("load-more").click();
-		#time.sleep(5);
-		lst =  browser.find_elements_by_class_name("ember-view");
-		counter = 0
-		for l in lst:
 
-			counter= counter+1;
-		print index + "clicked" + counter;
+		#此路不行，因为ID是变化的
+		#js = "var q=document.documentElement.getElementById('').scrollTop=10000";
+		#browser.execute_script(js);
+	
+		#此路OK
+		#browser.get("https://web.hotline.io/app/conversation/message?rand=1514469224961&convid=9190958&excludeCampaign=true");
+		#print browser.page_source  # it is ok
+
+		ps = browser.find_element_by_link_text("Load More...");
+		ps.click();
+		time.sleep(3);
+
 
 
 	#browser.find_element_by_class_name("btn btn-default").click();

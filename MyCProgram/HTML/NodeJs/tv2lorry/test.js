@@ -14,3 +14,22 @@ console.log(data[0].toUpperCase())
 
 var str3 = "wfG";
 console.log(str3.toUpperCase())
+
+var data = {"name":1,"name2":2};
+
+
+for(var a in data){
+	console.log(a,data[a]);
+}
+
+for(var a in data){
+	if(parseInt(data[a])>1)
+	{
+	console.log(data[a]);	
+	}
+	
+}
+
+
+var str4 = "abc123456789";
+console.log(str4.substr(str4.length-5));
