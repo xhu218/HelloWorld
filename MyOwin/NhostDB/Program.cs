@@ -10,6 +10,11 @@ using System.Threading.Tasks;
 
 namespace NhostDB
 {
+    class Studen {
+
+        public String name;
+        public int Age;
+    }
     class Program
     {
 
@@ -34,9 +39,12 @@ namespace NhostDB
 
         static void Main(string[] args)
         {
+            List<Studen> stus = new List<Studen>();
+            stus.First(s => s.Age == 100);
 
-            CMApi_IngestWFTable ingest = new CMApi_IngestWFTable(db);
-            ingest.AddIngestWF(new CMApi_IngestWF { CREATETIME = DateTime.Now, DSTOBJID = "wfg", SRCOBJID = "wfg", TARGETMOSID = "wfg", USERTOKEN = "wfg" });
+
+            //CMApi_IngestWFTable ingest = new CMApi_IngestWFTable(db);
+            //ingest.AddIngestWF(new CMApi_IngestWF { CREATETIME = DateTime.Now, DSTOBJID = "wfg", SRCOBJID = "wfg", TARGETMOSID = "wfg", USERTOKEN = "wfg" });
 
 
             //TestSelfTab1Info();
