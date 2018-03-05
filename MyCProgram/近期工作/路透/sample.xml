@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TaskInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:\Work\HelloWorld.git\trunk\MyCProgram\近期工作\路透\mpc.xsd">
+	<Data>
+		<userToken/>
+		<EventInfo/>
+		<Mappings>
+			<Mapping>
+				<H/>
+				<L/>
+			</Mapping>
+		</Mappings>
+		<ProjectPath/>
+		<Logicpath/>
+		<Metadatas>
+			<Metadata>
+				<Key/>
+				<Value/>
+			</Metadata>
+		</Metadatas>
+	</Data>
+</TaskInfo>
