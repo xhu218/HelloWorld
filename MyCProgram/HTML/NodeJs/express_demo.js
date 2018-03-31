@@ -56,19 +56,58 @@ app.get('/:id', function(req, res) {
 app.post("/notify", function(req, res) {
 
     //console.log("1");
-     res.writeHead(200, { 'Content-Type': 'application/json; charset=UTF-8' });
-     //res.end(JSON.stringify(req.body.name));
-     //console.log(req);
-     //res.end(JSON.stringify(req.url));
-     
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=UTF-8' });
+    //res.end(JSON.stringify(req.body.name));
+    //console.log(req);
+    //res.end(JSON.stringify(req.url));
 
-     res.end("{\"Code\":\"0\"}");
-      console.log(req.body);
-     //res.end("{\"name\":\"wfg\"}");
+
+    res.end("{\"Code\":\"0\"}");
+    console.log(req.body);
+    //res.end("{\"name\":\"wfg\"}");
 
 
 })
 
+app.post("/uploadfile", function(req, res) {
+
+    //console.log("1");
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=UTF-8' });
+    //res.end(JSON.stringify(req.body.name));
+    //console.log(req);
+    //res.end(JSON.stringify(req.url));
+    writeFile("C:\\Users\\WangFugui\\Desktop\\3-1.jpg".req.body);
+
+    res.end("{\"Code\":\"0\"}");
+    console.log(req.body);
+
+
+    //res.end("{\"name\":\"wfg\"}");
+
+
+})
+
+
+function writeFile(path, content) {
+    var fs = require("fs");
+    fs.writeFile(file, content, function(err) {
+        if (err) {
+            console.log("fail" + err)
+        } else {
+            /*
+                    try {
+
+                        //qn.Test1(file.replace("/home/Service/script/",""));
+                        qn.Test1(file);
+                    } catch (error) { console.log(error); }
+*/
+            //console.log("写入文件成功 : " + file);
+            if (typeof callback == "function") {
+                callback(file);
+            }
+        }
+    })
+}
 
 
 var server = app.listen(9023, function() {

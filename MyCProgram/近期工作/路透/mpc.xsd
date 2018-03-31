@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
 <!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="TaskInfo">
 		<xs:annotation>
@@ -12,7 +13,19 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="userToken"/>
-							<xs:element name="EventInfo"/>
+							<xs:element name="EventInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="StudioId"/>
+										<xs:element name="RundownId">
+											<xs:complexType/>
+										</xs:element>
+										<xs:element name="StoryId"/>
+										<xs:element name="EventId"/>
+										<xs:element name="ContentId"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
 							<xs:element name="Mappings">
 								<xs:complexType>
 									<xs:sequence>
