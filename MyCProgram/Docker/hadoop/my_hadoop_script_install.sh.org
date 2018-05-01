@@ -1,6 +1,4 @@
-docker run  --privileged=true -it \
---name hadoop0 \
--d \
+docker run  --privileged=true -it --rm \
 -v $(pwd)/step1.sh:/step1.sh \
 -v $(pwd)/step2.sh:/step2.sh \
 -v $(pwd)/data:/data \
