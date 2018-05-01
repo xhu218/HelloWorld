@@ -1,0 +1,23 @@
+2：设置ssh免密码登录 
+在hadoop0上执行下面操作
+
+cd  ~
+mkdir .ssh
+cd .ssh
+ssh-keygen -t rsa(一直按回车即可)
+ssh-copy-id -i localhost
+ssh-copy-id -i hadoop0
+ssh-copy-id -i hadoop1
+ssh-copy-id -i hadoop2
+在hadoop1上执行下面操作
+cd  ~
+cd .ssh
+ssh-keygen -t rsa(一直按回车即可)
+ssh-copy-id -i localhost
+ssh-copy-id -i hadoop1
+在hadoop2上执行下面操作
+cd  ~
+cd .ssh
+ssh-keygen -t rsa(一直按回车即可)
+ssh-copy-id -i localhost
+ssh-copy-id -i hadoop2
