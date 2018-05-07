@@ -27,4 +27,4 @@ fi
 if [[ $1 == "-bash" ]]; then
   /bin/bash
 fi
-#node /data/script/server.js
+node /data/script/server.js
