@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{AF6ACCDD-5DBF-4C2C-8603-0AF844F55D1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication2", "ConsoleApplication2\ConsoleApplication2.csproj", "{D17EFA01-E309-40E9-82C6-AADABE954952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication3", "ConsoleApplication3\ConsoleApplication3.csproj", "{0557E612-287A-4CBD-9F6D-CD9CC53C5FD4}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -77,6 +81,14 @@ Global
 		{AF6ACCDD-5DBF-4C2C-8603-0AF844F55D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF6ACCDD-5DBF-4C2C-8603-0AF844F55D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF6ACCDD-5DBF-4C2C-8603-0AF844F55D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17EFA01-E309-40E9-82C6-AADABE954952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17EFA01-E309-40E9-82C6-AADABE954952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17EFA01-E309-40E9-82C6-AADABE954952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17EFA01-E309-40E9-82C6-AADABE954952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0557E612-287A-4CBD-9F6D-CD9CC53C5FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0557E612-287A-4CBD-9F6D-CD9CC53C5FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0557E612-287A-4CBD-9F6D-CD9CC53C5FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0557E612-287A-4CBD-9F6D-CD9CC53C5FD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
