@@ -15,6 +15,7 @@ namespace ConsoleApplication3
     {
         public static string MatchNameByRegex(string source)
         {
+            
             //file://storage.sobey.com/u-p4m0iu701r57low5/hv_res/2018-03-14/ingest_test_20180314120533_0_150_2719__002__high.mp4
             var pattern = @"file://(.*?)/";
 
@@ -62,29 +63,65 @@ namespace ConsoleApplication3
 
         }
 
+
+        public String GetRealPath(String path)
+        {
+            path = @"V:\RAID\hv\ABC123\Archive_1573V2103519232Archive_1573w2103519232søndok_karl_marx_20121218151738_053_346168__002__high.mxf";
+
+
+
+
+            String[] level = path.Split(new char[] { '\\' });
+
+            for (int i = 0; i < length; i++)
+            {
+                
+            }
+
+
+
+            return "";
+
+        }
+
         static void Main(String[] args) {
 
 
-            RestClient client = new RestClient("http://hive.sobey.com:9023/CMApi/api/entity/object/getobjectinfo?usertoken=323a7ade135775909248d8402759215b&contentid=0fc3b11ec3324e1fbdda2f5e0348cb16&objecttype=32&pathtype=unc");
+            FileInfo fileInfo = new FileInfo(@"\\172.16.134.2\x\wfg\2.txt");
 
-            RestRequest request = new RestRequest(Method.GET);
+            Console.WriteLine(fileInfo.FullName);
+
+            Console.WriteLine(Path.GetFullPath(@"\\172.16.134.2\x\wfg\2.txt"));
+
+            
+            String []dir =  Directory.GetDirectories(@"\\172.16.134.2\x","wfg");
+            
+
+
+
+            Console.ReadLine();
+            /*
+
+    RestClient client = new RestClient("http://hive.sobey.com:9023/CMApi/api/entity/object/getobjectinfo?usertoken=323a7ade135775909248d8402759215b&contentid=0fc3b11ec3324e1fbdda2f5e0348cb16&objecttype=32&pathtype=unc");
+
+    RestRequest request = new RestRequest(Method.GET);
 
           
 
          
 
-            var response = client.Get(request);
+    var response = client.Get(request);
 
-            Console.WriteLine(JsonHelper.ToJson(response.Content));
+    Console.WriteLine(JsonHelper.ToJson(response));
 
-            /*
-            String str1 = "\\netapp.sobey.com";
-            String str2 = "file://storage.sobey.com/u-p4m0iu701r57low5/hv_res/2018-03-14/ingest_test_20180314120533_0_150_2719__002__high.mp4";
-            String str3 = @"\\netapp.sobey.com\a\b\1.mxf";
+    
+    String str1 = "\\netapp.sobey.com";
+    String str2 = "file://storage.sobey.com/u-p4m0iu701r57low5/hv_res/2018-03-14/ingest_test_20180314120533_0_150_2719__002__high.mp4";
+    String str3 = @"\\netapp.sobey.com\a\b\1.mxf";
 
-            Console.WriteLine(MatchNameConfigByRegex(str1));
-            Console.WriteLine(MatchNameByRegex(str2));
-            */
+    Console.WriteLine(MatchNameConfigByRegex(str1));
+    Console.WriteLine(MatchNameByRegex(str2));
+    */
             
 
             Console.Read();
