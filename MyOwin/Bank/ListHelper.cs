@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Bank
 {
@@ -50,12 +48,12 @@ namespace Bank
             if (String.IsNullOrEmpty(_Input))
                 return;
 
-            for (int i = 0; i < Math.Ceiling(_Input.Count() / 4d); i++)
+            for (int i = 0; i < Math.Ceiling(_Input.Length / 4d); i++)
             {
                 _ListText.Add(new List<char>());
             }
 
-            for (int i = 0; i < _Input.Count(); i++)
+            for (int i = 0; i < _Input.Length; i++)
             {
                 _ListText[(i / 4)].Add(_Input[i]);
 
