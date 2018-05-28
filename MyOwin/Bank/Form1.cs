@@ -18,7 +18,8 @@ namespace Bank
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Method();         
+            Method();
+            Validate();
         }
 
         private void Method()

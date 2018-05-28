@@ -146,10 +146,10 @@ namespace Bank
                         }
 
 
-                        int min = Math.Min(_ListOrg[i - 1].Count, _ListOrg[i - interval - 1].Count);
+                        int min = Math.Min(_ListOrg[i].Count, _ListOrg[i - interval].Count);
                         sb.Append('2', min - 1);
 
-                        int v = _ListOrg[i].Count - _ListOrg[i - 1].Count;
+                        int v = _ListOrg[i].Count - _ListOrg[i - interval].Count;
                         if (v > 0)
                         {
                             for (int j = 0; j < v; j++)
@@ -177,15 +177,27 @@ namespace Bank
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < _ListText.Count; i++)
             {
+                sb.AppendFormat("第 {0} 行 \t", i + 1);
                 for (int j = 0; j < _ListText[i].Count; j++)
                 {
                     sb.AppendFormat("{0} ", _ListText[i][j]);
                 }
-                sb.AppendLine();
+                var same = 0;
                 if (i != 0)
                 {
-                    
+                   
+                    for (int j = 0; j < _ListText[i].Count; j++)
+                    {
+                        if (_ListText[i][j] == _ListText[i - 1][j])
+                        {
+                            same++;
+                        }
+                    }
+                    sb.AppendFormat("\t 共 {0}  个相同", same);
+
                 }
+                sb.AppendLine();
+
 
             }
             return sb.ToString();
