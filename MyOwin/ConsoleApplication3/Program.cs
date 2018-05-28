@@ -73,10 +73,7 @@ namespace ConsoleApplication3
 
             String[] level = path.Split(new char[] { '\\' });
 
-            for (int i = 0; i < length; i++)
-            {
-                
-            }
+         
 
 
 
@@ -87,14 +84,7 @@ namespace ConsoleApplication3
         static void Main(String[] args) {
 
 
-            FileInfo fileInfo = new FileInfo(@"\\172.16.134.2\x\wfg\2.txt");
-
-            Console.WriteLine(fileInfo.FullName);
-
-            Console.WriteLine(Path.GetFullPath(@"\\172.16.134.2\x\wfg\2.txt"));
-
-            
-            String []dir =  Directory.GetDirectories(@"\\172.16.134.2\x","wfg");
+         
             
 
 
@@ -102,6 +92,15 @@ namespace ConsoleApplication3
             Console.ReadLine();
             /*
 
+             FileInfo fileInfo = new FileInfo(@"\\172.16.134.2\x\wfg\2.txt");
+
+            Console.WriteLine(fileInfo.FullName);
+
+            Console.WriteLine(Path.GetFullPath(@"\\172.16.134.2\x\wfg\2.txt"));
+
+            
+            String []dir =  Directory.GetDirectories(@"\\172.16.134.2\x","wfg");
+             * 
     RestClient client = new RestClient("http://hive.sobey.com:9023/CMApi/api/entity/object/getobjectinfo?usertoken=323a7ade135775909248d8402759215b&contentid=0fc3b11ec3324e1fbdda2f5e0348cb16&objecttype=32&pathtype=unc");
 
     RestRequest request = new RestRequest(Method.GET);
@@ -122,7 +121,7 @@ namespace ConsoleApplication3
     Console.WriteLine(MatchNameConfigByRegex(str1));
     Console.WriteLine(MatchNameByRegex(str2));
     */
-            
+
 
             Console.Read();
         

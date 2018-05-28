@@ -15,18 +15,25 @@ namespace Bank
         public Form1()
         {
             InitializeComponent();
+  
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            ListHelper helper = new ListHelper();
-            helper._Input = this.textBox1.Text;
-            helper.Process(helper._Input, helper._List);
-            helper.Process1(helper._List, helper._List1);
+            Method();         
+        }
 
-            Draw(this.panel1,helper._List);
-            Draw(this.panel2, helper._List1);
-          
+        private void Method()
+        {
+            ListHelper helper = new ListHelper( this.textBox1.Text);
+
+            helper.ProcessMain();         
+
+            Draw(this.panel1, helper._ListOrg);
+            Draw(this.panel2, helper._List21);
+            Draw(this.panel3, helper._List32);
+            Draw(this.panel4, helper._List43);
+            this.label1.Text = helper.ToString();
         }
 
         
@@ -62,7 +69,6 @@ namespace Bank
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(((Button)sender).Text);
          
             if (((Button)sender).ForeColor != Color.Red)
             {
@@ -77,11 +83,6 @@ namespace Bank
 
         }
 
-        private void panel1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             this.textBox1.AppendText(((Button)sender).Text);
@@ -93,12 +94,6 @@ namespace Bank
             textBox1.SelectionStart = textBox1.Text.Length;
 
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }     
-
    
     }
 }

@@ -10,161 +10,189 @@ namespace Bank
     {
         public String _Input { get; set; }
 
-        private String _Input1 { get; set; }
 
-        public List<List<char>> _List { get; set; }
+        public List<List<char>> _ListOrg { get; set; }
 
-        public List<List<char>> _List1 { get; set; }
+        public List<List<char>> _List21 { get; set; }
 
-        public ListHelper()
+        public List<List<char>> _List32 { get; set; }
+
+        public List<List<char>> _List43 { get; set; }
+
+        private List<List<char>> _ListText { get; set; }
+
+        public ListHelper() { }
+
+        public ListHelper(String input)
         {
-            _List = new List<List<char>>();
-            _List1 = new List<List<char>>();
+
+            _Input = input;
+            _ListOrg = new List<List<char>>();
+            _List21 = new List<List<char>>();
+            _List32 = new List<List<char>>();
+            _List43 = new List<List<char>>();
+
+            _ListText = new List<List<char>>();
         }
 
-        public void Process(String input, List<List<char>> list)
+        public void ProcessMain()
         {
-            if (String.IsNullOrEmpty(input))
+            Process(this._Input, _ListOrg);
+            Process1(this._List21, 1, 1);
+            Process1(this._List32, 2, 2);
+            Process1(this._List43, 3, 3);
+            ProcessText();
+
+        }
+
+        private void ProcessText()
+        {
+            if (String.IsNullOrEmpty(_Input))
+                return;
+
+            for (int i = 0; i < Math.Ceiling(_Input.Count() / 4d); i++)
+            {
+                _ListText.Add(new List<char>());
+            }
+
+            for (int i = 0; i < _Input.Count(); i++)
+            {
+                _ListText[(i / 4)].Add(_Input[i]);
+
+            }
+
+        }
+
+        private void Process(String inputString, List<List<char>> outList)
+        {
+            if (String.IsNullOrEmpty(inputString))
                 return;
 
             char current = 'a';
-            for (var index = 0; index < input.Length; index++)
+            for (var index = 0; index < inputString.Length; index++)
             {
                 if (index == 0)
                 {
                     List<char> lst = new List<char>();
-                    lst.Add(input[index]);
-                    list.Add(lst);
+                    lst.Add(inputString[index]);
+                    outList.Add(lst);
                 }
                 else
                 {
-                    if (input[index] == current)
+                    if (inputString[index] == current)
                     {
-                        list[list.Count - 1].Add(input[index]);
+                        outList[outList.Count - 1].Add(inputString[index]);
                     }
                     else
                     {
                         List<char> lst = new List<char>();
-                        lst.Add(input[index]);
-                        list.Add(lst);
+                        lst.Add(inputString[index]);
+                        outList.Add(lst);
                     }
                 }
-                current = input[index];
+                current = inputString[index];
             }
         }
 
-        public void Process1(List<List<char>>list, List<List<char>> list1)
+        private void Process1(List<List<char>> list1, int start, int interval)
         {
+
+            //start = 1   interval = 1
+            //start = 2   interval = 2
+            //start = 3   interval = 3
+
             //1是绿色
             //2是红色
             StringBuilder sb = new StringBuilder();
-            if (list.Count < 2)
-                return;
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (i == 1)
+
+            if (start <= _ListOrg.Count - 1)
+                for (int i = start; i < _ListOrg.Count; i++)
                 {
-                    if (list[i].Count == list[i - 1].Count)
+                    if (i == start)
                     {
-                        //因为第一个数据不比较
-                        sb.Append('2', list[i].Count - 1);
+                        if (_ListOrg[i].Count == _ListOrg[i - interval].Count)
+                        {
+                            //因为第一个数据不比较
+                            sb.Append('2', _ListOrg[i].Count - 1);
+                        }
+                        else
+                        {
+                            int min = Math.Min(_ListOrg[i].Count, _ListOrg[i - interval].Count);
+                            sb.Append('2', min - 1);
+
+                            int v = _ListOrg[i].Count - _ListOrg[i - interval].Count;
+                            if (v > 0)
+                            {
+                                for (int j = 0; j < v; j++)
+                                {
+                                    if (j == 0)
+                                        sb.Append('1');
+                                    else
+                                        sb.Append('2');
+                                }
+
+                            }
+                        }
                     }
-                    else
+                    else if (i > start)
                     {
-                        int min = Math.Min(list[i].Count, list[i - 1].Count);
+                        if (_ListOrg[i - 1].Count == _ListOrg[i - interval - 1].Count)
+                        {
+                            //齐脚跳
+                            sb.Append('2');
+                        }
+                        else
+                        {
+                            //突脚跳
+                            sb.Append('1');
+                        }
+
+
+                        int min = Math.Min(_ListOrg[i - 1].Count, _ListOrg[i - interval - 1].Count);
                         sb.Append('2', min - 1);
 
-                        int v = list[i].Count - list[i - 1].Count;
+                        int v = _ListOrg[i].Count - _ListOrg[i - 1].Count;
                         if (v > 0)
                         {
                             for (int j = 0; j < v; j++)
                             {
-                                if (i == 0)
+                                if (j == 0)
                                     sb.Append('1');
                                 else
                                     sb.Append('2');
                             }
-                            
                         }
+
                     }
                 }
-                else if(i>1)
-                {
-                    if (list[i - 1].Count == list[i - 2].Count)
-                    {
-                        //齐脚跳
-                        sb.Append('2');
-                    }
-                    else
-                    {
-                        //突脚跳
-                        sb.Append('1');
-                    }
 
 
-                    int min = Math.Min(list[i].Count, list[i - 1].Count);
-                    sb.Append('2', min - 1);
-
-                    int v = list[i].Count - list[i - 1].Count;
-                    if (v > 0)
-                    {
-                        for (int j = 0; j < v; j++)
-                        {
-                            if (i == 0)
-                                sb.Append('1');
-                            else
-                                sb.Append('2');
-                        }
-                    }
-
-                }
-            }
-
-            _Input1 = sb.ToString();
-            Process(_Input1, this._List1);
+            Process(sb.ToString(), list1);
 
 
-           
+
         }
 
-       
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < _ListText.Count; i++)
+            {
+                for (int j = 0; j < _ListText[i].Count; j++)
+                {
+                    sb.AppendFormat("{0} ", _ListText[i][j]);
+                }
+                sb.AppendLine();
+                if (i != 0)
+                {
+                    
+                }
+
+            }
+            return sb.ToString();
+        }
+
+
     }
 }
-/*
- 
-    this.panel2.Controls.Clear();
-
-                for (int i = 0; i < list.Count; i++)
-                {
-                    Panel p = new Panel();
-
-                    for (int j = 0; j < list[i].Count; j++)
-                    {
-                        Button btn = new Button();
-                        btn.Width = 20;
-                        btn.Height = 20;
-                        btn.Location = new Point(p.Location.X, p.Location.Y + 20 * j);
-                    btn.Text = list[i][j].ToString();
-
-                    if ( (i == 1 && j>0 ) || i>1)
-                    {
-                        if (j < list[i - 1].Count)
-                        {
-                            if (list[i][j] != list[i - 1][j])
-                            {
-                                btn.BackColor = Color.Red;
-                            }
-                        }
-                    }
-                        //btn.BackColor = color[((int)list[i][j]) % 2];
-
-                        p.Controls.Add(btn);
-                    }
-                    p.Width = 20;
-                    p.Height = 400;
-                    p.Location = new Point(this.panel2.Location.X + i * 20, this.panel2.Location.Y);
-                    this.panel2.Controls.Add(p);
-                }
- 
- 
- */
