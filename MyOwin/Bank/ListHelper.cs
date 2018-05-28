@@ -77,7 +77,14 @@ namespace Bank
                         int v = list[i].Count - list[i - 1].Count;
                         if (v > 0)
                         {
-                            sb.Append('1', v);
+                            for (int j = 0; j < v; j++)
+                            {
+                                if (i == 0)
+                                    sb.Append('1');
+                                else
+                                    sb.Append('2');
+                            }
+                            
                         }
                     }
                 }
@@ -101,7 +108,13 @@ namespace Bank
                     int v = list[i].Count - list[i - 1].Count;
                     if (v > 0)
                     {
-                        sb.Append('1', v);
+                        for (int j = 0; j < v; j++)
+                        {
+                            if (i == 0)
+                                sb.Append('1');
+                            else
+                                sb.Append('2');
+                        }
                     }
 
                 }
