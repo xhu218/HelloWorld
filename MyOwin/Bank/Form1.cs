@@ -19,24 +19,24 @@ namespace Bank
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            ListHelper list = new ListHelper();
-            list.Input = this.textBox1.Text;
-            list.Process(list.Input);
-           
+            ListHelper helper = new ListHelper();
+            helper._Input = this.textBox1.Text;
+            helper.Process(helper._Input, helper._List);
+            helper.Process1(helper._List, helper._List1);
 
-            Draw(list.list);
+            Draw(this.panel1,helper._List);
+            Draw(this.panel2, helper._List1);
           
         }
 
         
 
-        private void Draw(List<List<char>> list)
+        private void Draw(Panel panel, List<List<char>> list)
         {
-
             Color[] color = new Color[] { Color.Red, Color.Green };
             Application.DoEvents();
 
-            this.panel1.Controls.Clear();
+            panel.Controls.Clear();
             for (int i = 0; i < list.Count; i++)
             {
                 Panel p = new Panel();           
@@ -55,45 +55,8 @@ namespace Bank
                 p.Width = 20;
                 p.Height = 400;
                 p.Location = new Point(this.panel1.Location.X + i * 20, this.panel1.Location.Y);
-                this.panel1.Controls.Add(p);
+                panel.Controls.Add(p);
             }
-
-                this.panel2.Controls.Clear();
-
-                for (int i = 0; i < list.Count; i++)
-                {
-                    Panel p = new Panel();
-
-                    for (int j = 0; j < list[i].Count; j++)
-                    {
-                        Button btn = new Button();
-                        btn.Width = 20;
-                        btn.Height = 20;
-                        btn.Location = new Point(p.Location.X, p.Location.Y + 20 * j);
-                    btn.Text = list[i][j].ToString();
-
-                    if ( (i == 1 && j>0 ) || i>1)
-                    {
-                        if (j < list[i - 1].Count)
-                        {
-                            if (list[i][j] != list[i - 1][j])
-                            {
-                                btn.BackColor = Color.Red;
-                            }
-                        }
-                    }
-                        //btn.BackColor = color[((int)list[i][j]) % 2];
-
-                        p.Controls.Add(btn);
-                    }
-                    p.Width = 20;
-                    p.Height = 400;
-                    p.Location = new Point(this.panel2.Location.X + i * 20, this.panel2.Location.Y);
-                    this.panel2.Controls.Add(p);
-                }
-            
-
-
             Application.DoEvents();
         }
 
