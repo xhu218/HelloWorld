@@ -19,6 +19,8 @@ namespace Bank
 
         private List<List<char>> _ListText { get; set; }
 
+        public String _Last3Word { get; set; }
+
         public ListHelper() { }
 
         public ListHelper(String input)
@@ -40,7 +42,17 @@ namespace Bank
             Process1(this._List32, 2, 2);
             Process1(this._List43, 3, 3);
             ProcessText();
+            ProcessFeature();
 
+        }
+
+        private void ProcessFeature()
+        {
+            if(  ((_Input.Length-1) % 4 == 0) && _Input.Length>1 )
+            {
+                int length = _Input.Length;
+                _Last3Word = _Input[length - 4].ToString() + _Input[length - 3].ToString() + _Input[length - 2].ToString();
+            }
         }
 
         private void ProcessText()
