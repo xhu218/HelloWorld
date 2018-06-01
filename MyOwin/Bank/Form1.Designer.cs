@@ -56,8 +56,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -93,7 +93,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(1121, 87);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "123";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
@@ -249,7 +248,7 @@
             this.splitContainer5.Panel2.Controls.Add(this.button5);
             this.splitContainer5.Panel2.Controls.Add(this.button7);
             this.splitContainer5.Size = new System.Drawing.Size(1117, 321);
-            this.splitContainer5.SplitterDistance = 148;
+            this.splitContainer5.SplitterDistance = 144;
             this.splitContainer5.SplitterWidth = 8;
             this.splitContainer5.TabIndex = 1;
             // 
@@ -261,7 +260,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1113, 144);
+            this.panel4.Size = new System.Drawing.Size(1113, 140);
             this.panel4.TabIndex = 0;
             // 
             // label9
@@ -448,16 +447,6 @@
             this.button7.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.button7.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "就绪：";
-            // 
             // splitContainer7
             // 
             this.splitContainer7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -471,11 +460,19 @@
             // 
             // splitContainer7.Panel2
             // 
-            this.splitContainer7.Panel2.Controls.Add(this.label1);
+            this.splitContainer7.Panel2.Controls.Add(this.panel5);
             this.splitContainer7.Size = new System.Drawing.Size(1556, 808);
             this.splitContainer7.SplitterDistance = 1125;
             this.splitContainer7.SplitterWidth = 8;
             this.splitContainer7.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(419, 804);
+            this.panel5.TabIndex = 1;
             // 
             // Form1
             // 
@@ -487,6 +484,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "超级玛丽";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -515,7 +513,6 @@
             this.splitContainer5.ResumeLayout(false);
             this.splitContainer7.Panel1.ResumeLayout(false);
             this.splitContainer7.Panel2.ResumeLayout(false);
-            this.splitContainer7.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
             this.splitContainer7.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -543,7 +540,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -553,6 +549,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
     }
 }
 

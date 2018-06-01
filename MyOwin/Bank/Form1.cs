@@ -20,7 +20,7 @@ namespace Bank
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Method(this.textBox1.Text);      
+            Method(this.textBox1.Text);
         }
 
         private void Method(String msg)
@@ -29,14 +29,73 @@ namespace Bank
 
             helper.ProcessMain();
 
-            Draw(this.panel1, helper._ListOrg);
-            Draw(this.panel2, helper._List21);
-            Draw(this.panel3, helper._List32);
-            Draw(this.panel4, helper._List43);
-            this.label1.Text = helper.ToString();
+            Draw(this.panel1, helper._ListOrg, 0, "_ListOrg");
+
+            var length21 = ListHelper.GetListLength(helper._List21);
+            Draw(this.panel2, helper._List21, helper._Input.Length - length21, "_List21");
+
+            int length32 = ListHelper.GetListLength(helper._List32);
+            Draw(this.panel3, helper._List32, helper._Input.Length - length32, "_List32");
+
+            int length43 = ListHelper.GetListLength(helper._List43);
+            Draw(this.panel4, helper._List43, helper._Input.Length - length43, "_List43");
+
+            DrawRighText(helper._ListText);
+
             DrawText(helper._Last3Word);
 
+        }
 
+        private void DrawRighText(List<List<char>> _ListText)
+        {
+            this.panel5.Controls.Clear();
+            var index = 0;
+            for (int i = 0; i < _ListText.Count; i++)
+            {
+                //sb.AppendFormat("第 {0} 行 \t", i + 1);
+                Label lab = new Label();
+                lab.Text = String.Format("第{0}行", i + 1);
+                lab.Font = new System.Drawing.Font("宋体", 16);
+                lab.Location =new Point( this.panel5.Location.X,this.panel5.Location.Y + 50 * i);
+                this.panel5.Controls.Add(lab);
+
+
+                for (int j =0 ; j < _ListText[i].Count; j++)
+                {
+                    //sb.AppendFormat("{0} ", _ListText[i][j]);
+                    Label l = new Label();
+                    l.Location = new Point( this.panel5.Location.X +100+ j * 50,this.panel5.Location.Y + i * 50);
+                    l.Font = new System.Drawing.Font("宋体", 16);
+                    l.Width = 30;
+                    l.Text = _ListText[i][j].ToString() ;
+                    l.Name = String.Format("lbl_{0}", index++);
+                    this.panel5.Controls.Add(l);
+
+                }
+                var same = 0;
+                if (i != 0)
+                {
+
+                    for (int j = 0; j < _ListText[i].Count; j++)
+                    {
+                        if (_ListText[i][j] == _ListText[i - 1][j])
+                        {
+                            same++;
+                        }
+                    }
+                   // sb.AppendFormat("\t 共 {0}  个相同", same);
+                    Label l = new Label();
+                    //l.Location.X = this.panel5.Location.X + j * 20;
+                    l.Location = new Point(this.panel5.Location.X + 300, this.panel5.Location.Y + i * 50);
+                    l.Text = String.Format("共 {0} 个相同", same);
+                    l.Font = new System.Drawing.Font("宋体", 16);
+                    this.panel5.Controls.Add(l);
+
+                }
+                //sb.AppendLine();
+
+
+            }
         }
 
         private void DrawText(string p)
@@ -70,9 +129,9 @@ namespace Bank
                 lbl.Text = same.ToString();
             }
         }
-        
 
-        private void Draw(Panel panel, List<List<char>> list)
+
+        private void Draw(Panel panel, List<List<char>> list, int start, string startname)
         {
             Color[] color = new Color[] { Color.Red, Color.Green };
 
@@ -89,11 +148,86 @@ namespace Bank
                     btn.Location = new Point(panel.Location.X + 20 * i, panel.Location.Y + 20 * j);
                     btn.BackColor = color[((int)list[i][j]) % 2];
                     btn.Text = list[i][j].ToString();
+                    btn.Name = String.Format("btn{0}_{1}", startname, start++);
+                    btn.MouseEnter += btn_MouseEnter;
+                    btn.MouseLeave += btn_MouseLeave;
                     panel.Controls.Add(btn);
                 }
             }
 
         }
+
+        void btn_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn1 = ((Button)sender) as Button;
+
+
+            String buttonName = ((Button)sender).Name;
+            string nameIndex = buttonName.Substring(buttonName.LastIndexOf("_"));
+
+
+            string[] prefixs = { "btn_ListOrg", "btn_List21", "btn_List32", "btn_List43" };
+
+            for (int i = 0; i < prefixs.Length; i++)
+            {
+                Control[] cs = this.Controls.Find(String.Format("{0}{1}", prefixs[i], nameIndex), true);
+                if (cs != null && cs.Length > 0)
+                {
+                    Button btn = cs[0] as Button;
+                    if (btn != null)
+                    {
+                        //MessageBox.Show(btn.Name);
+                        btn.BackColor = (Color)btn.Tag;
+                    }
+                }
+            }
+
+            Control[] cs1 = this.Controls.Find(String.Format("lbl{0}", nameIndex), true);
+            if (cs1 != null && cs1.Length > 0)
+            {
+                Label lbl = cs1[0] as Label;
+                if (lbl != null)
+                {
+
+                    lbl.BackColor = (Color)lbl.Tag;
+                }
+            }
+        }
+
+        void btn_MouseEnter(object sender, EventArgs e)
+        {
+            String buttonName = ((Button)sender).Name;
+            string nameIndex = buttonName.Substring(buttonName.LastIndexOf("_"));
+
+
+            string[] prefixs = { "btn_ListOrg", "btn_List21", "btn_List32", "btn_List43" };
+
+            for (int i = 0; i < prefixs.Length; i++)
+            {
+                Control [] cs = this.Controls.Find(String.Format("{0}{1}", prefixs[i], nameIndex), true);
+                if (cs != null && cs.Length > 0)
+                {
+                    Button btn = cs[0] as Button;
+                    if (btn != null)
+                    {
+                        //MessageBox.Show(btn.Name);
+                        btn.Tag = btn.BackColor;
+                        btn.BackColor = Color.Yellow;
+                    }
+                }
+            }
+
+            Control [] cs1 = this.Controls.Find(String.Format("lbl{0}", nameIndex),true);
+            if (cs1 != null && cs1.Length > 0)
+            {
+                Label lbl = cs1[0] as Label;
+                if (lbl != null)
+                {
+                    lbl.Tag = lbl.BackColor;
+                    lbl.BackColor = Color.Yellow;
+                }
+            }
+        }  
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -121,6 +255,16 @@ namespace Bank
             this.textBox1.Text = this.textBox1.Text.Remove(this.textBox1.Text.Length - 3, 3);
             textBox1.SelectionStart = textBox1.Text.Length;
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (!WebHelper.GetRight())
+            {
+                MessageBox.Show("程序异常,请联系管理员", "超级玛丽", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+                return;
+            }
         }
 
 

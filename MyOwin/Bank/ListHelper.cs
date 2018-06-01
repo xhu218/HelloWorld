@@ -17,7 +17,8 @@ namespace Bank
 
         public List<List<char>> _List43 { get; set; }
 
-        private List<List<char>> _ListText { get; set; }
+        
+        public List<List<char>> _ListText { get; set; }
 
         public String _Last3Word { get; set; }
 
@@ -35,16 +36,40 @@ namespace Bank
             _ListText = new List<List<char>>();
         }
 
+        public static int GetListLength(List<List<char>> list)
+        {
+            if (list == null)
+                return 0;
+
+            var sum = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                for (int j = 0; j < list[i].Count; j++)
+                {
+                    sum++;
+                }
+            }
+
+            return sum;
+
+        }
+
         public void ProcessMain()
         {
             Process(this._Input, _ListOrg);
+
             Process1(this._List21, 1, 1);
             Process1(this._List32, 2, 2);
             Process1(this._List43, 3, 3);
+
+       
+
             ProcessText();
             ProcessFeature();
 
         }
+
+   
 
         private void ProcessFeature()
         {
