@@ -58,6 +58,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -82,6 +84,7 @@
             this.splitContainer7.Panel1.SuspendLayout();
             this.splitContainer7.Panel2.SuspendLayout();
             this.splitContainer7.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -91,6 +94,7 @@
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox1.Size = new System.Drawing.Size(1121, 87);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -248,7 +252,7 @@
             this.splitContainer5.Panel2.Controls.Add(this.button5);
             this.splitContainer5.Panel2.Controls.Add(this.button7);
             this.splitContainer5.Size = new System.Drawing.Size(1117, 321);
-            this.splitContainer5.SplitterDistance = 144;
+            this.splitContainer5.SplitterDistance = 140;
             this.splitContainer5.SplitterWidth = 8;
             this.splitContainer5.TabIndex = 1;
             // 
@@ -260,7 +264,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1113, 140);
+            this.panel4.Size = new System.Drawing.Size(1113, 136);
             this.panel4.TabIndex = 0;
             // 
             // label9
@@ -474,11 +478,28 @@
             this.panel5.Size = new System.Drawing.Size(419, 804);
             this.panel5.TabIndex = 1;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(3, 786);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1556, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1559, 808);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.splitContainer7);
             this.Controls.Add(this.splitter1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -515,7 +536,10 @@
             this.splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
             this.splitContainer7.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -550,6 +574,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

@@ -265,6 +265,9 @@ namespace Bank
                 Application.Exit();
                 return;
             }
+             Version ApplicationVersion = new Version(Application.ProductVersion);
+                    string localVer = ApplicationVersion.ToString();
+                    this.toolStripStatusLabel1.Text = localVer;
         }
 
 
