@@ -42,9 +42,17 @@ namespace Bank
                     string localVer = ApplicationVersion.ToString();
                     if (LastVer != localVer)
                     {
-                        FileInfo fileInfo = new FileInfo(path);
-                        fileInfo.MoveTo(String.Format("{0}{1}", dir, appName + "_old.exe"));
-                        client.DownloadFile(appurl, path);
+                        //先下载文件，并且命名为_update.exe
+                        client.DownloadFile(appurl, String.Format("{0}{1}", dir, appName + "_update.exe"));
+
+                        //重命名之前的文件为old
+                        FileInfo fileInfoOld = new FileInfo(path);
+                        fileInfoOld.MoveTo(String.Format("{0}{1}", dir, appName + "_old.exe"));
+
+                        //重命名下下文件为正式文件
+                        FileInfo fileInfoNew = new FileInfo(String.Format("{0}{1}", dir, appName + "_update.exe"));
+                        fileInfoNew.MoveTo(String.Format("{0}{1}", dir, appName + ".exe"));
+
 
                         Application.Exit();
 
