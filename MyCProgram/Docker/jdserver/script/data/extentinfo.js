@@ -1,1 +1,1 @@
-var extentinfo = {    lastUpdateTime:'2017-09-07 17:24'}
+{    "lastUpdateTime":"2018-06-03 18:52"}

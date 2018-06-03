@@ -45,10 +45,10 @@
             <tbody>
                 <tr v-for="entry in filteredData">
                     <td v-for="key in columns">
-                        <div v-if="displayLink(key)" style="font-size: 20px;"> <a :href="'http://91sc.top?email=web@web.com&url=https://item.jd.com/'+entry['wareId']+'.html'" target="_blank">{{entry['wname']}}</a> </div>
+                        <div v-if="displayLink(key)" style="font-size: 20px;"> <a :href="'http://91sc.top/process/jd.php?email=web@web.com&url=https://item.jd.com/'+entry['wareId']+'.html'" target="_blank">{{entry['wname']}}</a> </div>
                         <div v-if="displayInDiv(key)" style="font-size: 20px">{{entry[key] }}</div>
                         <div v-if="displayForRemianTime(key)" style="font-size: 20px">{{(entry[key]/60/60).toFixed(0) }} 小时后</div>
-                        <div v-if="displayImage(key)" width="200px" height="200px"><a :href="'http://91sc.top?email=web@web.com&url=https://item.jd.com/'+entry['wareId']+'.html'" target="_blank"><img width="160px" height="160px" v-bind:src=entry[key] /></a> </div>
+                        <div v-if="displayImage(key)" width="200px" height="200px"><a :href="'http://91sc.top/process/jd.php?email=web@web.com&url=https://item.jd.com/'+entry['wareId']+'.html'" target="_blank"><img width="160px" height="160px" v-bind:src=entry[key] /></a> </div>
                     </td>
                 </tr>
             </tbody>

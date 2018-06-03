@@ -1,0 +1,588 @@
+standard error output:
+             total       used       free     shared    buffers     cached
+Mem:         32012       8488      23524          1        136       4839
+-/+ buffers/cache:       3513      28499
+Swap:            0          0          0
+child process eixt ,exit:0standard error output:
+201850501631
+standard error output:
+DEPRECATED: Use of this script to execute hdfs command is deprecated.
+Instead use the hdfs command for it.
+
+standard error output:
+18/05/05 16:33:36 INFO client.RMProxy: Connecting to ResourceManager at hadoop0/192.168.3.10:8032
+standard error output:
+18/05/05 16:33:36 INFO input.FileInputFormat: Total input paths to process : 4
+standard error output:
+18/05/05 16:33:36 INFO mapreduce.JobSubmitter: number of splits:4
+standard error output:
+18/05/05 16:33:36 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1525506840520_0006
+standard error output:
+18/05/05 16:33:37 INFO impl.YarnClientImpl: Submitted application application_1525506840520_0006
+standard error output:
+18/05/05 16:33:37 INFO mapreduce.Job: The url to track the job: http://hadoop0:8088/proxy/application_1525506840520_0006/
+standard error output:
+18/05/05 16:33:37 INFO mapreduce.Job: Running job: job_1525506840520_0006
+standard error output:
+18/05/05 16:33:42 INFO mapreduce.Job: Job job_1525506840520_0006 running in uber mode : false
+standard error output:
+18/05/05 16:33:42 INFO mapreduce.Job:  map 0% reduce 0%
+standard error output:
+18/05/05 16:33:47 INFO mapreduce.Job:  map 100% reduce 0%
+standard error output:
+18/05/05 16:33:52 INFO mapreduce.Job:  map 100% reduce 100%
+standard error output:
+18/05/05 16:33:52 INFO mapreduce.Job: Job job_1525506840520_0006 completed successfully
+standard error output:
+18/05/05 16:33:52 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=86
+		FILE: Number of bytes written=577685
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=472
+		HDFS: Number of bytes written=138
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Data-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=14106
+		Total time spent by all reduces in occupied slots (ms)=2386
+		Total time spent by all map tasks (ms)=14106
+		Total time spent by all reduce tasks (ms)=2386
+		Total vcore-seconds taken by all map tasks=14106
+		Total vcore-seconds taken by all reduce tasks=2386
+		Total megabyte-seconds taken by all map tasks=14444544
+		Total megabyte-seconds taken by all reduce tasks=2443264
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=4
+		Map output bytes=72
+		Map output materialized bytes=104
+		Input split bytes=432
+		Combine input records=4
+		Combine output records=4
+		Reduce input groups=2
+		Reduce shuffle bytes=104
+		Reduce input records=4
+		Reduce output records=2
+		Spilled Records=8
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=146
+		CPU time spent (ms)=2230
+		Physical memory (bytes) snapshot=1237827584
+		Virtual memory (bytes) snapshot=3816157184
+		Total committed heap usage (bytes)=1006632960
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=40
+	File Output Format Counters 
+		Bytes Written=138
+standard error output:
+18/05/05 16:33:52 INFO client.RMProxy: Connecting to ResourceManager at hadoop0/192.168.3.10:8032
+standard error output:
+18/05/05 16:33:52 INFO input.FileInputFormat: Total input paths to process : 1
+standard error output:
+18/05/05 16:33:52 INFO mapreduce.JobSubmitter: number of splits:1
+standard error output:
+18/05/05 16:33:52 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1525506840520_0007
+standard error output:
+18/05/05 16:33:52 INFO impl.YarnClientImpl: Submitted application application_1525506840520_0007
+standard error output:
+18/05/05 16:33:52 INFO mapreduce.Job: The url to track the job: http://hadoop0:8088/proxy/application_1525506840520_0007/
+standard error output:
+18/05/05 16:33:52 INFO mapreduce.Job: Running job: job_1525506840520_0007
+standard error output:
+18/05/05 16:34:01 INFO mapreduce.Job: Job job_1525506840520_0007 running in uber mode : false
+standard error output:
+18/05/05 16:34:01 INFO mapreduce.Job:  map 0% reduce 0%
+standard error output:
+18/05/05 16:34:05 INFO mapreduce.Job:  map 100% reduce 0%
+standard error output:
+18/05/05 16:34:10 INFO mapreduce.Job:  map 100% reduce 100%
+standard error output:
+18/05/05 16:34:11 INFO mapreduce.Job: Job job_1525506840520_0007 completed successfully
+standard error output:
+18/05/05 16:34:11 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=46
+		FILE: Number of bytes written=230067
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=271
+		HDFS: Number of bytes written=24
+		HDFS: Number of read operations=7
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=2290
+		Total time spent by all reduces in occupied slots (ms)=2269
+		Total time spent by all map tasks (ms)=2290
+		Total time spent by all reduce tasks (ms)=2269
+		Total vcore-seconds taken by all map tasks=2290
+		Total vcore-seconds taken by all reduce tasks=2269
+		Total megabyte-seconds taken by all map tasks=2344960
+		Total megabyte-seconds taken by all reduce tasks=2323456
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=2
+		Map output bytes=36
+		Map output materialized bytes=46
+		Input split bytes=133
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=1
+		Reduce shuffle bytes=46
+		Reduce input records=2
+		Reduce output records=2
+		Spilled Records=4
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=42
+		CPU time spent (ms)=970
+		Physical memory (bytes) snapshot=433844224
+		Virtual memory (bytes) snapshot=1525600256
+		Total committed heap usage (bytes)=402653184
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=138
+	File Output Format Counters 
+		Bytes Written=24
+standard error output:
+2	hello wfg
+2	hello lxx
+child process eixt ,exit:0standard error output:
+201850501631
+standard error output:
+mkdir: cannot create directory `201850501631': File exists
+standard error output:
+DEPRECATED: Use of this script to execute hdfs command is deprecated.
+Instead use the hdfs command for it.
+
+standard error output:
+mkdir: `/201850501631': File exists
+standard error output:
+copyFromLocal: `/201850501631/file1': File exists
+standard error output:
+copyFromLocal: `/201850501631/file2': File exists
+standard error output:
+copyFromLocal: `/201850501631/file4': File exists
+standard error output:
+copyFromLocal: `/201850501631/file5': File existsstandard error output:
+
+standard error output:
+18/05/05 16:39:12 INFO client.RMProxy: Connecting to ResourceManager at hadoop0/192.168.3.10:8032
+standard error output:
+18/05/05 16:39:12 INFO hdfs.DFSClient: Exception in createBlockOutputStream
+java.io.EOFException: Premature EOF: no length prefix available
+	at org.apache.hadoop.hdfs.protocolPB.PBHelper.vintPrefixed(PBHelper.java:2280)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.createBlockOutputStream(DFSOutputStream.java:1317)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.nextBlockOutputStream(DFSOutputStream.java:1237)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:449)
+standard error output:
+18/05/05 16:39:12 INFO hdfs.DFSClient: Abandoning BP-754408308-172.17.9.73-1431769234492:blk_1073741880_1056
+standard error output:
+18/05/05 16:39:12 INFO hdfs.DFSClient: Excluding datanode DatanodeInfoWithStorage[192.168.3.12:50010,DS-ded577c3-21b1-4374-bae5-31e7bcd3ca07,DISK]
+standard error output:
+18/05/05 16:39:12 WARN hdfs.DFSClient: DataStreamer Exception
+org.apache.hadoop.ipc.RemoteException(java.io.IOException): File /tmp/hadoop-yarn/staging/root/.staging/job_1525506840520_0008/job.jar could only be replicated to 0 nodes instead of minReplication (=1).  There are 1 datanode(s) running and 1 node(s) are excluded in this operation.
+	at org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.chooseTarget4NewBlock(BlockManager.java:1550)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:3067)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:722)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:492)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:969)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:2049)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:2045)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1657)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2043)
+
+	at org.apache.hadoop.ipc.Client.call(Client.java:1476)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1407)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy9.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.addBlock(ClientNamenodeProtocolTranslatorPB.java:418)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:187)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy10.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.locateFollowingBlock(DFSOutputStream.java:1430)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.nextBlockOutputStream(DFSOutputStream.java:1226)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:449)
+standard error output:
+18/05/05 16:39:12 INFO mapreduce.JobSubmitter: Cleaning up the staging area /tmp/hadoop-yarn/staging/root/.staging/job_1525506840520_0008
+standard error output:
+org.apache.hadoop.ipc.RemoteException(java.io.IOException): File /tmp/hadoop-yarn/staging/root/.staging/job_1525506840520_0008/job.jar could only be replicated to 0 nodes instead of minReplication (=1).  There are 1 datanode(s) running and 1 node(s) are excluded in this operation.
+	at org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.chooseTarget4NewBlock(BlockManager.java:1550)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:3067)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:722)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:492)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:969)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:2049)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:2045)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1657)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2043)
+
+standard error output:
+	at org.apache.hadoop.ipc.Client.call(Client.java:1476)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1407)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy9.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.addBlock(ClientNamenodeProtocolTranslatorPB.java:418)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+standard error output:
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:187)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy10.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.locateFollowingBlock(DFSOutputStream.java:1430)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.nextBlockOutputStream(DFSOutputStream.java:1226)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:449)
+standard error output:
+2	hello wfg
+2	hello lxx
+child process eixt ,exit:0standard error output:
+201850501631
+standard error output:
+mkdir: cannot create directory `201850501631': File exists
+standard error output:
+DEPRECATED: Use of this script to execute hdfs command is deprecated.
+Instead use the hdfs command for it.
+standard error output:
+
+standard error output:
+mkdir: `/201850501631': File exists
+standard error output:
+copyFromLocal: `/201850501631/file1': File exists
+standard error output:
+copyFromLocal: `/201850501631/file2': File exists
+standard error output:
+copyFromLocal: `/201850501631/file4': File exists
+standard error output:
+copyFromLocal: `/201850501631/file5': File exists
+standard error output:
+18/05/05 16:44:02 INFO client.RMProxy: Connecting to ResourceManager at hadoop0/192.168.3.10:8032
+standard error output:
+18/05/05 16:44:03 INFO input.FileInputFormat: Total input paths to process : 4
+standard error output:
+18/05/05 16:44:03 INFO mapreduce.JobSubmitter: number of splits:4
+standard error output:
+18/05/05 16:44:03 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1525506840520_0009
+standard error output:
+18/05/05 16:44:03 INFO impl.YarnClientImpl: Submitted application application_1525506840520_0009
+standard error output:
+18/05/05 16:44:03 INFO mapreduce.Job: The url to track the job: http://hadoop0:8088/proxy/application_1525506840520_0009/
+standard error output:
+18/05/05 16:44:03 INFO mapreduce.Job: Running job: job_1525506840520_0009
+standard error output:
+18/05/05 16:44:08 INFO mapreduce.Job: Job job_1525506840520_0009 running in uber mode : false
+standard error output:
+18/05/05 16:44:08 INFO mapreduce.Job:  map 0% reduce 0%
+standard error output:
+18/05/05 16:44:13 INFO mapreduce.Job:  map 100% reduce 0%
+standard error output:
+18/05/05 16:44:18 INFO mapreduce.Job:  map 100% reduce 100%
+standard error output:
+18/05/05 16:44:18 INFO mapreduce.Job: Job job_1525506840520_0009 completed successfully
+standard error output:
+18/05/05 16:44:19 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=86
+		FILE: Number of bytes written=577680
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=472
+		HDFS: Number of bytes written=138
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Data-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=14276
+		Total time spent by all reduces in occupied slots (ms)=2352
+		Total time spent by all map tasks (ms)=14276
+		Total time spent by all reduce tasks (ms)=2352
+		Total vcore-seconds taken by all map tasks=14276
+		Total vcore-seconds taken by all reduce tasks=2352
+		Total megabyte-seconds taken by all map tasks=14618624
+		Total megabyte-seconds taken by all reduce tasks=2408448
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=4
+		Map output bytes=72
+		Map output materialized bytes=104
+		Input split bytes=432
+		Combine input records=4
+		Combine output records=4
+		Reduce input groups=2
+		Reduce shuffle bytes=104
+		Reduce input records=4
+		Reduce output records=2
+		Spilled Records=8
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=174
+		CPU time spent (ms)=2280
+		Physical memory (bytes) snapshot=1227243520
+		Virtual memory (bytes) snapshot=3803242496
+		Total committed heap usage (bytes)=1006632960
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=40
+	File Output Format Counters 
+		Bytes Written=138
+standard error output:
+18/05/05 16:44:19 INFO client.RMProxy: Connecting to ResourceManager at hadoop0/192.168.3.10:8032
+standard error output:
+org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory hdfs://2bc67c1980a1:9000/user/root/output-201850501631 already exists
+standard error output:
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputFormat.checkOutputSpecs(FileOutputFormat.java:146)
+	at org.apache.hadoop.mapreduce.JobSubmitter.checkSpecs(JobSubmitter.java:269)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:142)
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1290)
+standard error output:
+	at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1287)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1657)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1287)
+	at org.apache.hadoop.mapreduce.Job.waitForCompletion(Job.java:1308)
+	at org.apache.hadoop.examples.Grep.run(Grep.java:94)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)
+	at org.apache.hadoop.examples.Grep.main(Grep.java:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)standard error output:
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.util.ProgramDriver$ProgramDescription.invoke(ProgramDriver.java:71)
+	at org.apache.hadoop.util.ProgramDriver.run(ProgramDriver.java:144)
+	at org.apache.hadoop.examples.ExampleDriver.main(ExampleDriver.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+standard error output:
+2	hello wfg
+2	hello lxx
+child process eixt ,exit:0standard error output:
+201805051642
+standard error output:
+DEPRECATED: Use of this script to execute hdfs command is deprecated.
+Instead use the hdfs command for it.
+
+standard error output:
+18/05/05 16:53:02 INFO client.RMProxy: Connecting to ResourceManager at hadoop0/192.168.3.10:8032
+standard error output:
+18/05/05 16:53:03 INFO input.FileInputFormat: Total input paths to process : 4
+standard error output:
+18/05/05 16:53:03 INFO mapreduce.JobSubmitter: number of splits:4
+standard error output:
+18/05/05 16:53:03 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1525506840520_0010
+standard error output:
+18/05/05 16:53:03 INFO impl.YarnClientImpl: Submitted application application_1525506840520_0010
+standard error output:
+18/05/05 16:53:03 INFO mapreduce.Job: The url to track the job: http://hadoop0:8088/proxy/application_1525506840520_0010/
+standard error output:
+18/05/05 16:53:03 INFO mapreduce.Job: Running job: job_1525506840520_0010
+standard error output:
+18/05/05 16:53:08 INFO mapreduce.Job: Job job_1525506840520_0010 running in uber mode : false
+standard error output:
+18/05/05 16:53:08 INFO mapreduce.Job:  map 0% reduce 0%
+standard error output:
+18/05/05 16:53:13 INFO mapreduce.Job:  map 75% reduce 0%
+standard error output:
+18/05/05 16:53:14 INFO mapreduce.Job:  map 100% reduce 0%
+standard error output:
+18/05/05 16:53:18 INFO mapreduce.Job:  map 100% reduce 100%
+standard error output:
+18/05/05 16:53:18 INFO mapreduce.Job: Job job_1525506840520_0010 completed successfully
+standard error output:
+18/05/05 16:53:18 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=86
+		FILE: Number of bytes written=577680
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=472
+		HDFS: Number of bytes written=138
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Data-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=14354
+		Total time spent by all reduces in occupied slots (ms)=2400
+		Total time spent by all map tasks (ms)=14354
+		Total time spent by all reduce tasks (ms)=2400
+		Total vcore-seconds taken by all map tasks=14354
+		Total vcore-seconds taken by all reduce tasks=2400
+		Total megabyte-seconds taken by all map tasks=14698496
+		Total megabyte-seconds taken by all reduce tasks=2457600
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=4
+		Map output bytes=72
+		Map output materialized bytes=104
+		Input split bytes=432
+		Combine input records=4
+		Combine output records=4
+		Reduce input groups=2
+		Reduce shuffle bytes=104
+		Reduce input records=4
+		Reduce output records=2
+		Spilled Records=8
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=165
+		CPU time spent (ms)=2300
+		Physical memory (bytes) snapshot=1234309120
+		Virtual memory (bytes) snapshot=3794079744
+		Total committed heap usage (bytes)=1006632960
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=40
+	File Output Format Counters 
+		Bytes Written=138
+standard error output:
+18/05/05 16:53:18 INFO client.RMProxy: Connecting to ResourceManager at hadoop0/192.168.3.10:8032
+standard error output:
+18/05/05 16:53:18 INFO input.FileInputFormat: Total input paths to process : 1
+standard error output:
+18/05/05 16:53:18 INFO mapreduce.JobSubmitter: number of splits:1
+standard error output:
+18/05/05 16:53:18 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1525506840520_0011
+standard error output:
+18/05/05 16:53:18 INFO impl.YarnClientImpl: Submitted application application_1525506840520_0011
+standard error output:
+18/05/05 16:53:18 INFO mapreduce.Job: The url to track the job: http://hadoop0:8088/proxy/application_1525506840520_0011/
+standard error output:
+18/05/05 16:53:18 INFO mapreduce.Job: Running job: job_1525506840520_0011
+standard error output:
+18/05/05 16:53:28 INFO mapreduce.Job: Job job_1525506840520_0011 running in uber mode : false
+standard error output:
+18/05/05 16:53:28 INFO mapreduce.Job:  map 0% reduce 0%
+standard error output:
+18/05/05 16:53:33 INFO mapreduce.Job:  map 100% reduce 0%
+standard error output:
+18/05/05 16:53:38 INFO mapreduce.Job:  map 100% reduce 100%
+standard error output:
+18/05/05 16:53:38 INFO mapreduce.Job: Job job_1525506840520_0011 completed successfully
+standard error output:
+18/05/05 16:53:38 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=46
+		FILE: Number of bytes written=230065
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=270
+		HDFS: Number of bytes written=24
+		HDFS: Number of read operations=7
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=2238
+		Total time spent by all reduces in occupied slots (ms)=2368
+		Total time spent by all map tasks (ms)=2238
+		Total time spent by all reduce tasks (ms)=2368
+		Total vcore-seconds taken by all map tasks=2238
+		Total vcore-seconds taken by all reduce tasks=2368
+		Total megabyte-seconds taken by all map tasks=2291712
+		Total megabyte-seconds taken by all reduce tasks=2424832
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=2
+		Map output bytes=36
+		Map output materialized bytes=46
+		Input split bytes=132
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=1
+		Reduce shuffle bytes=46
+		Reduce input records=2
+		Reduce output records=2
+		Spilled Records=4
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=39
+		CPU time spent (ms)=980
+		Physical memory (bytes) snapshot=422195200
+		Virtual memory (bytes) snapshot=1527812096
+		Total committed heap usage (bytes)=402653184
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=138
+	File Output Format Counters 
+		Bytes Written=24
+standard error output:
+2	hello wfg
+2	hello lxx
+child process eixt ,exit:0

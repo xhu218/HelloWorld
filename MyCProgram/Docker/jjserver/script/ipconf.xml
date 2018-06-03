@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<NEBULA_VIP showname="Hive集群虚拟IP">172.16.168.205</NEBULA_VIP>
+	<PNSIPADDRESS>172.16.148.81</PNSIPADDRESS>
+	<PNSPORT>11111</PNSPORT>
+	<LOCAL_IP showname="本机IP">172.16.168.203</LOCAL_IP>
+	<LOCAL_HOSTNAME showname="本机名">hivenode03</LOCAL_HOSTNAME>
+	<DOMAIN_NAME showname="Hive域名">hive.sobey.com</DOMAIN_NAME>
+	<HIVE_NODES showname="Hive集群列表">hivenode01;hivenode02;hivenode03</HIVE_NODES><!--多个地址间分号隔开-->
+	<AKSERVER_IP showname="AK服务器地址">172.16.128.134</AKSERVER_IP>
+	<ACTOR_NODES showname="后台执行器节点">172.16.128.136;172.16.128.137;172.16.128.138</ACTOR_NODES><!--多个地址间分号隔开-->
+    <THIRD_STORAGE_ADDRESS showname="第三方存储外挂至HIVE的访问地址" type="NAS/OSS/FTP/HTTP/UNC" uid="" password="" access_keyid="" access_keysecret="" rootname="">\\\\IP\NECStoarge</THIRD_STORAGE_ADDRESS>
+</config>

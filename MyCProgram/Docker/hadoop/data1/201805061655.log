@@ -1,0 +1,172 @@
+standard error output:
+201805061655
+standard error output:
+DEPRECATED: Use of this script to execute hdfs command is deprecated.
+Instead use the hdfs command for it.
+
+standard error output:
+18/05/06 16:55:34 INFO client.RMProxy: Connecting to ResourceManager at hadoop0/192.168.3.10:8032
+standard error output:
+18/05/06 16:55:34 INFO input.FileInputFormat: Total input paths to process : 4
+standard error output:
+18/05/06 16:55:34 INFO mapreduce.JobSubmitter: number of splits:4
+standard error output:
+18/05/06 16:55:34 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1525596863915_0002
+standard error output:
+18/05/06 16:55:35 INFO impl.YarnClientImpl: Submitted application application_1525596863915_0002
+standard error output:
+18/05/06 16:55:35 INFO mapreduce.Job: The url to track the job: http://hadoop0:8088/proxy/application_1525596863915_0002/
+standard error output:
+18/05/06 16:55:35 INFO mapreduce.Job: Running job: job_1525596863915_0002
+standard error output:
+18/05/06 16:55:43 INFO mapreduce.Job: Job job_1525596863915_0002 running in uber mode : false
+standard error output:
+18/05/06 16:55:43 INFO mapreduce.Job:  map 0% reduce 0%
+standard error output:
+18/05/06 16:55:49 INFO mapreduce.Job:  map 100% reduce 0%
+standard error output:
+18/05/06 16:55:54 INFO mapreduce.Job:  map 100% reduce 100%
+standard error output:
+18/05/06 16:55:55 INFO mapreduce.Job: Job job_1525596863915_0002 completed successfully
+standard error output:
+18/05/06 16:55:55 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=86
+		FILE: Number of bytes written=577685
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=472
+		HDFS: Number of bytes written=138
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Data-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=14514
+		Total time spent by all reduces in occupied slots (ms)=2987
+		Total time spent by all map tasks (ms)=14514
+		Total time spent by all reduce tasks (ms)=2987
+		Total vcore-seconds taken by all map tasks=14514
+		Total vcore-seconds taken by all reduce tasks=2987
+		Total megabyte-seconds taken by all map tasks=14862336
+		Total megabyte-seconds taken by all reduce tasks=3058688
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=4
+		Map output bytes=72
+		Map output materialized bytes=104
+		Input split bytes=432
+		Combine input records=4
+		Combine output records=4
+		Reduce input groups=2
+		Reduce shuffle bytes=104
+		Reduce input records=4
+		Reduce output records=2
+		Spilled Records=8
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=148
+		CPU time spent (ms)=2260
+		Physical memory (bytes) snapshot=1231011840
+		Virtual memory (bytes) snapshot=3792887808
+		Total committed heap usage (bytes)=1006632960
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=40
+	File Output Format Counters 
+		Bytes Written=138
+standard error output:
+18/05/06 16:55:55 INFO client.RMProxy: Connecting to ResourceManager at hadoop0/192.168.3.10:8032
+standard error output:
+18/05/06 16:55:55 INFO input.FileInputFormat: Total input paths to process : 1
+standard error output:
+18/05/06 16:55:55 INFO mapreduce.JobSubmitter: number of splits:1
+standard error output:
+18/05/06 16:55:55 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1525596863915_0003
+standard error output:
+18/05/06 16:55:55 INFO impl.YarnClientImpl: Submitted application application_1525596863915_0003
+standard error output:
+18/05/06 16:55:55 INFO mapreduce.Job: The url to track the job: http://hadoop0:8088/proxy/application_1525596863915_0003/
+standard error output:
+18/05/06 16:55:55 INFO mapreduce.Job: Running job: job_1525596863915_0003
+standard error output:
+18/05/06 16:56:05 INFO mapreduce.Job: Job job_1525596863915_0003 running in uber mode : false
+standard error output:
+18/05/06 16:56:05 INFO mapreduce.Job:  map 0% reduce 0%
+standard error output:
+18/05/06 16:56:09 INFO mapreduce.Job:  map 100% reduce 0%
+standard error output:
+18/05/06 16:56:14 INFO mapreduce.Job:  map 100% reduce 100%
+standard error output:
+18/05/06 16:56:14 INFO mapreduce.Job: Job job_1525596863915_0003 completed successfully
+standard error output:
+18/05/06 16:56:14 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=46
+		FILE: Number of bytes written=230067
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=271
+		HDFS: Number of bytes written=24
+		HDFS: Number of read operations=7
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=2215
+		Total time spent by all reduces in occupied slots (ms)=2292
+		Total time spent by all map tasks (ms)=2215
+		Total time spent by all reduce tasks (ms)=2292
+		Total vcore-seconds taken by all map tasks=2215
+		Total vcore-seconds taken by all reduce tasks=2292
+		Total megabyte-seconds taken by all map tasks=2268160
+		Total megabyte-seconds taken by all reduce tasks=2347008
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=2
+		Map output bytes=36
+		Map output materialized bytes=46
+		Input split bytes=133
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=1
+		Reduce shuffle bytes=46
+		Reduce input records=2
+		Reduce output records=2
+		Spilled Records=4
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=36
+		CPU time spent (ms)=1060
+		Physical memory (bytes) snapshot=429359104
+		Virtual memory (bytes) snapshot=1512505344
+		Total committed heap usage (bytes)=402653184
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=138
+	File Output Format Counters 
+		Bytes Written=24
+standard error output:
+2	hello wfg
+2	hello lxx
+child process eixt ,exit:0
