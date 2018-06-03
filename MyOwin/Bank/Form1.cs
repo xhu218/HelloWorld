@@ -155,6 +155,18 @@ namespace Bank
                 }
             }
 
+            Label lab1 = new Label();
+            lab1.Font = new System.Drawing.Font("宋体", 16);
+            lab1.Text = "1 50%";         
+            lab1.Location = new Point(panel.Location.X + panel.Width - 200, panel.Location.Y);
+
+            Label lab2 = new Label();
+            lab2.Font = new System.Drawing.Font("宋体", 16);
+            lab2.Text = "2 50%";
+            lab2.Location = new Point(panel.Location.X + panel.Width - 200, panel.Location.Y+50);
+
+            panel.Controls.Add(lab1);
+            panel.Controls.Add(lab2);
         }
 
         void btn_MouseLeave(object sender, EventArgs e)
