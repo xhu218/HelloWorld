@@ -1,7 +1,7 @@
 require('date-utils');
 var writelog = require("./writelog.js");
 
-var $host = '192.168.1.102';
+var $host = '172.16.134.31';
 var $user = 'mysql';
 var $password = 'mysql';
 var $database = 'mydatabase';
@@ -92,7 +92,7 @@ fund_mysql = {
 
     insert: function(fund) {
 
-        console.log("insert in to mysql " + fund);
+        //console.log("insert in to mysql " + fund);
 
 
         var mysql = require('mysql');
@@ -119,10 +119,10 @@ fund_mysql = {
                 return;
             }
 
-            console.log('--------------------------INSERT----------------------------');
-            //console.log('INSERT ID:',result.insertId);        
-            console.log('INSERT ID:', result);
-            console.log('-----------------------------------------------------------------\n\n');
+            //console.log('--------------------------INSERT----------------------------');
+            console.log('INSERT ID:',result.insertId);        
+            //console.log('INSERT ID:', result);
+            //console.log('-----------------------------------------------------------------\n\n');
         });
 
         connection.end();

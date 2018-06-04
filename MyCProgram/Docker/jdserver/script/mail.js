@@ -37,9 +37,10 @@ var sendMail = function (recipient, subject, html) {
 
     }, function (error, response) {
         if (error) {
+            console.log(recipient + " " + subject + " "   + '发送失败');
             console.log(error);
         }
-        console.log('发送成功')
+        console.log(recipient + " " + subject + " "   + '发送成功')
     });
 }
 

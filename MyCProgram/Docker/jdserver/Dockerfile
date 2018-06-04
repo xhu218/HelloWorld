@@ -13,9 +13,9 @@ ADD ./run.sh /run.sh
 #RUN yum install -y tar
 #RUN apt-get update 
 
-RUN apt-get install tar
+#RUN apt-get install tar
 
-RUN tar -xf node_modules.tar
+#RUN tar -xf node_modules.tar
 
 #RUN npm install
 

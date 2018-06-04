@@ -1,0 +1,13 @@
+{
+  "name": "webtest",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "lpxxn",
+  "main": "server.js",
+  "scripts": {
+    "start": "node script/server.js"
+  },
+  "engines": {
+    "node": "6.9.4"
+  }
+}

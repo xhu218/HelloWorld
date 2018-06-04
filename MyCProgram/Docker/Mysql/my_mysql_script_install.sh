@@ -6,6 +6,6 @@ docker run -d --privileged=true \
 -e MYSQL_DATABASE="mydatabase" \
 -e MYSQL_ROOT_PASSWORD="root" \
 -v "$(pwd)"/run:/usr/local/bin/run \
--v $(pwd)/mysql:/usr/lib/sbin/log \
--v $(pwd)/data/mysql:/var/lib/mysql \
- mysql:latest
+-v "$(pwd)"/log:/usr/lib/sbin/log \
+-v /sobeyhive/data/mysql/db:/var/lib/mysql \
+mysql

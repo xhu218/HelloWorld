@@ -31,7 +31,7 @@ jijingbase = {
         //Last3Year
 
         var last3year = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_last3year) - parseInt(b.jijing_last3year);
+            return (a.jijing_last3year) - (b.jijing_last3year);
         });
 
         for (var i = 0; i < alllist.length; i++) {
@@ -41,7 +41,7 @@ jijingbase = {
 
         //Last2Year
         var last2year = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_last2year) - parseInt(b.jijing_last2year);
+            return (a.jijing_last2year) - (b.jijing_last2year);
         });
         for (var i = 0; i < alllist.length; i++) {
             allDict[last3year[i].jijing_Code].jijing_last2year_sort = i;
@@ -51,7 +51,7 @@ jijingbase = {
         //Last6Month
 
         var last6Month = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_last6Month) - parseInt(b.jijing_last6Month);
+            return (a.jijing_last6Month) - (b.jijing_last6Month);
         });
 
         for (var i = 0; i < alllist.length; i++) {
@@ -60,7 +60,7 @@ jijingbase = {
         //Last3Month
 
         var last3Month = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_last3Month) - parseInt(b.jijing_last3Month);
+            return (a.jijing_last3Month) - (b.jijing_last3Month);
         });
 
         for (var i = 0; i < alllist.length; i++) {
@@ -70,7 +70,7 @@ jijingbase = {
         //LastMonth
 
         var lastMonth = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_lastMonth, null, "\t") - parseInt(b.jijing_lastMonth);
+            return (a.jijing_lastMonth) - (b.jijing_lastMonth);
         });
 
         for (var i = 0; i < alllist.length; i++) {
@@ -80,7 +80,7 @@ jijingbase = {
         //LastWeek
 
         var lastWeek = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_lastWeek) - parseInt(b.jijing_lastWeek);
+            return (a.jijing_lastWeek) - (b.jijing_lastWeek);
         });
 
 
@@ -91,7 +91,7 @@ jijingbase = {
         //Last1Year
 
         var last1year = alllist.sort(function(b, a) {
-            return parseInt(a.jijing_last1year) - parseInt(b.jijing_last1year);
+            return (a.jijing_last1year) - (b.jijing_last1year);
         });
 
         for (var i = 0; i < alllist.length; i++) {

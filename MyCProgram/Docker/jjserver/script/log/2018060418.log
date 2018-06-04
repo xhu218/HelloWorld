@@ -1,0 +1,15 @@
+2018-06-04 18:06:26	doit method 001387TypeError: Cannot read property '0' of null
+2018-06-04 18:06:46	doit method 002853TypeError: Cannot read property '0' of null
+2018-06-04 18:09:19	doit method 002853TypeError: Cannot read property '0' of null
+2018-06-04 18:09:20	doit method 001387TypeError: Cannot read property '0' of null
+2018-06-04 18:10:08	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:11:40	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:11:43	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:12:34	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:12:40	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:12:53	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:13:32	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:14:49	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:14:54	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:15:01	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
+2018-06-04 18:15:16	[INSERT ERROR] - Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'
