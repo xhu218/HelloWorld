@@ -85,14 +85,14 @@ fund_mysql = {
 
         for (var i = 0; i < data.length; i++) {
             console.log(i);
-            setTimeout(this.insert, 200 * i, data[i]);
+            setTimeout(this.insert, 50 * i, data[i]);
             //this.insert(data[i]);
         }
     },
 
     insert: function(fund) {
 
-        //console.log("insert in to mysql " + fund);
+        //console.log("insert in to mysql " + JSON.stringify(fund));
 
 
         var mysql = require('mysql');
@@ -116,6 +116,7 @@ fund_mysql = {
         connection.query(addSql, addSqlParams, function(err, result) {
             if (err) {
                 writelog('[INSERT ERROR] - '+ err,"Error");
+				  writelog('[INSERT ERROR] - '+ err + JSON.stringify(fund),"Error");
                 return;
             }
 

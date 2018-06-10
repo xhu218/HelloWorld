@@ -12,7 +12,7 @@ var fund_stock = require("./fund_stock.js");
 
 jijing.download();
 //jijing.readfile()
-//fund_stock.getalltheinfo();
+fund_stock.getalltheinfo();
 //my_http.start();
 
 
@@ -20,7 +20,7 @@ jijing.download();
 
 
 
-/*
+
 
 var schedule = require("node-schedule");
 
@@ -34,7 +34,7 @@ var job1 = schedule.scheduleJob(rule1, function() {
     fund_stock.getalltheinfo();
 
 });
-*/
+
 /*
 
 

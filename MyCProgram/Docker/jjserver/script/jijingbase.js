@@ -141,8 +141,8 @@ jijingbase = {
             fund_mysql.insertall(data);
         } catch (error) { console.log(error); }
 
-        file.writetoFile("var good = " + JSON.stringify(data, null, "\t"), path.join(rootDir, d + ".json"), false);
-        //file.writetoFile(JSON.stringify(d, null, "\t"), path.join(rootDir, "AllList", d + ".json"), false);
+        file.writetoFile(JSON.stringify(data, null, "\t"), path.join(rootDir, d + ".json"), false,null,true);
+        file.writetoFile(JSON.stringify(data, null, "\t"), path.join(rootDir, "AllList", d + ".json"), false,null,true);
 
         function isInList(item, list) {
 

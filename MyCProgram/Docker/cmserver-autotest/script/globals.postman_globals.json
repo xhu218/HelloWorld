@@ -1,149 +1,287 @@
 {
-  "id": "d6ce3d52-539a-41ee-5193-c209dd587eeb",
+  "id": "be295c3a-bb19-c549-52bf-0b7eff3ce5f7",
   "name": "Postman Globals",
   "values": [
     {
-      "enabled": true,
       "key": "echo_digest_realm",
       "value": "Users",
+      "enabled": true,
       "type": "text"
     },
     {
-      "enabled": true,
       "key": "echo_digest_nonce",
       "value": "OnN4vCWOvpcbqN1i7lZFCTKIX4ofUilv",
+      "enabled": true,
       "type": "text"
     },
     {
-      "enabled": true,
       "key": "variable_key",
       "value": "undefined",
+      "enabled": true,
       "type": "text"
     },
     {
       "key": "VIP",
       "value": "172.16.168.205",
-      "type": "text",
-      "enabled": true
+      "enabled": true,
+      "type": "text"
     },
     {
       "key": "contentid",
-      "type": "text",
-      "value": "62b2ae46f2054c2ab650a15366ebccfe",
-      "enabled": true
+      "value": "9155bc9655d44902b8d24ca4cfedff54",
+      "enabled": true,
+      "type": "text"
     },
     {
       "key": "mosid\n",
       "value": "sony.studioDev.mos",
-      "type": "text",
-      "enabled": true
+      "enabled": true,
+      "type": "text"
     },
     {
       "key": "foldername_re",
-      "type": "text",
       "value": "9ZKAYR13KYGCWFVC9E1BK5UVXETH3IKX",
-      "enabled": true
+      "enabled": true,
+      "type": "text"
     },
     {
       "key": "responseTime",
-      "type": "text",
       "value": "1",
-      "enabled": true
+      "enabled": true,
+      "type": "text"
     },
     {
       "key": "Response_time\n",
       "value": "200",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "filepath",
-      "value": "\\\\\\\\172.16.168.202\\\\hivefiles\\\\sobeyhive\\\\bucket-z\\\\u20011\\\\cmupload\\\\2017-04-21\\\\a6c01c60870ab25975885bbe0787f75cwfg4.mp4",
-      "type": "text",
-      "enabled": true
+      "enabled": true,
+      "type": "text"
     },
     {
       "key": "fcpfilepath",
-      "value": "\\\\\\\\172.16.168.202\\\\hivefiles\\\\sobeyhive\\\\bucket-z\\\\u20002\\\\cmupload\\\\2017-04-21\\\\0c60189decb5e1e3e8e720ce47c09683.mp4",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "jove_contentId",
-      "type": "text",
-      "value": "2fca6290165f4989ad63140a96a64271",
-      "enabled": true
+      "value": "\\\\\\\\172.16.168.202\\\\hivefiles\\\\sobeyhive\\\\buckets\\\\u-3ulc5d341cl2tqwr\\\\0c60189decb5e1e3e8e720ce47c09683.mp4",
+      "enabled": true,
+      "type": "text"
     },
     {
       "key": "planningGuid",
       "value": "",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "RundownID",
+      "value": "3a2bcc72-d6bc-4453-be00-2377ba21c921",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "StoryID",
+      "value": "3d7ed9d4-5bad-4a60-8e48-9a1f88bba40f",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "EventID",
+      "value": "4d902f59-c9ed-4b85-a7a3-a46b1b14cbb4",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "userextendid",
+      "value": "25007",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "columncode",
+      "value": "undefined",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "foldername_rename",
+      "value": "66INLJO2G7Q6LBUHSOYV5R6W6MFBEAVB",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "folder_contentid",
+      "value": "86023a7e3f2646a2bbee8a9fec7e6bcb",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "filepath",
+      "value": "\\\\\\\\172.16.168.202\\\\hivefiles\\\\sobeyhive\\\\buckets\\\\u-3ulc5d341cl2tqwr\\\\a6c01c60870ab25975885bbe0787f75cwfg4.mp4",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "objectid",
+      "value": "2806881",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "contentId",
+      "value": "7a8c093b7fb24a1c9c5c960e1b3e44b4",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "pefFilePath",
+      "value": "\\\\172.16.168.202\\hivefiles\\sobeyhive\\\\buckets\\\\u-3ulc5d341cl2tqwr\\\\PEF_New_8b9d130321c54b82a34a06e4fa8a9b51.pef",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "StudioID",
+      "value": "1",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "mosid",
+      "value": "sony.studioDev.mos",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "UrlBase",
       "type": "text",
+      "value": "http://localhost",
+      "enabled": true
+    },
+    {
+      "key": "Port",
+      "type": "text",
+      "value": ":3333",
+      "enabled": true
+    },
+    {
+      "key": "Route",
+      "type": "text",
+      "value": "/api/sns",
+      "enabled": true
+    },
+    {
+      "key": "UserCode",
+      "type": "text",
+      "value": "bfed346828694708a037e4b2ff833327",
+      "enabled": true
+    },
+    {
+      "key": "UserName",
+      "type": "text",
+      "value": "yhj",
+      "enabled": true
+    },
+    {
+      "key": "ImageContentID",
+      "type": "text",
+      "value": "8a1850f92bb94d02833bdf42b8337553",
+      "enabled": true
+    },
+    {
+      "key": "VideoContentID",
+      "type": "text",
+      "value": "72809daed212465f8205757e79dd3fb1",
+      "enabled": true
+    },
+    {
+      "key": "FacebookPageID",
+      "type": "text",
+      "value": "355926338205642",
+      "enabled": true
+    },
+    {
+      "key": "TwitterUserID",
+      "type": "text",
+      "value": "3913B7E4554E4C8E91BFA00EBF6FDCE6",
+      "enabled": true
+    },
+    {
+      "key": "YouTubeUserID",
+      "type": "text",
+      "value": "0E666EE1A7374857AFC6332561690F0D",
+      "enabled": true
+    },
+    {
+      "key": "FacebookUserToken",
+      "type": "text",
+      "value": "EAAQjYlQ40J8BAMJfZCP8Ac6FUDC79dUGVx7FNkU9dCfTp36P8BEFY4OdmnFFGyUhwU7vMGJ21rQTXvklmoP2I5Tu7esAKcxFopOU9jQ9mZACrrlLpMVxojCt2dEtq2c8gPZBgT09goshsGdm6U9kBO79vMhLwUZD",
+      "enabled": true
+    },
+    {
+      "key": "FacebookPageToken",
+      "type": "text",
+      "value": "EAAQjYlQ40J8BAIZBHYjZBx0Fb8ko25ypuIf7SLvU9i5bPttcEkvkANg8qrTZAZBqzZBHbbd9BSjEDlj792nMWDnS4bdO6M1m9ZC1XHzo3LgZCprxJj6RaSsbdBxFRAV8A5B9qzWQFZCmyAJISz2aZAsoRW49Pfv1CpwiZC2S2Hqli62wZDZD",
+      "enabled": true
+    },
+    {
+      "key": "FacebookUserID",
+      "type": "text",
+      "value": "2006779142940725",
+      "enabled": true
+    },
+    {
+      "key": "FacebookAdsAccount",
+      "type": "text",
+      "value": "1999968446955128",
+      "enabled": true
+    },
+    {
+      "key": "TwitterConsumerKey",
+      "type": "text",
+      "value": "xXpIB8TaLnqXzwQFVcnHj0w6x",
+      "enabled": true
+    },
+    {
+      "key": "TwitterConsumerSecret",
+      "type": "text",
+      "value": "i3hKmPWi9DgqDKfEj1eBZBOEDnYpJTjSj35zvcjm7oSLXkcDQq",
+      "enabled": true
+    },
+    {
+      "key": "TwitterAccessToken",
+      "type": "text",
+      "value": "4778155454-T455UG4uJr2T6SWueqlPRaXQ75PYzMeVIWEVNnx",
+      "enabled": true
+    },
+    {
+      "key": "TwitterAccessTokenSecret",
+      "type": "text",
+      "value": "Rp1hSX7LknqobPw0GLD2u0xm3QFlwFABwiZzYWJ8ytisH",
+      "enabled": true
+    },
+    {
+      "key": "YouTubeClientID",
+      "type": "text",
+      "value": "258351154057-ku3p7gt8frfa0kpb6sb4qsqvkm7j0i1u.apps.googleusercontent.com",
+      "enabled": true
+    },
+    {
+      "key": "YouTubeClientSecret",
+      "type": "text",
+      "value": "7bKG83e0nILm8yHodZpRjMcX",
       "enabled": true
     },
     {
       "key": "planningID",
       "type": "text",
-      "value": "159",
-      "enabled": true
-    },
-    {
-      "key": "StudioID",
-      "type": "text",
-      "value": "1",
-      "enabled": true
-    },
-    {
-      "key": "mosid",
-      "type": "text",
-      "value": "sony.studioDev.mos",
-      "enabled": true
-    },
-    {
-      "key": "RundownID",
-      "type": "text",
-      "value": "3a2bcc72-d6bc-4453-be00-2377ba21c921",
-      "enabled": true
-    },
-    {
-      "key": "StoryID",
-      "type": "text",
-      "value": "3d7ed9d4-5bad-4a60-8e48-9a1f88bba40f",
-      "enabled": true
-    },
-    {
-      "key": "EventID",
-      "type": "text",
-      "value": "4d902f59-c9ed-4b85-a7a3-a46b1b14cbb4",
-      "enabled": true
-    },
-    {
-      "key": "columnname",
-      "type": "text",
-      "value": "12",
-      "enabled": true
-    },
-    {
-      "key": "columncode",
-      "type": "text",
-      "value": "undefined",
-      "enabled": true
-    },
-    {
-      "key": "userextendid",
-      "type": "text",
-      "value": "23275",
+      "value": "131",
       "enabled": true
     },
     {
       "key": "usertoken",
       "type": "text",
-      "value": "3da9ab79a55edc893a4289175e8ff7fa",
+      "value": "323a7ade135775909248d8402759215b",
       "enabled": true
     },
     {
       "key": "loginInfoID",
       "type": "text",
-      "value": "307505",
+      "value": "182885",
       "enabled": true
     },
     {
@@ -167,41 +305,17 @@
     {
       "key": "foldername",
       "type": "text",
-      "value": "C637NO9V5V89CK8JDYRLNRR7RDSA9TT7",
+      "value": "NWKSIWB3M8MSE1K1FDPGO5BZU3PSYSTW",
       "enabled": true
     },
     {
       "key": "folderid",
       "type": "text",
-      "value": "323b75db97b6489e90a3f5b665b79fdb",
-      "enabled": true
-    },
-    {
-      "key": "foldername_rename",
-      "type": "text",
-      "value": "RUBD1MTSR51EXWIEDKQ54DQQZGPCE34R",
-      "enabled": true
-    },
-    {
-      "key": "folder_contentid",
-      "type": "text",
-      "value": "86023a7e3f2646a2bbee8a9fec7e6bcb",
-      "enabled": true
-    },
-    {
-      "key": "objectid",
-      "type": "text",
-      "value": "767461",
-      "enabled": true
-    },
-    {
-      "key": "pefFilePath",
-      "type": "text",
-      "value": "\\\\172.16.168.202\\hivefiles\\sobeyhive\\bucket-z\\u20011\\2017-05-18\\PEF_New_ddc8e707e30c4bef9da150a4ec5b2d95.pef",
+      "value": "bba03042f3334447ac8ea9d659600106",
       "enabled": true
     }
   ],
   "_postman_variable_scope": "globals",
-  "_postman_exported_at": "2017-05-18T11:33:21.350Z",
-  "_postman_exported_using": "Postman/4.10.7"
+  "_postman_exported_at": "2018-06-05T11:38:03.000Z",
+  "_postman_exported_using": "Postman/5.5.2"
 }

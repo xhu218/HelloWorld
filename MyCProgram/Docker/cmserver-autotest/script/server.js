@@ -1,5 +1,5 @@
 var newman = require('newman'); // require newman in your project 
-var Step = require('step');
+//var Step = require('step');
 var async = require('async');
 
 var dir = "/home/Service/script/";
@@ -41,8 +41,8 @@ function replaceFilePath(obj){
 	console.log(filepath_guid);
 	//console.log(fcpfilepath_guid);	
 
-	var _src = 				"/ext_file_root/hivefiles/sobeyhive/bucket-z/u20002/cmupload/2017-04-21/47e4f93b55cf4578ae4182be1012876cmyfly.mp4";
-	var _dst_filepath =		"/ext_file_root/hivefiles/sobeyhive/bucket-z/u20011/cmupload/2017-04-21/"+ filepath_guid +".mp4";//"d:\\1.mp4";//
+	var _src = 				"/ext_file_root/hivefiles/sobeyhive/buckets/u-3ulc5d341cl2tqwr/47e4f93b55cf4578ae4182be1012876cmyfly.mp4";
+	var _dst_filepath =		"/ext_file_root/hivefiles/sobeyhive/buckets/u-3ulc5d341cl2tqwr/"+ filepath_guid +".mp4";//"d:\\1.mp4";//
 	//var _dst_fcpfilepath = 	"/ext_file_root/hivefiles/sobeyhive/bucket-z/u20002/cmupload/2017-04-21/"+ fcpfilepath_guid +".mp4";
 
 	
@@ -98,8 +98,8 @@ function replacePefPath(obj){
 	console.log(fcppef_guid);
 	//console.log(jovepef_guid);
 
-	var _src_pef =  		"/ext_file_root/hivefiles/sobeyhive/bucket-z/u20002/cmupload/2017-04-21/PEF_New_3abaf010db8c4f6686d670610dc92c21.pef";
-	var _dst_fcppef = 		"/ext_file_root/hivefiles/sobeyhive/bucket-z/u20011/cmupload/2017-04-21/"+ fcppef_guid +".pef";	
+	var _src_pef =  		"/ext_file_root/hivefiles/sobeyhive/buckets/u-3ulc5d341cl2tqwr/PEF_New_3abaf010db8c4f6686d670610dc92c21.pef";
+	var _dst_fcppef = 		"/ext_file_root/hivefiles/sobeyhive/buckets/u-3ulc5d341cl2tqwr/"+ fcppef_guid +".pef";	
 	//var _dst_jovepef=		"/ext_file_root/hivefiles/sobeyhive/bucket-z/u20240/"+ jovepef_guid +".pef";
 
 	var fcppef_path = "PEF_New_8b9d130321c54b82a34a06e4fa8a9b51";

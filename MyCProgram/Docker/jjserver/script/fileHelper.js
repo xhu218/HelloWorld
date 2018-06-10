@@ -8,7 +8,7 @@ fileHelper = {
         return data;
     },
 
-    writetoFile: function(content, file, append,callback) {
+    writetoFile: function(content, file, append,callback,writeToQiniu) {
         var fs = require("fs");
         var path = require("path");
         var parentFolder = path.resolve(file, "..");
@@ -36,6 +36,7 @@ fileHelper = {
 
                         //qn.Test1(file.replace("/home/Service/script/",""));
                         //if (file.indexOf("MyCProgram") < 0)
+							if(writeToQiniu)
                             qn.Test1(file);
                     } catch (error) { console.log(error); }
 
