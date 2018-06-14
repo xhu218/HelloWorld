@@ -10,9 +10,9 @@ var fund_stock = require("./fund_stock.js");
 
 
 
-jijing.download();
+//jijing.download();
 //jijing.readfile()
-fund_stock.getalltheinfo();
+//fund_stock.getalltheinfo1();
 //my_http.start();
 
 
@@ -31,11 +31,11 @@ rule1.minute = 30;
 var job1 = schedule.scheduleJob(rule1, function() {
     console.log("执行任务");　
     jijing.download();
-    fund_stock.getalltheinfo();
+
 
 });
 
-/*
+
 
 
 var rule2 = new schedule.RecurrenceRule();　　
@@ -44,13 +44,13 @@ rule2.hour = 16;　
 rule2.minute = 30;
 var job1 = schedule.scheduleJob(rule2, function() {
 
-
+    fund_stock.getalltheinfo1();
     console.log("执行任务");　
 
 });
 
 
-*/
+
 
 
 const readline = require('readline');

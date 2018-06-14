@@ -52,13 +52,20 @@ var jdProcess = {
                 var fromfile = readfromFile(datapath);
 
                 //console.log("from is ok1 " + fromfile);
-                var from = JSON.parse(fromfile.replace("var goods = ", "").replace("}];", "}]"));
+                var from = [];
+                try
+                {
+                    from = JSON.parse(fromfile.replace("var goods = ", "").replace("}];", "}]"));
+                }
+                catch(err){
+                    
+                }
                 var writeto = "var goods = " + JSON.stringify(result) + ";";
                 console.log("from is ok ");
                 var f = isTheSameList(result, from);
                 console.log("current f is :" + f);
-                if (!f)//(true) //(!f) 
-				{
+                if (!f) //(true) //(!f) 
+                {
 
                     //针对超级秒杀，单独发邮件给13548180218@139.com
                     for (var i = 0; i < result.length; i++) {
@@ -120,7 +127,7 @@ var jdProcess = {
 
                     var request = require("request")
 
-                    var url = "http://xhu218.s3.91sc.top/user.json?t="+Math.random();//http://qxu1194650105.my3w.com/data/user.json"
+                    var url = "http://xhu218.s3.91sc.top/user.json?t=" + Math.random(); //http://qxu1194650105.my3w.com/data/user.json"
 
                     request({
                         url: url,
@@ -131,18 +138,18 @@ var jdProcess = {
                             //console.log(users) // Print the json response
                             //var users = JSON.parse(users);
                             //console.log(users.length);
-							console.log("url = " + url + "wfg...");
+                            console.log("url = " + url + "wfg...");
                             for (var i = 0; i < users.length; i++) {
-                                
+
                                 if (users[i].enable == true) {
-									console.log("wfg================"+JSON.stringify(users[i]));
-									
-                                    setTimeout((function(email,t, c) {
+                                    console.log("wfg================" + JSON.stringify(users[i]));
+
+                                    setTimeout((function(email, t, c) {
                                         return function() {
                                             sendmail(email, t, c);
                                         }
-                                    })(users[i].email,time + "数据更新", GetMailContent(result, users[i].email)), i * 10000);
-									
+                                    })(users[i].email, time + "数据更新", GetMailContent(result, users[i].email)), i * 10000);
+
 
                                     //sendmail(users[i].email, '秒杀数据更新', GetMailContent(result, users[i].email));
                                 }
@@ -158,12 +165,12 @@ var jdProcess = {
                     var time1 = sd.format(new Date(), 'YYYY-MM-DD HH:mm');
                     var info = "{    \"lastUpdateTime\":\"" + time1 + "\"}";
                     writetoFile(info, extenpath, false);
-					
-					var qn = require("./form_upload_simple.js");
+
+                    var qn = require("./form_upload_simple.js");
 
                     /*
-					qn.Test1("data/data.js");
-					qn.Test1("data/extentinfo.js");
+                    qn.Test1("data/data.js");
+                    qn.Test1("data/extentinfo.js");
                     qn.Test1("data/"+time+".js");
                     */
                     qn.Test1(datapath);
@@ -181,7 +188,7 @@ var jdProcess = {
 
         function GetMailContent(arr, email) {
 
-            var content = "<div style=\"float:right\"> <a href=\"http:\/\/qxu1194650105.my3w.com/subscribe.php?email="+email+"&enable=0\" >取消关注</a> </div> <br/> <hr style=\"clear: both\"> "    
+            var content = "<div style=\"float:right\"> <a href=\"http:\/\/qxu1194650105.my3w.com/subscribe.php?email=" + email + "&enable=0\" >取消关注</a> </div> <br/> <hr style=\"clear: both\"> "
             content += "<table style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px ;'> <caption>秒杀数据</caption> <thead> <tr style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>图片</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>京东价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>秒杀价格</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>降价</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>折扣</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>开始时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>结束时间</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>卖出比例</th> <th style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px '>名字</th> </tr> </thead> <tbody> ";
 
 
@@ -201,7 +208,7 @@ var jdProcess = {
                     arr[x].startTimeShow + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
                     (arr[x].endRemainTime / 60 / 60).toFixed(0) + "小时后</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '>" +
                     arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='http://91sc.top/index.php?email=" + email + "&url=" +
-                   // arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='" +
+                    // arr[x].soldRate + "</td> <td style='border:solid;margin: 0,0,0,0;padding: 0,0,0,0;border-width: 1px 1px 0px 0px '><a href='" +
                     url + "' target='_blank '>" + arr[x].wname + "</a></td> </tr>";
             }
 

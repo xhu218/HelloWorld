@@ -1,7 +1,7 @@
 var request1 = require("./request.js");
 require('date-utils');
 var config = require("./config.js")
-
+var writelog = require("./writelog.js");
 
 
 var jijingProcess = {
@@ -14,7 +14,7 @@ var jijingProcess = {
             var d = dt.toFormat("YYYY-MM-DD");
             console.log(d);
 
-            var allpages = 82;//82;//74; //;
+            var allpages = 82; //82;//74; //;
 
             var alldata = [];
 
@@ -55,18 +55,18 @@ var jijingProcess = {
                                 jijing_Code: obj[0],
                                 jijing_Name: obj[1],
                                 jijing_Mask: obj[74],
-                                jijing_Date: (obj[3]==null || obj[3] =="")?"1970-01-01":obj[3],
-                                jijing_unitValue: (obj[4]==null || obj[4] == "")  ? 0 : parseFloat(obj[4]),
-                                jijing_totalValue: (obj[5]==null || obj[5]=="")  ? 0 : parseFloat(obj[5]),
-                                jijing_daliyIncreaseRate: (obj[6] ==null || obj[6] =="") ? 0: parseFloat(obj[6]),
-                                jijing_lastWeek: (obj[7] == null  || obj[7] == "")? 0 : parseFloat((obj[7])),
-                                jijing_lastMonth: (obj[8] == null  || obj[8] == "") ?0 : parseFloat((obj[8])),
-                                jijing_last3Month: (obj[9] == null || obj[9] == "" )? 0 : parseFloat((obj[9])),
-                                jijing_last6Month: (obj[10] == null ||obj[10] == "") ? 0 : parseFloat((obj[10])),
+                                jijing_Date: (obj[3] == null || obj[3] == "") ? "1970-01-01" : obj[3],
+                                jijing_unitValue: (obj[4] == null || obj[4] == "") ? 0 : parseFloat(obj[4]),
+                                jijing_totalValue: (obj[5] == null || obj[5] == "") ? 0 : parseFloat(obj[5]),
+                                jijing_daliyIncreaseRate: (obj[6] == null || obj[6] == "") ? 0 : parseFloat(obj[6]),
+                                jijing_lastWeek: (obj[7] == null || obj[7] == "") ? 0 : parseFloat((obj[7])),
+                                jijing_lastMonth: (obj[8] == null || obj[8] == "") ? 0 : parseFloat((obj[8])),
+                                jijing_last3Month: (obj[9] == null || obj[9] == "") ? 0 : parseFloat((obj[9])),
+                                jijing_last6Month: (obj[10] == null || obj[10] == "") ? 0 : parseFloat((obj[10])),
                                 jijing_last1year: (obj[11] == null || obj[11] == "") ? 0 : parseFloat((obj[11])),
-                                jijing_last2year: (obj[12] == null ||obj[12] == "") ? 0 : parseFloat((obj[12])),
-                                jijing_last3year: (obj[13] == null || obj[13] == "") ?  0 : parseFloat((obj[13])),
-                                jijing_sinceThisYear: (obj[14] == null |obj[14] == "") ? 0 : parseFloat((obj[14])),
+                                jijing_last2year: (obj[12] == null || obj[12] == "") ? 0 : parseFloat((obj[12])),
+                                jijing_last3year: (obj[13] == null || obj[13] == "") ? 0 : parseFloat((obj[13])),
+                                jijing_sinceThisYear: (obj[14] == null | obj[14] == "") ? 0 : parseFloat((obj[14])),
                                 jijing_sinceestablish: (obj[15] == null || obj[15] == "") ? 0 : parseFloat((obj[15]))
 
                             };
@@ -90,6 +90,7 @@ var jijingProcess = {
 
         } catch (err) {
             console.log(err);
+            writelog("出错了" + err, "Error");
         }
     },
 
