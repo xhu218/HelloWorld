@@ -143,7 +143,7 @@ var fund_stock = {
 
         var dt = new Date();
         var line = dt.toFormat("YYYY-MM-DD");
-        alljjlisturl = alljjlisturl + line+".json"
+        alljjlisturl = "http://xhu219.s3.91sc.top/data/" + line+".json"
         console.log(alljjlisturl);
 
         req1(alljjlisturl, function(error, response, body) {

@@ -66,7 +66,7 @@ fund_mysql = {
                                 }
 
                              
-                                console.log('INSERT ID:',result.insertId);        
+                                writelog('INSERT ID:',result.insertId);        
                                 //console.log('INSERT ID:', result);
                                
                             });
@@ -121,7 +121,7 @@ fund_mysql = {
             }
 
             //console.log('--------------------------INSERT----------------------------');
-            console.log('INSERT ID:',result.insertId);        
+            writelog('INSERT ID:',result.insertId);        
             //console.log('INSERT ID:', result);
             //console.log('-----------------------------------------------------------------\n\n');
         });
