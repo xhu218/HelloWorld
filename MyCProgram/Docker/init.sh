@@ -1,8 +1,8 @@
 export MysqlMain=hivenode01
 export RedisMain=hivenode01
 
-#export VIP=172.16.134.205
-export VIP=192.168.1.200
+export VIP=172.16.134.205
+#export VIP=192.168.1.200
 
 
 export hivenode01=172.16.134.31

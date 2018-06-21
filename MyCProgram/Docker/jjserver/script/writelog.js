@@ -9,7 +9,7 @@ module.exports = function(line, level) {
 
         var dt = new Date();
         var line = dt.toFormat("YYYY-MM-DD HH24:MI:SS") + "\t" + line;
-        console.log(line);
+        //console.log(line);
 
 
         var dt = new Date();

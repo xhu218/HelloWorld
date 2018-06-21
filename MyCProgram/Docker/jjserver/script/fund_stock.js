@@ -154,7 +154,10 @@ var fund_stock = {
                 jjObjs = JSON.parse(jj);
 
                 getfundstock();
-            }
+            }else
+			{
+				console.log(error);
+			}
         })
 
 

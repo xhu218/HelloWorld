@@ -2,10 +2,12 @@
 
 count=1
 
-arrayWen=( 80cceaac5239  da85e75f14b3 faaa57f63da0)  
+arrayWen=( 80cceaac5239  da85e75f14b3 faaa57f63da0 1fb87772f2e1)  
 
 #while [ $count -le 10000 ]; do
 while true; do
+
+	sh ./clear_docker_logs.sh
 
 	echo ${#arrayWen[@]}  
 
