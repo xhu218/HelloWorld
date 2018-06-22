@@ -10,13 +10,140 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
+using System.Messaging;
 namespace ConsoleApplication3
 {
     class Program
     {
+
+
+        static void Main(String[] args)
+        {
+
+
+
+            MessageQueue messageQueue = null;
+
+            string description = "This is a test queue.";
+
+            //string message = null;
+
+            byte[] message = null;
+
+            string path = @".\Private$\mosgw_roresponse";
+
+            try
+            {
+
+                if (MessageQueue.Exists(path))
+                {
+
+                    messageQueue = new MessageQueue(path);
+
+                    messageQueue.Label = description;
+
+                }
+
+                else
+                {
+
+                    MessageQueue.Create(path);
+
+                    messageQueue = new MessageQueue(path);
+
+                    messageQueue.Label = description;
+
+                }
+
+                messageQueue.Send(message);
+
+            }
+
+            catch
+            {
+
+                throw;
+
+            }
+
+            finally
+            {
+
+                messageQueue.Dispose();
+
+            }
+
+            /*
+            String transferPath = "½ § ¤ ´`´Å å ^^ æÆ øØ €we€ åÅ æÆ øØ !\"#&/{([)]=}?+`´`|~~*',;.:-_><\\  ~`!@#$^&*()_+{}|:\"<>?-=[];'\\,./";
+            // transferPath = "½ § ¤ ´`´Å å ^^ æÆ øØ €we€ åÅ";  //OK
+            //transferPath = "½ § ¤ ´`´Å å ^^ æÆ øØ €we€ åÅ æÆ øØ !"; //ok
+
+            transferPath = File.ReadAllText(@"f:\wfg.txt");
+            transferPath = ForbidCharFilter.Purify(transferPath);
+            for (int i = 0; i <= transferPath.Length; i++)
+            {
+                //transferPath = transferPath.Replace("+", "%2b");
+                // transferPath = transferPath.Replace(" ", "%20");
+                //transferPath = transferPath.Replace(" ", "%20");
+
+                String path = "20223/" + transferPath;
+
+                path = Base64Helper.Base64Encode(path);
+
+                //String out1 = System.Web.HttpUtility.UrlEncode(path,Encoding.UTF8);
+                String out1 = path;
+
+                String decode = Base64Helper.Base64Decode(out1);
+                Console.WriteLine(String.Format("{0}\t{1}", path, out1));
+
+                var url = "http://hive.sobey.com:9023/CMApi/api/entity/object/transferclipoanonotify?usertoken=3e7ffd7be3d768753f20e9d08d8d458c&sourceguid=a5639694b356444dbf1d4f65812b044d&targetguid=&targetmosid=sony.studioDev.mos&broadnotify=0&mpcnotify=0&relativepath=" + out1 + "&isbase64=true";
+                WebClient client = new WebClient();
+
+                String abc = client.DownloadString(url);
+
+            }
+
+            Console.ReadLine();
+            /*
+
+             FileInfo fileInfo = new FileInfo(@"\\172.16.134.2\x\wfg\2.txt");
+
+            Console.WriteLine(fileInfo.FullName);
+
+            Console.WriteLine(Path.GetFullPath(@"\\172.16.134.2\x\wfg\2.txt"));
+
+            
+            String []dir =  Directory.GetDirectories(@"\\172.16.134.2\x","wfg");
+             * 
+    RestClient client = new RestClient("http://hive.sobey.com:9023/CMApi/api/entity/object/getobjectinfo?usertoken=323a7ade135775909248d8402759215b&contentid=0fc3b11ec3324e1fbdda2f5e0348cb16&objecttype=32&pathtype=unc");
+
+    RestRequest request = new RestRequest(Method.GET);
+
+          
+
+         
+
+    var response = client.Get(request);
+
+    Console.WriteLine(JsonHelper.ToJson(response));
+
+    
+    String str1 = "\\netapp.sobey.com";
+    String str2 = "file://storage.sobey.com/u-p4m0iu701r57low5/hv_res/2018-03-14/ingest_test_20180314120533_0_150_2719__002__high.mp4";
+    String str3 = @"\\netapp.sobey.com\a\b\1.mxf";
+
+    Console.WriteLine(MatchNameConfigByRegex(str1));
+    Console.WriteLine(MatchNameByRegex(str2));
+    */
+
+
+            Console.Read();
+
+        }
+
         public static string MatchNameByRegex(string source)
         {
-            
+
             //file://storage.sobey.com/u-p4m0iu701r57low5/hv_res/2018-03-14/ingest_test_20180314120533_0_150_2719__002__high.mp4
             var pattern = @"file://(.*?)/";
 
@@ -74,7 +201,7 @@ namespace ConsoleApplication3
 
             String[] level = path.Split(new char[] { '\\' });
 
-         
+
 
 
 
@@ -82,81 +209,11 @@ namespace ConsoleApplication3
 
         }
 
-        static void Main(String[] args) {
 
-
-
-
-            String transferPath = "½ § ¤ ´`´Å å ^^ æÆ øØ €we€ åÅ æÆ øØ !\"#&/{([)]=}?+`´`|~~*',;.:-_><\\  ~`!@#$^&*()_+{}|:\"<>?-=[];'\\,./";
-           // transferPath = "½ § ¤ ´`´Å å ^^ æÆ øØ €we€ åÅ";  //OK
-            //transferPath = "½ § ¤ ´`´Å å ^^ æÆ øØ €we€ åÅ æÆ øØ !"; //ok
-
-            transferPath = File.ReadAllText(@"f:\wfg.txt");
-            transferPath = ForbidCharFilter.Purify(transferPath);
-            for (int i = 0; i <= transferPath.Length; i++)
-            {
-                //transferPath = transferPath.Replace("+", "%2b");
-               // transferPath = transferPath.Replace(" ", "%20");
-                //transferPath = transferPath.Replace(" ", "%20");
-
-                String path = "20223/" + transferPath;
-
-                path = Base64Helper.Base64Encode(path);
-
-                //String out1 = System.Web.HttpUtility.UrlEncode(path,Encoding.UTF8);
-                String out1 = path;
-
-                String decode = Base64Helper.Base64Decode(out1);
-                Console.WriteLine(String.Format("{0}\t{1}", path, out1));
-
-                var url = "http://hive.sobey.com:9023/CMApi/api/entity/object/transferclipoanonotify?usertoken=3e7ffd7be3d768753f20e9d08d8d458c&sourceguid=a5639694b356444dbf1d4f65812b044d&targetguid=&targetmosid=sony.studioDev.mos&broadnotify=0&mpcnotify=0&relativepath=" + out1 + "&isbase64=true";
-                WebClient client = new WebClient();
-           
-                String abc =  client.DownloadString(url);
-
-            }
-           
-            Console.ReadLine();
-            /*
-
-             FileInfo fileInfo = new FileInfo(@"\\172.16.134.2\x\wfg\2.txt");
-
-            Console.WriteLine(fileInfo.FullName);
-
-            Console.WriteLine(Path.GetFullPath(@"\\172.16.134.2\x\wfg\2.txt"));
-
-            
-            String []dir =  Directory.GetDirectories(@"\\172.16.134.2\x","wfg");
-             * 
-    RestClient client = new RestClient("http://hive.sobey.com:9023/CMApi/api/entity/object/getobjectinfo?usertoken=323a7ade135775909248d8402759215b&contentid=0fc3b11ec3324e1fbdda2f5e0348cb16&objecttype=32&pathtype=unc");
-
-    RestRequest request = new RestRequest(Method.GET);
-
-          
-
-         
-
-    var response = client.Get(request);
-
-    Console.WriteLine(JsonHelper.ToJson(response));
-
-    
-    String str1 = "\\netapp.sobey.com";
-    String str2 = "file://storage.sobey.com/u-p4m0iu701r57low5/hv_res/2018-03-14/ingest_test_20180314120533_0_150_2719__002__high.mp4";
-    String str3 = @"\\netapp.sobey.com\a\b\1.mxf";
-
-    Console.WriteLine(MatchNameConfigByRegex(str1));
-    Console.WriteLine(MatchNameByRegex(str2));
-    */
-
-
-            Console.Read();
-        
-        }
 
         static void Main1(string[] args)
         {
-           
+
             String time = "2018-04-04T12:12:11";
             //time = "20180404121211";
             DateTime dt = DateTime.MinValue; ;
@@ -250,7 +307,7 @@ namespace ConsoleApplication3
     {
         const string REPLACE_STRING = "_";
         //兼容iNews创建Place Holder（&amp;gt;）
-        static readonly string[] ForbidCharList = new string[] { "*", "?", "/", @"\", "&lt:", "<", ">", "|", ":", "\"", "&amp;gt;", ".", "%", "`", "\'"};
+        static readonly string[] ForbidCharList = new string[] { "*", "?", "/", @"\", "&lt:", "<", ">", "|", ":", "\"", "&amp;gt;", ".", "%", "`", "\'" };
 
         //static readonly string[] ForbidCharList = new string[] { "*", "?", "/", @"\", "&lt:", "<", ">", "|", ":", "\"" };
         static readonly string[] ForbidCharListForPlanning = new string[] { "*", "?", "/", "&lt:", "<", ">", "|", ":", "\"", "." };
