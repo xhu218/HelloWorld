@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+using System.Web;
 namespace ConsoleApplication3
 {
     class Program
@@ -84,11 +85,37 @@ namespace ConsoleApplication3
         static void Main(String[] args) {
 
 
-         
-            
 
 
+            String transferPath = "½ § ¤ ´`´Å å ^^ æÆ øØ €we€ åÅ æÆ øØ !\"#&/{([)]=}?+`´`|~~*',;.:-_><\\  ~`!@#$^&*()_+{}|:\"<>?-=[];'\\,./";
+           // transferPath = "½ § ¤ ´`´Å å ^^ æÆ øØ €we€ åÅ";  //OK
+            //transferPath = "½ § ¤ ´`´Å å ^^ æÆ øØ €we€ åÅ æÆ øØ !"; //ok
 
+            transferPath = File.ReadAllText(@"f:\wfg.txt");
+            transferPath = ForbidCharFilter.Purify(transferPath);
+            for (int i = 0; i <= transferPath.Length; i++)
+            {
+                //transferPath = transferPath.Replace("+", "%2b");
+               // transferPath = transferPath.Replace(" ", "%20");
+                //transferPath = transferPath.Replace(" ", "%20");
+
+                String path = "20223/" + transferPath;
+
+                path = Base64Helper.Base64Encode(path);
+
+                //String out1 = System.Web.HttpUtility.UrlEncode(path,Encoding.UTF8);
+                String out1 = path;
+
+                String decode = Base64Helper.Base64Decode(out1);
+                Console.WriteLine(String.Format("{0}\t{1}", path, out1));
+
+                var url = "http://hive.sobey.com:9023/CMApi/api/entity/object/transferclipoanonotify?usertoken=3e7ffd7be3d768753f20e9d08d8d458c&sourceguid=a5639694b356444dbf1d4f65812b044d&targetguid=&targetmosid=sony.studioDev.mos&broadnotify=0&mpcnotify=0&relativepath=" + out1 + "&isbase64=true";
+                WebClient client = new WebClient();
+           
+                String abc =  client.DownloadString(url);
+
+            }
+           
             Console.ReadLine();
             /*
 
@@ -216,5 +243,43 @@ namespace ConsoleApplication3
             return nFrameNum;
         }
 
+    }
+
+
+    class ForbidCharFilter
+    {
+        const string REPLACE_STRING = "_";
+        //兼容iNews创建Place Holder（&amp;gt;）
+        static readonly string[] ForbidCharList = new string[] { "*", "?", "/", @"\", "&lt:", "<", ">", "|", ":", "\"", "&amp;gt;", ".", "%", "`", "\'"};
+
+        //static readonly string[] ForbidCharList = new string[] { "*", "?", "/", @"\", "&lt:", "<", ">", "|", ":", "\"" };
+        static readonly string[] ForbidCharListForPlanning = new string[] { "*", "?", "/", "&lt:", "<", ">", "|", ":", "\"", "." };
+
+        public static string Purify(string originalString)
+        {
+            if (originalString == null)
+            {
+                return string.Empty;
+            }
+            //TODO: 实现替换originalString中包含的forbid char为REPLACE_STRING
+            foreach (string str in ForbidCharList)
+            {
+                originalString = originalString.Replace(str, REPLACE_STRING);
+            }
+            return originalString;
+        }
+
+        public static String PurifyForPlanningGroup(string originalString)
+        {
+            if (originalString == null)
+            {
+                return string.Empty;
+            }
+            foreach (string str in ForbidCharListForPlanning)
+            {
+                originalString = originalString.Replace(str, REPLACE_STRING);
+            }
+            return originalString;
+        }
     }
 }
