@@ -151,6 +151,7 @@ var fund_stock = {
                 //console.log(body);
 
                 var jj = body.replace("var good =", "");
+				console.log(jj);
                 jjObjs = JSON.parse(jj);
 
                 getfundstock();
@@ -177,7 +178,8 @@ var fund_stock = {
 
                 jijing_Code = jjObjs[current].jijing_Code;
                 jijing_Name = jjObjs[current].jijing_Name;
-
+				
+				console.log(jijing_Code);
                 var url = "http://fund.eastmoney.com/" + jijing_Code + ".html?spm=search&t=" + Math.random();
                 var request = require('request');
                 request(url, function(error, response, body) {
@@ -188,7 +190,7 @@ var fund_stock = {
                             current++;
                             retry=0;
                             console.log(current + "\t" + url);
-                            file.writetoFile(body, path.join(__dirname, "data/" + jijing_Code + ".html"), false, null, false);
+                            //file.writetoFile(body, path.join(__dirname, "data/" + jijing_Code + ".html"), false, null, false);
                             doit(jijing_Code, jijing_Name, body, function(jijing_Code, item) {
 
                                 if (item == null) {

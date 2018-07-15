@@ -42,6 +42,8 @@ app.get('/addUser', function(req, res) {
 
 
 app.get('/:id', function(req, res) {
+
+    console.log(req.header);
     // 首先我们读取已存在的用户
     fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data) {
         data = JSON.parse(data);
