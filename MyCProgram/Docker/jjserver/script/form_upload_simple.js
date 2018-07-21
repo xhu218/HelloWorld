@@ -67,7 +67,7 @@ Qiniu = {
         formUploader.putFile(uploadToken, filepath.replace(gradParentFolder+"/",""), localFile, putExtra, function(respErr,
             respBody, respInfo) {
             if (respErr) {
-                throw respErr;
+                //throw respErr;
             }
 
             if (respInfo.statusCode == 200) {
