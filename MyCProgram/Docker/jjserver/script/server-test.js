@@ -10,9 +10,9 @@ var fund_stock = require("./fund_stock.js");
 
 
 
-//jijing.download();
+jijing.download();
 //jijing.readfile()
-fund_stock.getalltheinfo1();
+//fund_stock.getalltheinfo1();
 //my_http.start();
 
 

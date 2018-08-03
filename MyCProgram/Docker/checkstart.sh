@@ -2,7 +2,7 @@
 
 count=1
 
-arrayWen=( 80cceaac5239  da85e75f14b3 faaa57f63da0 1fb87772f2e1)  
+arrayWen=( my-jjserver-script my-jdserver-script my-mysql-script )  
 
 #while [ $count -le 10000 ]; do
 while true; do
@@ -13,13 +13,25 @@ while true; do
 	########################################################
 	a=`date +%H%M`
 	b=1100
+	tgz=`date +%Y%m%d`.tgz
+	mysql__dest_tar=/mnt/sda4/$tgz
 	
 	echo $a
 	echo $b
 	
 	if [ $a -eq $b ] 
 	then
-		docker stop 80cceaac5239
+		docker stop my-jjserver-script
+        docker stop my-mysql-script
+		cd /sobeyhive/data/
+		tar -zcvf $mysql__dest_tar mysql
+		/sobeyhive/app/qshell-linux-x64 fput xhu219 $tgz $mysql__dest_tar
+		
+		ftp -i -n php.91sc.top <<EOF
+		user qxu1194650105 Pass2word
+		put $mysql__dest_tar  /htdocs/mysql/$tgz
+EOF
+
 	
 	
 	fi 
