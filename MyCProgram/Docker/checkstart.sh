@@ -25,8 +25,12 @@ while true; do
         docker stop my-mysql-script
 		cd /sobeyhive/data/
 		tar -zcvf $mysql__dest_tar mysql
+		#Qiniu
 		/sobeyhive/app/qshell-linux-x64 fput xhu219 $tgz $mysql__dest_tar
-		
+		#Aliyun
+		/sobeyhive/app/ossutil64 cp /mnt/sda4/$tgz oss://xhu219/mysql/$tgz
+		#Baidu
+
 		ftp -i -n php.91sc.top <<EOF
 		user qxu1194650105 Pass2word
 		put $mysql__dest_tar  /htdocs/mysql/$tgz
