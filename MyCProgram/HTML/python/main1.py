@@ -36,8 +36,11 @@ __beforeclosetime = 300;
 time.sleep(1);
 now = datetime.datetime.now()
 print now.strftime('%Y-%m-%d %H:%M:%S');
+
+
 if now.strftime('%S') =="00":
 	i = os.system('cls');
+
 try:
 
 	browser = webdriver.Chrome();

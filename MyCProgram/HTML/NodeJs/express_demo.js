@@ -19,6 +19,11 @@ app.get('/', function(req, res) {
     res.send('Hello World');
 })
 
+app.get('/hb', function(req, res) {
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=UTF-8' });
+    res.end();
+})
+
 app.get('/listUsers', function(req, res) {
     console.log(req);
     fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data) {

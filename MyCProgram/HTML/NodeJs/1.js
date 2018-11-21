@@ -1,5 +1,6 @@
 require('date-utils');
 
+/*
 function a() {
     var x = (time = null ? 100 : 100)
     console.log(x)
@@ -85,25 +86,35 @@ else{
 	console.log("less than");
 }
 console.log("dt = "+ dt.toFormat("YYYY-MM-DD HH24:MI:SS"));
-
+*/
 var wareids = [1, 2, 3, 4, 5];
+/*
 for (var index = 0; index < wareids.length; index++) {
     console.log(wareids[index]);
     if (index == 2)
         break;
 }
-
-
 */
 
 
-/*
+wareids.forEach(function(x,y){
+    //console.log(x);
+    setTimeout((function(){console.log(x)}),1000);
+});
 
+
+
+/*
 for (var i = 0; i < 10; i++) {
+    var a = i;
+
+    setTimeout((function(){console.log(a)}),1000);
+
     setTimeout((function(i) {
         return function() {
             console.log(i);
         }
     })(i), 0);
+
 }
 */
