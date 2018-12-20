@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="../jquery-1.11.3.js"></script>
+   <script type="text/javascript">
+    $(document).ready(function() {
+       
+       $("#btn1").click(function(){
+
+       	   window.frames[0].postMessage('abc', '*');
+       })
+
+    })
+    </script>
+</head>
+<div>
+    <iframe id="child1" src="http://hive.sobey.com:9021/NEW-CM/wfg/b1.html" style="border:solid 2px #444" width="500px" height="500px"></iframe>
+</div>
+
+<body>
+</body>
+<input type="button" id="btn1" />
+
+</html>
