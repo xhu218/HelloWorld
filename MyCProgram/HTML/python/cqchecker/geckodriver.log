@@ -1,16 +1,26 @@
-1505577729757	geckodriver	INFO	Listening on 127.0.0.1:12570
-1505577731757	mozprofile::profile	INFO	Using profile path A:\AppData\Local\Temp\rust_mozprofile.HNwWTH9Pd1xr
-1505577731757	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
-1505577731757	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12576
-1505577732689	Marionette	INFO	Listening on port 12576
-JavaScript warning: resource://addoninstaller/log4moz.js, line 494: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
-JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=s&json=1&p=3&sid=1458_21106_18559_17001&req=2&csor=1&cb=jQuery1102002515705176612848_1503067117243&_=1503067117245, line 1: TypeError: jQuery1102002515705176612848_1503067117243 is not a function
-on
-JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=sel&json=1&p=3&sid=1467_21090_18560_17001_22072&req=2&csor=3&pwd=se&cb=jQuery110209011770550625551_1503067112699&_=1503067112703, line 1: TypeError: jQuery110209011770550625551_1503067112699 is not a function
-JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=se&json=1&p=3&sid=1467_21090_18560_17001_22072&req=2&csor=2&pwd=s&cb=jQuery110209011770550625551_1503067112699&_=1503067112702, line 1: TypeError: jQuery110209011770550625551_1503067112699 is not a function
-JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=selenium&json=1&p=3&sid=1467_21090_18560_17001_22072&req=2&csor=8&pwd=seleniu&cb=jQuery110209011770550625551_1503067112699&_=1503067112708, line 1: TypeError: jQuery110209011770550625551_1503067112699 is not a function
-JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=sele&json=1&p=3&sid=1467_21090_18560_17001_22072&req=2&csor=4&pwd=sel&cb=jQuery110209011770550625551_1503067112699&_=1503067112704, line 1: TypeError: jQuery110209011770550625551_1503067112699 is not a function
-JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=selen&json=1&p=3&sid=1467_21090_18560_17001_22072&req=2&csor=5&pwd=sele&cb=jQuery110209011770550625551_1503067112699&_=1503067112705, line 1: TypeError: jQuery110209011770550625551_1503067112699 is not a function
+1546490341233	geckodriver	INFO	Listening on 127.0.0.1:31725
+1546490343251	mozprofile::profile	INFO	Using profile path F:\TEMP\rust_mozprofile.zTRJeuy5Do28
+1546490343256	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+1546490343388	geckodriver::marionette	INFO	Connecting to Marionette on localhost:31750
+1546490343970	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox/omni.ja!/components/addonManager.js:65
+JavaScript warning: resource://addoninstaller/log4moz.js, line 489: Date.prototype.toLocaleFormat is deprecated; consider using Intl.DateTimeFormat instead
+[Child 22688] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 22688] WARNING:
+###!!! [Parent][MessageChannel] Error: (msgtype=0x2400FC,name=PContent::Msg_AsyncMessage) Closed channel: cannot send/recv
+
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ecv
+
+ation. Ignoring timer registration for id: telemetry_modules_ping
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ild][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+550625551_1503067112699&_=1503067112705, line 1: TypeError: jQuery110209011770550625551_1503067112699 is not a function
 JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=seleni&json=1&p=3&sid=1467_21090_18560_17001_22072&req=2&csor=6&pwd=selen&cb=jQuery110209011770550625551_1503067112699&_=1503067112706, line 1: TypeError: jQuery110209011770550625551_1503067112699 is not a function
 JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=seleniu&json=1&p=3&sid=1467_21090_18560_17001_22072&req=2&csor=7&pwd=seleni&cb=jQuery110209011770550625551_1503067112699&_=1503067112707, line 1: TypeError: jQuery110209011770550625551_1503067112699 is not a function
 JavaScript error: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair.afb53ff18f093e84a458.js, line 6: SyntaxError: missing = in const declaration

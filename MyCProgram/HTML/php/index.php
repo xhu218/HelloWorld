@@ -10,11 +10,13 @@ define('S3_REGION', 'ap-northeast-1');        // S3 region name: http://amzn.to/
 define('S3_ACL',    'private'); // File permissions: http://amzn.to/18s9Gv7
 */
 
-define('S3_BUCKET', 'nabbucket');
+define('S3_BUCKET', 'reuters');
 //define('S3_BUCKET', 'ph.test');
-define('S3_KEY',    'AKIAJOJGNKQOYRHZGPOA');
-define('S3_SECRET', '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');
-define('S3_REGION', 'ap-northeast-1');        // S3 region name: http://amzn.to/1FtPG6r
+define('S3_KEY',    'AKIAJHZVV3FZQPLO34DA');
+define('S3_SECRET', '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');
+#define('S3_REGION', 'ap-northeast-1');        // S3 region name: http://amzn.to/1FtPG6r
+
+define('S3_REGION', 'cn-north-1');        // S3 region name: http://amzn.to/1FtPG6r
 define('S3_ACL',    'private'); // File permissions: http://amzn.to/18s9Gv7
 
 
@@ -122,7 +124,7 @@ echo "signature=".$signature."</BR>";
         <!-- URL prefix (//) means either HTTP or HTTPS (depending on which is being currently used) -->
         <!-- . "-" . S3_REGION-->
         <!--.amazonaws.com------.cn-north-1.amazonaws.com.cn-->
-        <form action="//<?php echo S3_BUCKET . "." . $service; ?>.ap-northeast-1.amazonaws.com"
+        <form action="//<?php echo S3_BUCKET . "." . $service; ?>.cn-north-1.amazonaws.com.cn"
               method="POST"
               enctype="multipart/form-data"
               class="direct-upload">
