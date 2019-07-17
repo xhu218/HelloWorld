@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -20,8 +21,19 @@ namespace ConsoleApplication2
             //process.StartInfo = new ProcessStartInfo(@"C:\sony\CommonModule\bin\Sony.S2.MOS.ActiveXInstallerForNRCS.exe", null);
             //process.StartInfo.CreateNoWindow = false;
            // process.Start();
-            String uncPath= "";
-            TryConvertLocalPathToUnc(@"y:\\ABC\1.MXF", @"\\172.16.168.202\X", out uncPath);
+
+            Console.WriteLine("input key to read");
+            Console.ReadLine();
+
+            FileStream fs = new FileStream(@"C:\Users\WangFugui\Desktop\002_20180524052042_1_122_2637__000__high.mp4", FileMode.Open, FileAccess.Read);
+            while (true)
+            {
+                byte[] data = new byte[100];
+                fs.Read(data, 0, 100);
+                Console.WriteLine("input key to read");
+                Console.ReadLine();
+            }
+
 
 
             Console.ReadLine();

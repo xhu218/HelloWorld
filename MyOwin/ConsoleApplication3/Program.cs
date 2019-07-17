@@ -13,15 +13,102 @@ using System.Web;
 using System.Messaging;
 namespace ConsoleApplication3
 {
+
+    public class A
+    {
+        public D brokers;
+        public class D
+        {
+            public Dictionary<String, E> dict;
+           
+        }
+        public class E
+        {
+            public B listener_security_protocol_map { get; set; }
+            public List<string> endpoints { get; set; }
+            public int jmx_port { get; set; }
+            public string host { get; set; }
+            public string timestamp { get; set; }
+            public int port { get; set; }
+            public int version { get; set; }
+        }
+        public class B
+        {
+
+            public string PLAINTEXT { get; set; }
+
+        }
+    }
+
+    public class stu
+    {
+        public string name { get; set; }
+        public List<object> stream { get; set; }
+    }
+    public class streamMedia
+    {
+        public String filepath;
+    }
     class Program
     {
-
-
         static void Main(String[] args)
+        {
+            string json = "{\"name\":\"wfg\",\"stream\":[ 			{ 				\"fileguid\": \"d11b943830a9294f178a345ed1fd83ef\", 				\"filepath\": \"\\\\\\\\192.168.0.87\\\\infinityfs1\\\\hivefiles\\\\sobeyhive\\\\bucket-p\\\\u-x3oqxhywuw283423\\\\2019\\\\05\\\\30\\\\ed21340bead54d279362a8046520a848_videogroup_079d06b8843e476082fe405860220a31_000.mp4\", 				\"size\": 1689699617 			} 		]}";
+            stu  streams = (stu)JsonConvert.DeserializeObject(json, typeof(stu));
+
+            Console.WriteLine(streams.name);
+            streamMedia s2 = (streamMedia)JsonConvert.DeserializeObject(streams.stream[0].ToString(), typeof(streamMedia));
+            Console.WriteLine(s2.filepath);
+
+
+
+            List<streamMedia> s1 = new List<streamMedia>();
+            s1.Add(new streamMedia { filepath = "wfg" });
+
+            Console.WriteLine(JsonConvert.SerializeObject(s1));
+
+            //int x = 950;
+            //int y = 4 * 1024 * 1024;
+            //Console.WriteLine(Convert.ToInt64(x) * Convert.ToInt64(y));
+            Console.ReadLine();
+            //String url = "http://www.baidu.com////";
+            //Console.WriteLine(url.TrimEnd('/'));
+            //Console.Read();
+        }
+        static void Main1437(String[] args)
+        {
+
+            String json = File.ReadAllText(@"C:\Users\WangFugui\Desktop\test.json");
+           // A a = JsonConvert.DeserializeObject<A>(json);
+            Regex reg = new Regex("\"PLAINTEXT://(.*)\"");
+            MatchCollection mc = reg.Matches(json);
+            StringBuilder sb = new StringBuilder();
+            foreach (Match m in mc)
+            {
+                sb.AppendFormat("http://{0};", m.Groups[1].Value);
+                Console.WriteLine(m.Groups[1]);
+            }
+              String temp = "";
+            if (sb.Length > 0)
+            {
+                temp  = sb.ToString();
+                temp = temp.Substring(0, temp.Length - 1);
+            }
+            Console.WriteLine(temp);
+            
+          
+
+            Console.ReadLine();
+
+        }
+
+
+
+        static void Main1(String[] args)
         {
 
 
-
+            
             MessageQueue messageQueue = null;
 
             string description = "This is a test queue.";
@@ -211,7 +298,7 @@ namespace ConsoleApplication3
 
 
 
-        static void Main1(string[] args)
+        static void Main2(string[] args)
         {
 
             String time = "2018-04-04T12:12:11";

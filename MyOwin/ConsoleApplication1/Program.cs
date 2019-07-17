@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,12 +8,27 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using System.Xml;
 
 namespace ConsoleApplication1
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"C:\Users\WangFugui\Desktop\AEEncoderTemplate.xml");
+            if (doc.ChildNodes.Count == 2)
+                doc.RemoveChild(doc.FirstChild);
+            JObject jobject =  Newtonsoft.Json.Linq.JObject.Parse(Newtonsoft.Json.JsonConvert.SerializeXmlNode(doc));
+
+            //Console.WriteLine("start...");
+            //Console.WriteLine(args[0]);
+            //System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("end...");
+
+        }
+        static void Main1(string[] args)
         {
 
 

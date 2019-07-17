@@ -4,6 +4,10 @@ using Sobey.Data;
 using Sobey.Data.DataMapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,8 +43,45 @@ namespace NhostDB
 
         static void Main(string[] args)
         {
-            List<Studen> stus = new List<Studen>();
-            stus.First(s => s.Age == 100);
+
+            TestSelfTab1Info();
+            //try
+            //{
+            //    //var connStr = "server=172.16.168.205;user id=sdba;password=sdba;database=nwfm;pooling=False;allowzerodatetime=True;allowuservariables=True;cacheserverproperties=True;minpoolsize=10;characterset=utf8";
+            //    var connStr = "server=172.16.168.202:3306;user id=sdba;password=sdba;database=mldb;";
+            //    //var connStr = "server=10.0.100.11;user id=mldba;password=mldba;database=mldb;pooling=True";
+            //    //connStr = Properties.Settings.Default.connStr;
+            //    MySqlConnection conn = new MySqlConnection(connStr);
+            //    conn.Open();
+            //    Console.WriteLine("OK");
+            //    conn.Dispose();
+            //}
+            //catch (Exception EX)
+            //{
+
+            //    Console.WriteLine(EX.ToString());
+            //}
+
+
+
+
+            //List<Studen> stus = new List<Studen>();
+
+            //var path = @"C:\Users\WangFugui\Documents\Visual Studio 2012\Projects\MyOwin\MyOwin\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe";
+            //Process process = new Process();
+            //process.StartInfo = new ProcessStartInfo(path,"\"hello world\"");
+            //process.StartInfo.UseShellExecute = false;
+            //process.StartInfo.RedirectStandardOutput = true;
+            //process.StartInfo.RedirectStandardError = true;
+            //process.StartInfo.CreateNoWindow = false;
+           
+            //process.Start();
+            //StreamReader reader = process.StandardOutput;
+            //Console.WriteLine(reader.ReadToEnd());
+            //process.WaitForExit();
+
+
+            //stus.First(s => s.Age == 100);
 
 
             //CMApi_IngestWFTable ingest = new CMApi_IngestWFTable(db);
@@ -49,10 +90,26 @@ namespace NhostDB
 
             //TestSelfTab1Info();
             //TestGen2SmmUserLoginInfo();
-            Console.WriteLine(db.ConnectionString);
-            Console.ReadLine();
-            
+          //  Console.WriteLine(db.ConnectionString);
 
+
+            
+            //while (true)
+            //{
+            //    String s = Console.ReadLine();
+            //    try
+            //    {
+            //        Ado ado = new Ado();
+            //        ado.doTest1(s);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.Write(ex.ToString());
+            //    }
+
+               
+            //}
+             
             /*
             
             for (var index = 0; index < 80; index++)
@@ -81,38 +138,50 @@ namespace NhostDB
 
         private static void TestSelfTab1Info()
         {
-            for (var index = 0; index < 10; index++)
-            {
+          
 
                 DatabaseConfiguration config = new DatabaseConfiguration
                 {
                     DatabaseType = DatabaseType.MySql,
                     Encoding = "ascii",
-                    DatabaseName = "mydatabase",
+                    DatabaseName = "hivedb",
                     Username = "mysql",
                     Password = "mysql",
-                    DatabaseServer = "centos1",
-                    Pooling = true,
+                    DatabaseServer = "172.16.128.41:3307",
+                    
+                    Pooling = false,
                     MaximumPoolSize = 10,
 
 
 
                 };
 
-                var j = index;
-
-                Task task = new Task(delegate()
-               {
-                   Database db = DatabaseHelper.CreateDatabase(config);
+              
+              
+              
+                 
 
                    tab1Table user = new tab1Table(db);
 
-                   for (var i = 0; i < 200; i++)
+                   while(true)
                    {
+                       try
+                       {
 
-                       var x = user.Login();
+                           Database db = DatabaseHelper.CreateDatabase(config);
 
-                       Console.WriteLine(String.Format("{0} {1}   {2} {3}", j, x.ToString(), user.Add(), user.Login()));
+                           var x = user.Login();
+                       }
+                       catch (Exception ex)
+                       {
+
+                           Console.Write(ex.ToString());
+                       }
+                       //System.Threading.Thread.Sleep(1500);
+
+                     
+
+                       //Console.WriteLine(String.Format("{0} {1}   {2} {3}", j, x.ToString(), user.Add(), user.Login()));
 
                        //Console.WriteLine(String.Format("Current Date Count is :{0} ", x.ToString()));
 
@@ -121,11 +190,10 @@ namespace NhostDB
                        //Console.WriteLine(String.Format("Current Date Count is :{0} ", user.Login().ToString()));
                    }
 
-               });
-                task.Start();
+             
 
 
-            }
+            
         }
 
         private static void  TestGen2SmmUserLoginInfo()
@@ -178,7 +246,7 @@ namespace NhostDB
         private object _locker = new object();
         public void doTest(int index)
         {
-            for (var i = 0; i < 1000; i++)
+           // for (var i = 0; i < 1000; i++)
             {
                 //var connStr = String.Format("server={0};user id={1};password={2};database={3};pooling=True;allowzerodatetime=True;allowuservariables=True;minpoolsize=10;characterset=utf8",
                 //   "10.0.100.10", "sdba", "sdba", "mldb");
@@ -198,7 +266,7 @@ namespace NhostDB
                 //System.Threading.Thread.Sleep(1);
                 //lock (_locker)
                 //    count++;
-                Console.WriteLine(String.Format("{0}   {1}   {2}   {3}    *{4}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), index, i, c, count));
+                Console.WriteLine(String.Format("{0}   {1}   {2}   {3}    *{4}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), index, 0, c, count));
 
 
 
@@ -206,6 +274,34 @@ namespace NhostDB
 
 
         }
+
+        public void doTest1(String s)
+        {
+            //var connStr = "server=172.16.168.205;user id=sdba;password=sdba;database=mldb;pooling=True;minpoolsize=0;maxpoolsize=5;allowzerodatetime=True;allowuservariables=True;characterset=utf8";
+            var connStr = "server=hiveqa-db.cgmmflntckek.ap-northeast-1.rds.amazonaws.com;user id=sdba;password=sdba;database=mldb;pooling=True;minpoolsize=0;maxpoolsize=5;allowzerodatetime=True;allowuservariables=True;characterset=utf8";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand cmd = new MySqlCommand("PC_MATERIALID", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            MySqlParameter parOutput = cmd.Parameters.Add("ID", MySqlDbType.Int32, 10);
+            parOutput.Direction = ParameterDirection.Output;　　//参数类型为Output
+
+            MySqlParameter parInput = cmd.Parameters.Add("POLICY", MySqlDbType.VarChar, 255);
+            parInput.Direction = ParameterDirection.Input;
+            parInput.Value = s;
+
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+          
+            Console.WriteLine(parOutput.Value.ToString());   //显示输出参数的值
+            conn.Dispose();
+
+
+        }
+
+      
 
 
     }
@@ -248,8 +344,7 @@ namespace NhostDB
         public long Login()
         {
 
-            try
-            {
+          
                 var loginObjs = from l in this.AsQueryable()
 
                                 select l;
@@ -258,11 +353,9 @@ namespace NhostDB
 
 
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          
+
+            return 11;
         }
 
 
