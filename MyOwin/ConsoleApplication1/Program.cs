@@ -12,9 +12,49 @@ using System.Xml;
 
 namespace ConsoleApplication1
 {
+    public struct test
+    { };
+
     class Program
     {
-        static void Main(string[] args)
+
+
+        static void Main(String[] args)
+        {
+            AutoResetEvent transferWaiter = new AutoResetEvent(false);
+          
+            ThreadPool.QueueUserWorkItem(new WaitCallback(TransferProc), new object[] { transferWaiter, null });
+
+            transferWaiter.WaitOne();
+            Console.WriteLine("hello");
+            Console.Read();
+        }
+
+        private static void TransferProc(Object o)
+        {
+            object[] objs = o as object[];
+            AutoResetEvent transferWaiter = objs[0] as AutoResetEvent;
+
+            System.Threading.Thread.Sleep(10000);
+            transferWaiter.Set();
+        }
+
+            
+        static void Main20190724(String[] args)
+        {
+            Dictionary<test, object> dict = new Dictionary<test, object>();
+            test test1 = new test();
+            if (!dict.ContainsKey(test1))
+            {
+                dict.Add(test1, null);
+            }
+            test test2 = new test();
+            if (!dict.ContainsKey(test2))
+            {
+                dict.Add(test2, null);
+            }
+        }
+        static void Main20190717(string[] args)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(@"C:\Users\WangFugui\Desktop\AEEncoderTemplate.xml");
