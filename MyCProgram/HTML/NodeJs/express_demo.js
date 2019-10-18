@@ -83,10 +83,11 @@ app.post("/uploadfile", function(req, res) {
     //res.end(JSON.stringify(req.body.name));
     //console.log(req);
     //res.end(JSON.stringify(req.url));
-    writeFile("C:\\Users\\WangFugui\\Desktop\\3-1.jpg".req.body);
+    writeFile("C:\\Users\\WangFugui\\Desktop\\3-1.txt",JSON.stringify(req.header));
+    writeFile("C:\\Users\\WangFugui\\Desktop\\3-1.txt",JSON.stringify(req.body));
 
     res.end("{\"Code\":\"0\"}");
-    console.log(req.body);
+    console.log(req);
 
 
     //res.end("{\"name\":\"wfg\"}");
@@ -96,8 +97,9 @@ app.post("/uploadfile", function(req, res) {
 
 
 function writeFile(path, content) {
+    console.log("path = "+path);
     var fs = require("fs");
-    fs.writeFile(file, content, function(err) {
+    fs.appendFile(path, content, function(err) {
         if (err) {
             console.log("fail" + err)
         } else {
@@ -110,7 +112,7 @@ function writeFile(path, content) {
 */
             //console.log("写入文件成功 : " + file);
             if (typeof callback == "function") {
-                callback(file);
+                callback(path);
             }
         }
     })

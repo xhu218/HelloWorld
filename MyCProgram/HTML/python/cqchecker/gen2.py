@@ -13,7 +13,7 @@ from selenium.webdriver.support.select import Select
 browser = None;
 
 __close_after_test = True;
-__beforeclosetime = 600;
+__beforeclosetime = 1800;
 
 __times =("12:00:00","15:00:00","17:00:00","19:00:00","21:00:00","10:35");
 
