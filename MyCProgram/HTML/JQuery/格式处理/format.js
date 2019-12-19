@@ -964,7 +964,7 @@
         var stFrameRate = ETGetVideoFrameRate(dwStandard);
         if (null != stFrameRate && stFrameRate.nTimeScale > 0)
         {
-            return parseInt( stFrameRate.nTimeRate / stFrameRate.nTimeScale);
+            return ( stFrameRate.nTimeRate / stFrameRate.nTimeScale);
         }
         return 0.0;
     }
