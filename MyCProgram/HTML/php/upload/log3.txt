@@ -1,6 +1,0 @@
-2019-11-19 09:00:00
-请使用联通专线
-server ip:vpn.91sc.top
-server port:1984		
-encrption:aes-256-cfb	
-password:042095181			
