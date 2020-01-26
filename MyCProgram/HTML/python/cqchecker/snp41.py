@@ -15,7 +15,7 @@ browser = None;
 __close_after_test = True;
 __beforeclosetime = 1800;
 
-__times =("11:00:00","14:00:00","16:00:00","18:00:00","20:00:00");
+__times =("11:00:00","14:00:00","16:00:00","18:00:00","20:00:00","16:01");
 
 __fileter = ['WFG',"WANGFUGUI",'YRF','yaorongfu','YL','YELIANG','MYQ','maoyuanqiao','CT','chentao'];
 __logpath = r'E:\\Work\\HelloWorld.git\\trunk\\MyCProgram\\HTML\\python\\bug\\snp41\\'
@@ -66,9 +66,9 @@ while True:
 				#个人目录
 				browser.find_element_by_id("tittle33689476").click();
 				#lts目录
-				browser.find_element_by_id("tittle34180331").click();
+				browser.find_element_by_id("tittle34191724").click();
 				#         archive           rms              web              mos
-				n = ['tittle34180333',"tittle34180334",'tittle34180335','tittle34180553']
+				n = ['tittle34191725']
 
 				for i in n:    
 			    	

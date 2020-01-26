@@ -98,8 +98,8 @@ for (var index = 0; index < wareids.length; index++) {
 
 
 wareids.forEach(function(x,y){
-    //console.log(x);
-    setTimeout((function(){console.log(x)}),1000);
+    console.log(x);
+    //setTimeout((function(){console.log(x)}),1000);
 });
 
 

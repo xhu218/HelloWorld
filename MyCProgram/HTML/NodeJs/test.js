@@ -1,10 +1,20 @@
 
 
-/*
+
 var sd = require('silly-datetime');
-var time=sd.format(new Date(), 'YYYY-MM-DD HH:mm');
+var num = 0;
+var I = setInterval(function(){
+	num++;
+	if(num==100)
+	{
+		clearInterval(I);
+	}
+	var time=sd.format(new Date(), 'YYYY-MM-DD HH:mm:ss');
 console.log(time);
-*/
+
+},1000);
+
+
 
 var str = "123+wf+/ga/bc=============wfg321";
 var tt = str.replace('/+/g',"-");   

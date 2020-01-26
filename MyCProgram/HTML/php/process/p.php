@@ -10,7 +10,7 @@ $view = getUrlParam("view");
 
 if($host!=null && $tool !=null)
 {
-	insert($host,date("Y-m-d h:i"),$tool);
+	insert($host,date("Y-m-d h:i:sa"),$tool);
 }
 if($view !=null && $view!="")
 {

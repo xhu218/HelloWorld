@@ -28,7 +28,7 @@ var request1 = {
     sendRequest: function(callback) {
 
         var url = this.url;
-        console.log(url);
+       // console.log(url);
         request(this.options, function(error, response, body) {
 
 

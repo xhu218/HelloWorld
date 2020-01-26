@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.IO;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace ConsoleApplication29
             //2，调用Task的Wait方法
             try
             {
+                
                 var task = Task.Factory.StartNew(() =>
                 {
                     System.Threading.Thread.Sleep(3000);

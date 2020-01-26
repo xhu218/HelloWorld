@@ -14,7 +14,9 @@ var jijingProcess = {
             var d = dt.toFormat("YYYY-MM-DD");
             console.log(d);
 
-            var allpages = 74; //;
+            var allpages = 2; //;
+
+            var pagenum = 3000;
 
             var alldata = [];
 
@@ -22,71 +24,77 @@ var jijingProcess = {
 
             var doingCount = 0;
 
-            var top = 200
+            var top = 200;
+
+
 
             for (var index = 1; index <= allpages; index++) {
 
-                var tempStr = "http://fund.eastmoney.com/data/rankhandler.aspx?op=ph&dt=kf&ft=all&rs=&gs=0&sc=3nzf&st=desc&sd=" + d + "&ed=" + d + "&qdii=&tabSubtype=,,,,,&pi=" + index + "&pn=50&dx=1&v=" + Math.random();
+                var tempStr = "http://fund.eastmoney.com/data/rankhandler.aspx?op=ph&dt=kf&ft=all&rs=&gs=0&sc=zzf&st=desc&sd=" + d + "&ed=" + d + "&qdii=&tabSubtype=,,,,,&pi=" + index + "&pn="+pagenum+"&dx=1&v=" + Math.random();
+                    tempStr = "http://fund.eastmoney.com/data/rankhandler.aspx?op=ph&dt=kf&ft=all&rs=&gs=0&sc=zzf&st=desc&sd=" + d + "&ed=" + d + "&qdii=&tabSubtype=,,,,,&pi=" + index + "&pn="+pagenum+"&dx=1&v=" + Math.random();
                 var url = tempStr; // "http://fund.eastmoney.com/data/rankhandler.aspx?op=ph&dt=kf&ft=all&rs=&gs=0&sc=3nzf&st=desc&sd=2016-10-18&ed=2017-10-18&qdii=&tabSubtype=,,,,,&pi=74&pn=50&dx=1&v=0.005266926352829326";
-                request1.setUrl(url);
+                //console.log(url);
 
-                var goods = request1.sendRequest(function(url, content) {
-                    doingCount++;
-                    console.log(doingCount);
-                    if (content == null)
-                        return;
+                setTimeout((function(t) {
+                    return function() {
+                        //console.log(t);
 
-                    console.log("current page : " + url);
-                    var data = content.replace("var rankData = ", "").replace("};", "}");
+                        request1.setUrl(t);
 
-                    var o = eval("(" + data + ")");
-                    console.log("allRecords :" + o.allRecords + " pageIndex : " + o.pageIndex + " pageNum : " + o.pageNum, " allPages : " + o.allPages);
+                        var goods = request1.sendRequest(function(url, content) {
+                            doingCount++;
+                            console.log(doingCount+"    "+ t);
+                            //console.log(content);
+                            if (content == null) {
+                                console.log(url + "内容为空");
+                                return;
+                            }
 
-                    alldata = alldata.concat(o.datas);
+                            //console.log("current page : " + url);
+                            var data = content.replace("var rankData = ", "").replace("};", "}");
+
+                            var o = eval("(" + data + ")");
+                            console.log("allRecords :" + o.allRecords + " pageIndex : " + o.pageIndex + " pageNum : " + o.pageNum, " allPages : " + o.allPages);
+
+                            alldata = alldata.concat(o.datas);
 
 
-                    if (doingCount == allpages) {
+                            if (doingCount == allpages) {
 
-                        for (var i = 0; i < alldata.length; i++) {
+                                for (var i = 0; i < alldata.length; i++) {
 
-                            var obj = alldata[i].split(",");
-                            var data = {
+                                    var obj = alldata[i].split(",");
+                                    var data = {
 
-                                jijing_Code: obj[0],
-                                jijing_Name: obj[1],
-                                jijing_Mask: obj[74],
-                                jijing_Date: obj[3],
-                                jijing_unitValue: obj[4],
-                                jijing_totalValue: obj[5],
-                                jijing_daliyIncreaseRate: obj[6],
-                                jijing_lastWeek: obj[7] == "" ? 0 : ((obj[7])),
-                                jijing_lastMonth: obj[8] == "" ? 0 : ((obj[8])),
-                                jijing_last3Month: obj[9] == "" ? 0 : ((obj[9])),
-                                jijing_last6Month: obj[10] == "" ? 0 : ((obj[10])),
-                                jijing_last1year: obj[11] == "" ? 0 : ((obj[11])),
-                                jijing_last2year: obj[12] == "" ? 0 : ((obj[12])),
-                                jijing_last3year: obj[13] == "" ? 0 : ((obj[13])),
-                                jijing_sinceThisYear: obj[14] == "" ? 0 : ((obj[14])),
-                                jijing_sinceestablish: obj[15] == "" ? 0 : ((obj[15]))
+                                        jijing_Code: obj[0],
+                                        jijing_Name: obj[1],
+                                        jijing_Mask: obj[74],
+                                        jijing_Date: obj[3],
+                                        jijing_unitValue: obj[4]==""?0:parseFloat(obj[4]),
+                                        jijing_totalValue: obj[5]==""?0:parseFloat(obj[5]),
+                                        jijing_daliyIncreaseRate: obj[6]==""?0:parseFloat(obj[6]),
+                                        jijing_lastWeek: obj[7] == "" ? 0 : parseFloat((obj[7])),
+                                        jijing_lastMonth: obj[8] == "" ? 0 : parseFloat((obj[8])),
+                                        jijing_last3Month: obj[9] == "" ? 0 : parseFloat((obj[9])),
+                                        jijing_last6Month: obj[10] == "" ? 0 : parseFloat((obj[10])),
+                                        jijing_last1year: obj[11] == "" ? 0 : parseFloat((obj[11])),
+                                        jijing_last2year: obj[12] == "" ? 0 : parseFloat((obj[12])),
+                                        jijing_last3year: obj[13] == "" ? 0 : parseFloat((obj[13])),
+                                        jijing_sinceThisYear: obj[14] == "" ? 0 : parseFloat((obj[14])),
+                                        jijing_sinceestablish: obj[15] == "" ? 0 : parseFloat((obj[15]))
 
-                            };
+                                    };
 
-                            alllist.push(data);
-                        }
+                                    alllist.push(data);
+                                }
 
-                        /*begin for replace method*/
-
-                        var base = require("./jijingbase.js");
-                        base.WritetoFile(alllist);
-                        //base.sayHello();
-
-                        /*end for replace method*/
+                                var base = require("./jijingbase.js");
+                                base.WritetoFile(alllist);
+                            }
+                        });
                     }
-
-
-                });
+                })(url), index * 1000);
             }
-
 
         } catch (err) {
             console.log(err);
@@ -94,8 +102,6 @@ var jijingProcess = {
     },
 
     readfile: function() {
-
-
 
         var file = require("./fileHelper.js");
         var path = require("path");

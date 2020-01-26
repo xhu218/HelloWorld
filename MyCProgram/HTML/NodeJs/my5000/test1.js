@@ -205,7 +205,7 @@ var MD5 = function (string) {
 }
 
 var salt = (new Date).getTime();
-salt = 1529921329842;
+//salt = 1529921329842;
 var query = 'apple';
 
 var from = 'en';

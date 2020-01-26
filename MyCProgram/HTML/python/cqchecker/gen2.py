@@ -15,7 +15,7 @@ browser = None;
 __close_after_test = True;
 __beforeclosetime = 1800;
 
-__times =("12:00:00","15:00:00","17:00:00","19:00:00","21:00:00","10:35");
+__times =("12:00:00","15:00:00","17:00:00","19:00:00","21:00:00","10:35","15:48");
 
 __fileter = ['WFG',"WANGFUGUI",'YRF','yaorongfu','YL','YELIANG','MYQ','maoyuanqiao','CT','chentao'];
 __logpath = r'E:\\Work\\HelloWorld.git\\trunk\\MyCProgram\\HTML\\python\\bug\\gen2\\'
@@ -69,8 +69,9 @@ while True:
 				#lts目录
 	
 				#    151RC4               1.6				152p1              161           162              1.7               SRG                 mbh cloud
-				n = ['tittle33808144',"tittle33807102","tittle33809378","tittle33817495","tittle33819049","tittle33830739","tittle33835833","tittle33835861"]
-
+				#n = ['tittle33808144',"tittle33807102","tittle33809378","tittle33817495","tittle33819049","tittle33830739","tittle33835833","tittle33835861"]
+				#    1.8                SRG					售后项目			售后分组
+				n = ['tittle33955728','tittle33959074','tittle33975740','tittle33975739'];
 				for i in n:    
 			    	
 

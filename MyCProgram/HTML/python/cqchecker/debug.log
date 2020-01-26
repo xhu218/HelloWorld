@@ -81,3 +81,9 @@
 [0312/182634.737:ERROR:process_info.cc(631)] range at 0xa36142b200000000, size 0x24c fully unreadable
 [0312/182635.376:ERROR:process_info.cc(631)] range at 0xa36142d200000000, size 0x24c fully unreadable
 [0312/182635.376:ERROR:process_info.cc(631)] range at 0x0, size 0x24c fully unreadable
+[1225/162050.539:ERROR:process_reader_win.cc(123)] NtOpenThread: {无法访问} 过程已请求访问一对象，但未给访问权限。  (0xc0000022)
+[1225/162050.581:ERROR:exception_snapshot_win.cc(87)] thread ID 10344 not found in process
+[1225/162050.581:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[1226/120223.446:ERROR:process_reader_win.cc(123)] NtOpenThread: {无法访问} 过程已请求访问一对象，但未给访问权限。  (0xc0000022)
+[1226/120223.449:ERROR:exception_snapshot_win.cc(87)] thread ID 21484 not found in process
+[1226/120223.449:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed

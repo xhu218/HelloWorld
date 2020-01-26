@@ -2,12 +2,12 @@ var jijing = require("./jijingProcess.js");
 //var test1 = require("./test1.js");
 var my_http = require("./http.js");
 require('date-utils');
-var fund_stock = require("./fund_stock.js");
+var fund_stock = require("./fun_stock.js");
 
 //fund_stock.getalltheinfo();
 
-
-
+  jijing.download();
+   // fund_stock.getalltheinfo();
 
 
 //jijing.download();
@@ -21,7 +21,7 @@ var fund_stock = require("./fund_stock.js");
 
 
 
-
+/*
 var schedule = require("node-schedule");
 
 var rule1 = new schedule.RecurrenceRule();　　
@@ -34,7 +34,7 @@ var job1 = schedule.scheduleJob(rule1, function() {
     fund_stock.getalltheinfo();
 
 });
-
+*/
 /*
 
 

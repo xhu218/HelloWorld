@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="jquery-1.11.3.js"></script> 
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $("#clickme").click(function(event) {
+         
+		//alert("hello");
+		htmlobj=$.ajax({url:"6.txt",async:false});
+		$("#myDiv").html($("#myDiv").html() + " </ hr> " + htmlobj.responseText);
+
+
+        });
+
+        log("<br />start...");
+        log("end...");
+
+
+
+		$("#setcookies").click(function(event){
+		var d=new Date();
+			htmlobj=$.ajax({url:"setcookies.php?t="+d.getTime(),async:false});
+			$("#myDiv").html($("#myDiv").html() + " <br />set the cookies is  " + htmlobj.responseText);
+
+
+        });
+		$("#getcookies").click(function(event){
+		var d=new Date();
+			htmlobj=$.ajax({url:"getcookies.php?t="+d.getTime(),async:false});
+			$("#myDiv").html($("#myDiv").html() + " <br />get the cookies is  " + htmlobj.responseText);
+
+
+        });
+
+        function log(msg) {
+            $("#info").append(msg + "</br>");
+        }
+
+    });
+    </script>
+</head>
+
+<body>
+    <div id="info" />
+    <br />
+	<!--
+      <input type="submit" id="clickme" width="200px" />-->
+		<input type="button" id="setcookies" width="200px" value="setcookies" >
+		<input type="button" id="getcookies" width="200px"  value = "getcookies" />
+    <div id="myDiv" />
+  
+</body>
+
+</html>

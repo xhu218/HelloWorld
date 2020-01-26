@@ -1,10 +1,10 @@
 require('date-utils');
 var writelog = require("./writelog.js");
 
-var $host = 'mysql';
-var $user = 'mysql';
-var $password = 'mysql';
-var $database = 'mydatabase';
+var $host = 'mysql.91sc.top';
+var $user = 'qdm170526179';
+var $password = 'Pass2word';
+var $database = 'qdm170526179_db';
 
 
 fund_mysql = {
@@ -82,7 +82,7 @@ fund_mysql = {
     },
 
     insertall: function(data) {
-
+        fund_count = data.length;
         for (var i = 0; i < data.length; i++) {
             console.log(i);
             setTimeout(this.insert, 200 * i, data[i]);
@@ -90,9 +90,12 @@ fund_mysql = {
         }
     },
 
+   fund_count:0,
+   current_index:0,
+
     insert: function(fund) {
 
-        console.log("insert in to mysql " + fund);
+        console.log("insert in to mysql " + fund.jijing_Code);
 
 
         var mysql = require('mysql');
@@ -110,8 +113,47 @@ fund_mysql = {
         var d = dt.toFormat("YYYY-MM-DD");
         //var d = '2017-12-02';
 
-        var addSql = "INSERT INTO `FUND` (`FUND_CODE`, `FUND_NAME`, `FUND_UNITVALUE`, `FUND_TOTALVALUE`, `FUND_DALIYINCREASE`, `FUND_LASTWEEK`, `FUND_LASTMONTH`, `FUND_LAST3MONTH`, `FUND_LAST6MONTH`, `FUND_LASTYEAR`, `FUND_LAST2YEAR`, `FUND_LAST3YEAR`, `FUND_LASTTHISYEAR`, `FUND_SINCECONSTRUCT`, `FUND_DATE`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        var addSqlParams = [fund.jijing_Code, fund.jijing_Name, fund.jijing_unitValue, fund.jijing_totalValue, fund.jijing_daliyIncreaseRate, fund.jijing_lastWeek, fund.jijing_lastMonth, fund.jijing_last3Month, fund.jijing_last6Month, fund.jijing_last1year, fund.jijing_last2year, fund.jijing_last3year, fund.jijing_sinceThisYear, fund.jijing_sinceestablish, d];
+        var addSql = "INSERT INTO `FUND` (`FUND_CODE`, `FUND_NAME`, `FUND_UNITVALUE`, `FUND_TOTALVALUE`, `FUND_DALIYINCREASE`, `FUND_LASTWEEK`, `FUND_LASTMONTH`, `FUND_LAST3MONTH`, `FUND_LAST6MONTH`, `FUND_LASTYEAR`, `FUND_LAST2YEAR`, `FUND_LAST3YEAR`, `FUND_LASTTHISYEAR`, `FUND_SINCECONSTRUCT`, `FUND_DATE`,`jijing_last3year_sort`,`jijing_last2year_sort`,`jijing_last1year_sort`,`jijing_last6Month_sort`,`jijing_last3Month_sort`,`jijing_lastMonth_sort`,`jijing_lastWeek_sort`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?)";
+        var addSqlParams = [fund.jijing_Code, fund.jijing_Name, fund.jijing_unitValue, fund.jijing_totalValue, fund.jijing_daliyIncreaseRate, fund.jijing_lastWeek, fund.jijing_lastMonth, fund.jijing_last3Month, fund.jijing_last6Month, fund.jijing_last1year, fund.jijing_last2year, fund.jijing_last3year, fund.jijing_sinceThisYear, fund.jijing_sinceestablish, d,fund.jijing_last3year_sort,fund.jijing_last2year_sort,fund.jijing_last1year_sort,fund.jijing_last6Month_sort,fund.jijing_last3Month_sort,fund.jijing_lastMonth_sort,fund.jijing_lastWeek_sort];
+
+        connection.query(addSql, addSqlParams, function(err, result) {
+
+            if (err) {
+                writelog('[INSERT ERROR] - '+ err + result +JSON.stringify(fund),"Error");
+                return;
+            }
+
+            //console.log('--------------------------INSERT----------------------------');
+            //console.log('INSERT ID:',result.insertId);        
+            //console.log('INSERT ID:', result);
+            //console.log('-----------------------------------------------------------------\n\n');
+        });
+
+        connection.end();
+    },
+
+    insert1:function(item){
+
+           console.log("insert in to mysql " + item);
+
+
+        var mysql = require('mysql');
+
+        var connection = mysql.createConnection({
+            host: $host,
+            user: $user,
+            password: $password,
+            database: $database
+        });
+
+        connection.connect();
+
+        var dt = new Date();
+        var d = dt.toFormat("YYYY-MM-DD");
+        //var d = '2017-12-02';
+
+        var addSql = "insert INTO JJ(`id`,`read`,`write`,`author`,`content`,`time`)VALUES(?,?,?,?,?,?)";
+        var addSqlParams = [item.id,item.read,item.write,item.author,item.content,item.time];
 
         connection.query(addSql, addSqlParams, function(err, result) {
             if (err) {
@@ -127,8 +169,9 @@ fund_mysql = {
 
         connection.end();
 
-
     }
+
+
 
 
 }

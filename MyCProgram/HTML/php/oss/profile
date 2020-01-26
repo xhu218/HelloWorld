@@ -1,0 +1,22 @@
+#wfg added 20190109 for record history
+#PS1="`whoami`@`hostname`:"'[$PWD]'
+history
+USER_IP=`who -u am i 2>/dev/null| awk '{print $NF}'|sed -e 's/[()]//g'`
+if [ "$USER_IP" = "" ]
+then
+USER_IP=`hostname`
+fi
+if [ ! -d /tmp/login_data ]
+then
+mkdir /tmp/login_data
+chmod 777 /tmp/login_data
+fi
+if [ ! -d /tmp/login_data/${LOGNAME} ]
+then
+mkdir /tmp/login_data/${LOGNAME}
+chmod 300 /tmp/login_data/${LOGNAME}
+fi
+export HISTSIZE=4096
+DT=`date "+%Y-%m-%d_%H%M%S"`
+export HISTFILE="/tmp/login_data/${LOGNAME}/${USER_IP}login_data.$DT"
+chmod 600 /tmp/login_data/${LOGNAME}/*login_data* 2>/dev/null
