@@ -16,7 +16,7 @@ var jijingProcess = {
 
             var allpages = 2; //;
 
-            var pagenum = 3000;
+            var pagenum = 30;
 
             var alldata = [];
 

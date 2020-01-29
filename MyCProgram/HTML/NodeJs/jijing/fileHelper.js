@@ -8,21 +8,23 @@ fileHelper = {
         return data;
     },
 
-    writetoFile: function(content, file, append,callback) {
+    writetoFile: function(content, file, append, callback) {
         var fs = require("fs");
         var path = require("path");
-        var parentFolder = path.resolve(file, "..");
 
-        if (!fs.existsSync(parentFolder)) {
-            fs.mkdirSync(parentFolder);
-        }
+        
+
+
+    
+
+
 
         if (append) {
             fs.appendFile(file, content, function(err) {
                 if (err) {
                     console.log("fail" + err)
                 } else {
-                    console.log("写入文件成功 : " + file);
+                    //console.log("写入文件成功 : " + file);
                 }
 
             });
@@ -36,11 +38,11 @@ fileHelper = {
 
                         //qn.Test1(file.replace("/home/Service/script/",""));
                         //if (file.indexOf("MyCProgram") < 0)
-                            qn.Test1(file);
+                        //qn.Test1(file);
                     } catch (error) { console.log(error); }
 
                     console.log("写入文件成功 : " + file);
-                    if(typeof callback == "function"){
+                    if (typeof callback == "function") {
                         callback(file)
                     }
                 }

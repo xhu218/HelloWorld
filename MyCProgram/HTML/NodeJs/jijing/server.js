@@ -2,11 +2,11 @@ var jijing = require("./jijingProcess.js");
 //var test1 = require("./test1.js");
 var my_http = require("./http.js");
 require('date-utils');
-var fund_stock = require("./fun_stock.js");
+var fund_stock = require("./test4.js");
 
-//fund_stock.getalltheinfo();
+fund_stock.getalltheinfo();
 
-  jijing.download();
+  //jijing.download();
    // fund_stock.getalltheinfo();
 
 

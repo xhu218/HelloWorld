@@ -9,7 +9,29 @@ var $database = 'qdm170526179_db';
 
 fund_mysql = {
 
+    getAllFundCode: function(callback) {
 
+        var mysql = require('mysql');
+        var connection = mysql.createConnection({
+            host: $host,
+            user: $user,
+            password: $password,
+            database: $database
+        });
+
+        connection.connect();
+        var sql = 'SELECT DISTINCT(FUND_CODE) AS FUND_CODE FROM FUND';
+        //sql =  'SELECT DISTINCT(FUND_CODE) AS FUND_CODE FROM FUND LIMIT 1';
+        connection.query(sql, function(error, results, fields) {
+            if (error) throw error;
+            if (typeof callback == "function")
+                callback(results);
+
+        });
+
+        connection.end();
+
+    },
     select: function() {
 
         var mysql = require('mysql');
@@ -29,6 +51,8 @@ fund_mysql = {
 
         connection.end();
     },
+
+
 
     insert_fund_stocks: function(data) {
 
@@ -119,7 +143,7 @@ fund_mysql = {
 
                             if (err) {
                                 writelog('[INSERT ERROR] - ' + err + result + JSON.stringify(fund), "Error");
-                               return reject(err);
+                                return reject(err);
                             } else {
                                 return resolve(fund);
                             }
@@ -167,28 +191,30 @@ fund_mysql = {
 
         for (var i = 0; i < data.length; i++) {
             console.log("start..." + i);
-            await synchronous_post(data[i]);
+            //await synchronous_post(data[i]);
+            await insert(data[i]);
         }
         console.log("结束连接")
         connection.end();
 
     },
 
-    insert1: function(item) {
 
-        console.log("insert in to mysql " + item);
+    pool: null,
 
+    insert1: function(item,callback) {
 
         var mysql = require('mysql');
+        if (this.pool == null) {
+            this.pool = mysql.createPool({
+                host: $host,
+                user: $user,
+                password: $password,
+                database: $database
+            });
+        }
 
-        var connection = mysql.createConnection({
-            host: $host,
-            user: $user,
-            password: $password,
-            database: $database
-        });
-
-        connection.connect();
+        console.log("insert in to mysql " + item);
 
         var dt = new Date();
         var d = dt.toFormat("YYYY-MM-DD");
@@ -197,20 +223,21 @@ fund_mysql = {
         var addSql = "insert INTO JJ(`id`,`read`,`write`,`author`,`content`,`time`)VALUES(?,?,?,?,?,?)";
         var addSqlParams = [item.id, item.read, item.write, item.author, item.content, item.time];
 
-        connection.query(addSql, addSqlParams, function(err, result) {
-            if (err) {
-                writelog('[INSERT ERROR] - ' + err, "Error");
-                return;
-            }
+        this.pool.getConnection(function(err, connection) {
+            if (err) { throw err; }
+            connection.query(addSql, addSqlParams, function(err, result) {
+                callback(err,result);
+                if (err) {
+                    writelog('[INSERT ERROR] - ' + err, "Error");
+                    throw err
+                }
+                else{callback(err,result)}
+               
 
-            console.log('--------------------------INSERT----------------------------');
-            //console.log('INSERT ID:',result.insertId);        
-            console.log('INSERT ID:', result);
-            console.log('-----------------------------------------------------------------\n\n');
-        });
+            });
 
-        connection.end();
-
+            connection.release();
+        })
     }
 }
 
