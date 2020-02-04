@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -9,17 +10,137 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace ConsoleApplication1
 {
     public struct test
     { };
 
+    public class Aninal
+    {
+        public int Age;
+
+    }
+    public class Person : Aninal
+    {
+        public String Name;
+    }
+    public class Bird : Aninal
+    {
+        public String Wing;
+    }
+
     class Program
     {
+        public static string Serialize(object obj)
+        {
+            string xml="";
+
+            Type type = obj.GetType();
+
+            try
+            {
+                XmlSerializer formatter = new XmlSerializer(type);
+                MemoryStream stream = new MemoryStream();
+                XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+                ns.Add("", "");
+                formatter.Serialize(stream, obj, ns);
+                byte[] streamBytes = stream.ToArray();
+                xml = Encoding.UTF8.GetString(streamBytes);
+                stream.Close();
+            }
+            catch (Exception e)
+            {
+                string errorMessage = string.Format("Error occur when serializing {0} object to XML.", type.Name);
+              
+            }
+            return xml;
+        }
+        static void Main()
+        {
+            List<Aninal> aninals = new List<Aninal>();
+            aninals.Add(new Person { Age = 1, Name = "wfg" });
+            aninals.Add(new Bird { Age = 1, Wing = "Green" });
+
+            Console.WriteLine(Serialize(aninals));
+            Console.Read();
 
 
-        static void Main(String[] args)
+        }
+
+        static void Main20191106()
+        {
+            //Directory.CreateDirectory(@"c:\wfg\lxx\wly");
+            String length = "10000000";
+            String objTB = "59.94";
+            String r = (Convert.ToInt64(length) * Convert.ToDouble(objTB) / 10000000).ToString();
+            Console.ReadLine();
+        }
+        static void Main20191018()
+        {
+            //String abc = String.Format("name={0},  sex = {2}", "wfg", "36", "body");
+            //Console.WriteLine(abc);
+            XmlDocument doclist = new XmlDocument();
+
+            XmlElement mos = doclist.CreateElement("mos");
+            XmlElement mosID = doclist.CreateElement("mosID");
+            XmlElement ncsID = doclist.CreateElement("ncsID");
+            XmlElement listMachInfo = doclist.CreateElement("listMachInfo");
+
+            mosID.AppendChild(doclist.CreateTextNode("11"));
+            ncsID.AppendChild(doclist.CreateTextNode("22"));
+
+            XmlElement support = doclist.CreateElement("supportedProfiles");
+            var deviceType = support.Attributes.Append(doclist.CreateAttribute("deviceType"));
+            deviceType.Value = "MOS";
+            
+
+
+            XmlElement elm;
+            elm = doclist.CreateElement("mosProfile0");
+            elm.AppendChild(doclist.CreateTextNode("1111111111111111111111111"));
+            support.AppendChild(elm);
+            elm = doclist.CreateElement("mosProfile1");
+            elm.AppendChild(doclist.CreateTextNode("1111111111111111111111111"));
+            support.AppendChild(elm);
+            elm = doclist.CreateElement("mosProfile2");
+            elm.AppendChild(doclist.CreateTextNode("1111111111111111111111111"));
+            support.AppendChild(elm);
+            elm = doclist.CreateElement("mosProfile3");
+            elm.AppendChild(doclist.CreateTextNode("1111111111111111111111111"));
+            support.AppendChild(elm);
+            elm = doclist.CreateElement("mosProfile4");
+            elm.AppendChild(doclist.CreateTextNode("1111111111111111111111111"));
+            support.AppendChild(elm);
+            elm = doclist.CreateElement("mosProfile5");
+            elm.AppendChild(doclist.CreateTextNode("1111111111111111111111111"));
+            support.AppendChild(elm);
+            elm = doclist.CreateElement("mosProfile6");
+            elm.AppendChild(doclist.CreateTextNode("1111111111111111111111111"));
+            support.AppendChild(elm);
+            elm = doclist.CreateElement("mosProfile7");
+            elm.AppendChild(doclist.CreateTextNode("1111111111111111111111111"));
+            support.AppendChild(elm);
+
+
+            listMachInfo.AppendChild(support);
+
+
+            mos.AppendChild(mosID);
+            mos.AppendChild(ncsID);
+            mos.AppendChild(listMachInfo);
+            doclist.AppendChild(mos);
+
+           
+            
+            Console.Write(doclist.OuterXml);
+
+
+            Console.ReadLine();
+        }
+
+        static void Main20191010(String[] args)
         {
             AutoResetEvent transferWaiter = new AutoResetEvent(false);
           
