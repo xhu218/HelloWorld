@@ -13,7 +13,8 @@ var fund_stock = {
 
     getalltheinfo: function() {
         fund_mysql.getAllFundCode(async function(r) {
-
+			
+			console.log(r.length);
             var async = require("async");
 
             var fund_codes = [];
@@ -86,7 +87,9 @@ var fund_stock = {
                                             //console.log(data[0]);
                                             var dt = new Date();
                                             var line = dt.toFormat("YYYY-MM-DD")
-                                            var filename = path.join("e:", "Data", line, fund_code + ".xml");
+											var path1 = path.parse(__dirname);
+											//console.log(path1.root);
+                                            var filename = path.join(path1.root, "Data", line, fund_code + ".xml");
                                             var fs = require("fs");
                                             if (!fs.existsSync(path.join("e:", "Data", line))) {
                                                 fs.mkdirSync(path.join("e:", "Data", line));

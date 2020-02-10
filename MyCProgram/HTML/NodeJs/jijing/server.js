@@ -28,7 +28,7 @@ var jijingcomment = require("./jijingcomment.js")
 获取所有基金的购买情况
 存入本地文件
 */
-//fund_stock.getalltheinfo();
+fund_stock.getalltheinfo();
 
 
 
