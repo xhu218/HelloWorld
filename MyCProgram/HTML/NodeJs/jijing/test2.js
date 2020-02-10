@@ -6,14 +6,14 @@ function foo(param) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             try {
-                JSON.parse('{}'); // 执行到这里会报错
-                var arr = [1,2,3];
-                arr.forEach(function(item,index){
-                  console.log(item);
+                JSON.parse('{'); // 执行到这里会报错
+                var arr = [1, 2, 3];
+                arr.forEach(function(item, index) {
+                    console.log(item);
 
                 })
-                 return resolve(param);
-                
+                return resolve(param);
+
             } catch (err) {
                 return reject(err);
             }
@@ -79,4 +79,7 @@ foo(123)
     .catch(e => {
         console.log('最后错误：');
         console.log(e)
-    })
+    });
+
+
+

@@ -13,7 +13,7 @@ module.exports = function(line, level) {
 
 
         var dt = new Date();
-        var filename = dt.toFormat("YYYYMMDDHH24") + ".log";
+        var filename = dt.toFormat("YYYY-MM-DD-HH24") + ".log";
 
         if (level == "Error") {
             fslog.appendFile(path.join(__dirname, "log", filename), line + "\n", function(err) {

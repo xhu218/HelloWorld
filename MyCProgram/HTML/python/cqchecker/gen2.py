@@ -18,7 +18,7 @@ __beforeclosetime = 1800;
 __times =("12:00:00","15:00:00","17:00:00","19:00:00","21:00:00","10:35","15:48");
 
 __fileter = ['WFG',"WANGFUGUI",'YRF','yaorongfu','YL','YELIANG','MYQ','maoyuanqiao','CT','chentao'];
-__logpath = r'E:\\Work\\HelloWorld.git\\trunk\\MyCProgram\\HTML\\python\\bug\\gen2\\'
+__logpath = 'E:\\bug\\gen2\\'
 logfile = "";
 
 
