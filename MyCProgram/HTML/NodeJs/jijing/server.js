@@ -35,42 +35,57 @@ fund_stock.getalltheinfo();
 
 //my_http.start();
 
+var scheduletask = false;
 
-var schedule = require("node-schedule");
-var rule1 = new schedule.RecurrenceRule();　　
-rule1.dayOfWeek = [0, new schedule.Range(1, 5)];　
-rule1.hour = 15;　
-rule1.minute = 30;
-var job1 = schedule.scheduleJob(rule1, function() {
-    console.log("执行任务");　
-    jijing.download();   
+if (scheduletask) {
 
-});
+    var starthour = 14;
+    var startmin = 36;
 
+    var schedule = require("node-schedule");
+    var rule1 = new schedule.RecurrenceRule();
+    rule1.dayOfWeek = [0, new schedule.Range(1, 5)];
+    rule1.hour = starthour;
+    rule1.minute = startmin;
+    var job1 = schedule.scheduleJob(rule1, function() {
+        console.log("执行任务");
+        jijing.download();
 
-
-
-var rule2 = new schedule.RecurrenceRule();　　
-rule2.dayOfWeek = [0, new schedule.Range(1, 5)];　
-rule2.hour = 16;　
-rule2.minute = 00;
-var job2 = schedule.scheduleJob(rule2, function() {
-    console.log("执行任务");
-    jijingcomment.test2();　
-
-});
+    });
 
 
-var rule3 = new schedule.RecurrenceRule();　　
-rule3.dayOfWeek = [0, new schedule.Range(1, 5)];　
-rule3.hour = 16;　
-rule3.minute = 30;
-var job3 = schedule.scheduleJob(rule3, function() {
-    console.log("执行任务");
-    fund_stock.getalltheinfo();　
+    var rule2 = new schedule.RecurrenceRule();
+    rule2.dayOfWeek = [0, new schedule.Range(1, 5)];
+    if (rule1.minute + 20 >= 60) {
+        rule2.hour = rule1.hour + 1;
+        rule2.minute = (rule1.minute + 20) % 60;
+    } else {
+        rule2.hour = rule1.hour;
+        rule2.minute = (rule1.minute + 20);
+    }
+    var job2 = schedule.scheduleJob(rule2, function() {
+        console.log("执行任务");
+        jijingcomment.test2();
 
-});
+    });
 
+
+    var rule3 = new schedule.RecurrenceRule();
+    rule3.dayOfWeek = [0, new schedule.Range(1, 5)];
+    if (rule2.minute + 20 >= 60) {
+        rule3.hour = rule2.hour + 1;
+        rule3.minute = (rule2.minute + 20) % 60;
+    } else {
+        rule3.hour = rule2.hour;
+        rule3.minute = (rule2.minute + 20);
+    }
+    var job3 = schedule.scheduleJob(rule3, function() {
+        console.log("执行任务");
+        fund_stock.getalltheinfo();
+
+    });
+
+}
 
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -81,7 +96,7 @@ var inputArr = [];
 rl.on('line', function(input) {
     inputArr.push(input);
     console.log(inputArr[0]);
-    console.log(+inputArr[0]); 
+    console.log(+inputArr[0]);
     inputArr = [];
 
 });

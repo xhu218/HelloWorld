@@ -15,9 +15,9 @@ var jijingProcess = {
             var d = dt.toFormat("YYYY-MM-DD");
             console.log(d);
 
-            var allpages = 2; //;
+            var allpages = 6; //;
 
-            var pagenum = 3000;
+            var pagenum = 1000;
 
             //pagenum = 30;
 
@@ -77,16 +77,17 @@ var jijingProcess = {
 
                             doingCount++;
                             console.log(doingCount + "    " + t);
-                            //console.log(content);
+                           
                             content = body;
                             if (content == null) {
                                 writelog(url + "content is null", "Error")
                                 return;
                             }
-
+                            // console.log(content);
+                            //console.log(data);
                             //console.log("current page : " + url);
                             var data = content.replace("var rankData = ", "").replace("};", "}");
-
+                            //console.log(data);
                             var o = eval("(" + data + ")");
                             console.log("allRecords :" + o.allRecords + " pageIndex : " + o.pageIndex + " pageNum : " + o.pageNum, " allPages : " + o.allPages);
 

@@ -20,11 +20,11 @@ var fund_stock = {
             var fund_codes = [];
             var currentCount = 0;
 
-            //fund_codes.push("000148");
-            //fund_codes.push("000149")
+            fund_codes.push("000148");
+            fund_codes.push("000149")
             
             for (var i = r.length - 1; i >= 0; i--) {
-                fund_codes.push(r[i].FUND_CODE);
+                //fund_codes.push(r[i].FUND_CODE);
             }          
 
             var index = 0;

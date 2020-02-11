@@ -24,7 +24,7 @@ function encode(cryptkey, iv, cleardata) {
 var
 cryptkey   = crypto.createHash('sha256').update('__tazai_wolf__key').digest(),
 iv         = '1234567890000000',
-buf        = "http://fund.eastmoney.com/000148.html?spm=search&t=0.9898113955910472",
+buf        = "http://fundf10.eastmoney.com/ccmx_000149.html",
 enc        = encode( cryptkey, iv, buf );
  
 var dec        = decode(cryptkey, iv, enc);
