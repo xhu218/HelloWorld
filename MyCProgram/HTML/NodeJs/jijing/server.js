@@ -11,7 +11,7 @@ var jijingcomment = require("./jijingcomment.js")
 存放MYSQL
 */
 
-//jijing.download();
+jijing.download();
 
 
 /*
@@ -28,7 +28,7 @@ var jijingcomment = require("./jijingcomment.js")
 获取所有基金的购买情况
 存入本地文件
 */
-fund_stock.getalltheinfo();
+//fund_stock.getalltheinfo();
 
 
 
@@ -87,6 +87,8 @@ if (scheduletask) {
 
 }
 
+
+/*
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -100,3 +102,5 @@ rl.on('line', function(input) {
     inputArr = [];
 
 });
+
+*/

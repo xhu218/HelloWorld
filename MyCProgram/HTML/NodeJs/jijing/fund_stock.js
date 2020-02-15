@@ -13,19 +13,19 @@ var fund_stock = {
 
     getalltheinfo: function() {
         fund_mysql.getAllFundCode(async function(r) {
-			
-			console.log(r.length);
+
+            console.log(r.length);
             var async = require("async");
 
             var fund_codes = [];
             var currentCount = 0;
 
-            fund_codes.push("000148");
-            fund_codes.push("000149")
-            
+            fund_codes.push("161903");
+            //fund_codes.push("000149")
+
             for (var i = r.length - 1; i >= 0; i--) {
                 //fund_codes.push(r[i].FUND_CODE);
-            }          
+            }
 
             var index = 0;
             async.mapLimit(fund_codes, 5, function(fund_code, callback) {
@@ -60,8 +60,8 @@ var fund_stock = {
                                     console.log(`url = ${url}`);
                                     request(options, function(error, response, body) {
 
-                                        if(error){
-                                            writelog(error+url,"Error");
+                                        if (error) {
+                                            writelog(error + url, "Error");
                                             return reject(param);
                                         }
 
@@ -77,28 +77,48 @@ var fund_stock = {
 
 
                                         currentCount--;
-                                
+
 
                                         var regTab = /<li class=\'position_shares\' id=\'position_shares\' style=\'display:block\' >[\s\S]*?<\/li>/gi;
                                         var data = regTab.exec(body);
-                                        //console.log(body);
+                                        var content = "";
                                         if (data != null) {
+                                            //console.log(data[0]);
                                             console.log(fund_code);
+                                            var regtr = /<tr>[\s\S]*?<\/tr>/gi;
+                                            var rows = data[0].match(regtr);
+                                            if (rows != null) {
+                                                console.log(`row count = ${rows.length}`);
+                                                for (var i = 0; i < rows.length; i++) {
+                                                    //console.log(rows[i]);
+                                                    var regtd = /<td[\s\S]*?<\/td>/g;
+                                                    var fields = rows[i].match(regtd);
+                                                    if (fields != null) {
+                                                        for (var j = 0; j < fields.length; j++) {
+                                                            if (j != 2) {
+                                                                content+=(fields[j]);
+                                                            }
+                                                        }
+                                                    }
+                                                    console.log("----------------------------------")
+                                                }
+
+                                            }
                                             //console.log(data[0]);
                                             var dt = new Date();
                                             var line = dt.toFormat("YYYY-MM-DD")
-											var path1 = path.parse(__dirname);
-											//console.log(path1.root);
+                                            var path1 = path.parse(__dirname);
+                                            //console.log(path1.root);
                                             var filename = path.join(path1.root, "Data", line, fund_code + ".xml");
                                             var fs = require("fs");
-                                            if (!fs.existsSync(path.join("e:", "Data", line))) {
-                                                fs.mkdirSync(path.join("e:", "Data", line));
+                                            if (!fs.existsSync(path.join(path1.root, "Data", line))) {
+                                                fs.mkdirSync(path.join(path1.root, "Data", line));
                                             }
 
                                             //console.log(data[0]);
 
 
-                                            file.writetoFile((data[0]), filename, false, function() {
+                                            file.writetoFile(content, filename, false, function() {
                                                 console.log(`${index++} / ${r.length}`);
                                                 return resolve(param);
 
@@ -110,7 +130,7 @@ var fund_stock = {
                                     })
 
                                 } catch (err) {
-                                     writelog(url + 'not find matched cotent', "Error");
+                                    writelog(url + 'not find matched cotent', "Error");
                                     return reject(param);
                                 }
                             }, 1000);

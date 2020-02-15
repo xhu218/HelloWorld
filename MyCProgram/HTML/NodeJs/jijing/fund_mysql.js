@@ -195,13 +195,13 @@ fund_mysql = {
                         this.pool.getConnection(function(err, connection) {
                             if (err) {
                                 writelog(err, "Error");
-                                throw err;
+                                //throw err;
                             }
                             connection.query(addSql, addSqlParams, function(err, result) {
 
                                 if (err) {
                                     writelog('[INSERT ERROR] - ' + err, "Error");
-                                    throw err
+                                    //throw err
                                 }
                                 //return resolve(fund);
                                 console.log(` ${index++} / ${data.length} insert in to mysql ${fund.jijing_Code}`);
