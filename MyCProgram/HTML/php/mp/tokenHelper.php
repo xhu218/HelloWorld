@@ -12,12 +12,12 @@ class tokenHelper{
 		{
 			$data= json_decode($content);
 		}
-		if( $content==null || ( $content!=null  && $data!=null && $now> $data->expires_in ))
+		if( ( $content==null || ( $content!=null  && $data!=null && $now> $data->expires_in )))
 		{
 			
 			$curl = curl_init();
 			curl_setopt_array($curl, array(
-			  CURLOPT_URL => "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx295f5fa6df618a38&secret=e0913cc27088987714ea449e48122816",
+			  CURLOPT_URL => "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx295f5fa6df618a38&secret=ee33484638ee37b79b4f68a27b92cf28",
 			  CURLOPT_RETURNTRANSFER => true,
 			  CURLOPT_ENCODING => "",
 			  CURLOPT_MAXREDIRS => 10,

@@ -17,6 +17,8 @@ class messageHelper{
 		$MsgId = $xml_tree->getElementsByTagName('MsgId');
 		$Recognition=$xml_tree->getElementsByTagName('Recognition');
 		$MediaId=$xml_tree->getElementsByTagName('MediaId');
+		$PicUrl=$xml_tree->getElementsByTagName('PicUrl');
+		
 		
 		return array(
 		"ToUserName"=>$ToUserName->item(0)->nodeValue,
@@ -26,7 +28,8 @@ class messageHelper{
 		"Content"=>$Content->item(0)!=null?$Content->item(0)->nodeValue:null,
 		"MsgId"=>$MsgId->item(0)->nodeValue,
 		"Recognition"=>$Recognition->item(0)!=null?$Recognition->item(0)->nodeValue:null,
-		"MediaId"=>$MediaId->item(0)!=null?$MediaId->item(0)->nodeValue:null
+		"MediaId"=>$MediaId->item(0)!=null?$MediaId->item(0)->nodeValue:null,
+		"PicUrl"=>$PicUrl->item(0)!=null?$PicUrl->item(0)->nodeValue:null
 		);
 	} catch (Exception $e) {
 		//print $e . "\n";

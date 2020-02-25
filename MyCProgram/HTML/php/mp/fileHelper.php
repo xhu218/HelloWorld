@@ -34,6 +34,17 @@ class fileHelper
 		return $body;
 	}
 	
+	
+	public function writelog($content){
+		
+		$myfile = fopen("logs/debug_".date("Y-m-d").".log", "a") or die("Unable to open file!");
+		$body = $content;
+		fwrite($myfile, date("Y-m-d H:i:s").$body ."\n");
+		fclose($myfile);
+		//return $body;
+	}	
+	
+	
 	public function writefile1($path,$content){
 		
 		$myfile = fopen($path, "w") or die("Unable to open file!");

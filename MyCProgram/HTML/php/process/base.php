@@ -46,7 +46,19 @@ function sayHello( $string){
   echo "hello " . $string;
 }
 
+function decode($cryptkey, $iv, $secretdata){
+		$d =  openssl_decrypt($secretdata,'aes-256-cbc',$cryptkey,false,$iv);
+		//$d = str_replace(array('_','-'),array('/','+'),$string);		
+		return $d;
+}
 
+function encode($cryptkey, $iv, $secretdata){
+	return openssl_encrypt($secretdata,'aes-256-cbc',$cryptkey,false,$iv);
+}
+
+
+$cryptkey = hash('sha256','__tazai_wolf__key',true);
+$iv = '1234567890000000';
 
 
 define('S3_BUCKET', 'xhu218');

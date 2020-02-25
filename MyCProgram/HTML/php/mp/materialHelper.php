@@ -29,4 +29,15 @@ class materialHelper{
 		//print_r($info);
 
 	}
+	
+	function getmaterialurl($mediaid){
+		
+		$tokenHelper = new tokenHelper();
+		$token_response=$tokenHelper->getToken();
+		$token_response_obj = json_decode($token_response);
+		$token = $token_response_obj->access_token;
+		
+		$url='http://file.api.weixin.qq.com/cgi-bin/media/get?access_token='.$token .'&media_id=' .$mediaid;
+		return $url;
+	}
 }
