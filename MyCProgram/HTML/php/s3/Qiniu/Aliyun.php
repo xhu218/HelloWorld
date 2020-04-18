@@ -1,6 +1,6 @@
                                            
 <?php
-$access_id = 'Q6kOA4w2vfsJdEYm';
+$access_id = '1Q6kOA4w2vfsJdEYm';
 $access_key = 'JfgOIdkRKiAkb0VEhWWUdtgsNr6Bfl';
 $url='http://xhu218.oss-cn-beijing.aliyuncs.com';//更改成你自己的地址
 $policy = '{"expiration": "2121-01-01T12:00:00.000Z","conditions":[{"bucket": "xhu218" },["content-length-range", 0, 104857600]]}';
