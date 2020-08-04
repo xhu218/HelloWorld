@@ -13,3 +13,13 @@ for(var index =1;index<=10;index++){
     temp += `${index} + `
 	console.log(`${temp}  = ${sum}`);
 }
+
+var data = [];
+for(var index=0;index<100;index++){
+	data.push(index);
+}
+
+data.forEach(function(item,index){
+	setTimeout(()=>{console.log(index);},1000-index);
+	//console.log(index);
+})

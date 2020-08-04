@@ -15,7 +15,7 @@ browser = None;
 __close_after_test = True;
 __beforeclosetime = 1800;
 
-__times =("11:00:00","14:00:00","16:00:00","18:00:00","20:00:00","16:01");
+__times =("11:00:00","14:00:00","16:00:00","18:00:00","20:00:00","16:01","19:06");
 
 __fileter = ['WFG',"WANGFUGUI",'YRF','yaorongfu','YL','YELIANG','MYQ','maoyuanqiao','CT','chentao'];
 __logpath = 'E:\\bug\\snp41\\'

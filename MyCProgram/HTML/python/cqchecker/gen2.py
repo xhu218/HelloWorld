@@ -15,7 +15,7 @@ browser = None;
 __close_after_test = True;
 __beforeclosetime = 1800;
 
-__times =("12:00:00","15:00:00","17:00:00","19:00:00","21:00:00","10:35","15:48");
+__times =("10:30:00","11:00:00","12:00:00","13:00:00","14:00:00","15:00:00","16:00:00","17:00:00","18:00:00","19:00:00","20:00:00","17:47:00");
 
 __fileter = ['WFG',"WANGFUGUI",'YRF','yaorongfu','YL','YELIANG','MYQ','maoyuanqiao','CT','chentao'];
 __logpath = 'E:\\bug\\gen2\\'
@@ -70,8 +70,8 @@ while True:
 	
 				#    151RC4               1.6				152p1              161           162              1.7               SRG                 mbh cloud
 				#n = ['tittle33808144',"tittle33807102","tittle33809378","tittle33817495","tittle33819049","tittle33830739","tittle33835833","tittle33835861"]
-				#    1.8                SRG					售后项目			售后分组
-				n = ['tittle33955728','tittle33959074','tittle33975740','tittle33975739'];
+				#    1.8.1              SRG					售后项目			售后分组
+				n = ['tittle34012657','tittle34012773','tittle33975740','tittle33975739'];
 				for i in n:    
 			    	
 

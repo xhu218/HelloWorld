@@ -26,8 +26,24 @@ while true; do
 		cd /sobeyhive/data/
 		tar -zcvf $mysql__dest_tar mysql
 		#Qiniu
+
+		#./qshell-linux-x64  account 5zICAtLUtlGbbMfDB2ucQ9OxyO3zwQTG6I5do11P c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7
+
+		#echo '{"access_key":"5zICAtLUtlGbbMfDB2ucQ9OxyO3zwQTG6I5do11P","secret_key":"nmLwELZkxdVxHECFTnTMdce2VJbgVIqMkkQMYN1wRUvGaNII1vqhJiHEQ-9wjOZA"}' > /root/.qshell/account.json 
+
 		/sobeyhive/app/qshell-linux-x64 fput xhu219 $tgz $mysql__dest_tar
+
+		
 		#Aliyun
+		#./ossutil64 config
+		#Please enter endpoint:oss-cn-beijing.aliyuncs.com
+		#Please enter accessKeyID:Q6kOA4w2vfsJdEYm
+		#Please enter accessKeySecret:JfgOIdkRKiAkb0VEhWWUdtgsNr6Bfl
+
+		#echo -e '[Credentials]\nlanguage=EN\nendpoint=oss-cn-beijing.aliyuncs.com\naccessKeyID=Q6kOA4w2vfsJdEYm\naccessKeySecret=JfgOIdkRKiAkb0VEhWWUdtgsNr6Bfl' > /root/.ossutilconfig 
+
+
+
 		/sobeyhive/app/ossutil64 cp /mnt/sda4/$tgz oss://xhu219/mysql/$tgz
 		#Baidu
 

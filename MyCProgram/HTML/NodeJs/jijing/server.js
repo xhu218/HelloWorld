@@ -11,7 +11,7 @@ var jijingcomment = require("./jijingcomment.js")
 存放MYSQL
 */
 
-jijing.download();
+//jijing.download();
 
 
 /*
@@ -35,12 +35,13 @@ jijing.download();
 
 //my_http.start();
 
-var scheduletask = false;
+var scheduletask = true;
+//scheduletask = false;
 
 if (scheduletask) {
 
-    var starthour = 14;
-    var startmin = 36;
+    var starthour = 12;
+    var startmin = 0;
 
     var schedule = require("node-schedule");
     var rule1 = new schedule.RecurrenceRule();
