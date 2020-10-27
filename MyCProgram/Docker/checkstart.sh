@@ -29,7 +29,7 @@ while true; do
 
 		#./qshell-linux-x64  account 5zICAtLUtlGbbMfDB2ucQ9OxyO3zwQTG6I5do11P c2mM0jRfxm9hYDdsbeFqBR4akbMqG8n6TpIl4mE7
 
-		#echo '{"access_key":"5zICAtLUtlGbbMfDB2ucQ9OxyO3zwQTG6I5do11P","secret_key":"nmLwELZkxdVxHECFTnTMdce2VJbgVIqMkkQMYN1wRUvGaNII1vqhJiHEQ-9wjOZA"}' > /root/.qshell/account.json 
+		#echo '{"access_key":"5zICAtLUtlGbbMfDB2ucQ9OxyO3zwQTG6I5do11P","secret_key":"1111111111111111111111111111111-9wjOZA"}' > /root/.qshell/account.json 
 
 		/sobeyhive/app/qshell-linux-x64 fput xhu219 $tgz $mysql__dest_tar
 
@@ -38,9 +38,9 @@ while true; do
 		#./ossutil64 config
 		#Please enter endpoint:oss-cn-beijing.aliyuncs.com
 		#Please enter accessKeyID:Q6kOA4w2vfsJdEYm
-		#Please enter accessKeySecret:JfgOIdkRKiAkb0VEhWWUdtgsNr6Bfl
+		#Please enter accessKeySecret:1111111111111111111111111111111-9wjOZA
 
-		#echo -e '[Credentials]\nlanguage=EN\nendpoint=oss-cn-beijing.aliyuncs.com\naccessKeyID=Q6kOA4w2vfsJdEYm\naccessKeySecret=JfgOIdkRKiAkb0VEhWWUdtgsNr6Bfl' > /root/.ossutilconfig 
+		#echo -e '[Credentials]\nlanguage=EN\nendpoint=oss-cn-beijing.aliyuncs.com\naccessKeyID=Q6kOA4w2vfsJdEYm\naccessKeySecret=1111111111111111111111111111111-9wjOZA' > /root/.ossutilconfig 
 
 
 
