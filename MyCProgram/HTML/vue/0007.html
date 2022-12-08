@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <pre><a v-bind:href="url">菜鸟教程</a></pre>
+    <a v-bind:href="url" v-on:click="doSomething">点我试试</a>
+</div>
+<form v-on:submit.prevent="onSubmit"></form>
+	
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    url: 'http://www.runoob.com'
+  },
+  methods:{
+  	doSomething:function(){alert("ok");}
+  }
+})
+</script>
+</body>
+</html>

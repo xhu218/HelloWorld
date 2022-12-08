@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <meta charset="utf-8">
+   <title>菜鸟教程(runoob.com)</title>
+    
+      <script type="text/javascript">
+
+          //var ws = new WebSocket("ws://172.16.128.183:1880/ws/example");
+          var ws = new WebSocket("ws://service.xhu218.com:1880/ws/example");
+         function WebSocketTest()
+         {
+            if ("WebSocket" in window)
+            {
+               console.log("您的浏览器支持 WebSocket!");
+               
+               // 打开一个 web socket
+              
+                
+               ws.onopen = function()
+               {
+                  // Web Socket 已连接上，使用 send() 方法发送数据
+                  var student = {"name":"wfg","age":11};
+                  ws.send(JSON.stringify(student));
+
+                  console.log("数据发送中...");
+               };
+                
+               ws.onmessage = function (evt) 
+               { 
+                  var received_msg = evt.data;
+                  console.log("数据已接收..." +received_msg);
+               };
+                
+               ws.onclose = function()
+               { 
+                  // 关闭 websocket
+                  console.log("连接已关闭..."); 
+               };
+            }
+            
+            else
+            {
+               // 浏览器不支持 WebSocket
+               console.warn("您的浏览器不支持 WebSocket!");
+            }
+         }
+
+
+         function SendMsg()
+         {
+               var student = {"name":"wfg","age":11,"time":new Date()};
+               ws.send(JSON.stringify(student));
+               console.log("数据发送中...");           
+         }
+         WebSocketTest();
+      </script>
+        
+   </head>
+   <body>
+   
+      <div id="sse">
+         <a href="javascript:SendMsg()">运行 WebSocket</a>
+      </div>
+      
+   </body>
+</html>

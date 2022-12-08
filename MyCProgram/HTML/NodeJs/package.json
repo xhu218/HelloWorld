@@ -30,6 +30,9 @@
   },
   "private": true,
   "dependencies": {
-    "body-parser": "^1.17.1"
+    "body-parser": "^1.17.1",
+    "data-utils": "0.0.2",
+    "date-utils": "^1.2.21",
+    "request": "^2.88.2"
   }
 }

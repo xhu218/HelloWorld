@@ -15,5 +15,5 @@ sleep 5
 tar -zxf ossutil64.tar
 chmod a+x /oss/ossutil64
 
-echo -e '[Credentials]\nlanguage=EN\nendpoint=oss-cn-beijing.aliyuncs.com\naccessKeyID=Q6kOA4w2vfsJdEYm\naccessKeySecret=JfgOIdkRKiAkb0VEhWWUdtgsNr6Bfl' > /root/.ossutilconfig 
+echo -e '[Credentials]\nlanguage=EN\nendpoint=oss-cn-beijing.aliyuncs.com\naccessKeyID=Q6kOA4w2vfsJdEYm\naccessKeySecret=111111111111111111111' > /root/.ossutilconfig 
 

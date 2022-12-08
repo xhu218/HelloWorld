@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+  
+    <script type="text/javascript">
+    $(document).ready(function() {
+        console.log("start...");
+        
+        var framecount = 677329;
+        var totalsec = framecount / 25;
+
+        
+        
+        var hour = Math.floor(totalsec / 3600);
+        var min =  Math.floor((totalsec % 3600) / 60);
+        var sec = Math.floor((totalsec % 3600) % 60);
+        
+
+        $("#info").append( hour + ":" + min + ":" + sec + "<br />");
+    })
+    </script>
+</head>
+
+<body>
+    <div id="info">样例</div>
+</body>
+
+</html>

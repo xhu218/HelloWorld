@@ -5,7 +5,7 @@
 
 ## ----- Setting -----
 AccessKeyId="Q6kOA4w2vfsJdEYm"
-AccessKeySec="JfgOIdkRKiAkb0VEhWWUdtgsNr6Bfl"
+AccessKeySec="11111111111111111111111"
 DomainRecordId="4081479915886592"
 # DomainRR, use "@" to set top level domain
 DomainRR="vpn"

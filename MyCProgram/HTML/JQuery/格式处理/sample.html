@@ -10,7 +10,7 @@
         console.log("start...");
      
       
-         $("#info").append('wfg 的帧率是' + ETGetFrameRate(65536) + "<br />");
+         $("#info").append('wfg 的帧率是' + ETGetFrameRate(1178680001) + "<br />");
   
   
   
@@ -97,6 +97,14 @@
 
   $("#info").append("        VIDEOSTANDARD_1920_1080_5994p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +    ETGetFrameRate(0x49411082) + "<br />");  //
         console.log("end...");
+
+  $("#info").append(" 20220809 wfg add<br />");  //
+
+  console.log("end...");
+
+  $("#info").append("        VIDEOSTANDARD_1920_1080_5994p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +    JSON.stringify(ETGetExsitVideoStandard(0x10000040)) + "<br />");  //
+        console.log("end...");
+
 
     });
     </script>

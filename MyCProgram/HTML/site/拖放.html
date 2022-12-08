@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5拖拽</title>
+<meta charset="utf-8">
+<style>
+#div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+</head>
+<body>
+<p>拖动img_w3slogo.gif图片到矩形框中:</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="https://www.baidu.com/img/PCfb_5bf082d29588c07f842ccde3f97243ea.png" draggable="true" ondragstart="drag(event)" width="300" height="56">
+
+<script>
+function allowDrop(ev){
+    ev.preventDefault();
+}
+
+function drag(ev){
+    //ev.dataTransfer.setData("Text",ev.target.id);
+    var msg = "<OBJECTS xmlns=\"http://DCMPlatform/v1.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"> 	<VERSION>25</VERSION> 	<TYPE>1</TYPE> 	<SOURCE>24832</SOURCE> 	<USERCODE>b245143353634f399610118433d6b97f</USERCODE> 	<IPADDRESS/> 	<SITEID>21</SITEID> 	<OBJECT> 		<EntityType> 			<Clip> 				<CLIPGUID>0556df5ef6994672a91a8d63854c1be5</CLIPGUID> 				<OBJID>129751</OBJID> 				<CLIPNAME>10min 1218---SM marker trim</CLIPNAME> 				<MATERIALID>202105130007</MATERIALID> 				<UMID/> 				<INPOINT>0</INPOINT> 				<OUTPOINT>1295</OUTPOINT> 				<MARKIN>-1</MARKIN> 				<MARKOUT>-1</MARKOUT> 				<LENGTH>1295</LENGTH> 				<ICONFRAME>0</ICONFRAME> 				<ICONFILENAME>\\172.16.0.202\\hivefiles\\sobeyhive\\buckets\\u-vfpo9y0cdss8gp06\\2021\\05\\13\\45x02p92tj4v9mzg\\ae0dbe1b75be4a0ea4b06a59703897f5.jpg</ICONFILENAME> 				<STATUS>0</STATUS> 				<FILESTATUS>581</FILESTATUS> 				<CLIPSOURCE>29441</CLIPSOURCE> 				<LOCKFLAG>0</LOCKFLAG> 				<KEEPDAYS>0</KEEPDAYS> 				<KEYWORDS/> 				<CLIPNOTE/> 				<CREATEDATE>2021-05-13 17:00:41</CREATEDATE> 				<CREATORCODE>b245143353634f399610118433d6b97f</CREATORCODE> 				<MODIFYDATE>2021-05-13 17:01:40</MODIFYDATE> 				<MENDERCODE>b245143353634f399610118433d6b97f</MENDERCODE> 				<MODIFYTERMINAL>172.16.0.205</MODIFYTERMINAL> 				<DISTRIBUTEDATE>1899-12-30 00:00:00</DISTRIBUTEDATE> 				<RECORDDATE>1899-12-30 00:00:00</RECORDDATE> 				<RECORDENDTIME>1899-12-30 00:00:00</RECORDENDTIME> 				<SHOWDATE>1899-12-30 00:00:00</SHOWDATE> 				<FOLDERID>126122</FOLDERID> 				<PACKAGEID>129751</PACKAGEID> 				<SIGNALSOURCETYPE>0</SIGNALSOURCETYPE> 				<SIGNALSOURCEDESC/> 				<SIGNALSOURCEMARK/> 				<VTRINPOINT>0</VTRINPOINT> 				<VTROUTPOINT>0</VTROUTPOINT> 				<VTRINEXT>0</VTRINEXT> 				<VTROUTEXT>0</VTROUTEXT> 				<STORAGECODE/> 				<JOURNALIST/> 				<DEVICEGUID>00000000000000000000000000000000</DEVICEGUID> 				<VERSION>0</VERSION> 				<ACCESSPRIVILEGE>0</ACCESSPRIVILEGE> 				<MODIFYPRIVILEGE>0</MODIFYPRIVILEGE> 				<RIGHTS/> 				<VIDEOSTANDARD>0</VIDEOSTANDARD> 				<VIDEOSTANDARDGUID>210108000780043809c40010000900000de1</VIDEOSTANDARDGUID> 				<CLIPTYPE>1</CLIPTYPE> 				<CLIPLANGUAGE/> 				<ARCHIVEFLAG>0</ARCHIVEFLAG> 				<DELETEFLAG>0</DELETEFLAG> 				<PLANNINGID>0</PLANNINGID> 				<PLANNINGGUID>00000000000000000000000000000000</PLANNINGGUID> 				<INGESTID>0</INGESTID> 				<SRCPGMGUID>00000000000000000000000000000000</SRCPGMGUID> 				<FOLDERPATH>\\Public Material\\OA Material\\StudioA\\2021\\05\\12\\123</FOLDERPATH> 				<DEFCLASSPATH>MaterialList/Public Material/OA Material/StudioA/2021/05/12/123</DEFCLASSPATH> 				<NTSCTCMODE>1</NTSCTCMODE> 				<MEDIACHANNEL>VAAAAAAAA</MEDIACHANNEL> 				<NONAUDIOCHANNEL>48</NONAUDIOCHANNEL> 				<CAPTURESTATUS>0</CAPTURESTATUS> 				<IMAGETYPE>4</IMAGETYPE> 				<SRCSITEID>0</SRCSITEID> 				<RESTRICTVIEWCONTENT>0</RESTRICTVIEWCONTENT> 				<FOURCC>0</FOURCC> 				<VideoAdapteType>0</VideoAdapteType> 				<VideoShowMode>0</VideoShowMode> 				<VideoPosX>0.000000</VideoPosX> 				<VideoPosY>0.000000</VideoPosY> 				<ClipProperty>0</ClipProperty> 				<Reserved20>0</Reserved20> 				<audiodata/> 				<bcplink>0</bcplink> 				<CLIPFILES/> 			</Clip> 		</EntityType> 		<MetaData> 			<MaterialMetadata> 				<PGMNAME/> 				<ITEMNAME/> 				<CATEGORY/> 				<Custom1/> 				<Custom2/> 				<Custom3/> 			</MaterialMetadata> 		</MetaData> 		<MARKPOINTS/> 	</OBJECT> </OBJECTS>";
+
+    ev.dataTransfer.setData("Text",msg);
+}
+
+function drop(ev){
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    console.log(data);
+    ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+</body>
+</html>
