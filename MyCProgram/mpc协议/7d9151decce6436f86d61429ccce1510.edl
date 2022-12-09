@@ -1,0 +1,27 @@
+<sbedl version="-1" name="0" length="2425600000" ip="0" timecodestart="0" creationdate="2021-08-03T16:42:13.3316264+08:00" id="de94c1262f087c84be5e36b274f1df0a" fmtid="0" fps="-1" maxid="0">
+  <video>
+    <ref clipfile="\\172.16.149.205\hivefiles\sobeyhive\buckets\u-z543j3d323f50hy8\cmupload\2021-08-03\01184e79ee4978b507fbea745fa39c40.mp4" begin="0" clipbegin="0" clipend="2425600000" cliptype="0" format="0" channel="0" transtype="0" groupid="0" clipid="0" />
+  </video>
+  <audio>
+    <ref clipfile="\\172.16.149.205\hivefiles\sobeyhive\buckets\u-z543j3d323f50hy8\cmupload\2021-08-03\01184e79ee4978b507fbea745fa39c40.mp4" begin="0" clipbegin="0" clipend="2425600000" cliptype="0" format="0" channel="1" transtype="0" groupid="0" clipid="0" />
+  </audio>
+  <audio>
+    <ref clipfile="\\172.16.149.205\hivefiles\sobeyhive\buckets\u-z543j3d323f50hy8\cmupload\2021-08-03\01184e79ee4978b507fbea745fa39c40.mp4" begin="0" clipbegin="0" clipend="2425600000" cliptype="0" format="0" channel="2" transtype="0" groupid="0" clipid="0" />
+  </audio>
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <otc />
+  <cc />
+</sbedl>

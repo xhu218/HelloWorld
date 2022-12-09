@@ -1,0 +1,27 @@
+<sbedl version="-1" name="0" length="2000000" ip="0" timecodestart="0" creationdate="2021-08-03T16:42:13.3316264+08:00" id="de94c1262f087c84be5e36b274f1df0a" fmtid="0" fps="-1" maxid="0">
+  <video>
+    <ref clipfile="oss://AKIAYNXF25VLT2GQKIYU:KsTNQ8Yvj0To+zNtJkQ6fUmIgJd4Z650sphP27vr@s3.ap-northeast-1.amazonaws.com/sobeyqahiveupgrade12-media/download/3333333333.mxf?encode=0&product=amazon&type=https&version=420210630" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" channel="0" transtype="0" groupid="0" clipid="0" />
+  </video>
+  <audio>
+    <ref clipfile="oss://AKIAYNXF25VLT2GQKIYU:KsTNQ8Yvj0To+zNtJkQ6fUmIgJd4Z650sphP27vr@s3.ap-northeast-1.amazonaws.com/sobeyqahiveupgrade12-media/download/3333333333.mxf?encode=0&product=amazon&type=https&version=420210630" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" channel="1" transtype="0" groupid="0" clipid="0" />
+  </audio>
+  <audio>
+    <ref clipfile="oss://AKIAYNXF25VLT2GQKIYU:KsTNQ8Yvj0To+zNtJkQ6fUmIgJd4Z650sphP27vr@s3.ap-northeast-1.amazonaws.com/sobeyqahiveupgrade12-media/download/3333333333.mxf?encode=0&product=amazon&type=https&version=420210630" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" channel="2" transtype="0" groupid="0" clipid="0" />
+  </audio>
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <audio />
+  <otc />
+  <cc />
+</sbedl>

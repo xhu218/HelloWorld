@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MPC>
+	<Header>
+		<RequestID>be5c35394af143a9a02442f498fd8c3b</RequestID>
+		<Version>1.0</Version>
+		<RequestTime>2021-08-18 18:59:10</RequestTime>
+		<RequestMQ/>
+	</Header>
+	<Content>
+		<MPCType>AssignTask</MPCType>
+		<AssignTask>
+			<BaseInfo>
+				<ColumnName/>
+				<Controllable>1</Controllable>
+				<DispatchType>auto</DispatchType>
+				<PutinTime>2021-08-18 18:59:10</PutinTime>
+				<TaskLength>n/a</TaskLength>
+				<TaskGUID>41bad6f3f60144f192a3ac8e62fd9a55</TaskGUID>
+				<TaskName>3333333333</TaskName>
+				<TaskPriority>80</TaskPriority>
+			</BaseInfo>
+			<TaskInfo>
+				<Scope>ETClipAdditiveData</Scope>
+				<Schema>ETClipAdditiveData</Schema>
+				<Data>
+					<ETClipAdditiveData>
+						<CLIPGUID>9cbd92da28212c9c758ad8c3b52b942d</CLIPGUID>
+						<USERCODE>5ed5fcfbff8f4c4eb24e45103e0ffbaf</USERCODE>
+						<WavePeakChannelNum>2</WavePeakChannelNum>
+					</ETClipAdditiveData>
+				</Data>
+			</TaskInfo>
+			<MediaFile>
+				<GroupType>video</GroupType>
+				<MediaType>videogroup</MediaType>
+				<FileContent>
+					<sbedl version="1" isclipcut="false" fps="25.0">
+						<audio>
+							<ref clipfile="oss://AKIAZKVK6G3ZUQDOZ2OB:qhQfK99heaeAlkCZkpf0HvoUWmdBsPJ7oj2AXqQs@s3.cn-northwest-1.amazonaws.com.cn/itv-download/3333333333_472e3c73925648fd84e3c641895cb04c_low_audio1.mp3" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" mediatype="videogroup" guid="85db555d5cc44a939fdc2b651dcca758" channel="1"/>
+						</audio>
+						<audio>
+							<ref clipfile="oss://AKIAZKVK6G3ZUQDOZ2OB:qhQfK99heaeAlkCZkpf0HvoUWmdBsPJ7oj2AXqQs@s3.cn-northwest-1.amazonaws.com.cn/itv-download/3333333333_472e3c73925648fd84e3c641895cb04c_low_audio1.mp3" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" mediatype="videogroup" guid="85db555d5cc44a939fdc2b651dcca758" channel="2"/>
+						</audio>
+						<audio>
+							<ref clipfile="oss://AKIAZKVK6G3ZUQDOZ2OB:qhQfK99heaeAlkCZkpf0HvoUWmdBsPJ7oj2AXqQs@s3.cn-northwest-1.amazonaws.com.cn/itv-download/3333333333_472e3c73925648fd84e3c641895cb04c_low_audio2.mp3" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" mediatype="videogroup" guid="39552bcc0b3e4f3b849c91ed138642f9" channel="1"/>
+						</audio>
+						<audio>
+							<ref clipfile="oss://AKIAZKVK6G3ZUQDOZ2OB:qhQfK99heaeAlkCZkpf0HvoUWmdBsPJ7oj2AXqQs@s3.cn-northwest-1.amazonaws.com.cn/itv-download/3333333333_472e3c73925648fd84e3c641895cb04c_low_audio2.mp3" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" mediatype="videogroup" guid="39552bcc0b3e4f3b849c91ed138642f9" channel="2"/>
+						</audio>
+						<audio>
+							<ref clipfile="oss://AKIAZKVK6G3ZUQDOZ2OB:qhQfK99heaeAlkCZkpf0HvoUWmdBsPJ7oj2AXqQs@s3.cn-northwest-1.amazonaws.com.cn/itv-download/3333333333_472e3c73925648fd84e3c641895cb04c_low_audio3.mp3" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" mediatype="videogroup" guid="4899bec2029d4318932eef25c2c80a0c" channel="1"/>
+						</audio>
+						<audio>
+							<ref clipfile="oss://AKIAZKVK6G3ZUQDOZ2OB:qhQfK99heaeAlkCZkpf0HvoUWmdBsPJ7oj2AXqQs@s3.cn-northwest-1.amazonaws.com.cn/itv-download/3333333333_472e3c73925648fd84e3c641895cb04c_low_audio3.mp3" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" mediatype="videogroup" guid="4899bec2029d4318932eef25c2c80a0c" channel="2"/>
+						</audio>
+						<audio>
+							<ref clipfile="oss://AKIAZKVK6G3ZUQDOZ2OB:qhQfK99heaeAlkCZkpf0HvoUWmdBsPJ7oj2AXqQs@s3.cn-northwest-1.amazonaws.com.cn/itv-download/3333333333_472e3c73925648fd84e3c641895cb04c_low_audio4.mp3" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" mediatype="videogroup" guid="450a26e515c246b4b2cb7be557c25dbf" channel="1"/>
+						</audio>
+						<audio>
+							<ref clipfile="oss://AKIAZKVK6G3ZUQDOZ2OB:qhQfK99heaeAlkCZkpf0HvoUWmdBsPJ7oj2AXqQs@s3.cn-northwest-1.amazonaws.com.cn/itv-download/3333333333_472e3c73925648fd84e3c641895cb04c_low_audio4.mp3" begin="0" clipbegin="0" clipend="2000000" cliptype="0" format="0" mediatype="videogroup" guid="450a26e515c246b4b2cb7be557c25dbf" channel="2"/>
+						</audio>
+					</sbedl>
+				</FileContent>
+			</MediaFile>
+			<TaskInfo>
+				<Scope>ObjPath</Scope>
+				<Schema>ObjPath</Schema>
+				<Data>
+					<CommonObjInfo>
+						<HVDestDir>\\172.16.149.205\hivefiles\sobeyhive\buckets\u-z543j3d323f50hy8\20210818</HVDestDir>
+						<HADestDir>\\172.16.149.205\hivefiles\sobeyhive\buckets\u-z543j3d323f50hy8\20210818</HADestDir>
+						<LVDestDir>\\172.16.149.205\hivefiles\sobeyhive\buckets\u-z543j3d323f50hy8\20210818</LVDestDir>
+						<LADestDir>\\172.16.149.205\hivefiles\sobeyhive\buckets\u-z543j3d323f50hy8\20210818</LADestDir>
+					</CommonObjInfo>
+				</Data>
+			</TaskInfo>
+			<JobType>wavepeak</JobType>
+			<JobID>58336</JobID>
+			<BreakResume>0</BreakResume>
+			<JobInfo>
+				<Scope>tv_wavepeakjobparam2</Scope>
+				<Schema>sbwavepeakjobparam2.xsd</Schema>
+				<Data>
+					<WavePeakJobParam2>
+						<Src>
+							<GroupType>video</GroupType>
+							<MediaType>videogroup</MediaType>
+						</Src>
+						<Obj>
+							<PathFormat>\\172.16.149.205\hivefiles\sobeyhive\buckets\u-z543j3d323f50hy8\20210818</PathFormat>
+							<ClipGuid>9cbd92da28212c9c758ad8c3b52b942d</ClipGuid>
+							<WavePeakChannelNum>2</WavePeakChannelNum>
+						</Obj>
+					</WavePeakJobParam2>
+				</Data>
+			</JobInfo>
+		</AssignTask>
+	</Content>
+</MPC>
