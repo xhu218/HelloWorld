@@ -1,0 +1,137 @@
+{
+	"contentId": "51fdedd4a1e64e63ad38a4f436ccce3a",
+	"entityData": {
+		"createTime": "2016-03-18 22:35:04",
+		"creatorCode": "123",
+		"videostandard": 0,
+		"type": "biz_sobey_video",
+		"contentId": "51fdedd4a1e64e63ad38a4f436ccce3a",
+		"filestatus": 5,
+		"markin": 0,
+		"source": "edit",
+		"trimout": 134000000,
+		"markout": 0,
+		"privilege": "public",
+		"name": "Untitled Ingest 2016-03-18 22_34_59",
+		"importDate": "0001-01-01 00:00:00",
+		"length": 134000000,
+		"privilegeUserGroup_": null,
+		"objectid": 850,
+		"trimin": 0
+	},
+	"fileGroups": [{
+		"fileItems": [{
+			"fileCreateTime": "0001-01-01 00:00:00",
+			"fileFormat": {
+				"audioFormat": null,
+				"docFormat": null,
+				"otherFormat": null,
+				"picFormat": null,
+				"videoFormat": null
+			},
+			"fileGUID": "28978d039907009e9c09a8f4baae68fd",
+			"fileLength": 134000000,
+			"filePath": "Z:\\\\HV\\Can_not_get_task_name_20160318223504_0_120_84__000__high.mxf",
+			"filePathPrefix": null,
+			"fileSize": 0,
+			"fileState": "0",
+			"fileType": null,
+			"verifyCode": null
+		}],
+		"groupName": "videogroup",
+		"groupType": "video",
+		"keyFrames": [{
+			"description": null,
+			"filePath": "/keyframes/2016/03/18/Can_not_get_task_name_20160318223504_0_120_84__000__high.mxf_0_180_320.jpg",
+			"filePathPrefix": null,
+			"format": ".jpg",
+			"height": 180,
+			"keyFrameNo": 0,
+			"width": 320
+		}],
+		"specific": {
+			"bitRate": 0,
+			"fileOrders": [],
+			"frameRate": 25,
+			"height": 1080,
+			"inPoint": 0,
+			"outPoint": 0,
+			"picCount": null,
+			"sequences": [{
+				"dbeType": null,
+				"fileGUID": "28978d039907009e9c09a8f4baae68fd",
+				"fileInPoint": 0,
+				"fileOutPoint": 134000000,
+				"mediaChannel": 1,
+				"refInPoint": 0,
+				"refOutPoint": 134000000,
+				"track": "A1"
+			},
+			{
+				"dbeType": null,
+				"fileGUID": "28978d039907009e9c09a8f4baae68fd",
+				"fileInPoint": 0,
+				"fileOutPoint": 134000000,
+				"mediaChannel": 2,
+				"refInPoint": 0,
+				"refOutPoint": 134000000,
+				"track": "A2"
+			},
+			{
+				"dbeType": null,
+				"fileGUID": "28978d039907009e9c09a8f4baae68fd",
+				"fileInPoint": 0,
+				"fileOutPoint": 134000000,
+				"mediaChannel": 3,
+				"refInPoint": 0,
+				"refOutPoint": 134000000,
+				"track": "A3"
+			},
+			{
+				"dbeType": null,
+				"fileGUID": "28978d039907009e9c09a8f4baae68fd",
+				"fileInPoint": 0,
+				"fileOutPoint": 134000000,
+				"mediaChannel": 4,
+				"refInPoint": 0,
+				"refOutPoint": 134000000,
+				"track": "A4"
+			},
+			{
+				"dbeType": null,
+				"fileGUID": "28978d039907009e9c09a8f4baae68fd",
+				"fileInPoint": 0,
+				"fileOutPoint": 134000000,
+				"mediaChannel": 0,
+				"refInPoint": 0,
+				"refOutPoint": 134000000,
+				"track": "V0"
+			}],
+			"width": 1920
+		},
+		"status": 0,
+		"streamMedias": [{
+			"bitRate": 84063,
+			"fileGUID": null,
+			"filePath": "/streamings/Untitled Ingest 2016-03-18 22_34_59_0.mp4",
+			"filePathPrefix": "k:",
+			"frameRate": 25,
+			"height": 360,
+			"name": null,
+			"size": 282989,
+			"width": 640
+		}]
+	}],
+	"importDate": "2016-03-18 22:35:29",
+	"importUser": "admin",
+	"metadatas": [],
+	"name": "Untitled Ingest 2016-03-18 22_34_59",
+	"privilege": "public",
+	"privilegeUserGroup": [],
+	"relationInfo": {
+		"parents": [],
+		"subs": []
+	},
+	"tree": ["global_sobey_defaultclass/MaterialList/WFG456"],
+	"type": "biz_sobey_video"
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="http://localhost:9999/1.css" />
+    <script src="jquery-1.11.3.js"></script>
+    <script src="http://localhost:9999/2.js"></script>
+    <script src="http://localhost:9999/3.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //直接把这个源文件纯属DIV链接过来，可以直接嵌入到本页面
+
+            $("#div1").load('http://localhost:9999/1.html',
+                function () {
+                    console.log("DIV里加载其他页面成功")
+                });
+
+
+            showhello();
+
+            $("#btn2").click(function (event) {
+                /* Act on the event */
+                console.log("btn2 click");
+                //此处不通，不能跨域访问
+                $("#iframe1").contents().find('#div123').click();
+            });
+            //使用扩展方法
+            $("#catagory").paddingList({
+                animatePadding: 30,
+                hoverColor: "Red"
+            });
+
+            $("#btn1").Sayhello();
+
+            $("#container1").addcontent();
+
+        });
+
+        function load() {
+            console.log("load called");
+        }
+    </script>
+</head>
+
+<body>
+    <input id="btn1" type="button" value="button"></input>
+    <input id="btn2" type="button" value="button"></input>
+    <div id="div1">this is content</div>
+    <div id="container1">this is container1</div>
+    <ul id="catagory">
+        <li><a href="#">jQuery</a></li>
+        <li><a href="#">Asp.net</a></li>
+        <li><a href="#">Sql Server</a></li>
+        <li><a href="#">CSS</a></li>
+    </ul>
+    <!-- 使用iframe这种方式，相当于内嵌一个浏览器	-->
+    <iframe id="iframe1" src="http://localhost:9999/1.html"></iframe>
+    <!--	<iframe src="6.html"></iframe>-->
+</body>
+<!--
+<script src="http://localhost:9999/1.js"></script>-->
+<!--扩展方法-->
+
+
+</html>

@@ -1,0 +1,72 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="jquery-1.11.3.js"></script> 
+
+
+
+</head>
+<body>
+    <form action="welcome.php" method="post">
+        Name:
+        <input type="text" name="name">
+        <br> E-mail:
+        <input type="text" name="email">
+        <br>
+        <textarea name="t1" wrap="hard"></textarea>
+        <br>
+        <input type="submit">
+    </form>
+
+
+<div id="formID"></div>
+ 
+
+<script>
+ 
+        function formAction(){
+ 
+            var formElement = document.createElement('form');
+                formElement.setAttribute('id','form1');
+                formElement.setAttribute('name','form1');
+                formElement.setAttribute('action','welcome.php');
+                formElement.setAttribute('method','post');
+             
+            var inputTextElement = document.createElement('textarea');
+                inputTextElement.setAttribute('id','t1');
+                //inputTextElement.setAttribute('type','text');
+                inputTextElement.setAttribute('value','aa');
+ 
+ 
+            var inputButtonElement = document.createElement('input');
+                inputButtonElement.setAttribute('id','btnSubmit');
+                inputButtonElement.setAttribute('type','button');
+                inputButtonElement.setAttribute('value','确定');
+                inputButtonElement.setAttribute('onclick',fnBtn);
+ 
+                formElement.appendChild(inputTextElement);
+                formElement.appendChild(inputButtonElement);
+                var objForm = document.getElementById('formID');
+                objForm.apendChild(formElement);
+        }
+        formAction();
+        function fnBtn(){
+            return document.form1.submit();
+        }
+ 
+        if(window.attachEvent){
+            window.attachEvent('onclick',fnBtn);
+        }else if(window.addEventListener){
+            window.addEventListener('click',fnBtn,true);
+        }
+     
+ 
+</script>
+</body>
+
+
+ 
+
+</html>

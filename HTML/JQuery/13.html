@@ -1,0 +1,53 @@
+<html>
+ <script src="jquery-1.11.3.js"></script>
+ <script type="text/javascript">
+ 	
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://172.16.0.205:10023/CMApi/api/basic/config/getsysparam",
+  "method": "POST",
+  "headers": {
+    "sobeyhive-http-token": "323a7ade135775909248d8402759215b"
+   
+  },
+  "data": "{ \"system\":\"MOS\",\"tool\": \"DEFAULT\", \"paramname\":\"MosVersion\", \"paramvalue\": \"\", \"paramdescription\": \"\", \"paramvaluedef\":\"\" }"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+console.log(GetFileContent());
+function GetFileContent(filepath)
+	{
+		var userToken = null;
+			  $.ajax({
+            type: "POST",
+            async: false,
+            url: "http://appnode2:10556/MOSConfiguration/Pages/t.txt",          
+            dataType: "txt",
+            error: function (xhr, type, exception) {
+                console.log(xhr.responseText, "Failed");
+            },
+            beforeSend: function (xhr) {
+                //xhr.setRequestHeader("sobeyhive-http-system", "MOS");
+                //xhr.setRequestHeader("sobeyhive-http-site", "S1");
+                //xhr.setRequestHeader("sobeyhive-http-tool", "MOSGATEWAY");
+            },
+            success: function (data) {
+                if (data.code == "0" || data.code == "901") {
+                    userToken = data;
+                }
+                else {
+                    alert("Failed to login, please refresh current page. Code: " + data.code + ", Message: " + data.msg);
+                }
+            }
+
+        });
+
+        return userToken;
+	}
+
+ </script>
+</html>

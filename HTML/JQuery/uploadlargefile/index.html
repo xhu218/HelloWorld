@@ -1,0 +1,89 @@
+<html>
+<script src='../jquery-1.11.3.js'></script>
+<script src='./UploadPlugin.js'></script>
+<script>
+$(document).ready(function() {
+
+    function doLargeFileUpload(file) {
+
+
+        var uploadPath = "/ext_file_root/hivefiles/sobeyhive/bucket-z/u20002/cmupload/2017-08-30" + "/"; //TODO  + new Date().format("yyyy-MM-dd")
+        var failFileName;
+        var curCount = 0;
+
+
+        $.UploadPlugin("http://hive.sobey.com:9021/Handler/WebLargeFileUploadService.aspx", uploadPath, [file],
+
+            function(data) {
+                uploading = true;
+                curCount++;
+
+                console.log(curCount + "-----" + data.total);
+
+                var percent = Math.round(curCount / data.total * 100, 2) + '%';
+                if (curCount == data.total) {
+                    succfull = true;
+
+                    uploadFileIndex++;
+                    uploading = false;
+                    $('#UploadWindow #uploadInfo').html(uploadFileIndex + "/" + uploadCount);
+                    //uploadFileArray.splice(uploadFileIndex-1, 1); //不能调数组中的数据。导致记录不好判断
+                    uploadFileArray[uploadFileIndex - 1].status = 2; //上传成功状态值为2
+                }
+                $("#UploadWindow #proHighlight").css("width", percent);
+            },
+
+
+
+            function(fileName) { //失败
+                if (failFileName != fileName) {
+                    failFileName = fileName;
+                    $("#UploadWindow #message").val("Save failed, caused by upload failed!");
+                    //上传失败，文件列表保留
+                    succfull = false;
+                    uploadFileIndex++;
+                    uploading = false;
+                    $('#UploadWindow #uploadInfo').html(uploadFileIndex + "/" + uploadCount);
+                    uploadFileArray[uploadFileIndex - 1].status = -1; //上传失败状态值为-1
+                }
+            }
+
+        );
+
+
+    }
+
+
+    $("#btn").click(function() {
+
+        console.log("aaa");
+        console.log($("#uploadfile").val())
+
+        doLargeFileUpload($("#uploadfile")[0].files[0]);
+
+    })
+
+
+
+
+
+
+
+
+})
+</script>
+
+<body>
+    <input type="file" name="file" id='uploadfile' multiple />
+    <div id='UploadWindow'>
+        <div id='uploadInfo'></div>
+        <div id="message"></div>
+    </div>
+    <hr />
+    <div>
+        <button type="button" id='btn' width="400px" heigth="400px">确认</button>
+    </div>
+    hello
+</body>
+
+</html>
