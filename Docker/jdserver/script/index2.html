@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>超级秒杀</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script src="./data/data.js?t=1"></script>
+    <script src="./data/extentinfo.js?t=1"></script>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="base.css" type="text/css" />
+</head>
+
+<body>
+    <!-- component template -->
+    <script type="text/x-template" id="grid-template">
+        <table style="clear: both;">
+            <thead>
+                <tr id="header">
+                    <th v-for="key in columns" @click="sortBy(key)" :class="{ active: sortKey == key }">
+                        {{ key | changeHeader }}
+                        <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+          </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="entry in filteredData">
+                    <td v-for="key in columns">
+                        <div v-if="displayLink(key)" style="font-size: 20px"> <a :href="'https://search.jd.com/Search?enc=utf-8&keyword='+entry[key]" target="_blank">{{entry[key]}}</a> </div>
+                        <div v-if="displayInDiv(key)" style="font-size: 20px">{{entry[key] }}</div>
+                        <div v-if="displayForRemianTime(key)" style="font-size: 20px">{{(entry[key]/60/60).toFixed(0) }} 小时后</div>
+                        <div v-if="displayImage(key)" width="200px" height="200px"><img width="160px" height="160px" v-bind:src=entry[key] /></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
+    <!-- demo root element -->
+    <div id="demo">
+        <form id="search">
+            <div style="float: right;font-size: 40px;font-weight: bold">
+                记录条数:&nbsp;&nbsp;{{goods.length}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 更新时间:&nbsp;&nbsp;&nbsp;&nbsp;{{extentinfo.lastUpdateTime}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="query" v-model="searchQuery" width="200px" height="60px" style="font-size: 40px"> <b style="font-size: 40px">Search</b>
+            </div>
+            <div style="clear:both" />
+            <br />
+            <hr style="border-width: 2px ;border-color: red" />
+            <br />
+        </form>
+        <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery">
+        </demo-grid>
+        <script src="base.js"></script>
+    </div>
+</body>
+
+</html>
