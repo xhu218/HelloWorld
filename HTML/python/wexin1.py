@@ -1,6 +1,8 @@
 import win32gui
+import win32ui
+import win32con
+import win32api
 import pygetwindow as gw
-import pyautogui
 import cv2
 import numpy as np
 from PIL import Image
@@ -15,6 +17,10 @@ import base64
 import queue
 import json
 import signal
+import ctypes
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
 
 # -------------------------- 配置项（重点修改！）--------------------------
 # 1. 百度OCR API配置
@@ -41,13 +47,88 @@ SCREENSHOT_SAVE_DIR = "wechat_screenshots"
 # 3. 时间限制配置（周一到周五 9:30 ~ 20:00）
 MONITOR_WEEKDAYS = [0, 1, 2, 3, 4]  # 0=周一, 1=周二, ..., 4=周五
 MONITOR_START_TIME = dt_time(9, 30)  # 9:30开始
-MONITOR_END_TIME = dt_time(20, 0)    # 20:00结束
+MONITOR_END_TIME = dt_time(20, 30)    # 20:00结束
 
 # 全局变量
 EXIT_FLAG = False          # 退出标志
 ALERT_QUEUE = queue.Queue()# 报警队列
 ROOT = None                # GUI根窗口
 LAST_RECOGNIZED_TEXT = ""  # 上一次识别的文本（用于对比去重）
+
+
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
+
+def send_mail(to, subject, html, success_callback=None):
+    """
+    发送163邮箱邮件（等价于Node.js的nodemailer实现）
+    :param to: 收件人邮箱（字符串，多个用逗号分隔）
+    :param subject: 邮件主题
+    :param html: 邮件HTML内容
+    :param success_callback: 发送成功后的回调函数（可选）
+    """
+    # 163邮箱SMTP配置（与Node.js保持一致）
+    config = {
+        "smtp_server": "smtp.163.com",  # 163邮箱SMTP服务器
+        "smtp_port": 465,               # SSL加密端口
+        "user": "xhu218@163.com",       # 发件人邮箱账号
+        "pass": "QTZBHELDCPMNZVFG"      # 发件人授权码（注意：生成后需等待几分钟生效）
+    }
+
+    # 构建邮件内容
+    # 邮件正文（HTML格式）
+    msg = MIMEText(html, 'html', 'utf-8')
+    # 发件人（昵称+邮箱，与Node.js保持一致）
+    msg['From'] = Header("==王富贵 王富贵 王富贵 验货==<xhu218@163.com>", 'utf-8')
+    # 收件人
+    msg['To'] = Header(to, 'utf-8')
+    # 邮件主题
+    msg['Subject'] = Header(subject, 'utf-8')
+
+    smtp_obj = None
+    try:
+        # 连接SMTP服务器（SSL加密）
+        smtp_obj = smtplib.SMTP_SSL(config["smtp_server"], config["smtp_port"])
+        # 登录邮箱
+        smtp_obj.login(config["user"], config["pass"])
+        # 发送邮件（收件人需转成列表格式）
+        smtp_obj.sendmail(config["user"], to.split(','), msg.as_string())
+        
+       
+        # 执行成功回调
+        if success_callback and callable(success_callback):
+            success_callback()
+        
+        print('mail sent:', "发送成功")  # 模拟Node.js的info.response
+    except smtplib.SMTPException as e:
+        # 捕获邮件发送异常
+        print(f"邮件发送失败: {e}")
+    finally:
+        # 关闭连接（等价于transporter.close()）
+        if smtp_obj:
+            smtp_obj.quit()
+
+# 提升进程权限（解决远程截图权限问题）
+def elevate_process_privileges():
+    """提升进程权限，允许远程会话截图"""
+    try:
+        # 设置进程为高DPI感知（解决截图模糊）
+        ctypes.windll.shcore.SetProcessDpiAwareness(2)
+        
+        # 提升窗口站权限（远程会话必备）
+        hWinSta = win32api.OpenProcessWindowStation("WinSta0", 0, win32con.GENERIC_ALL)
+        if hWinSta:
+            win32api.SetProcessWindowStation(hWinSta)
+        
+        # 打开桌面
+        hDesktop = win32api.OpenDesktop("Default", 0, True, win32con.GENERIC_ALL)
+        if hDesktop:
+            win32api.SetThreadDesktop(hDesktop)
+        
+        my_print("✅ 进程权限提升成功")
+    except Exception as e:
+        my_print(f"⚠️ 权限提升失败（不影响基础功能）：{e}")
 
 def my_print(content):
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -207,8 +288,55 @@ def find_wechat_window():
     
     return None
 
+def capture_window_region(hwnd, x1, y1, x2, y2):
+    """
+    底层Windows API截图（不依赖活跃桌面会话）
+    :param hwnd: 窗口句柄
+    :param x1, y1: 区域左上角坐标
+    :param x2, y2: 区域右下角坐标
+    :return: OpenCV格式图像
+    """
+    if EXIT_FLAG:
+        return None
+    
+    try:
+        # 计算截图区域的宽高
+        width = x2 - x1
+        height = y2 - y1
+        
+        # 获取窗口设备上下文
+        hwnd_dc = win32gui.GetWindowDC(hwnd)
+        mfc_dc = win32ui.CreateDCFromHandle(hwnd_dc)
+        save_dc = mfc_dc.CreateCompatibleDC()
+        
+        # 创建位图对象
+        save_bitmap = win32ui.CreateBitmap()
+        save_bitmap.CreateCompatibleBitmap(mfc_dc, width, height)
+        save_dc.SelectObject(save_bitmap)
+        
+        # 复制屏幕内容到位图
+        save_dc.BitBlt((0, 0), (width, height), mfc_dc, (x1, y1), win32con.SRCCOPY)
+        
+        # 转换为numpy数组
+        bmp_info = save_bitmap.GetInfo()
+        bmp_str = save_bitmap.GetBitmapBits(True)
+        img = np.frombuffer(bmp_str, dtype=np.uint8).reshape((height, width, 4))
+        img = img[:, :, :3]  # 去掉Alpha通道
+        img = cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)
+        
+        # 释放资源
+        win32gui.DeleteObject(save_bitmap.GetHandle())
+        save_dc.DeleteDC()
+        mfc_dc.DeleteDC()
+        win32gui.ReleaseDC(hwnd, hwnd_dc)
+        
+        return img
+    except Exception as e:
+        my_print(f"底层截图失败：{e}")
+        return None
+
 def capture_chat_area(window):
-    """截取聊天区域"""
+    """截取聊天区域（适配远程断开场景）"""
     if EXIT_FLAG:
         return None
     
@@ -217,20 +345,25 @@ def capture_chat_area(window):
         width, height = window.width, window.height
         
         # 计算聊天区域坐标
-        chat_x1 = x + CHAT_AREA_OFFSET["left"]
-        chat_y1 = y + CHAT_AREA_OFFSET["top"]
-        chat_x2 = x + width - CHAT_AREA_OFFSET["right"]
-        chat_y2 = y + height - CHAT_AREA_OFFSET["bottom"]
+        chat_x1 = CHAT_AREA_OFFSET["left"]
+        chat_y1 = CHAT_AREA_OFFSET["top"]
+        chat_x2 = width - CHAT_AREA_OFFSET["right"]
+        chat_y2 = height - CHAT_AREA_OFFSET["bottom"]
         
-        # 截图
-        screenshot = pyautogui.screenshot(region=(chat_x1, chat_y1, chat_x2-chat_x1, chat_y2-chat_y1))
+        # 使用底层API截图（核心修改：不依赖桌面会话）
+        hwnd = window._hWnd  # 获取窗口句柄
+        chat_img = capture_window_region(hwnd, chat_x1, chat_y1, chat_x2, chat_y2)
         
-        # 保存截图（注释掉则不保存）
-        # save_path = os.path.join(SCREENSHOT_SAVE_DIR, get_timestamp_filename())
-        # screenshot.save(save_path)
-        # my_print(f"📸 截图已保存：{os.path.abspath(save_path)}")
+        if chat_img is None:
+            my_print("⚠️ 底层截图失败，尝试降级方案")
+            return None
         
-        return cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
+        # 保存截图（可选）
+        #save_path = os.path.join(SCREENSHOT_SAVE_DIR, get_timestamp_filename())
+        #cv2.imwrite(save_path, chat_img)
+        #my_print(f"📸 截图已保存：{os.path.abspath(save_path)}")
+        
+        return chat_img
     except Exception as e:
         my_print(f"截图失败：{e}")
         return None
@@ -265,28 +398,36 @@ def send_alert_to_gui(keyword, text):
         ALERT_QUEUE.put((keyword, text))
 
 def send_alert(msg):
-    """发送钉钉报警"""
     if EXIT_FLAG:
         return None
-    
     try:
+    
+    
+        
         now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # 1. 发钉钉
         headers = {"Content-Type": "application/json"}
         data = {
             "msgtype": "text",
-            "text": {
-                "content": f"[{now_str}]小爱同学【告警】{msg}"
-            },
-            "at": {
-                "atMobiles": [YOUR_PHONE],
-                "isAtAll": False
-            }
+            "text": {"content": f"[{now_str}] 小爱同学->告警：{msg}"},
+            "at": {"atMobiles": [YOUR_PHONE]}
         }
-        resp = requests.post(WEBHOOK_URL, data=json.dumps(data), headers=headers, timeout=10)
-        return resp.json()
+        requests.post(WEBHOOK_URL, json=data, timeout=10)
+        
+        def success_cb():
+            print("邮件发送成功，回调函数执行！")
+    
+        # 调用发送邮件函数
+        send_mail(
+            to="13548180218@139.com",  # 替换成实际收件人
+            subject="测试邮件",
+            html="<h1>这是测试邮件的HTML内容</h1><p>Hello World！</p>",
+            success_callback=success_cb
+        )
+        
+        my_print("✅ 告警+语音通知已发送")
     except Exception as e:
-        my_print(f"❌ 钉钉报警失败：{e}")
-        return None
+        my_print(f"❌ 告警失败：{e}")
 
 def gui_worker():
     """GUI线程：处理报警"""
@@ -319,6 +460,7 @@ def monitor_wechat_chat():
     """监控主逻辑"""
     init_save_dir()
     get_baidu_access_token()
+    elevate_process_privileges()  # 启动时提升权限
     
     print("✅ 微信聊天监控已启动！")
     print(f"👉 监控窗口：{WECHAT_WINDOW_TITLE}")
@@ -354,7 +496,7 @@ def monitor_wechat_chat():
                     sleep_count += 0.5
                 continue
 
-            # 2. 截图
+            # 2. 截图（改用底层API）
             chat_img = capture_chat_area(wechat_window)
             if chat_img is None:
                 # 分段sleep，响应退出
@@ -366,7 +508,7 @@ def monitor_wechat_chat():
 
             # 3. OCR识别
             chat_text = baidu_ocr_recognize(chat_img)
-            my_print(f"📝 本次识别文本：{chat_text[:50]}..." if chat_text else "📝 本次未识别到文本")
+            my_print(f"📝 本次识别文本：{chat_text}" if chat_text else "📝 本次未识别到文本")
 
             # 4. 检测关键词（自动对比去重）
             matched_keyword = check_keywords_in_text(chat_text)
