@@ -21,14 +21,13 @@ import ctypes
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
+import pytesseract  # 新增：免费OCR库
 
 # -------------------------- 配置项（重点修改！）--------------------------
-# 1. 百度OCR API配置
-BAIDU_OCR_CONFIG = {
-    "API_KEY": "kPU6Cj30Voo8PiUrJinjereK",       
-    "SECRET_KEY": "dv9Y2nYFq2Ic2rtS8Z05hz1tb0hN4pOG",
-    "ACCESS_TOKEN": ""                   
-}
+# 1. Tesseract OCR配置（免费）
+# Windows系统需要指定Tesseract安装路径，Linux/Mac一般不需要
+TESSERACT_PATH = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # 根据你的安装路径修改
+pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
 # 钉钉配置
 WEBHOOK_URL = "https://oapi.dingtalk.com/robot/send?access_token=3677af4ef38ac3291bd64e17506a89b3a376679df65a8cca06ca3aee74a02d34"
@@ -36,7 +35,7 @@ YOUR_PHONE = "13548180218"
 
 # 2. 检测配置
 KEYWORDS = ["交警", "快", "来了", "警察"]
-SCAN_INTERVAL = 60
+SCAN_INTERVAL = 10
 WECHAT_WINDOW_TITLE = "享你索想，贝享生活"
 CHAT_AREA_OFFSET = {
     "left": 20,    "top": 80,     "right": 20,   "bottom": 120
@@ -47,7 +46,7 @@ SCREENSHOT_SAVE_DIR = "wechat_screenshots"
 # 3. 时间限制配置（周一到周五 9:30 ~ 20:00）
 MONITOR_WEEKDAYS = [0, 1, 2, 3, 4]  # 0=周一, 1=周二, ..., 4=周五
 MONITOR_START_TIME = dt_time(9, 30)  # 9:30开始
-MONITOR_END_TIME = dt_time(20, 30)    # 20:00结束
+MONITOR_END_TIME = dt_time(23, 30)    # 20:00结束
 
 # 全局变量
 EXIT_FLAG = False          # 退出标志
@@ -176,72 +175,56 @@ def handle_interrupt(signum, frame):
     my_print("👋 程序已正常退出")
     os._exit(0)
 
-# -------------------------- 百度OCR API相关函数 --------------------------
-def get_baidu_access_token():
-    """获取百度OCR Token"""
-    if EXIT_FLAG:
-        return False
-    try:
-        url = f"https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id={BAIDU_OCR_CONFIG['API_KEY']}&client_secret={BAIDU_OCR_CONFIG['SECRET_KEY']}"
-        response = requests.get(url, timeout=10)
-        result = response.json()
-        if "access_token" in result:
-            BAIDU_OCR_CONFIG["ACCESS_TOKEN"] = result["access_token"]
-            my_print(f"✅ 获取Token成功，有效期：{result.get('expires_in', '30天')}秒")
-            return True
-        else:
-            my_print(f"❌ 获取Token失败：{result}")
-            return False
-    except Exception as e:
-        my_print(f"❌ Token获取异常：{e}")
-        return False
+# -------------------------- 免费OCR相关函数（替换百度OCR） --------------------------
+def preprocess_image(img):
+    """图像预处理，提升OCR识别准确率"""
+    if img is None or not img.any():
+        return None
+    
+    # 1. 转为灰度图
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    
+    # 2. 二值化（去除噪声）
+    _, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    
+    # 3. 去除小噪声点
+    kernel = np.ones((1, 1), np.uint8)
+    clean = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
+    
+    return clean
 
-def image_to_base64(img):
-    """图像转Base64"""
-    try:
-        pil_img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-        import io
-        buffer = io.BytesIO()
-        pil_img.save(buffer, format='PNG')
-        return base64.b64encode(buffer.getvalue()).decode('utf-8')
-    except Exception as e:
-        my_print(f"❌ 图像转Base64失败：{e}")
-        return ""
-
-def baidu_ocr_recognize(img):
-    """百度OCR识别"""
+def free_ocr_recognize(img, save_path):
+    """免费Tesseract OCR识别（替换百度OCR）
+    :param img: 待识别的图像
+    :param save_path: 原始图片保存路径
+    """
     if EXIT_FLAG or img is None or not img.any():
         return ""
     
-    if not BAIDU_OCR_CONFIG["ACCESS_TOKEN"]:
-        if not get_baidu_access_token():
-            return ""
-    
-    img_base64 = image_to_base64(img)
-    if not img_base64:
-        return ""
-    
     try:
-        url = f"https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token={BAIDU_OCR_CONFIG['ACCESS_TOKEN']}"
-        headers = {"Content-Type": "application/x-www-form-urlencoded"}
-        data = {
-            "image": img_base64,
-            "language_type": "CHN_ENG",
-            "detect_direction": "true"
-        }
+        # 保存原始截图（识别前的图片）
+        cv2.imwrite(save_path, img)
+        my_print(f"📸 识别前原始截图已保存：{os.path.abspath(save_path)}")
         
-        response = requests.post(url, headers=headers, data=data, timeout=15)
-        result = response.json()
-        
-        if "words_result" in result:
-            text = "\n".join([item["words"] for item in result["words_result"]])
-            return text.strip()
-        else:
-            my_print(f"❌ OCR识别失败：{result}")
+        # 图像预处理
+        processed_img = preprocess_image(img)
+        if processed_img is None:
             return ""
+        
+        # 保存预处理后的图片（便于对比排查）
+        processed_save_path = save_path.replace(".png", "_processed.png")
+        cv2.imwrite(processed_save_path, processed_img)
+        my_print(f"📸 预处理后截图已保存：{os.path.abspath(processed_save_path)}")
+        
+        # 使用Tesseract识别中文
+        # lang='chi_sim' 表示简体中文，eng表示英文
+        text = pytesseract.image_to_string(processed_img, lang='chi_sim+eng')
+        
+        # 清理识别结果
+        text = text.strip().replace('\n', '').replace('\r', '').replace(' ', '')
+        return text
     except Exception as e:
-        my_print(f"❌ API调用异常：{e}")
-        BAIDU_OCR_CONFIG["ACCESS_TOKEN"] = ""
+        my_print(f"❌ 免费OCR识别异常：{e}")
         return ""
 
 # -------------------------- 工具函数 --------------------------
@@ -253,7 +236,7 @@ def init_save_dir():
 
 def get_timestamp_filename():
     """生成时间戳文件名"""
-    return f"wechat_chat_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+    return f"wechat_chat_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}.png"  # 增加毫秒级时间戳避免重名
 
 def find_wechat_window():
     """查找微信窗口"""
@@ -358,11 +341,6 @@ def capture_chat_area(window):
             my_print("⚠️ 底层截图失败，尝试降级方案")
             return None
         
-        # 保存截图（可选）
-        #save_path = os.path.join(SCREENSHOT_SAVE_DIR, get_timestamp_filename())
-        #cv2.imwrite(save_path, chat_img)
-        #my_print(f"📸 截图已保存：{os.path.abspath(save_path)}")
-        
         return chat_img
     except Exception as e:
         my_print(f"截图失败：{e}")
@@ -401,9 +379,6 @@ def send_alert(msg):
     if EXIT_FLAG:
         return None
     try:
-    
-    
-        
         now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         # 1. 发钉钉
         headers = {"Content-Type": "application/json"}
@@ -418,16 +393,21 @@ def send_alert(msg):
             print("邮件发送成功，回调函数执行！")
     
         # 调用发送邮件函数
-        send_mail(
-            to="13548180218@139.com",  # 替换成实际收件人
-            subject="测试邮件",
-            html="<h1>这是测试邮件的HTML内容</h1><p>Hello World！</p>",
-            success_callback=success_cb
-        )
+        send_alert_email(msg)
         
         my_print("✅ 告警+语音通知已发送")
     except Exception as e:
         my_print(f"❌ 告警失败：{e}")
+
+def send_alert_email(msg):
+    """发送告警邮件"""
+    # 调用发送邮件函数
+    send_mail(
+        to="13548180218@139.com",  # 替换成实际收件人
+        subject="微信监控告警通知",
+        html=f"<h1>微信监控告警</h1><p>{msg}</p>",
+        success_callback=lambda: print("告警邮件发送成功")
+    )
 
 def gui_worker():
     """GUI线程：处理报警"""
@@ -459,7 +439,6 @@ def gui_worker():
 def monitor_wechat_chat():
     """监控主逻辑"""
     init_save_dir()
-    get_baidu_access_token()
     elevate_process_privileges()  # 启动时提升权限
     
     print("✅ 微信聊天监控已启动！")
@@ -467,7 +446,8 @@ def monitor_wechat_chat():
     print(f"👉 检测间隔：{SCAN_INTERVAL}秒")
     print(f"👉 截图目录：{os.path.abspath(SCREENSHOT_SAVE_DIR)}")
     print(f"👉 监控时段：周一至周五 9:30 ~ 20:00")
-    print("👉 紧急停止：按Ctrl+C退出\n")
+    print("👉 紧急停止：按Ctrl+C退出")
+    print("👉 每次识别前都会保存原始截图和预处理截图到截图目录\n")
 
     while not EXIT_FLAG:
         try:
@@ -506,17 +486,20 @@ def monitor_wechat_chat():
                     sleep_count += 0.5
                 continue
 
-            # 3. OCR识别
-            chat_text = baidu_ocr_recognize(chat_img)
+            # 3. 生成截图保存路径
+            save_path = os.path.join(SCREENSHOT_SAVE_DIR, get_timestamp_filename())
+            
+            # 4. 免费OCR识别（替换百度OCR）- 传入保存路径
+            chat_text = free_ocr_recognize(chat_img, save_path)
             my_print(f"📝 本次识别文本：{chat_text}" if chat_text else "📝 本次未识别到文本")
 
-            # 4. 检测关键词（自动对比去重）
+            # 5. 检测关键词（自动对比去重）
             matched_keyword = check_keywords_in_text(chat_text)
             if matched_keyword:
                 my_print(f"🔍 检测到关键词：{matched_keyword}")
                 send_alert_to_gui(matched_keyword, chat_text)
 
-            # 5. 间隔等待（分段sleep，便于响应退出）
+            # 6. 间隔等待（分段sleep，便于响应退出）
             sleep_count = 0
             while sleep_count < SCAN_INTERVAL and not EXIT_FLAG:
                 time.sleep(0.5)
@@ -539,9 +522,13 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, handle_interrupt)
     signal.signal(signal.SIGTERM, handle_interrupt)  # 处理kill信号
     
-    # 2. 前置检查
-    if not BAIDU_OCR_CONFIG["API_KEY"] or BAIDU_OCR_CONFIG["API_KEY"] == "你的百度API Key":
-        my_print("❌ 请先配置百度OCR的API_KEY和SECRET_KEY！")
+    # 2. 检查Tesseract配置
+    try:
+        # 测试Tesseract是否可用
+        pytesseract.get_tesseract_version()
+    except Exception as e:
+        my_print(f"❌ Tesseract OCR配置错误：{e}")
+        my_print("请确认：1. 已安装Tesseract引擎 2. TESSERACT_PATH配置正确")
         os._exit(1)
     
     # 3. 启动GUI线程（daemon=True，随主线程退出）
