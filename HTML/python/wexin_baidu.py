@@ -36,7 +36,7 @@ YOUR_PHONE = "13548180218"
 
 # 2. 检测配置
 KEYWORDS = ["交警", "快", "来了", "警察","速度"]
-SCAN_INTERVAL = 180
+SCAN_INTERVAL = 60
 WECHAT_WINDOW_TITLE = "享你索想，贝享生活"
 CHAT_AREA_OFFSET = {
     "left": 20,    "top": 80,     "right": 20,   "bottom": 120
@@ -476,8 +476,8 @@ def send_alert(msg):
         # 调用发送邮件函数
         send_mail(
             to="13548180218@139.com",  # 替换成实际收件人
-            subject="交警来了，快移车",
-            html="<h1>交警来了，快移车</h1><p>Hello World！</p>",
+            subject=f"{now_str}交警来了，快移车",
+            html="<h1>交警来了，快移车</h1>",
             success_callback=success_cb
         )
         
@@ -601,7 +601,7 @@ def monitor_wechat_chat():
             chat_text = baidu_ocr_recognize(chat_img)
             my_print(f"📝 本次识别文本：{chat_text}" if chat_text else "📝 本次未识别到文本")
 
-            # 5. 检测关键词（传入Base64进行图片对比）【核心修改】
+           
             matched_keyword = check_keywords_in_text(chat_text)
             if matched_keyword:
                 my_print(f"🔍 检测到关键词：{matched_keyword}")
