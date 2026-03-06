@@ -36,7 +36,7 @@ YOUR_PHONE = "13548180218"
 
 # 2. 检测配置
 KEYWORDS = ["交警", "快", "来了", "警察","速度"]
-SCAN_INTERVAL = 60
+SCAN_INTERVAL = 180
 WECHAT_WINDOW_TITLE = "享你索想，贝享生活"
 CHAT_AREA_OFFSET = {
     "left": 20,    "top": 80,     "right": 20,   "bottom": 120
@@ -47,13 +47,79 @@ SCREENSHOT_SAVE_DIR = "wechat_screenshots"
 # 3. 时间限制配置（周一到周五 9:30 ~ 20:00）
 MONITOR_WEEKDAYS = [0, 1, 2, 3, 4]  # 0=周一, 1=周二, ..., 4=周五
 MONITOR_START_TIME = dt_time(9, 30)  # 9:30开始
-MONITOR_END_TIME = dt_time(23, 30)    # 20:00结束
+MONITOR_END_TIME = dt_time(19, 0)    # 20:00结束
 
 # 全局变量
 EXIT_FLAG = False          # 退出标志
 ALERT_QUEUE = queue.Queue()# 报警队列
 ROOT = None                # GUI根窗口
-LAST_RECOGNIZED_TEXT = ""  # 上一次识别的文本（用于对比去重）
+LAST_IMG_BASE64 = ""       # 上一次截图的Base64（用于对比去重）【核心修改】
+
+
+import requests
+import json
+
+def check_shared_value():
+    """
+    访问指定URL获取共享布尔值，返回对应布尔结果，并打印完整响应内容
+    :return: bool - current_value为true返回True，否则返回False
+    """
+    # 目标URL
+    url = "http://www.xhu218.com/get_shared_value.php"
+    
+    try:
+        # 发送HTTP请求（设置超时时间，避免卡死）
+        response = requests.get(url, timeout=10)
+        
+        # 检查响应状态码（200表示成功）
+        response.raise_for_status()
+        
+        # 获取原始响应文本并打印
+        raw_content = response.text
+        print("=" * 50)
+        print(f"从接口获取的原始内容：\n{raw_content}")
+        print("=" * 50)
+        
+        # 解析JSON数据
+        result = response.json()
+        
+        # 提取current_value并判断（转小写避免大小写问题）
+        current_value = result.get("current_value", "").lower()
+        
+        # 核心返回逻辑
+        if current_value == "true":
+            print(f"\n判断结果：current_value = {current_value} → 返回 True")
+            return True
+        else:
+            print(f"\n判断结果：current_value = {current_value} → 返回 False")
+            return False
+            
+    except requests.exceptions.Timeout:
+        error_msg = "请求超时（目标服务器未响应）"
+        print(f"{error_msg} → 返回 False")
+        return False
+    except requests.exceptions.ConnectionError:
+        error_msg = "连接失败（无法访问目标URL）"
+        print(f"{error_msg} → 返回 False")
+        return False
+    except requests.exceptions.HTTPError as e:
+        error_msg = f"HTTP请求错误：{e}"
+        print(f"{error_msg} → 返回 False")
+        return False
+    except json.JSONDecodeError:
+        # 即使JSON解析失败，也打印原始内容方便排查
+        try:
+            print("=" * 50)
+            print(f"JSON解析失败！原始响应内容：\n{response.text}")
+            print("=" * 50)
+        except:
+            pass
+        print("响应数据不是有效的JSON格式 → 返回 False")
+        return False
+    except Exception as e:
+        error_msg = f"未知错误：{str(e)}"
+        print(f"{error_msg} → 返回 False")
+        return False
 
 
 import smtplib
@@ -183,6 +249,7 @@ def get_baidu_access_token():
         return False
     try:
         url = f"https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id={BAIDU_OCR_CONFIG['API_KEY']}&client_secret={BAIDU_OCR_CONFIG['SECRET_KEY']}"
+        
         response = requests.get(url, timeout=10)
         result = response.json()
         if "access_token" in result:
@@ -222,7 +289,8 @@ def baidu_ocr_recognize(img):
         return ""
     
     try:
-        url = f"https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token={BAIDU_OCR_CONFIG['ACCESS_TOKEN']}"
+        #url = f"https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token={BAIDU_OCR_CONFIG['ACCESS_TOKEN']}"
+        url = f"https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic?access_token={BAIDU_OCR_CONFIG['ACCESS_TOKEN']}"
         headers = {"Content-Type": "application/x-www-form-urlencoded"}
         data = {
             "image": img_base64,
@@ -369,16 +437,7 @@ def capture_chat_area(window):
         return None
 
 def check_keywords_in_text(text):
-    """检测关键词（仅内容变化时）"""
-    global LAST_RECOGNIZED_TEXT
-    
-    # 如果内容和上次完全一致，直接返回None（不处理）
-    if text == LAST_RECOGNIZED_TEXT:
-        my_print("📝 内容无变化，跳过处理")
-        return None
-    
-    # 更新上次识别的文本
-    LAST_RECOGNIZED_TEXT = text
+
     
     # 检测关键词
     if not text:
@@ -401,9 +460,6 @@ def send_alert(msg):
     if EXIT_FLAG:
         return None
     try:
-    
-    
-        
         now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         # 1. 发钉钉
         headers = {"Content-Type": "application/json"}
@@ -466,7 +522,7 @@ def monitor_wechat_chat():
     print(f"👉 监控窗口：{WECHAT_WINDOW_TITLE}")
     print(f"👉 检测间隔：{SCAN_INTERVAL}秒")
     print(f"👉 截图目录：{os.path.abspath(SCREENSHOT_SAVE_DIR)}")
-    print(f"👉 监控时段：周一至周五 9:30 ~ 20:00")
+    print(f"👉 监控时段：周一至周五 9:30 ~ 19:00")
     print("👉 紧急停止：按Ctrl+C退出\n")
 
     while not EXIT_FLAG:
@@ -477,13 +533,21 @@ def monitor_wechat_chat():
             # 核心判断：只在指定时间段内执行监控逻辑
             if not is_in_monitor_time():
                 now = datetime.now()
-                my_print(f"⏰ 当前时间{now.strftime('%Y-%m-%d %H:%M')}不在监控时段（周一至周五9:30~20:00），跳过本次检测")
+                my_print(f"⏰ 当前时间{now.strftime('%Y-%m-%d %H:%M')}不在监控时段（周一至周五9:30~19:00），跳过本次检测")
                 # 分段sleep，响应退出
                 sleep_count = 0
                 while sleep_count < SCAN_INTERVAL and not EXIT_FLAG:
                     time.sleep(0.5)
                     sleep_count += 0.5
                 continue
+            
+            if not check_shared_value():
+                sleep_count = 0
+                while sleep_count < SCAN_INTERVAL and not EXIT_FLAG:
+                    time.sleep(0.5)
+                    sleep_count += 0.5
+                continue
+            
 
             # 1. 查找窗口
             wechat_window = find_wechat_window()
@@ -506,17 +570,44 @@ def monitor_wechat_chat():
                     sleep_count += 0.5
                 continue
 
-            # 3. OCR识别
+            # 3. 生成截图Base64（用于对比）
+            img_base64 = image_to_base64(chat_img)
+            if not img_base64:
+                my_print("⚠️ 图片转Base64失败，跳过本次检测")
+                sleep_count = 0
+                while sleep_count < SCAN_INTERVAL and not EXIT_FLAG:
+                    time.sleep(0.5)
+                    sleep_count += 0.5
+                continue
+                
+                
+            """检测关键词（仅图片变化时）【核心修改】"""
+            global LAST_IMG_BASE64
+
+            # 如果图片Base64和上次完全一致，直接返回None（不处理）
+            if img_base64 == LAST_IMG_BASE64 and LAST_IMG_BASE64 != "":
+                my_print("📝 图片内容无变化，跳过处理")
+                sleep_count = 0
+                while sleep_count < SCAN_INTERVAL and not EXIT_FLAG:
+                    time.sleep(0.5)
+                    sleep_count += 0.5
+                continue
+            
+
+            # 更新上次截图的Base64
+            LAST_IMG_BASE64 = img_base64    
+
+            # 4. OCR识别
             chat_text = baidu_ocr_recognize(chat_img)
             my_print(f"📝 本次识别文本：{chat_text}" if chat_text else "📝 本次未识别到文本")
 
-            # 4. 检测关键词（自动对比去重）
+            # 5. 检测关键词（传入Base64进行图片对比）【核心修改】
             matched_keyword = check_keywords_in_text(chat_text)
             if matched_keyword:
                 my_print(f"🔍 检测到关键词：{matched_keyword}")
                 send_alert_to_gui(matched_keyword, chat_text)
 
-            # 5. 间隔等待（分段sleep，便于响应退出）
+            # 6. 间隔等待（分段sleep，便于响应退出）
             sleep_count = 0
             while sleep_count < SCAN_INTERVAL and not EXIT_FLAG:
                 time.sleep(0.5)
