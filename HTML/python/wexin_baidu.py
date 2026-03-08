@@ -22,6 +22,9 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 
+
+DEBUG = False
+
 # -------------------------- 配置项（重点修改！）--------------------------
 # 1. 百度OCR API配置
 BAIDU_OCR_CONFIG = {
@@ -29,6 +32,10 @@ BAIDU_OCR_CONFIG = {
     "SECRET_KEY": "dv9Y2nYFq2Ic2rtS8Z05hz1tb0hN4pOG",
     "ACCESS_TOKEN": ""                   
 }
+
+
+
+
 
 # 钉钉配置
 WEBHOOK_URL = "https://oapi.dingtalk.com/robot/send?access_token=3677af4ef38ac3291bd64e17506a89b3a376679df65a8cca06ca3aee74a02d34"
@@ -202,6 +209,11 @@ def my_print(content):
 
 # -------------------------- 时间判断函数 --------------------------
 def is_in_monitor_time():
+    
+    if DEBUG:
+        SCAN_INTERVAL = 10
+        return True
+    
     """判断当前时间是否在监控时间段内（周一到周五 9:30~20:00）"""
     now = datetime.now()
     

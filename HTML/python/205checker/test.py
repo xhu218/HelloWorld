@@ -2,9 +2,10 @@
 # -*- coding: UTF-8 -*-
 
 
+import numpy
+import matplotlib.pyplot as plt
 
-import sys
-print "hello"
-print "脚本名：", sys.argv[0]
-for i in range(1, len(sys.argv)):
-    print "参数", i, sys.argv[i]
+x = numpy.random.uniform(0.0, 5.0, 250)
+
+plt.hist(x, 5)
+plt.show()
