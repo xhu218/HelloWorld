@@ -52,7 +52,7 @@ ALERTED_CONTENT = set()
 SCREENSHOT_SAVE_DIR = "wechat_screenshots"
 
 # 3. 时间限制配置（周一到周五 9:30 ~ 20:00）
-MONITOR_WEEKDAYS = [0, 1, 2, 3, 4]  # 0=周一, 1=周二, ..., 4=周五
+MONITOR_WEEKDAYS = [0, 1, 3, 4]  # 0=周一, 1=周二, ..., 4=周五
 MONITOR_START_TIME = dt_time(9, 30)  # 9:30开始
 MONITOR_END_TIME = dt_time(19, 0)    # 20:00结束
 
