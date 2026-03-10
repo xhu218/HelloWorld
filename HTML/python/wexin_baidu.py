@@ -493,9 +493,9 @@ def send_alert(msg):
             success_callback=success_cb
         )
         
-        my_print("✅ 告警+语音通知已发送")
+        my_print("✅ 钉钉消息+139邮箱已发送")
     except Exception as e:
-        my_print(f"❌ 告警失败：{e}")
+        my_print(f"❌ 钉钉消息+139邮箱已发送：{e}")
 
 def gui_worker():
     """GUI线程：处理报警"""
@@ -565,6 +565,18 @@ def monitor_wechat_chat():
             wechat_window = find_wechat_window()
             if not wechat_window:
                 my_print("⚠️ 未找到目标微信窗口")
+                
+                def success_cb():
+                    print("邮件发送成功，回调函数执行！")
+            
+                # 调用发送邮件函数
+                send_mail(
+                    to="13548180218@139.com",  # 替换成实际收件人
+                    subject=f"没有找到微信窗口",
+                    html="<h1>没有找到微信窗口</h1>",
+                    success_callback=success_cb
+                )
+                
                 # 分段sleep，响应退出
                 sleep_count = 0
                 while sleep_count < SCAN_INTERVAL and not EXIT_FLAG:
